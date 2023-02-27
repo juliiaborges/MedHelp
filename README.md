@@ -1,17 +1,24 @@
-# Nome do projeto
+# MedHelp
 
 Escreva um ou dois  parágrafo resumindo o objetivo do seu projeto.
 
 ## Integrantes
 
-* Nome completo do aluno 1
-* Nome completo do aluno 2
-* Nome completo do aluno 3
-* Nome completo do aluno 4
+*Letícia Rodrigues Blom de Paula, leticiarblom@gmail.com*
+
+*Arthur Capanema Bretas, arthurcbretas@gmail.com*
+
+*Igor Miranda Santos, igormsprofissional@gmail.com*
+
+*Júlia Borges Araújo Silva, juliaborgesfacul@gmail.com*
+
+*Gabriel Vitor de Oliveira Morais, gabrielvitor0309@gmail.com*
 
 ## Professor
 
-* Nome completo do professor
+*Hugo Bastos de Paula*
+
+*Eveline Alonso Veloso*
 
 ## Instruções de utilização
 
