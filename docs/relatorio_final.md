@@ -1,11 +1,15 @@
-# TITULO DO PROJETO
+# MedHelp
 
 
-**Nome completo do Aluno 1, email do aluno 1**
+**Letícia Rodrigues Blom de Paula, leticiarblom@gmail.com**
 
-**Nome completo do Aluno 2, email do aluno 2**
+**Arthur Capanema Bretas, arthurcbretas@gmail.com**
 
-**Nome completo do Aluno 3, email do aluno 3**
+**Igor Miranda Santos, igormsprofissional@gmail.com**
+
+**Júlia Borges Araújo Silva, juliaborgesfacul@gmail.com**
+
+**Gabriel Vitor de Oliveira Morais, gabrielvitor0309@gmail.com**
 
 ---
 
@@ -14,8 +18,6 @@ Professores:
 **Hugo Bastos de Paula**
 
 **Eveline Alonso Veloso**
-
-**Thiago Augusto Nicolini Silva**
 
 
 ---
