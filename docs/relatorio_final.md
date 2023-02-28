@@ -48,6 +48,8 @@ Assim, o trabalho se desenvolve em função de ser um sistema de software feito 
 
 
     1.2 Problema
+Uma clínica médica enfrenta vários problemas de organização, que inclui, agendamento de pacientes, manter um registro preciso de suas consultas, sincronização de dados e falta de organização no armazenamento desses dados. Que são causados por seu sistema de gerenciamento pouco integrado e que faz uso de tecnologias ultrapassadas.
+
 
 Em seguida o aluno deve caminhar a contextualização para descrever o **problema** que o artigo trata. 
 O **problema** pode ser algo vivido em uma empresa específica. Neste caso, o aluno deve rapidamente apresentar 
