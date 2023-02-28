@@ -40,9 +40,12 @@ A introdução deve apresentar de dois ou quatro parágrafos de contextualizaç�
 
     1.1 Contextualização
 
-Na **contextualização**, o aluno deve dizer do que se trata o trabalho, em que área ou contexto se insere. 
-A **contextualização** deve ser desenvolvida de algo mais genérico para algo mais específico. 
-A citação de pesquisas quantitativas é bem aceita aqui (corretamente referenciadas).
+Entendendo a saúde como um direito humano básico, que deve ser assegurado da melhor maneira estratégica possível, (JÚNIOR; PENHA; SILVA, 2013), e, juntamente, considerando o uso da tecnologia no campo da saúde um acontecimento relativamente recente, iniciado a pouco mais de 25 anos, (WECHSLER et al., 2003), pode-se deduzir que há oportunidades para aprimoramento na integração das duas áreas, aproveitando o potencial da tecnologia como meio para impulsionar importantes progressos na área da medicina. 
+
+Também, sendo a existência de um software adequado ao sistema, um componente fundamental para qualquer iniciativa relacionada à gestão de saúde, é crucial a utilização de softwares de qualidade para um bom funcionamento da gestão e atendimento de um ambiente médico. (COSTA; ORLOVKI, 2014).
+
+Assim, o trabalho se desenvolve em função de ser um sistema de software feito como um facilitador tanto para a empresa como para o usuário, respectivamente, profissionais da saúde e pacientes, procurando sempre atender as necessidades dos clientes e prezando pela facilidade de acesso dos prestadores de serviço.
+
 
     1.2 Problema
 
@@ -180,7 +183,6 @@ Como um projeto de software não requer revisão bibliográfica, a inclusão das
 Verifique no link abaixo como devem ser as referências no padrão ABNT:
 
 http://www.pucminas.br/imagedb/documento/DOC\_DSC\_NOME\_ARQUI20160217102425.pdf
-
 
 **[1.1]** - _ELMASRI, Ramez; NAVATHE, Sham. **Sistemas de banco de dados**. 7. ed. São Paulo: Pearson, c2019. E-book. ISBN 9788543025001._
 
