@@ -57,14 +57,12 @@ o cenário de problema da empresa. A empresa só deve ser citada explicitamente 
 para tal.
 
     1.3 Objetivo geral
+Com base nas informações e dados apresentados, torna-se evidente a grande necessidade de desenvolver um sistema de software que possa melhorar significativamente a qualidade das clínicas e a experiência dos usuários.
 
-O aluno deve escrever um pequeno parágrafo ou frase com o **objetivo geral** do trabalho. 
-O objetivo deve ser bem direto, específico e definido com verbos de ação (elaborar, propor, ava-liar, comparar etc.).
 
         1.3.1 Objetivos específicos
+Para amenizar a maioria dos problemas relacionados ao agendamento de consultas, é fundamental desenvolver um software com o objetivo de oferecer comodidade aos pacientes em qualquer localidade e a qualquer momento, por meio do agendamento online. Além disso, o software deve visar a melhoria substancial da experiência do paciente, reduzindo filas e esperas para a marcação de consultas e proporcionando um atendimento mais eficiente e ágil. Com essa solução tecnológica, é possível simplificar o processo de agendamento, aumentar a precisão das informações registradas, diminuir as chances de erros e garantir um fluxo mais rápido e organizado de pacientes no hospital ou clínica. Dessa forma, o software de agendamento contribui para a otimização dos recursos de saúde e para o aumento da satisfação e fidelização dos pacientes.
 
-Apresente também alguns (pelo menos 2) **objetivos específicos** dependendo de onde você vai querer 
-concentrar a sua prática investigativa, ou como você vai aprofundar no seu trabalho.
 
     1.4 Justificativas
 
