@@ -57,7 +57,15 @@ Com base nas informações e dados apresentados, torna-se evidente a grande nece
 
 
         1.3.1 Objetivos específicos
-Para amenizar a maioria dos problemas relacionados ao agendamento de consultas, é fundamental desenvolver um software com o objetivo de oferecer comodidade aos pacientes em qualquer localidade e a qualquer momento, por meio do agendamento online. Além disso, o software deve visar a melhoria substancial da experiência do paciente, reduzindo filas e esperas para a marcação de consultas e proporcionando um atendimento mais eficiente e ágil. Com essa solução tecnológica, é possível simplificar o processo de agendamento, aumentar a precisão das informações registradas, diminuir as chances de erros e garantir um fluxo mais rápido e organizado de pacientes no hospital ou clínica. Dessa forma, o software de agendamento contribui para a otimização dos recursos de saúde e para o aumento da satisfação e fidelização dos pacientes.
+Para amenizar a maioria dos problemas relacionados ao agendamento de consultas, é fundamental desenvolver um software com o objetivo de oferecer:
+-Comodidade aos pacientes em qualquer localidade e a qualquer momento, por meio do agendamento online. 
+- O software deve visar a melhoria substancial da experiência do paciente, reduzindo filas e esperas para o agendamento de consultas. 
+-  Proporcionar um atendimento mais eficiente e ágil. 
+Com essa solução tecnológica, é possível simplificar o processo de agendamento, com:
+-Aumento da precisão das informações registradas
+-Diminuição das chances de erros 
+-Garantia de um fluxo mais rápido e organizado de pacientes no hospital ou clínica. 
+Dessa forma, o software de agendamento contribui para a otimização dos recursos de saúde e para o aumento da satisfação e fidelização dos pacientes.
 
 
     1.4 Justificativas
