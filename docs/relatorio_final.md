@@ -49,11 +49,8 @@ Assim, o trabalho se desenvolve em função de ser um sistema de software feito 
     1.2 Problema
 Uma clínica médica enfrenta vários problemas de organização, que inclui, agendamento de pacientes, manter um registro preciso de suas consultas, sincronização de dados e falta de organização no armazenamento desses dados. Que são causados por seu sistema de gerenciamento pouco integrado e que faz uso de tecnologias ultrapassadas.
 
+Esses diversos problemas tornam essencial a criação de um sistema de software mais preparado para gerir e organizar a rotina dessas unidades de saúde. 
 
-Em seguida o aluno deve caminhar a contextualização para descrever o **problema** que o artigo trata. 
-O **problema** pode ser algo vivido em uma empresa específica. Neste caso, o aluno deve rapidamente apresentar 
-o cenário de problema da empresa. A empresa só deve ser citada explicitamente se o aluno tiver autorização 
-para tal.
 
     1.3 Objetivo geral
 Com base nas informações e dados apresentados, torna-se evidente a grande necessidade de desenvolver um sistema de software que possa melhorar significativamente a qualidade das clínicas e a experiência dos usuários.
@@ -64,8 +61,9 @@ Para amenizar a maioria dos problemas relacionados ao agendamento de consultas, 
 
 
     1.4 Justificativas
-Com a crescente demanda por atendimento médico, a implementação de um software de clínica médica pode ser uma solução efetiva para melhorar a qualidade do atendimento aos pacientes. Além disso, essa tecnologia pode aumentar a eficiência operacional, facilitar o gerenciamento de informações, otimizar a tomada de decisão e, principalmente, garantir a segurança dos pacientes. Com todas essas vantagens, investir em um software de clínica médica é uma escolha inteligente para quem deseja melhorar o desempenho da clínica ou consultório médico.
-Um software de clínica médica é uma ferramenta essencial para garantir a eficiência e qualidade no atendimento médico. Com ele, é possível agendar consultas de forma fácil e rápida, facilitando o acesso dos pacientes aos profissionais da saúde. Além disso, o software permite o registro completo do histórico médico do paciente, incluindo diagnósticos, tratamentos anteriores e prescrição de medicamentos. Isso torna o acompanhamento da saúde do paciente mais preciso e seguro.
+
+Mostre também as **justificativas** para o 
+desenvolvimento do seu trabalho e, caso deseje, desta-que alguma contribuição do trabalho.
 
 
 ## 2. Participantes do processo
