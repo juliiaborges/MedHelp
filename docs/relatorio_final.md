@@ -87,7 +87,7 @@ Atendentes: São usuários que já foram contratados para fazer a gestão da cl�
 
 ## 3.1. Análise da situação atual
 
-Apresente uma descrição textual de como os sistemas atuais resolvem o problema que se propoe a resolver.  Caso sua proposta seja inovadora e não existam processos claramente definidos, **apresente como as tarefas que o seu sistema pretende implementar são executadas atualmente**, mesmo que não se utilize tecnologia computacional.
+Atualmente, de acordo com o levantamento feito pelo grupo, existem diversas opções de sistemas digitais que possibilitam o agendamento de consultas médicas online. Por meio de plataformas onde o médico pode fazer seu cadastro, com informações básicas de suas especialidades, e também onde o cliente pode fazer agendamento de sua consulta. No entanto, muitos desses sistemas são específicos para convênios médicos, o que pode dificultar o processo para pacientes que não possuem convênio e desejam agendar uma consulta particular. Além disso, os sistemas que proporcionam o agendamento particular, deixam brecha a atrasos e confusões de horários pela falta de um bom sistema de notificações de reagendamento.
 
 ## 3.2. Descrição Geral da proposta
 
