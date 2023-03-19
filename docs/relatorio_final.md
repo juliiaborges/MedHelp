@@ -91,7 +91,17 @@ Atualmente, de acordo com o levantamento feito pelo grupo, existem diversas opç
 
 ## 3.2. Descrição Geral da proposta
 
-Apresente aqui uma descrição da sua proposta abordando seus limites e suas ligações com as estratégias e objetivos do negócio. Apresente aqui as oportunidades de melhorias.
+A ideia consiste em um sistema de software abrangente, projetado para administrar clínicas médicas de maneira eficaz e ordenada. O software deve possuir recursos que facilitem o gerenciamento de todos os aspectos da clínica, desde o agendamento de consultas e o monitoramento dos pacientes até o controle financeiro e o estoque de medicamentos.
+
+Dentre as principais funcionalidades do sistema, destacam-se:
+
+Calendário virtual: possibilita que a clínica agende consultas e organize a agenda dos médicos de forma prática e ágil, permitindo a visualização de horários vagos e o registro de novas consultas com poucos cliques.
+
+Prontuário digital: o software deve proporcionar o armazenamento e acesso às informações dos pacientes, como histórico de consultas e resultados de exames.
+
+Administração financeira: o software deve possibilitar o gerenciamento de gastos e receitas da clínica.
+
+O objetivo principal é fornecer uma solução completa e eficiente para a administração da clínica, automatizando processos e proporcionando uma experiência superior para pacientes e colaboradores.
 
 ## 3.3. Modelagem dos Processos
 
