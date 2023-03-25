@@ -87,7 +87,19 @@ Atendentes: São usuários que já foram contratados para fazer a gestão da cl�
 
 ## 3.1. Análise da situação atual
 
-Atualmente, de acordo com o levantamento feito pelo grupo, existem diversas opções de sistemas digitais que possibilitam o agendamento de consultas médicas online. Por meio de plataformas onde o médico pode fazer seu cadastro, com informações básicas de suas especialidades, e também onde o cliente pode fazer agendamento de sua consulta. No entanto, muitos desses sistemas são específicos para convênios médicos, o que pode dificultar o processo para pacientes que não possuem convênio e desejam agendar uma consulta particular. Além disso, os sistemas que proporcionam o agendamento particular, deixam brecha a atrasos e confusões de horários pela falta de um bom sistema de notificações de reagendamento.
+Quando o assunto é gestão de clínicas médicas, a maioria delas ainda realiza as atividades manualmente. Entre essas atividades, destacam-se a agenda eletrônica, o prontuário eletrônico, o cadastro de médicos, o gerenciamento financeiro e os relatórios gerenciais. Nosso objetivo é automatizar todos os processos para agilizar e proporcionar mais segurança, evitando a perda de dados da clínica.
+
+Com relação à agenda eletrônica, é possível implementar melhorias, como personalização de lembretes para reduzir faltas às consultas, visualização do histórico de consultas dos pacientes para planejamento das próximas consultas e integração com sistemas de telemedicina.
+
+Já o prontuário eletrônico pode ser aprimorado com a integração com a agenda eletrônica, permitindo o agendamento de consultas e exames diretamente no sistema, compartilhamento de informações entre profissionais autorizados e acesso aos prontuários dos pacientes em tempo real.
+
+O cadastro de médicos pode ser aprimorado com a inclusão de informações adicionais sobre a formação e experiência dos profissionais, a implementação de um sistema de avaliação pelos pacientes e a integração com a agenda eletrônica e prontuário eletrônico para maior integração dos sistemas.
+
+No que diz respeito ao gerenciamento financeiro, a geração de relatórios financeiros em tempo real e a integração com sistemas de gestão de estoque podem ajudar a clínica a ter uma visão geral mais precisa de seu desempenho financeiro e gerenciar melhor seus recursos.
+
+Por fim, quanto aos relatórios gerenciais, pode-se incluir informações sobre a disponibilidade dos médicos e relatórios de fluxo de pacientes.
+
+Em suma, a análise da situação atual das clínicas médicas mostra que a implementação dessas melhorias nos sistemas e ferramentas pode otimizar o atendimento aos pacientes, melhorar o desempenho financeiro, aprimorar a gestão dos recursos e profissionais da saúde.
 
 ## 3.2. Descrição Geral da proposta
 
