@@ -103,17 +103,17 @@ Em suma, a análise da situação atual das clínicas médicas mostra que a impl
 
 ## 3.2. Descrição Geral da proposta
 
-A ideia consiste em um sistema de software abrangente, projetado para administrar clínicas médicas de maneira eficaz e ordenada. O software deve possuir recursos que facilitem o gerenciamento de todos os aspectos da clínica, desde o agendamento de consultas e o monitoramento dos pacientes até o controle financeiro e o estoque de medicamentos.
+O primeiro passo para iniciar os processos de uma clínica médica gerenciada pela MedHelp é cadastrar médicos que farão parte da equipe. Para isso, um funcionário da clínica realizará uma entrevista com o médico interessado e, ao ser aceito, suas informações serão coletadas e agregadas ao sistema, tais como nome completo, especialidade, formação, endereço, telefone(s) e e-mail.
 
-Dentre as principais funcionalidades do sistema, destacam-se:
+Com os médicos contratados, a clínica estará preparada para receber pacientes, e o papel do software é facilitar o agendamento. Por meio do sistema, o cliente que já fez login no sistema poderá visualizar uma lista de médicos disponíveis e seus horários, com um indicador de ocupação para facilitar a escolha do profissional.
 
-Calendário virtual: possibilita que a clínica agende consultas e organize a agenda dos médicos de forma prática e ágil, permitindo a visualização de horários vagos e o registro de novas consultas com poucos cliques.
+No momento do atendimento, o médico estará logado em sua conta e, caso o paciente possua uma ficha cadastrada na clínica, ele terá acesso ao prontuário do paciente que contém informações importantes para a consulta, como, por exemplo, condições crônicas e histórico de consultas. Caso o paciente não possua uma ficha, o médico responsável deverá criá-la durante o atendimento.
 
-Prontuário digital: o software deve proporcionar o armazenamento e acesso às informações dos pacientes, como histórico de consultas e resultados de exames.
+Outra funcionalidade do sistema é a gestão financeira da clínica. Com os funcionários registrando os gastos realizados pela clínica, é feito um gráfico indicando para onde o dinheiro está sendo destinado, facilitando a visualização e gestão desses gastos.
 
-Administração financeira: o software deve possibilitar o gerenciamento de gastos e receitas da clínica.
+Para complementar a gestão financeira, a MedHelp possui um controle de estoque que será um processo feito pelos atendentes da clínica, pelos médicos e pelo sistema. Os médicos registrarão os equipamentos e medicamentos usados nos atendimentos, o sistema descontará do estoque, e quando algum produto estiver acabando, o software notificará os funcionários da clínica para que seja feito o reabastecimento.
 
-O objetivo principal é fornecer uma solução completa e eficiente para a administração da clínica, automatizando processos e proporcionando uma experiência superior para pacientes e colaboradores.
+Enfim, é importante ressaltar que a plataforma MedHelp visa facilitar, agilizar e organizar os processos de uma clínica médica. No entanto, é importante ter em mente que há limitações do sistema, já que processos manuais, como entrevistas de contratação e consultas, necessitam da intervenção humana para funcionarem adequadamente.
 
 ## 3.3. Modelagem dos Processos
 
