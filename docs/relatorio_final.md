@@ -132,6 +132,12 @@ Após a contratação dos médicos, a clínica já está pronta para receber seu
 
 ![Modelo BPMN do PROCESSO 2](imagens/Agendamento_Consulta_diagrama.jpg "Modelo BPMN do Processo 2.")
 
+### 3.3.5 Processo 5 – GESTÃO FINANCEIRA
+
+Após a contratação dos médicos, a clínica já está pronta para receber seus pacientes e, para isso, eles precisam marcar um horário de atendimento com o profissional desejado. O sistema mostra para o paciente os horários disponíveis e ao agendar em um desses horários o software atualizar os dados automaticamente. 
+
+![Modelo BPMN do PROCESSO 5](imagens/Gestão_Financeira.png "Modelo BPMN do Processo 5.")
+
 ## 4. Projeto da Solução
 
 ### 4.1. Detalhamento das atividades
