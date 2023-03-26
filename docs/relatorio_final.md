@@ -136,7 +136,7 @@ Após a contratação dos médicos, a clínica já está pronta para receber seu
 Após o agendamento da consulta, o médico irá solicitar os equipamentos necessários para realizar o atendimento do cliente. Para isso, ele enviará uma mensagem ao funcionário responsável, informando quais ferramentas serão necessárias. O funcionário, por sua vez, irá anotar os equipamentos solicitados e verificar a disponibilidade dos mesmos no estoque. Caso algum equipamento esteja indisponível, ele enviará uma mensagem ao médico informando a situação e encerrando o processo.
 Porém, caso todos os equipamentos estejam disponíveis, o funcionário irá retirá-los do estoque, dar baixa no sistema e entregá-los ao médico. Dessa forma, garantimos que todos os equipamentos necessários para a consulta estejam disponíveis e que o processo ocorra de forma eficiente e organizada
 
-![Modelo BPMN do PROCESSO 2](docs/imagens/Controle de estoque.png "Modelo BPMN do Processo 4.")
+![Modelo BPMN do PROCESSO 2](imagens/Controle_de_estoque.png "Modelo BPMN do Processo 4.")
 
 ### 3.3.5 Processo 5 – GESTÃO FINANCEIRA
 
