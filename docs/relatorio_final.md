@@ -134,9 +134,9 @@ Após a contratação dos médicos, a clínica já está pronta para receber seu
 
 ### 3.3.5 Processo 5 – GESTÃO FINANCEIRA
 
-Após a contratação dos médicos, a clínica já está pronta para receber seus pacientes e, para isso, eles precisam marcar um horário de atendimento com o profissional desejado. O sistema mostra para o paciente os horários disponíveis e ao agendar em um desses horários o software atualizar os dados automaticamente. 
+Após a conclusão da consulta, o paciente efetua o pagamento à clínica. Um funcionário da clínica, então, confirma o valor recebido e registra no sistema, possibilitando a atualização do saldo em tempo real. Quando há despesas, após a realização da transferência bancária pela clínica, o funcionário verifica o valor transferido e insere a informação no sistema da clínica. Em seguida, aguarda a atualização do saldo, que é exibido na tela.
 
-![Modelo BPMN do PROCESSO 5](imagens/Gestão_Financeira.png "Modelo BPMN do Processo 5.")
+![Exemplo de um Modelo BPMN do PROCESSO 5](imagens/Gestão_Financeira.png "Modelo BPMN do Processo 5.")
 
 ## 4. Projeto da Solução
 
