@@ -119,11 +119,11 @@ Enfim, é importante ressaltar que a plataforma MedHelp visa facilitar, agilizar
 
 ## 3.3. Modelagem dos Processos
 
-### 3.3.1 Processo 1 – NOME DO PROCESSO
+### 3.3.1 Processo 1 – CADASTRO DE MÉDICOS
 
 Apresente aqui o nome e as oportunidades de melhorias para o processo 1. Em seguida, apresente o modelo do processo 1, descrito no padrão BPMN.
 
-![Exemplo de um Modelo BPMN do PROCESSO 1](imagens/process.png "Modelo BPMN do Processo 1.")
+![Exemplo de um Modelo BPMN do PROCESSO 1](imagens/Cadastro_De_Medicos.png "Modelo BPMN do Processo 1.")
 
 
 ### 3.3.2 Processo 2 – AGENDAMENTO DE CONSULTAS
