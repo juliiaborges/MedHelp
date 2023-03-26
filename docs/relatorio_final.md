@@ -82,6 +82,8 @@ Médicos: São usuários com formação acadêmica na área da saúde, seu papel
 
 Atendentes: São usuários que já foram contratados para fazer a gestão da clínica dentro do software como: gestão financeira, cadastro de médicos e atendimento ao cliente.
 
+Sistema MedHelp: É o sistema de software que irá auxiliar no gerenciamento da clínica.
+
 
 ## 3. Modelagem do processo de negócio
 
@@ -124,11 +126,11 @@ Apresente aqui o nome e as oportunidades de melhorias para o processo 1. Em segu
 ![Exemplo de um Modelo BPMN do PROCESSO 1](imagens/process.png "Modelo BPMN do Processo 1.")
 
 
-### 3.3.2 Processo 2 – NOME DO PROCESSO
+### 3.3.2 Processo 2 – AGENDAMENTO DE CONSULTAS
 
-Apresente aqui o nome e as oportunidades de melhorias para o processo 2. Em seguida, apresente o modelo do processo 2, descrito no padrão BPMN.
+Após a contratação do médicos, a clínica já está pronta para receber seus pacientes e, para isso, eles precisam marcar um horárion de atendimento com o profissional desejado no qual o sistema mostra para o paciente os horários disponíveis e ao agendar em um desses horários o software atualizar os dados automaticamente 
 
-![Exemplo de um Modelo BPMN do PROCESSO 2](imagens/call_process.png "Modelo BPMN do Processo 2.")
+![Modelo BPMN do PROCESSO 2](imagens/Agendamento_Consulta_diagrama.jpg "Modelo BPMN do Processo 2.")
 
 ## 4. Projeto da Solução
 
