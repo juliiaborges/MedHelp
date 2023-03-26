@@ -132,6 +132,11 @@ Após a contratação dos médicos, a clínica já está pronta para receber seu
 
 ![Modelo BPMN do PROCESSO 2](imagens/Agendamento_Consulta_diagrama.jpg "Modelo BPMN do Processo 2.")
 
+### 3.3.3 Processo 3 -PRONTUÁRIO MÉDICO
+Após o paciente escolhe um médico e um horário disponível para a consulta, ele precisará fornecer algumas informações pessoais, como nome, idade, sexo, doenças crônicas, alergias, cirurgias já realizadas, entre outros, para que o prontuário seja criado. Esses dados serão armazenados pelo sistema para que o médico possa acessá-los e utilizá-los durante a consulta. Caso necessário, após a consulta, o médico poderá adicionar informações ao prontuário do paciente.
+![Modelo BPMN do PROCESSO 3](imagens/Prontuario_Medico.jpg "Modelo BPMN do Processo 3.")
+
+
 ### 3.3.4 Processo 4 – CONTROLE DE ESTOQUE
 Após o agendamento da consulta, o médico irá solicitar os equipamentos necessários para realizar o atendimento do cliente. Para isso, ele enviará uma mensagem ao funcionário responsável, informando quais ferramentas serão necessárias. O funcionário, por sua vez, irá anotar os equipamentos solicitados e verificar a disponibilidade dos mesmos no estoque. Caso algum equipamento esteja indisponível, ele enviará uma mensagem ao médico informando a situação e encerrando o processo.
 Porém, caso todos os equipamentos estejam disponíveis, o funcionário irá retirá-los do estoque, dar baixa no sistema e entregá-los ao médico. Dessa forma, garantimos que todos os equipamentos necessários para a consulta estejam disponíveis e que o processo ocorra de forma eficiente e organizada
