@@ -121,7 +121,7 @@ Enfim, é importante ressaltar que a plataforma MedHelp visa facilitar, agilizar
 
 ### 3.3.1 Processo 1 – CADASTRO DE MÉDICOS
 
-Apresente aqui o nome e as oportunidades de melhorias para o processo 1. Em seguida, apresente o modelo do processo 1, descrito no padrão BPMN.
+O primeiro processo se inicia com a etapa de admissão de novos médicos na MedHelp, sendo feita por meio de uma entrevista conduzida por um funcionário da clínica. Após a entrevista, caso o médico seja aprovado, serão solicitadas informações adicionais, como nome completo, especialidade, formação, endereço, telefone(s) e e-mail, que serão fornecidas pelo médico e agregadas ao sistema pela equipe da clínica, mantendo um cadastro completo de todos os médicos da equipe.
 
 ![Exemplo de um Modelo BPMN do PROCESSO 1](imagens/Cadastro_De_Medicos.png "Modelo BPMN do Processo 1.")
 
