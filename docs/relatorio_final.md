@@ -128,7 +128,7 @@ Apresente aqui o nome e as oportunidades de melhorias para o processo 1. Em segu
 
 ### 3.3.2 Processo 2 – AGENDAMENTO DE CONSULTAS
 
-Após a contratação do médicos, a clínica já está pronta para receber seus pacientes e, para isso, eles precisam marcar um horárion de atendimento com o profissional desejado no qual o sistema mostra para o paciente os horários disponíveis e ao agendar em um desses horários o software atualizar os dados automaticamente 
+Após a contratação dos médicos, a clínica já está pronta para receber seus pacientes e, para isso, eles precisam marcar um horário de atendimento com o profissional desejado. O sistema mostra para o paciente os horários disponíveis e ao agendar em um desses horários o software atualizar os dados automaticamente. 
 
 ![Modelo BPMN do PROCESSO 2](imagens/Agendamento_Consulta_diagrama.jpg "Modelo BPMN do Processo 2.")
 
