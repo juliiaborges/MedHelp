@@ -128,7 +128,7 @@ O primeiro processo se inicia com a etapa de admissão de novos médicos na MedH
 
 Após a contratação dos médicos, a clínica já está pronta para receber seus pacientes e, para isso, eles precisam marcar um horário de atendimento com o profissional desejado. O sistema mostra para o paciente os horários disponíveis e ao agendar em um desses horários o software atualizar os dados automaticamente. 
 
-![Modelo BPMN do PROCESSO 2](imagens/Agendamento_Consulta_diagrama.jpg "Modelo BPMN do Processo 2.")
+![Modelo BPMN do PROCESSO 2](imagens/Agendmento_Consulta_diagrama.jpg "Modelo BPMN do Processo 2.")
 
 ### 3.3.3 Processo 3 -PRONTUÁRIO MÉDICO
 Após o paciente escolher um médico e um horário disponível para a consulta, ele precisará fornecer algumas informações pessoais, como nome, idade, sexo, doenças crônicas, alergias, cirurgias já realizadas, entre outros, para que o prontuário seja criado. Esses dados serão armazenados pelo sistema para que o médico possa acessá-los e utilizá-los durante a consulta. Caso necessário, após a consulta, o médico poderá adicionar informações ao prontuário do paciente.
