@@ -82,8 +82,6 @@ Médicos: São usuários com formação acadêmica na área da saúde, seu papel
 
 Atendentes: São usuários que já foram contratados para fazer a gestão da clínica dentro do software como: gestão financeira, cadastro de médicos e atendimento ao cliente.
 
-Sistema MedHelp: É o sistema de software que irá auxiliar no gerenciamento da clínica.
-
 
 ## 3. Modelagem do processo de negócio
 
