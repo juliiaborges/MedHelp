@@ -131,7 +131,9 @@ Após a contratação dos médicos, a clínica já está pronta para receber seu
 ![Modelo BPMN do PROCESSO 2](imagens/Agendamento_Consulta_diagrama.jpg "Modelo BPMN do Processo 2.")
 
 ### 3.3.3 Processo 3 -PRONTUÁRIO MÉDICO
-Após o paciente escolher um médico e um horário disponível para a consulta, ele precisará fornecer algumas informações pessoais, como nome, idade, sexo, doenças crônicas, alergias, cirurgias já realizadas, entre outros, para que o prontuário seja criado. Esses dados serão armazenados pelo sistema para que o médico possa acessá-los e utilizá-los durante a consulta. Caso necessário, após a consulta, o médico poderá adicionar informações ao prontuário do paciente.
+Com as informações disponíveis no banco de dados, o médico poderá acessá-las durante a consulta para verificar o histórico médico do paciente, identificar possíveis alergias a medicamentos, verificar os medicamentos que o paciente está tomando atualmente, entre outras informações importantes que podem ajudar no diagnóstico e tratamento do paciente.
+
+Ao final da consulta, o médico poderá acrescentar novas informações relevantes no prontuário médico do paciente, como a prescrição de medicamentos, exames solicitados, recomendações de cuidados em casa, entre outras informações importantes. Isso garante que todas as informações relevantes para o tratamento do paciente fiquem armazenadas em um só lugar e possam ser acessadas facilmente em consultas futuras.
 
 ![Modelo BPMN do PROCESSO 3](imagens/Prontuario_Medico.jpg "Modelo BPMN do Processo 3.")
 
