@@ -210,7 +210,7 @@ Descrever aqui cada uma das propriedades das atividades de cada um dos processos
 **Atualizar estoque**
 
 | **Campo** | **Tipo** | **Restrições** | **Valor default** |
-| --- | --- | Apenas adicionar ou excluír | --- |
+| --- | --- | --- | --- |
 | [Atualizar equipamento que foi utilizado] | [Tabela] | - | - |
 |    |    |     |
 
