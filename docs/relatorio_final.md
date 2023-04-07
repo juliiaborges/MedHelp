@@ -211,7 +211,7 @@ Descrever aqui cada uma das propriedades das atividades de cada um dos processos
 
 | **Campo** | **Tipo** | **Restrições** | **Valor default** |
 | --- | --- | --- | --- |
-| [Atualizar equipamento que foi utilizado] | [Tabela] | - | - |
+| [Atualizar equipamento que foi utilizado] | [Tabela] | [Adiocionar ou excluír] | - |
 |    |    |     |
 
 ### 4.2. Tecnologias
