@@ -156,23 +156,26 @@ Após a conclusão da consulta, o paciente se dirige à recepção para efetuar 
 
 Descrever aqui cada uma das propriedades das atividades de cada um dos processos. Devem estar relacionadas com o modelo de processo apresentado anteriormente.
 
-#### Processo 1 – NOME DO PROCESSO
+#### Processo 1 – CADASTRO DE MEDICOS
 
-**Nome da atividade 1**
-
-| **Campo** | **Tipo** | **Restrições** | **Valor default** |
-| --- | --- | --- | --- |
-| [Nome do campo] | [Área de texto, Caixa de texto, Número, Data, Imagem, Seleção única, Múltipla escolha, Arquivo, Link, Tabela] |  |  |
-| ***Exemplo:***  |    |     |
-| login | Caixa de Texto | formato de e-mail |  |
-| senha | Caixa de Texto | mínimo de 8 caracteres |   |
-
-**Nome da atividade 2**
+**Cadastrar dados pessoais do médico**
 
 | **Campo** | **Tipo** | **Restrições** | **Valor default** |
 | --- | --- | --- | --- |
-| [Nome do campo] | [Área de texto, Caixa de texto, Número, Data, Imagem, Seleção única, Múltipla escolha, Arquivo, Link, Tabela] |  |  |
-|    |    |     |
+| Nome do médico | Caixa de Texto | Apenas letras e tamanho máximo de 15 caracteres | - |
+| Sobrenome do médico | Caixa de Texto | Apenas letras e tamanho máximo de 30 caracteres | - |
+| Especialidade | Caixa de Texto |  | - |
+| Formação | Caixa de Texto |  | - |
+| Telefone | Caixa de Texto | Mínimo de 7 e máximo de 10 caracteres | -  |
+| E-mail | Caixa de Texto | Formato de e-mail | - | 
+| CPF | Caixa de Texto | Deve ter 11 caracteres validados pelo cálculo de CPF | - | 
+
+**Cadastrar horários disponíveis do médico**
+
+| **Campo** | **Tipo** | **Restrições** | **Valor default** |
+| --- | --- | --- | --- |
+| Dias da semana disponível | Múltipla escolha | Valor não nulo |  |
+| Horas do dia disponível  |  Múltipla escolha  | Valor não nulo |  |
 
 #### Processo 2 – AGENDAMENTO DE CONSULTAS
 
