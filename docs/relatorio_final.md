@@ -146,7 +146,7 @@ Porém, caso todos os equipamentos estejam disponíveis, o funcionário irá ret
 
 ### 3.3.5 Processo 5 – GESTÃO FINANCEIRA
 
-Após a conclusão da consulta, o paciente efetua o pagamento à clínica. Um funcionário da clínica, então, confirma o valor recebido e registra no sistema, possibilitando a atualização do saldo em tempo real. Quando há despesas, após a realização da transferência bancária pela clínica, o funcionário verifica o valor transferido e insere a informação no sistema da clínica. Em seguida, aguarda a atualização do saldo, que é exibido na tela.
+Após a conclusão da consulta, o paciente se dirige à recepção para efetuar o pagamento à clínica. Um funcionário da clínica, então, confirma se o paciente possui plano de saúde e se o plano tem cobertura para a clínica em questão. Caso ele possua um plano de saúde com cobertura para a clínica, o atendente verifica o pagamento pelo plano de saúde, registra no sistema e emite o recibo para o cliente. Se o cliente não tiver plano de saúde ou se o plano de saúde não oferecer cobertura para a clínica, o atendente informa o valor da consulta ao paciente, que escolhe o método de pagamento e realiza o pagamento. Em seguida, o atendente registra o pagamento no sistema e emite o recibo ao cliente.
 
 ![Exemplo de um Modelo BPMN do PROCESSO 5](imagens/Gestão_Financeira.png "Modelo BPMN do Processo 5.")
 
