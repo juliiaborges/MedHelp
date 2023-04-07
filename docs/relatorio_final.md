@@ -174,20 +174,27 @@ Descrever aqui cada uma das propriedades das atividades de cada um dos processos
 | [Nome do campo] | [Área de texto, Caixa de texto, Número, Data, Imagem, Seleção única, Múltipla escolha, Arquivo, Link, Tabela] |  |  |
 |    |    |     |
 
-#### Processo 2 – NOME DO PROCESSO
+#### Processo 2 – AGENDAMENTO DE CONSULTAS
 
-**Nome da atividade 1**
+**Escolher médico**
 
 | **Campo** | **Tipo** | **Restrições** | **Valor default** |
 | --- | --- | --- | --- |
-| [Nome do campo] | [Área de texto, Caixa de texto, Número, Data, Imagem, Seleção única, Múltipla escolha, Arquivo, Link, Tabela] |  |  |
+| [Escolher médico] | [Tabela] | - | - |
 |    |    |     |
 
-**Nome da atividade 2**
+**Visualizar agenda de horários disponíveis**
 
 | **Campo** | **Tipo** | **Restrições** | **Valor default** |
 | --- | --- | --- | --- |
-| [Nome do campo] | [Área de texto, Caixa de texto, Número, Data, Imagem, Seleção única, Múltipla escolha, Arquivo, Link, Tabela] |  |  |
+| [Visualizar agenda de horários disponíveis] | [Tabela] | - | - |
+|    |    |     |
+
+**Agendar horário**
+
+| **Campo** | **Tipo** | **Restrições** | **Valor default** |
+| --- | --- | --- | --- |
+| [Agendar horário] | [Seleção única] | Necessário selecionar o horário | Nada selecionado |
 |    |    |     |
 
 ### 4.2. Tecnologias
