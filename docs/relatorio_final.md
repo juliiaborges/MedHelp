@@ -174,8 +174,8 @@ Descrever aqui cada uma das propriedades das atividades de cada um dos processos
 
 | **Campo** | **Tipo** | **Restrições** | **Valor default** |
 | --- | --- | --- | --- |
-| Dias da semana disponível | Múltipla escolha | Valor não nulo |  |
-| Horas do dia disponível  |  Múltipla escolha  | Valor não nulo |  |
+| Dias da semana disponível | Múltipla escolha | Valor não nulo | - |
+| Horas do dia disponível  |  Múltipla escolha  | Valor não nulo | - |
 
 #### Processo 2 – AGENDAMENTO DE CONSULTAS
 
