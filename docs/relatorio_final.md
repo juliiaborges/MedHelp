@@ -205,17 +205,19 @@ Descrever aqui cada uma das propriedades das atividades de cada um dos processos
 **Acessar informações do paciente**
 
 | **Campo** | **Tipo** | **Restrições** | **Valor default** |
+| --- | --- | --- | --- |
 | Informações do Paciente | Tabela | - | - |
-
+|    |    |     |
 
 **Implementar Prontuário**
 | **Campo** | **Tipo** | **Restrições** | **Valor default** |
+| --- | --- | --- | --- |
 | Diagnóstico | Caixa de Texto | - | - |
 | Medicamento | Caixa de Texto | - | - |
 | Tempo de uso do Medicamento | Caixa de Texto | - | - |
 | Quantidade | Caixa de Texto | - | - |
 | Recomendações | Caixa de Texto | - | - |
-
+|    |    |     |
 
 
 
