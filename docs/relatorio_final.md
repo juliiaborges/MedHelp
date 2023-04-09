@@ -212,11 +212,11 @@ Descrever aqui cada uma das propriedades das atividades de cada um dos processos
 **Implementar Prontuário**
 | **Campo** | **Tipo** | **Restrições** | **Valor default** |
 | --- | --- | --- | --- |
-| Diagnóstico | Caixa de Texto | - | - |
-| Medicamento | Caixa de Texto | - | - |
-| Tempo de uso do Medicamento | Caixa de Texto | - | - |
-| Quantidade | Caixa de Texto | - | - |
-| Recomendações | Caixa de Texto | - | - |
+| Diagnóstico | Caixa de texto | - | - |
+| Medicamento | Caixa de texto | - | - |
+| Tempo de uso do Medicamento | Caixa de texto | - | - |
+| Quantidade | Caixa de texto | - | - |
+| Recomendações | Caixa de texto | - | - |
 |    |    |     |
 
 
