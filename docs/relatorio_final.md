@@ -210,7 +210,6 @@ Descrever aqui cada uma das propriedades das atividades de cada um dos processos
 | Sobrenome do Paciente | Caixa de Texto | Apenas letras e tamanho máximo de 30 caracteres | - |
 | CPF | Caixa de Texto | Deve ter 11 caracteres validados pelo cálculo de CPF | - | 
 | Telefone | Caixa de Texto | Mínimo de 7 e máximo de 10 caracteres | -  |
-| E-mail | Caixa de Texto | Formato de e-mail | - | 
 | Alergias | Caixa de Texto |  | - |
 | E-mail | Caixa de Texto | Formato de e-mail | - | 
 | Quantidade de Cirurgias | Caixa de Texto |  | - |
@@ -225,7 +224,6 @@ Descrever aqui cada uma das propriedades das atividades de cada um dos processos
 | Telefone | Caixa de Texto | Mínimo de 7 e máximo de 10 caracteres | -  |
 | E-mail | Caixa de Texto | Formato de e-mail | - | 
 | Alergias | Caixa de Texto |  | - |
-| E-mail | Caixa de Texto | Formato de e-mail | - | 
 | Quantidade de Cirurgias | Caixa de Texto |  | - |
 | Diagnóstico | Caixa de texto | - | - |
 | Medicamento | Caixa de texto | - | - |
