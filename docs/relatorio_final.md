@@ -202,16 +202,31 @@ Descrever aqui cada uma das propriedades das atividades de cada um dos processos
 
 ### Processo 3 - Prontuário Médico 
 
-**Acessar informações do paciente**
+**Acessar prontuário do paciente**
 
 | **Campo** | **Tipo** | **Restrições** | **Valor default** |
 | --- | --- | --- | --- |
-| Informações do Paciente | Tabela | - | - |
+| Nome do paciente | Caixa de Texto | Apenas letras e tamanho máximo de 15 caracteres | - |
+| Sobrenome do Paciente | Caixa de Texto | Apenas letras e tamanho máximo de 30 caracteres | - |
+| CPF | Caixa de Texto | Deve ter 11 caracteres validados pelo cálculo de CPF | - | 
+| Telefone | Caixa de Texto | Mínimo de 7 e máximo de 10 caracteres | -  |
+| E-mail | Caixa de Texto | Formato de e-mail | - | 
+| Alergias | Caixa de Texto |  | - |
+| E-mail | Caixa de Texto | Formato de e-mail | - | 
+| Quantidade de Cirurgias | Caixa de Texto |  | - |
 |    |    |     |
 
-**Implementar Prontuário**
+**Atualizar Prontuário**
 | **Campo** | **Tipo** | **Restrições** | **Valor default** |
 | --- | --- | --- | --- |
+| Nome do paciente | Caixa de Texto | Apenas letras e tamanho máximo de 15 caracteres | - |
+| Sobrenome do Paciente | Caixa de Texto | Apenas letras e tamanho máximo de 30 caracteres | - |
+| CPF | Caixa de Texto | Deve ter 11 caracteres validados pelo cálculo de CPF | - | 
+| Telefone | Caixa de Texto | Mínimo de 7 e máximo de 10 caracteres | -  |
+| E-mail | Caixa de Texto | Formato de e-mail | - | 
+| Alergias | Caixa de Texto |  | - |
+| E-mail | Caixa de Texto | Formato de e-mail | - | 
+| Quantidade de Cirurgias | Caixa de Texto |  | - |
 | Diagnóstico | Caixa de texto | - | - |
 | Medicamento | Caixa de texto | - | - |
 | Tempo de uso do Medicamento | Caixa de texto | - | - |
