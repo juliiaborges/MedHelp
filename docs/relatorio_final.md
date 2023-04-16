@@ -250,17 +250,32 @@ Descrever aqui cada uma das propriedades das atividades de cada um dos processos
 | [Atualizar equipamento que foi utilizado] | [Tabela] | [Adiocionar ou excluír] | - |
 |    |    |     |
 
+
 #### Processo 5 – PAGAMENTO DE CONSULTAS
 
 **Registrar pagamento no sistema**
 
 | **Campo** | **Tipo** | **Restrições** | **Valor default** |
 | --- | --- | --- | --- |
-| Paciente | Caixa de texto | Apenas letras | - |
-| Médico | Caixa de texto | Apenas letras | - |
+| Nome Paciente | Caixa de texto | Apenas letras | - |
+| Nome Sobrenome | Caixa de texto | Apenas letras | - |
+| Nome Médico | Caixa de texto | Apenas letras | - |
+| Tipo de consulta | Caixa de texto | Apenas letras | - |
 | Valor da consulta | Caixa de texto | Apenas números | - |
 | Data do pagamento | Tipo Data | Obrigatório selecionar | - |
 | Pagamento via Plano de Saúde | Radio Button | [SIM] ou [NÃO] | - |
+|    |    |     |
+
+**Gerar Recibo**
+
+| **Campo** | **Tipo** | **Restrições** | **Valor default** |
+| --- | --- | --- | --- |
+| Número Recibo | Caixa de texto | Apenas números | - |
+| Data Emissão | Tipo Data | Obrigatório selecionar | - |
+| Nome do Paciente | Caixa de texto | Apenas texto | - |
+| CPF do Paciente | Caixa de texto | Onze dígitos do CPF | - |
+| Quantia paga | Tipo de texto | Apenas números  | - |
+| Observação | Tipo de texto | - | - |
 |    |    |     |
 
 ### 4.2. Tecnologias
