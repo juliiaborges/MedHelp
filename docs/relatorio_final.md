@@ -186,7 +186,7 @@ Descrever aqui cada uma das propriedades das atividades de cada um dos processos
 | Nome do médico e especialidade | Tabela | - | Nada selecionado |
 |    |    |     |
 
-**Visualizar agenda de horários disponíveis**
+**Selecionar horário**
 
 | **Campo** | **Tipo** | **Restrições** | **Valor default** |
 | --- | --- | --- | --- |
