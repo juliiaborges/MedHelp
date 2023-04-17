@@ -275,11 +275,6 @@ Descrever aqui cada uma das propriedades das atividades de cada um dos processos
 | **Campo** | **Tipo** | **Restrições** | **Valor default** |
 | --- | --- | --- | --- |
 | Número Recibo | Caixa de texto | Apenas números | - |
-| Data Emissão | Tipo Data | Obrigatório selecionar | - |
-| Nome do Paciente | Caixa de texto | Apenas texto | - |
-| CPF do Paciente | Caixa de texto | Onze dígitos do CPF | - |
-| Quantia paga | Tipo de texto | Apenas números  | - |
-| Observação | Tipo de texto | - | - |
 |    |    |     |
 
 ### 4.2. Tecnologias
