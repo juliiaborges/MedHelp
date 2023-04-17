@@ -234,20 +234,22 @@ Descrever aqui cada uma das propriedades das atividades de cada um dos processos
 
 
 
-#### Processo 4 – AGENDAMENTO DE CONSULTAS
+#### Processo 4 – CONTROLE DE ESTOQUE
 
 **Verificar disponibilidade**
 
 | **Campo** | **Tipo** | **Restrições** | **Valor default** |
-| --- | --- | --- | --- |
-| [Verificar o equipamento disponível] | [Tabela] | - | - |
+| Cod da ferramenta | Caixa de Texto | Apenas números | --- |
+| Nome da ferramenta | Caixa de Texto | Apenas letras e tamaanho máximo de 30 caracteres | --- |
+| Descrição da ferramenta | Caixa de Texto | Apenas letras e tamaanho máximo de 100 caracteres | --- |
 |    |    |     |
 
 **Atualizar estoque**
 
 | **Campo** | **Tipo** | **Restrições** | **Valor default** |
-| --- | --- | --- | --- |
-| [Atualizar equipamento que foi utilizado] | [Tabela] | [Adiocionar ou excluír] | - |
+| Ferramenta Disponível | Multípla escolha | Valor não nulo | --- |
+| CPF do médico | Caixa de Texto | Deve ter 11 caracteres validados pelo cálculo de CPF | --- | 
+| Nome do médico emprestado a ferramenta | Caixa de Texto | Apenas letras e tamaanho máximo de 100 caracteres | --- |
 |    |    |     |
 
 
