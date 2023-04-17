@@ -239,17 +239,19 @@ Descrever aqui cada uma das propriedades das atividades de cada um dos processos
 **Verificar disponibilidade**
 
 | **Campo** | **Tipo** | **Restrições** | **Valor default** |
-| Cod da ferramenta | Caixa de Texto | Apenas números | --- |
-| Nome da ferramenta | Caixa de Texto | Apenas letras e tamaanho máximo de 30 caracteres | --- |
-| Descrição da ferramenta | Caixa de Texto | Apenas letras e tamaanho máximo de 100 caracteres | --- |
+| --- | --- | --- | --- |
+| Cod da ferramenta | Caixa de Texto | Apenas números | - |
+| Nome da ferramenta | Caixa de Texto | Apenas letras e tamaanho máximo de 30 caracteres | - |
+| Descrição da ferramenta | Caixa de Texto | Apenas letras e tamaanho máximo de 100 caracteres | - |
 |    |    |     |
 
 **Atualizar estoque**
 
 | **Campo** | **Tipo** | **Restrições** | **Valor default** |
-| Ferramenta Disponível | Multípla escolha | Valor não nulo | --- |
-| CPF do médico | Caixa de Texto | Deve ter 11 caracteres validados pelo cálculo de CPF | --- | 
-| Nome do médico emprestado a ferramenta | Caixa de Texto | Apenas letras e tamaanho máximo de 100 caracteres | --- |
+| --- | --- | --- | --- |
+| Ferramenta Disponível | Multípla escolha | Valor não nulo | - |
+| CPF do médico | Caixa de Texto | Deve ter 11 caracteres validados pelo cálculo de CPF | - | 
+| Nome do médico emprestado a ferramenta | Caixa de Texto | Apenas letras e tamaanho máximo de 100 caracteres | - |
 |    |    |     |
 
 
