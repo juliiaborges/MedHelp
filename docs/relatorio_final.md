@@ -162,13 +162,11 @@ Descrever aqui cada uma das propriedades das atividades de cada um dos processos
 
 | **Campo** | **Tipo** | **Restrições** | **Valor default** |
 | --- | --- | --- | --- |
-| Nome do médico | Caixa de Texto | Apenas letras e tamanho máximo de 15 caracteres | - |
-| Sobrenome do médico | Caixa de Texto | Apenas letras e tamanho máximo de 30 caracteres | - |
+| Nome Completo do médico | Caixa de Texto | Apenas letras e tamanho máximo de 50 caracteres | - |
 | Especialidade | Caixa de Texto |  | - |
-| Formação | Caixa de Texto |  | - |
 | Telefone | Caixa de Texto | Mínimo de 7 e máximo de 10 caracteres | -  |
 | E-mail | Caixa de Texto | Formato de e-mail | - | 
-| CPF | Caixa de Texto | Deve ter 11 caracteres validados pelo cálculo de CPF | - | 
+
 
 **Cadastrar horários disponíveis do médico**
 
