@@ -182,21 +182,19 @@ Descrever aqui cada uma das propriedades das atividades de cada um dos processos
 | **Campo** | **Tipo** | **Restrições** | **Valor default** |
 | --- | --- | --- | --- |
 | Nome do médico e especialidade | Tabela | - | Nada selecionado |
-|    |    |     |
 
 **Selecionar horário**
 
 | **Campo** | **Tipo** | **Restrições** | **Valor default** |
 | --- | --- | --- | --- |
 | Horário e data | Tabela | - | Nada selecionado |
-|    |    |     |
 
 **Agendar horário**
 
 | **Campo** | **Tipo** | **Restrições** | **Valor default** |
 | --- | --- | --- | --- |
 | Cartão com informações do horário selecionado | Seleção única | - | Nada selecionado |
-| Aviso para confirmar agendamento | Seleção única | - | Nada selecionado |
+|    |    |    |
 
 ### Processo 3 - Prontuário Médico 
 
