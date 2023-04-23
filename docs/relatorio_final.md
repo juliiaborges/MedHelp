@@ -289,7 +289,7 @@ As tecnologias utilizadas serão:
 ## 5. Modelo de dados
 
 **[Modelo de Entidade Relacionamento Conceitual]**
-![Modelo de Entidade Relacionamento Conceitual](imagens/DiagramaModeloConceitual.jpg "Modelo de Entidade Relacionamento Conceitual")
+![Modelo de Entidade Relacionamento Conceitual](imagens/modeloDeEntidadeRelacionamentoConceitual.jpg "Modelo de Entidade Relacionamento Conceitual")
 
 **[Modelo de Entidade Relacionamento Lógico]**<br>
 ![Modelo de Entidade Relacionamento Lógico](imagens/DiagramaModeloLogico.jpg "Modelo de Entidade Relacionamento Lógico")
