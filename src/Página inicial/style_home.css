@@ -1,0 +1,203 @@
+root {
+    font-family: 'Inter', sans-serif;
+}
+
+:root {
+    font-family: 'Inter var', sans-serif;
+}
+
+* {
+    font-family: 'Inter';
+    margin: 0;
+    padding: 0;
+}
+
+.nav-bar {
+    display: flex;
+    align-items: center;
+    background-color: #EBEFF3;
+    padding: 20px;
+    width: auto;
+    height: 70px;
+    align-items: center;
+}
+
+.navegacao {
+    display: flex;
+    align-items: center;
+    margin: 100px;
+    padding: 30px;
+}
+
+.nav-bar a:not(:last-of-type) {
+    margin-right: 20px;
+}
+
+.nav-bar a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+.nav-bar a:hover {
+    border-bottom: 2px solid #49A2EB;
+    transition: border-bottom 0.2s ease-in-out;
+}
+
+#logo {
+    margin: 50px;
+}
+
+.perfil {
+    display: flex;
+    justify-content: right;
+    background-color: #49A2EB;
+    border-radius: 100%;
+    width: 50px;
+    height: 50px;
+
+    position: absolute;
+    left: 90%;
+    top: 25px;
+
+    background: linear-gradient(90deg, #49A2EB 4.88%, #50DED2 100%);
+    box-shadow: 0px 0px 17px rgba(0, 0, 0, 0.1);
+    border-radius: 35px;
+
+}
+
+.coluna-bemvindo {
+    display: block;
+    float: left;
+    width: 50%;
+}
+
+.bemvindo {
+    display: flex;
+    margin: 100px;
+    align-items: center;
+    justify-content: center;
+}
+
+.bemvindo h1 {
+    font-size: 60px;
+}
+
+.bemvindo p {
+    font-size: 22px;
+    width: 70%;
+    color: #717171;
+}
+
+.bemvindo::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.colunaFerramentas {
+    display: block;
+    float: left;
+    width: 20%;
+}
+
+.ferramentas::after {
+    content: "";
+    display: table;
+    clear: both;
+
+}
+
+.ferramentas {
+    display: flex;
+    gap: 15px;
+    margin: 100px;
+}
+
+.card {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    row-gap: 20px;
+    padding: 40px;
+
+    border-radius: 10px;
+    background: #F2F2F2;
+    box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.15);
+
+    /* Defina o estilo da borda aqui */
+    border: 2px solid #49A2EB;
+    border-radius: 15px;
+}
+
+
+
+.btn_acessar {
+    padding: 15px;
+    width: 100px;
+    color: white;
+
+    background: linear-gradient(90deg, #49A2EB 4.88%, #50DED2 100%);
+    box-shadow: 0px 0px 17px rgba(0, 0, 0, 0.1);
+    border-radius: 35px;
+    border: none;
+}
+
+.btn_acessar:hover {
+    background: white;
+    color: #49A2EB;
+    cursor: pointer;
+    transition: 0.5s;
+    margin-top: 5px;
+
+    -webkit-transition: margin 0.5s ease-out;
+    -moz-transition: margin 0.5s ease-out;
+    -o-transition: margin 0.5s ease-out;
+}
+
+.footer {
+    background-color: #EBEFF3;
+    font-size: 20px;
+    color: black;
+}
+
+#logoFooter{
+    margin-top: 50px ;
+    margin-left: 150px;
+}
+
+.colunaFooter {
+    display: grid;
+    float: left;
+    gap: 10px;
+    margin: 150px;
+}
+
+.colunaFooter a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+.colunaFooter a:hover {
+    border-bottom: 2px solid #49A2EB;
+    transition: border-bottom 0.2s ease-in-out;
+}
+
+.footer::after {
+    content: "";
+    display: table;
+    clear: both;
+
+}
+
+.social {
+    background: linear-gradient(90deg, #49A2EB 4.88%, #50DED2 100%);
+
+}
+
+.social:hover {
+    transition: 0.s ease;
+    transform: scale(1.1)
+}
+
