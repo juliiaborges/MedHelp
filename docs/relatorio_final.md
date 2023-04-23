@@ -289,7 +289,7 @@ As tecnologias utilizadas serão:
 ![Modelo de Entidade Relacionamento Conceitual](imagens/modeloDeEntidadeRelacionamentoConceitual.jpg "Modelo de Entidade Relacionamento Conceitual")
 
 **[Modelo de Entidade Relacionamento Físico]**<br>
-![Modelo de Entidade Relacionamento Físico](imagens/modelo_fisico.jpg "Modelo de Entidade Relacionamento Físico")
+![Modelo de Entidade Relacionamento Físico](imagens/modelo_fisico.jpeg "Modelo de Entidade Relacionamento Físico")
 
 ## 6. Indicadores de desempenho
 
