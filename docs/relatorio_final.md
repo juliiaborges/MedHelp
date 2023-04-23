@@ -194,7 +194,6 @@ Descrever aqui cada uma das propriedades das atividades de cada um dos processos
 | **Campo** | **Tipo** | **Restrições** | **Valor default** |
 | --- | --- | --- | --- |
 | Cartão com informações do horário selecionado | Seleção única | - | Nada selecionado |
-|    |    |    |
 
 ### Processo 3 - Prontuário Médico 
 
