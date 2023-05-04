@@ -2,4 +2,4 @@ function SayMyName(name){
     console.log(name);
 }
 
-SayMyName('Igor');
+SayMyName('Vai toma no cu'); 
