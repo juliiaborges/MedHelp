@@ -121,34 +121,34 @@ Enfim, é importante ressaltar que a plataforma MedHelp visa facilitar, agilizar
 
 O primeiro processo se inicia com a etapa de admissão de novos médicos na MedHelp, sendo feita por meio de uma entrevista conduzida por um funcionário da clínica. Após a entrevista, caso o médico seja aprovado, serão solicitadas informações adicionais, como nome completo, especialidade, formação, endereço, telefone(s) e e-mail, e também os horários em que o médico estará disponível para atendimento, que serão fornecidas pelo médico, e agregadas ao sistema pela equipe da clínica, mantendo um cadastro completo de todos os médicos da equipe.
 
-![Modelo BPMN do PROCESSO 1](assets/processos/Cadastro_De_Medicos.png "Modelo BPMN do Processo 1.")
+![Modelo BPMN do PROCESSO 1](//assets/processos/Cadastro_De_Medicos.png "Modelo BPMN do Processo 1.")
 
 
 ### 3.3.2 Processo 2 – AGENDAMENTO DE CONSULTAS
 
 Após a contratação dos médicos, a clínica já está pronta para receber seus pacientes e, para isso, eles precisam marcar um horário de atendimento com o profissional desejado. O sistema mostra para o paciente os horários disponíveis e ao agendar em um desses horários o software atualizar os dados automaticamente. 
 
-![Modelo BPMN do PROCESSO 2](assets/processos/Agendamento_Consulta_diagrama.jpg "Modelo BPMN do Processo 2.")
+![Modelo BPMN do PROCESSO 2](//assets/processos/Agendamento_Consulta_diagrama.jpg "Modelo BPMN do Processo 2.")
 
 ### 3.3.3 Processo 3 -PRONTUÁRIO MÉDICO
 Com as informações disponíveis no banco de dados, o médico poderá acessá-las durante a consulta para verificar o histórico médico do paciente, identificar possíveis alergias a medicamentos, verificar os medicamentos que o paciente está tomando atualmente, entre outras informações importantes que podem ajudar no diagnóstico e tratamento do paciente.
 
 Ao final da consulta, o médico poderá acrescentar novas informações relevantes no prontuário médico do paciente, como a prescrição de medicamentos, exames solicitados, recomendações de cuidados em casa, entre outras informações importantes. Isso garante que todas as informações relevantes para o tratamento do paciente fiquem armazenadas em um só lugar e possam ser acessadas facilmente em consultas futuras.
 
-![Modelo BPMN do PROCESSO 3](assets/processos/Prontuario_Medico.jpg "Modelo BPMN do Processo 3.")
+![Modelo BPMN do PROCESSO 3](//assets/processos/Prontuario_Medico.jpg "Modelo BPMN do Processo 3.")
 
 
 ### 3.3.4 Processo 4 – CONTROLE DE ESTOQUE
 Após o agendamento da consulta, o médico irá solicitar os equipamentos necessários para realizar o atendimento do cliente. Para isso, ele enviará uma mensagem ao funcionário responsável, informando quais ferramentas serão necessárias. O funcionário, por sua vez, irá anotar os equipamentos solicitados e verificar a disponibilidade dos mesmos no estoque. Caso algum equipamento esteja indisponível, ele enviará uma mensagem ao médico informando a situação e encerrando o processo.
 Porém, caso todos os equipamentos estejam disponíveis, o funcionário irá retirá-los do estoque, dar baixa no sistema e entregá-los ao médico. Dessa forma, garantimos que todos os equipamentos necessários para a consulta estejam disponíveis e que o processo ocorra de forma eficiente e organizada
 
-![Modelo BPMN do PROCESSO 4](assets/processos/Controle_de_estoque.jpg "Modelo BPMN do Processo 4.")
+![Modelo BPMN do PROCESSO 4](//assets/processos/Controle_de_estoque.jpg "Modelo BPMN do Processo 4.")
 
 ### 3.3.5 Processo 5 – PAGAMENTO DE CONSULTAS/
 
 Após a conclusão da consulta, o paciente se dirige à recepção para efetuar o pagamento à clínica. Um funcionário da clínica, então, confirma se o paciente possui plano de saúde e se o plano tem cobertura para a clínica em questão. Caso ele possua um plano de saúde com cobertura para a clínica, o atendente verifica o pagamento pelo plano de saúde, registra no sistema e emite o recibo para o cliente. Se o cliente não tiver plano de saúde ou se o plano de saúde não oferecer cobertura para a clínica, o atendente informa o valor da consulta ao paciente, que escolhe o método de pagamento e realiza o pagamento. Em seguida, o atendente registra o pagamento no sistema e emite o recibo da consulta para o cliente.
 
-![Exemplo de um Modelo BPMN do PROCESSO 5](assets/processos/Pagamento.png "Modelo BPMN do Processo 5.")
+![Exemplo de um Modelo BPMN do PROCESSO 5](//assets/processos/Pagamento.png "Modelo BPMN do Processo 5.")
 
 ## 4. Projeto da Solução
 
@@ -286,10 +286,10 @@ As tecnologias utilizadas serão:
 ## 5. Modelo de dados
 
 **[Modelo de Entidade Relacionamento Conceitual]**
-![Modelo de Entidade Relacionamento Conceitual](imagens/modeloDeEntidadeRelacionamentoConceitual.jpg "Modelo de Entidade Relacionamento Conceitual")
+![Modelo de Entidade Relacionamento Conceitual](//assets/processos/modeloDeEntidadeRelacionamentoConceitual.jpg "Modelo de Entidade Relacionamento Conceitual")
 
 **[Modelo de Entidade Relacionamento Físico]**<br>
-![Modelo de Entidade Relacionamento Físico](imagens/modelo_fisico.jpeg "Modelo de Entidade Relacionamento Físico")
+![Modelo de Entidade Relacionamento Físico](//assets/processos/modelo_fisico.jpeg "Modelo de Entidade Relacionamento Físico")
 
 ## 6. Indicadores de desempenho
 
