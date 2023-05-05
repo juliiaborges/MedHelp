@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="../styles/estoque.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atualizar estoque</title>
+</head>
+<body>
+    
+    <h1>Atualizar estoque</h1>
+
+    <form id="form">
+
+
+        <label for="id">ID:</label>
+        <input type="number" name="id" id="id" placeholder="ID do equipamento" required><br><br>
+        
+        <label for="nome">Equipamento:</label>
+        <input type="text" name="nome" id="nome" placeholder="Nome do equipamento" required><br><br>
+
+
+        <label for="descricao">Descrição:</label>
+        <input type="text" name="especialidade" id="especialidade" placeholder="Otorrinolaringologista" required> <br><br>
+
+        <label for="disponibilidade">Disponbilidade:</label>
+            <select name="disponibilidade" id="disponibilidade">
+                <option value="livre">Livre</option>
+                <option value="ocupado">Ocupado</option>
+            </select><br><br>
+
+        <button id="btn_uptade" onsubmit="">Atualizar</button>
+
+    </form>
+    <br><br>
+
+    <table id="equipamentos-table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Equipamento</th>
+                <th>Disponbilidade</th>
+                <th>Descrição</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+
+
+
+
+
+
+
+
+
+    <script src="../scripts/estoque.js"></script>
+</body>
+</html>

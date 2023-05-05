@@ -62,7 +62,6 @@ function limpar() {
 
 // função pra não recarregar página ao enviar novo médico
   const form = document.querySelector('form');
-  const sendBtn = document.querySelector('#btn_envio');
   
   form.addEventListener('submit', function(event) {
   
