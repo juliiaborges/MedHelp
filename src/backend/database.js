@@ -13,10 +13,9 @@ var con = mysql.createConnection({
   host: "localhost",
   user: "root",
   port: "3306",
-  password: "123456", 
+  password: "1234", 
   database: "mydb"
 });
-
 con.connect((error) => {
   if (error) {
     console.error('Erro ao conectar-se ao banco de dados:', error);
@@ -42,10 +41,18 @@ app.post('/cadastro', (req, res) => {
       res.send('Erro ao cadastrar usuário.');
     } else {
       res.send('Usuário cadastrado com sucesso!');
+      res.end('<h1>Hello World</h1>');
     }
+    res.end('<h1>Hello World</h1>');
   });
 });
-
+app.use(express.json());
+app.listen(3000, () => {
+  console.log ('Servidor foi iniciado')
+})
+app.get('/', (req, res) => {
+  res.send('Hello World!');
+});
 
 //   con.query(query, (error, results) => {
 //     if (error) throw error;
