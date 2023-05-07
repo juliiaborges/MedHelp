@@ -7,6 +7,7 @@ let equipamentos = [
 
 ]
 
+atualizarTabela();
 
 // função para adicionar um equipamento na tabela
 function adicionarEquipamentoTabela(equipamento) {
