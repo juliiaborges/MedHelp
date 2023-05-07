@@ -1,6 +1,7 @@
 const mysql = require('mysql2');
 const express = require('express');
-const bodyParser = require('body-parser')
+const bodyParser = require('body-parser');
+const path = require('path'); // Importar o módulo path
 
 //Criar o app express
 const app = express();
@@ -26,7 +27,7 @@ con.connect((error) => {
 
 //Rota do Envio do Formulário
 
-app.post('/cadastro', (req, res) => {
+app.post('/cadastroMedicos', (req, res) => {
   const nome = req.body.nome;
   const uf = req.body.uf;
   const crm = req.body.crm;
@@ -38,21 +39,26 @@ app.post('/cadastro', (req, res) => {
 
   con.query(query, (err, result) => {
     if (err) {
+      console.error('Erro ao cadastrar usuário:', err.message);
       res.send('Erro ao cadastrar usuário.');
     } else {
       res.send('Usuário cadastrado com sucesso!');
-      res.end('<h1>Hello World</h1>');
     }
-    res.end('<h1>Hello World</h1>');
   });
+  
 });
 app.use(express.json());
 app.listen(3000, () => {
   console.log ('Servidor foi iniciado')
 })
-app.get('/', (req, res) => {
-  res.send('Hello World!');
+app.use(express.static(path.join(__dirname, '../frontend')));
+
+app.get('/cadastroMedicos', (req, res) => {
+  res.sendFile(path.join(__dirname, '../frontend/views/cadastroMedicos.html'));
 });
+
+
+
 
 //   con.query(query, (error, results) => {
 //     if (error) throw error;

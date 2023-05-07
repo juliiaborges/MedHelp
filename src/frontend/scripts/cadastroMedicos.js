@@ -53,7 +53,7 @@ function limpar() {
     document.getElementById("nome").value = "";
     document.getElementById("uf").value = "";
     document.getElementById("crm").value = "";
-    document.getElementById("especialidade") = "";
+    document.getElementById("especialidade").value= "";
     document.getElementById("situacao").value = "";
     document.getElementById("telefone").value = "";
     document.getElementById("email").value = "";
