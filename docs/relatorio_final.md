@@ -128,7 +128,7 @@ O primeiro processo se inicia com a etapa de admissão de novos médicos na MedH
 
 Após a contratação dos médicos, a clínica já está pronta para receber seus pacientes e, para isso, eles precisam marcar um horário de atendimento com o profissional desejado. O sistema mostra para o paciente os horários disponíveis e ao agendar em um desses horários o software atualizar os dados automaticamente. 
 
-![Modelo BPMN do PROCESSO 2](/assets/processos/Agendamento_Consulta_diagrama.jpg "Modelo BPMN do Processo 2.")
+![Modelo BPMN do PROCESSO 2](/assets/processos/Agendamento_De_Consulta.jpg "Modelo BPMN do Processo 2.")
 
 ### 3.3.3 Processo 3 -PRONTUÁRIO MÉDICO
 Com as informações disponíveis no banco de dados, o médico poderá acessá-las durante a consulta para verificar o histórico médico do paciente, identificar possíveis alergias a medicamentos, verificar os medicamentos que o paciente está tomando atualmente, entre outras informações importantes que podem ajudar no diagnóstico e tratamento do paciente.
@@ -285,11 +285,8 @@ As tecnologias utilizadas serão:
 
 ## 5. Modelo de dados
 
-**[Modelo de Entidade Relacionamento Conceitual]**
-![Modelo de Entidade Relacionamento Conceitual](//assets/processos/modeloDeEntidadeRelacionamentoConceitual.jpg "Modelo de Entidade Relacionamento Conceitual")
-
 **[Modelo de Entidade Relacionamento Físico]**<br>
-![Modelo de Entidade Relacionamento Físico](//assets/processos/modelo_fisico.jpeg "Modelo de Entidade Relacionamento Físico")
+![Modelo de Entidade Relacionamento Físico](/assets/processos/modelo_fisico.png "Modelo de Entidade Relacionamento Físico")
 
 ## 6. Indicadores de desempenho
 
