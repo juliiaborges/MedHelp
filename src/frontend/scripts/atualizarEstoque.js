@@ -8,7 +8,7 @@ let equipamentos = [
 ]
 
 
-// função para adicionar um médico na tabela
+// função para adicionar um equipamento na tabela
 function adicionarEquipamentoTabela(equipamento) {
     const tableBody = document.querySelector('#equipamentos-table tbody');
     const row = tableBody.insertRow();
@@ -17,6 +17,7 @@ function adicionarEquipamentoTabela(equipamento) {
     const nomeCell = row.insertCell(1)
     const descricaoCell = row.insertCell(2);
     const disponibilidadeCell = row.insertCell(3)
+    const actionsCell = row.insertCell(4);
 
     idCell.innerText = equipamento.id;
     nomeCell.innerText = equipamento.nome;
@@ -33,13 +34,13 @@ function adicionarEquipamentoTabela(equipamento) {
     actionsCell.appendChild(deleteButton);
 }
 
-// função para excluir um médico do array e da tabela
+// função para excluir um equipamento do array e da tabela
 function excluirEquipamento(id) {
     equipamentos = equipamentos.filter(equipamento => equipamento.id !== id);
     atualizarTabela();
 }
 
-// função para atualizar a tabela com os dados do array de médicos
+// função para atualizar a tabela com os dados do array de equipamentos
 function atualizarTabela() {
     const tableBody = document.querySelector('#equipamentos-table tbody');
     tableBody.innerHTML = '';
@@ -48,26 +49,6 @@ function atualizarTabela() {
         adicionarEquipamentoTabela(equipamento);
     });
 }
-
-// função limpar formulário
-function limpar() {
-    document.getElementById("id").value = "";
-    document.getElementById("nome").value = "";
-    document.getElementById("descricao").value = "";
-    document.getElementById("disponibilidade").value = "";
-}
-
-
-// função pra não recarregar página ao enviar novo médico
-const form = document.querySelector('form');
-
-form.addEventListener('submit', function (event) {
-
-    adicionarEquipamento()
-
-    event.preventDefault();
-
-})
 
 // função para adicionar um médico ao array e atualizar a tabela
 function adicionarEquipamento() {
@@ -93,6 +74,8 @@ function adicionarEquipamento() {
 const updateBtn = document.querySelector('#btn_atualizar');
 
 updateBtn.addEventListener('click', function (event) {
-    atualizarTabela();
+
+    adicionarEquipamento();
+
     event.preventDefault();
 })
