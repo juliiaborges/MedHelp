@@ -144,7 +144,7 @@ Porém, caso todos os equipamentos estejam disponíveis, o funcionário irá ret
 
 ![Modelo BPMN do PROCESSO 4](/assets/processos/Controle_de_estoque.jpg "Modelo BPMN do Processo 4.")
 
-### 3.3.5 Processo 5 – PAGAMENTO DE CONSULTAS/
+### 3.3.5 Processo 5 – PAGAMENTO DE CONSULTAS
 
 Após a conclusão da consulta, o paciente se dirige à recepção para efetuar o pagamento à clínica. Um funcionário da clínica, então, confirma se o paciente possui plano de saúde e se o plano tem cobertura para a clínica em questão. Caso ele possua um plano de saúde com cobertura para a clínica, o atendente verifica o pagamento pelo plano de saúde, registra no sistema e emite o recibo para o cliente. Se o cliente não tiver plano de saúde ou se o plano de saúde não oferecer cobertura para a clínica, o atendente informa o valor da consulta ao paciente, que escolhe o método de pagamento e realiza o pagamento. Em seguida, o atendente registra o pagamento no sistema e emite o recibo da consulta para o cliente.
 
@@ -164,6 +164,10 @@ Descrever aqui cada uma das propriedades das atividades de cada um dos processos
 | --- | --- | --- | --- |
 | Nome Completo do médico | Caixa de Texto | Apenas letras e tamanho máximo de 50 caracteres | - |
 | Especialidade | Caixa de Texto |  | - |
+| UF | Caixa de Texto | Apenas letras maiusculas e máximo de 2 caracteres | - |
+| CRM | Caixa de Texto | 6 caracteres | - |
+| Especialidade | Caixa de Texto | Apenas letras e tamanho máximo de 50 caracteres | - |
+| Situação | Caixa de Texto | Múltipla escolha | - |
 | Telefone | Caixa de Texto | Mínimo de 7 e máximo de 10 caracteres | -  |
 | E-mail | Caixa de Texto | Formato de e-mail | - | 
 
@@ -201,11 +205,10 @@ Descrever aqui cada uma das propriedades das atividades de cada um dos processos
 
 | **Campo** | **Tipo** | **Restrições** | **Valor default** |
 | --- | --- | --- | --- |
-| Nome do paciente | Caixa de Texto | Apenas letras e tamanho máximo de 15 caracteres | - |
-| Sobrenome do Paciente | Caixa de Texto | Apenas letras e tamanho máximo de 30 caracteres | - |
+| Nome Completo do paciente | Caixa de Texto | Apenas letras e tamanho máximo de 15 caracteres | - |
 | CPF | Caixa de Texto | Deve ter 11 caracteres validados pelo cálculo de CPF | - | 
 | Telefone | Caixa de Texto | Mínimo de 7 e máximo de 10 caracteres | -  |
-| Alergias | Caixa de Texto |  | - |
+| Alergias | Caixa de Texto | - | - |
 | E-mail | Caixa de Texto | Formato de e-mail | - | 
 | Quantidade de Cirurgias | Caixa de Texto |  | - |
 |    |    |     |
@@ -218,7 +221,7 @@ Descrever aqui cada uma das propriedades das atividades de cada um dos processos
 | CPF | Caixa de Texto | Deve ter 11 caracteres validados pelo cálculo de CPF | - | 
 | Telefone | Caixa de Texto | Mínimo de 7 e máximo de 10 caracteres | -  |
 | E-mail | Caixa de Texto | Formato de e-mail | - | 
-| Alergias | Caixa de Texto |  | - |
+| Alergias | Caixa de Texto | - | - |
 | Quantidade de Cirurgias | Caixa de Texto |  | - |
 | Diagnóstico | Caixa de texto | - | - |
 | Medicamento | Caixa de texto | - | - |
@@ -237,7 +240,7 @@ Descrever aqui cada uma das propriedades das atividades de cada um dos processos
 | --- | --- | --- | --- |
 | Cod da ferramenta | Caixa de Texto | Apenas números | - |
 | Nome da ferramenta | Caixa de Texto | Apenas letras e tamaanho máximo de 30 caracteres | - |
-| Descrição da ferramenta | Caixa de Texto | Apenas letras e tamaanho máximo de 100 caracteres | - |
+| Descrição da ferramenta | Caixa de Texto | Apenas letras e tamanho máximo de 100 caracteres | - |
 |    |    |     |
 
 **Atualizar estoque**
