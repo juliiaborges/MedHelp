@@ -1,6 +1,8 @@
 // array para armazenar os médicos cadastrados
 let medicos = [];
 
+
+
 // função para adicionar um médico na tabela
 function adicionarMedicoNaTabela(medico) {
   const tableBody = document.querySelector('#medicos-table tbody');
@@ -90,8 +92,9 @@ function adicionarMedico() {
     telefone: telefone,
     email: email
   };
-
+  console.log(medico)
   medicos.push(medico);
   atualizarTabela();
+
 
 }

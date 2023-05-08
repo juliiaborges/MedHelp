@@ -14,7 +14,7 @@ var con = mysql.createConnection({
   host: "localhost",
   user: "root",
   port: "3306",
-  password: "1234", 
+  password: "123456", 
   database: "mydb"
 });
 con.connect((error) => {
@@ -27,7 +27,7 @@ con.connect((error) => {
 
 //Rota do Envio do Formulário
 
-app.post('/cadastroMedicos', (req, res) => {
+app.post('../frontend/scripts/cadastroMedicos.js', (req, res) => {
   const nome = req.body.nome;
   const uf = req.body.uf;
   const crm = req.body.crm;
@@ -35,8 +35,8 @@ app.post('/cadastroMedicos', (req, res) => {
   const situacao = req.body.situacao;
   const telefone = req.body.telefone;
   const email = req.body.email;
-  const query = `INSERT INTO medicos (nome, uf, crm, especialidade, situacao, telefone, email ) VALUES ('${nome}','${uf}', '${crm}', '${especialidade}', '${situacao}', '${telefone}', '${email}')`;
-
+  const query = `INSERT INTO medicos (nome_medico ,especialidade_medico, telefone_medico, email_medico,  uf_medico, crm_medico, situacao_medico ) VALUES ('${nome}', '${especialidade}', '${telefone}', '${email}','${uf}', '${crm}', '${situacao}')`;
+  console.log(query)
   con.query(query, (err, result) => {
     if (err) {
       console.error('Erro ao cadastrar usuário:', err.message);
