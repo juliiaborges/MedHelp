@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="../styles/cadastroMedicos.css" rel="stylesheet">
+    <link href="../../frontend/styles/cadastroMedicos.css" rel="stylesheet">
     <link rel="stylesheet" href="../frontend/styles/index.css">
     <link rel="preconnect" href="https://rsms.me/">
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
@@ -17,7 +17,7 @@
 </div>
      </div>
      <br><br>
-     <form action="../scripts/cadastroMedicos.js" method="post">
+     <form action="/medicoCadastrado" method="POST">
         <label for="nome">Nome:</label>
         <input type="text" id="nome" name="nome"><br><br>
       
@@ -28,7 +28,7 @@
         <input type="text" id="crm" name="crm"><br><br>
       
         <label for="especialidade">Especialidade:</label>
-        <input type="text" name="especialidade" id="especialidade" placeholder="Otorrinolaringologista" required> <br><br>
+        <input type="text" name="especialidade" id="especialidade" placeholder="Otorrinolaringologista"> <br><br>
 
         <label for="situacao">Situação:</label>
         <select id="situacao" name="situacao">
@@ -62,8 +62,5 @@
         <tbody></tbody>
     </table>
 
-
-    <script src="../../backend/database.js"></script>
-    <script src="../scripts/cadastroMedicos.js"></script>
 </body>
 </html>
