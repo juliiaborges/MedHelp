@@ -1,11 +1,7 @@
 //Função ATUALIZAR esquipamentos
 
 //Equipamentos em estoque
-let equipamentos = [
-    { id: 1, nome: 'Esfigmomanômetro', descricao: 'Aparelho utilizado para medir a pressão arterial', disponibilidade: "Livre" },
-    { id: 2, nome: 'Estetoscópio', descricao: 'Aparelho utilizado para ouvir sons vasculares, respiratórios ou de outras naturezas em diferentes partes do corpo do paciente.', disponibilidade: "Ocupado" }
 
-]
 
 atualizarTabela();
 

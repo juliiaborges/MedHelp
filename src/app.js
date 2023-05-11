@@ -7,11 +7,12 @@ const path = require('path');
 
 const Sequelize = require('sequelize')
 const { sequelize } = require('./backend/models/db');
+
 const Medicos = require('./backend/models/Medicos');
-
-const bodyParser = require('body-parser')
-
 const medico = require('../src/backend/models/Medicos')
+
+const bodyParser = require('body-parser');
+
 
 //Configuração BodyParser
 app.use(bodyParser.urlencoded({ extended: false }))
@@ -19,20 +20,6 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
 app.use(express.static(path.join(__dirname + '/frontend')));
-
-
-//Rotas
-// app.get('/cadastroMedicos', function (req, res) {
-//   const filePath = path.join(__dirname, '../src/frontend/views/cadastroMedicos.html');
-//   fs.readFile(filePath, function (err, content) {
-//     if (err) {
-//       console.error(err);
-//       res.status(500).send('Erro ao carregar o arquivo.');
-//     } else {
-//       res.send(content.toString());
-//     }
-//   });
-// });
 
 // Define a rota para o seu arquivo HTML
 app.get('/cadastroMedicos', function (req, res) {
@@ -61,12 +48,26 @@ app.post('/medicoCadastrado', function (req, res) {
 });
 
 
-
 sequelize.authenticate().then(function () {
   console.log("Conexeão realizada com sucesso")
 }).catch(function (err) {
   console.log("Erro ao realizar a conexão com banco de dados: " + err)
 })
+
+
+//Rotas
+// app.get('/cadastroMedicos', function (req, res) {
+//   const filePath = path.join(__dirname, '../src/frontend/views/cadastroMedicos.html');
+//   fs.readFile(filePath, function (err, content) {
+//     if (err) {
+//       console.error(err);
+//       res.status(500).send('Erro ao carregar o arquivo.');
+//     } else {
+//       res.send(content.toString());
+//     }
+//   });
+// });
+
 
 
 //Add médico na tabela
@@ -100,14 +101,6 @@ sequelize.authenticate().then(function () {
 
 // // Chama a função para excluir um usuário com ID 1
 // deleteUserById(7);
-
-
-app.listen(8080, () => {
-  console.log("Servidor iniciado")
-});
-
-
-
 
 
 //Inserindo novo médico
