@@ -4,6 +4,7 @@ const app = express();
 const fs = require('fs');
 const path = require('path');
 
+
 const Sequelize = require('sequelize')
 const { sequelize } = require('./backend/models/db');
 const Medicos = require('./backend/models/Medicos');
@@ -17,20 +18,26 @@ app.use(bodyParser.urlencoded({ extended: false }))
 //Parse application/json
 app.use(bodyParser.json())
 
+app.use(express.static(path.join(__dirname + '/frontend')));
+
 
 //Rotas
-app.get('/cadastroMedicos', function (req, res) {
-  const filePath = path.join(__dirname, '../src/frontend/views/cadastroMedicos.html');
-  fs.readFile(filePath, function (err, content) {
-    if (err) {
-      console.error(err);
-      res.status(500).send('Erro ao carregar o arquivo.');
-    } else {
-      res.send(content.toString());
-    }
-  });
-});
+// app.get('/cadastroMedicos', function (req, res) {
+//   const filePath = path.join(__dirname, '../src/frontend/views/cadastroMedicos.html');
+//   fs.readFile(filePath, function (err, content) {
+//     if (err) {
+//       console.error(err);
+//       res.status(500).send('Erro ao carregar o arquivo.');
+//     } else {
+//       res.send(content.toString());
+//     }
+//   });
+// });
 
+// Define a rota para o seu arquivo HTML
+app.get('/cadastroMedicos', function (req, res) {
+  res.sendFile(path.join(__dirname + '/frontend/views/cadastroMedicos.html'));
+});
 
 //Receber dados do formulário
 app.post('/medicoCadastrado', function (req, res) {
