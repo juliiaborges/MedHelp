@@ -1,8 +1,8 @@
-const db = require('../models/db')
+const db = require('./db')
 
 const Medicos = db.sequelize.define('medicos',{
-    id_medico: {
-        type: db.Sequelize.STRING,
+    id_medicos: {
+        type: db.Sequelize.DOUBLE,
         autoIncrement: true,
         primaryKey: true
     },
@@ -22,7 +22,7 @@ const Medicos = db.sequelize.define('medicos',{
         type: db.Sequelize.STRING
     },
     crm_medico:{
-        type: db.Sequelize.STRING
+        type: db.Sequelize.DOUBLE
     },
     situacao_medico:{
         type: db.Sequelize.STRING
