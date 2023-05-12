@@ -16,6 +16,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
 app.use(express.static(path.join(__dirname + '/frontend')));
+
 // ROTAS ESTOQUE
 const estoque = require('../src/backend/models/Estoque');
 
@@ -46,6 +47,28 @@ sequelize.authenticate().then(function () {
     console.log("Erro ao realizar a conexão com banco de dados: " + err)
   })
   
+  //Segunda parte - Listar Produtos
+  // rota para exibir os dados do estoque
+  
+  app.get('./frontend/views/pesquisaEstoque', function (req, res) {
+    res.render('estoque', {estoque: estoque});
+  })
+  
+  app.post('./frontend/views/pesquisaEstoque', function (req, res) {
+    estoque.findAll().then(estoque => {
+      res.render('pesquisarEstoque', {estoque: estoque});
+    }).catch(function (erro) {
+      res.send("Erro ao buscar equipamentos!" + erro)
+    });
+  });
+  
+//   const pesquisa = require ("./frontend/views/pesquisaEstoque.html")
+
+// app.get('/pesquisaEstoque', function (req, res) {
+//   pesquisa.findAll().then(function(pesquisas){
+//     res.render('pesquisaEstoque', { pesquisas: pesquisas });
+//   });
+// });
 
 app.listen(8081, () => {
   console.log("Servidor iniciado")
