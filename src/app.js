@@ -54,6 +54,11 @@ sequelize.authenticate().then(function () {
   console.log("Erro ao realizar a conexão com banco de dados: " + err)
 })
 
+app.listen(8080, () => {
+  console.log("Servidor iniciado")
+});
+
+
 
 //Rotas
 // app.get('/cadastroMedicos', function (req, res) {
