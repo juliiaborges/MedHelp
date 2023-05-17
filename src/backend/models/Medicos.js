@@ -31,10 +31,10 @@ const Medicos = db.sequelize.define('medicos', {
         type: db.Sequelize.STRING
     },
     horario_disponivel_inicio: {
-        type: db.Sequelize.STRING
+        type: db.Sequelize.TIME
     },
     horario_disponivel_fim: {
-        type: db.Sequelize.STRING
+        type: db.Sequelize.TIME
     },
     agendamento_id_agendamento: {
         type: db.Sequelize.INTEGER,

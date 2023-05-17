@@ -39,6 +39,9 @@ app.post('/medicoCadastrado', function (req, res) {
       situacao_medico: req.body.situacao,
       telefone_medico: req.body.telefone,
       email_medico: req.body.email,
+      horario_disponivel_inicio: req.body.horarioInicio,
+      horario_disponivel_fim: req.body.horarioFim,
+      dia_disponivel: req.body.diaSemana
     }).then(function () {
       res.send("Médico cadastrado: "+ req.body.nome)
     }).catch(function (erro) {
