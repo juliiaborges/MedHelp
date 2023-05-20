@@ -1,14 +1,10 @@
 const express = require('express');
 const app = express();
-
 const fs = require('fs');
 const path = require('path');
-
 const bodyParser = require('body-parser');
-
 const Sequelize = require('sequelize')
 const { sequelize } = require('./backend/models/db');
-
 
 //Configuração BodyParser
 app.use(bodyParser.urlencoded({ extended: false }))
@@ -42,7 +38,7 @@ app.post('/estoqueCadastrado', function (req, res) {
 });
 
 sequelize.authenticate().then(function () {
-    console.log("Conexeão realizada com sucesso")
+    console.log("Conexão realizada com sucesso")
   }).catch(function (err) {
     console.log("Erro ao realizar a conexão com banco de dados: " + err)
   })
