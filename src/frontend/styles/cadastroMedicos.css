@@ -5,12 +5,14 @@
 :root {
   font-family: 'Inter var', sans-serif;
 }
+
 /* Definindo o estilo do body */
 body {
   background-color: #f8f8f8;
   font-family: Arial, sans-serif;
-  
+
 }
+
 :root {
   font-family: 'Inter', sans-serif;
 }
@@ -18,24 +20,28 @@ body {
 :root {
   font-family: 'Inter var', sans-serif;
 }
+
 * {
   font-family: 'Inter';
   margin: 0;
   padding: 0;
 }
+
 /* Estilo para o título */
 h1 {
   text-align: center;
 }
-body{
+
+body {
   background: linear-gradient(90deg, #49A2EB 0%, #50DED2 100%);
 }
-.title{
+
+.title {
   align-items: center;
-  background: linear-gradient(90deg, #1b66a3 0%, #35e2d4 100%);  width: 100%;
- height: 80px;
- border-radius: 8px;
+  height: 80px;
+  border-radius: 8px;
 }
+
 /* Estilo para o formulário */
 form {
   border: 1px solid black;
@@ -60,7 +66,7 @@ select {
   margin-bottom: 20px;
   border: none;
   border-radius: 5px;
-  border: 1px rgb(1, 56, 107) solid;
+  border: 1px rgb(207, 207, 207) solid;
 }
 
 /* Estilo para os botões */
@@ -98,19 +104,19 @@ table {
   margin-top: 30px;
 }
 
-th, td {
+th,
+td {
   text-align: left;
   padding: 8px;
 }
 
 th {
-  background-color:#f8f8f8;
-  color:#49A2EB;
-  
-  
+  background-color: #f8f8f8;
+  color: #49A2EB;
+
+
 }
 
 tr:nth-child(even) {
   background-color: #f2f2f2;
 }
-
