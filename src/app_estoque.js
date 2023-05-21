@@ -57,7 +57,61 @@ sequelize.authenticate().then(function () {
       res.send("Erro ao buscar equipamentos!" + erro)
     });
   });
-  
+  // ...
+  app.set('view engine', 'ejs');
+  app.set('views', path.join(__dirname, 'frontend/views'));
+// Rota para exibir a página de listagem de equipamentos
+app.get('/listarEquipamentos', function (req, res) {
+  estoque.findAll().then(function (equipamentos) {
+    res.render('listarEquipamentos', { equipamentos: equipamentos });
+  }).catch(function (erro) {
+    res.send('Erro ao buscar equipamentos: ' + erro);
+  });
+});
+
+// Rota para atualizar a quantidade do equipamento selecionado
+app.post('/atualizar_quantidade/:id', function (req, res) {
+  const equipamentoId = req.params.id;
+  const novaQuantidade = req.body.quantidade;
+
+  estoque.findByPk(equipamentoId).then(function (equipamento) {
+    if (equipamento) {
+      const quantidadeAnterior = equipamento.quant_Equipamento;
+      const quantidadeAtualizada = parseInt(quantidadeAnterior) + parseInt(novaQuantidade);
+
+      equipamento.update({ quant_Equipamento: quantidadeAtualizada }).then(function () {
+        res.redirect('/listar_equipamentos');
+      }).catch(function (erro) {
+        res.send('Erro ao atualizar a quantidade do equipamento: ' + erro);
+      });
+    } else {
+      res.send('Equipamento não encontrado');
+    }
+  }).catch(function (erro) {
+    res.send('Erro ao buscar equipamento: ' + erro);
+  });
+});
+
+// Rota para registrar o uso do equipamento selecionado
+app.post('/registrar_uso/:id', function (req, res) {
+  const equipamentoId = req.params.id;
+  const resposta = req.body.resposta;
+
+  // Lógica para registrar o uso do equipamento de acordo com a resposta (Sim ou Não)
+
+  res.redirect('/listarEquipamentos');
+});
+
+// Rota para redirecionar para a página de listagem após cadastrar um novo equipamento
+app.post('/estoqueCadastrado', function (req, res) {
+  // Lógica para cadastrar um novo equipamento
+
+  res.redirect('/listarEquipamentos');
+});
+
+
+// ...
+
 //   const pesquisa = require ("./frontend/views/pesquisaEstoque.html")
 
 // app.get('/pesquisaEstoque', function (req, res) {
@@ -66,7 +120,7 @@ sequelize.authenticate().then(function () {
 //   });
 // });
 
-app.listen(8081, () => {
+app.listen(8085, () => {
   console.log("Servidor iniciado")
 });
 
