@@ -4,7 +4,7 @@ const Paciente = db.sequelize.define(
     "paciente",
     {
     cpf_paciente: {
-        type: db.Sequelize.STRING,
+        type: db.Sequelize.INTEGER,
         primaryKey: true
     },
     nome_paciente:{
@@ -26,6 +26,9 @@ const Paciente = db.sequelize.define(
     possui_plano:{
         type: db.Sequelize.STRING,
     },
+    observacoes_paciente:{
+        type: db.Sequelize.STRING,
+    }
     }, {
     timestamps: false,
 });

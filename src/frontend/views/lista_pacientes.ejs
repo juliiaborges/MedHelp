@@ -78,10 +78,7 @@
         </p>
         <p><strong>Alergias:</strong> <%= paciente.alergias_paciente %></p>
         <p><strong>Cirurgias:</strong> <%= paciente.cirurgias_paciente %></p>
-        <textarea
-          id="observacoes-<%= paciente.id %>"
-          name="observacoes"
-        ></textarea>
+        <p><strong>Observações:</strong><br> <%= paciente.observacoes_paciente %></p>
         <br />
         <a href="/editar_paciente/<%= paciente.cpf_paciente %>">Editar</a>
       </div>
