@@ -50,28 +50,61 @@ sequelize.authenticate().then(function () {
     console.log("Erro ao realizar a conexão com banco de dados: " + err)
   })
   
-  //Segunda parte - Listar Produtos
-  // rota para exibir os dados do estoque
-  
-  // app.get('./frontend/views/prontuarioPaciente_cadastrado', function (req, res) {
-  //   res.render('prontuarioPaciente', {prontuarioPaciente: prontuarioPaciente});
-  // })
-  
-  // app.post('./frontend/views/prontuarioPaciente_cadastrado', function (req, res) {
-  //   prontuarioPaciente.findAll().then(prontuarioPaciente => {
-  //     res.render('prontuarioPaciente', {prontuarioPaciente: prontuarioPaciente});
-  //   }).catch(function (erro) {
-  //     res.send("Erro ao buscar equipamentos!" + erro)
-  //   });
-  // });
-  
-//   const pesquisa = require ("./frontend/views/pesquisaEstoque.html")
+  //Edição
+  app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'frontend/views'));
 
-// app.get('/pesquisaEstoque', function (req, res) {
-//   pesquisa.findAll().then(function(pesquisas){
-//     res.render('pesquisaEstoque', { pesquisas: pesquisas });
-//   });
-// });
+  // Rota para exibir a lista de pacientes
+
+  app.get('/lista_pacientes', function (req, res) {
+    prontuarioPaciente
+      .findAll()
+      .then(function (pacientes) {
+        res.render('lista_pacientes', { pacientes: pacientes });
+      })
+      .catch(function (erro) {
+        res.send("Erro ao buscar pacientes!" + erro);
+      });
+  });
+
+// Rota para exibir o formulário de edição do paciente
+app.get('/editar_paciente/:id', function (req, res) {
+  const pacienteId = req.params.id;
+  pacienteId.findByPk(pacienteId)
+    .then(function (paciente) {
+      if (paciente) {
+        res.render('editar_paciente', { paciente: paciente });
+      } else {
+        res.send('Paciente não encontrado');
+      }
+    })
+    .catch(function (erro) {
+      res.send('Erro ao buscar paciente: ' + erro);
+    });
+});
+
+// Rota para atualizar o paciente com as observações do médico
+app.post('/atualizar_paciente/:id', function (req, res) {
+  const pacienteId = req.params.id;
+  const observacoes = req.body.observacoes;
+  pacienteId.findByPk(pacienteId)
+    .then(function (paciente) {
+      if (paciente) {
+        paciente.update({ observacoes_paciente: observacoes })
+          .then(function () {
+            res.send('Paciente atualizado: ' + paciente.nome_paciente);
+          })
+          .catch(function (erro) {
+            res.send('Erro ao atualizar prontuário do paciente: ' + erro);
+          });
+      } else {
+        res.send('Paciente não encontrado');
+      }
+    })
+    .catch(function (erro) {
+      res.send('Erro ao buscar paciente: ' + erro);
+    });
+});
 
 app.listen(8082, () => {
   console.log("Servidor iniciado")

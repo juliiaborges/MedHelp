@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Editar Paciente</title>
+</head>
+<body>
+  <h1>Editar Paciente</h1>
+  <form action="/atualizar_paciente/<%= paciente.id %>" method="POST">
+    <div class="form-group">
+      <label for="nome">Nome:</label>
+      <input type="text" id="nome" name="nome" value="<%= paciente.nome_paciente %>" required>
+    </div>
+    <div class="form-group">
+      <label for="cpf">CPF:</label>
+      <input type="text" id="cpf" name="cpf" value="<%= paciente.cpf_paciente %>" required>
+    </div>
+    <div class="form-group">
+      <label for="telefone">Telefone:</label>
+      <input type="text" id="telefone" name="telefone" value="<%= paciente.telefone_paciente %>" required>
+    </div>
+    <div class="form-group">
+      <label for="plano">Possui Plano:</label>
+      <input type="text" id="plano" name="plano" value="<%= paciente.possui_plano %>" required>
+    </div>
+    <div class="form-group">
+      <label for="data_nascimento">Data de Nascimento:</label>
+      <input type="date" id="data_nascimento" name="data_nascimento" value="<%= paciente.data_nascimento_paciente %>" required>
+    </div>
+    <div class="form-group">
+      <label for="alergias">Alergias:</label>
+      <textarea id="alergias" name="alergias"><%= paciente.alergias_paciente %></textarea>
+    </div>
+    <div class="form-group">
+      <label for="cirurgias">Cirurgias Realizadas:</label>
+      <textarea id="cirurgias" name="cirurgias"><%= paciente.cirurgias_paciente %></textarea>
+    </div>
+    <div class="form-group">
+      <label for="observacoes">Observações:</label>
+      <textarea id="observacoes" name="observacoes"><%= paciente.observacoes_paciente %></textarea>
+    </div>
+    <div class="form-group">
+      <br><br>
+      <input type="submit" value="Salvar">
+    </div>
+  </form>
+</body>
+</html>
