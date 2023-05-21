@@ -71,20 +71,6 @@ sequelize.authenticate().then(function () {
   });
 
 // Rota para exibir o formulário de edição do paciente
-// app.get('/editar_paciente/:id', function (req, res) {
-//   const pacienteId = req.params.id;
-//   Paciente.findByPk(pacienteId)
-//     .then(function (paciente) {
-//       if (paciente) {
-//         res.render('editar_paciente', { paciente: paciente });
-//       } else {
-//         res.send('Paciente não encontrado');
-//       }
-//     })
-//     .catch(function (erro) {
-//       res.send('Erro ao buscar paciente: ' + erro);
-//     });
-// });
 
 app.get('/editar_paciente/:cpf_paciente', function(req, res) {
   const cpfPaciente = req.params.cpf_paciente;
