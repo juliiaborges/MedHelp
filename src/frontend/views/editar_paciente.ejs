@@ -8,7 +8,7 @@
 </head>
 <body>
   <h1>Editar Paciente</h1>
-  <form action="/atualizar_paciente/<%= paciente.id %>" method="POST">
+  <form action="/editar_paciente/<%= paciente.cpf_paciente %>" method="POST">
     <div class="form-group">
       <label for="nome">Nome:</label>
       <input type="text" id="nome" name="nome" value="<%= paciente.nome_paciente %>" required>

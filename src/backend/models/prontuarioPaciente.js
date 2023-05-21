@@ -4,14 +4,14 @@ const Paciente = db.sequelize.define(
     "paciente",
     {
     cpf_paciente: {
-        type: db.Sequelize.DOUBLE,
+        type: db.Sequelize.STRING,
         primaryKey: true
     },
     nome_paciente:{
         type: db.Sequelize.STRING,
     },
     data_nascimento_paciente:{
-        type: db.Sequelize.DOUBLE,
+        type: db.Sequelize.STRING,
     },
     
     alergias_paciente:{
@@ -21,7 +21,7 @@ const Paciente = db.sequelize.define(
         type: db.Sequelize.STRING,
     },
     telefone_paciente:{
-        type: db.Sequelize.DOUBLE,
+        type: db.Sequelize.STRING,
     },
     possui_plano:{
         type: db.Sequelize.STRING,
