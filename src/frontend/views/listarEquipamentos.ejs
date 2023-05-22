@@ -15,7 +15,9 @@
       gap: 20px;
       margin-top: 20px;
     }
-
+   input{
+    display: none;
+   }
     .card {
       width: 300px;
       padding: 20px;
@@ -71,15 +73,15 @@
         <p>Quantidade: <%= equipamento.quant_Equipamento %></p>
         <form action="/atualizar_quantidade/<%= equipamento.id_equipamento %>" method="POST">
           <input type="number" name="quantidade" value="1">
-          <button type="submit">+</button>
+          <button type="submit">Devolver Equipamento</button>
         </form>
         <form action="/atualizar_quantidade/<%= equipamento.id_equipamento %>" method="POST">
           <input type="number" name="quantidade" value="-1">
-          <button type="submit">-</button>
-        </form>
-        <form action="/registrar_uso/<%= equipamento.id_equipamento %>" method="POST">
           <button type="submit">Solicitar Equipamento</button>
         </form>
+        <!-- <form action="/registrar_uso/<%= equipamento.id_equipamento %>" method="POST">
+          <button type="submit">Solicitar Equipamento</button>
+        </form> -->
       </div>
     <% }) %>
   </div>

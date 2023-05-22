@@ -80,7 +80,7 @@ app.post('/atualizar_quantidade/:id', function (req, res) {
       const quantidadeAtualizada = parseInt(quantidadeAnterior) + parseInt(novaQuantidade);
 
       equipamento.update({ quant_Equipamento: quantidadeAtualizada }).then(function () {
-        res.redirect('/listar_equipamentos');
+        res.redirect('/listarEquipamentos');
       }).catch(function (erro) {
         res.send('Erro ao atualizar a quantidade do equipamento: ' + erro);
       });
@@ -99,14 +99,14 @@ app.post('/registrar_uso/:id', function (req, res) {
 
   // Lógica para registrar o uso do equipamento de acordo com a resposta (Sim ou Não)
 
-  res.redirect('/listarEquipamentos');
+  // res.redirect('/estoqueCadastrado');
 });
 
 // Rota para redirecionar para a página de listagem após cadastrar um novo equipamento
 app.post('/estoqueCadastrado', function (req, res) {
   // Lógica para cadastrar um novo equipamento
 
-  res.redirect('/listarEquipamentos');
+  // res.redirect('/estoqueCadastrado');
 });
 
 
