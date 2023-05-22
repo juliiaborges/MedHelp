@@ -300,9 +300,8 @@ Usar o seguinte modelo:
 | Quantidade de reclamações | Avaliar quantitativamente as reclamações | Número de reclamações deixados na clínica |   | Caixa de reclamações na clínica | Aprendizado e Crescimento |
 | Número de agendamentos | Avaliar a quantidade de agendamentos | Mede o número de agendamentos em relação à meta mensal | (N° de atendimentos realizados no mês)/(Meta de 80 atendimentos mensais) | Registro de atendimentos da clínica | Evolução em relação à meta |
 | Necessidade de reestoque | Manter controle sobre os materiais que estão sendo utilizados | Um indicador para saber quando fazer o reestoque de algum item |  | Estoque registrado no sistema | Ter controle maior do estoque |
-
-
-Obs.: todas as informações para gerar os indicadores devem estar no diagrama de classe **a ser proposto**
+| Quantidade de cancelamentos nos agendamentos | Avaliar o cancelamento de consultas agendadas | Número de consultas com agendamento marcado que foram cancelados | | Cancelamentos registrados no sistema | Possuir mais dados para avaliar o atendimento |
+| Dias com mais atendimentos | Avaliar os dias mais lotados da clínica | Saber quais os dias mais cheios da clínica para melhorar a gestão |  | Agendamentos de consultas registrados no sistema | Melhor gestão de recursos |
 
 ## 7.Sistema desenvolvido
 
