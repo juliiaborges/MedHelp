@@ -47,7 +47,7 @@ body {
 }
 
 .form-group input[type="submit"] {
-  background-color: #4CAF50;
+  background-color: #49A2EB;
   color: #fff;
   padding: 10px 20px;
   font-size: 16px;
@@ -57,5 +57,5 @@ body {
 }
 
 .form-group input[type="submit"]:hover {
-  background-color: #45a049;
+  background-color: #49A2EB;
 }
