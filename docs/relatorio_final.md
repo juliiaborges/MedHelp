@@ -297,9 +297,10 @@ Usar o seguinte modelo:
 
 | **Indicador** | **Objetivos** | **Descrição** | **Cálculo** | **Fonte dados** | **Perspectiva** |
 | --- | --- | --- | --- | --- | --- |
-| Percentual reclamações | Avaliar quantitativamente as reclamações | Percentual de reclamações em relação ao total atendimento |   | Tabela reclamações | Aprendizado e Crescimento |
-| Taxa de Requisições abertas | Melhorar a prestação de serviços medindo a porcentagem de requisições | Mede % de requisições atendidas na semana | ![\frac{\sum{atendidas}}{\sum{requisicoes}}100](https://latex.codecogs.com/svg.latex?\frac{\sum{atendidas}}{\sum{requisicoes}}100) | Tabela solicitações | Processos internos |
-| Taxa de entrega de material | Manter controle sobre os materiais que estão sendo entregues | Mede % de material entregue dentro do mês |   | Tabela Pedidos | Clientes |
+| Quantidade de reclamações | Avaliar quantitativamente as reclamações | Número de reclamações deixados na clínica |   | Caixa de reclamações na clínica | Aprendizado e Crescimento |
+| Número de agendamentos | Avaliar a quantidade de agendamentos | Mede o número de agendamentos em relação à meta mensal | (N° de atendimentos realizados no mês)/(Meta de 80 atendimentos mensais) | Registro de atendimentos da clínica | Evolução em relação à meta |
+| Necessidade de reestoque | Manter controle sobre os materiais que estão sendo utilizados | Um indicador para saber quando fazer o reestoque de algum item |  | Estoque registrado no sistema | Ter controle maior do estoque |
+
 
 Obs.: todas as informações para gerar os indicadores devem estar no diagrama de classe **a ser proposto**
 
