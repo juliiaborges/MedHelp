@@ -144,11 +144,10 @@ Porém, caso todos os equipamentos estejam disponíveis, o funcionário irá ret
 
 ![Modelo BPMN do PROCESSO 4](/assets/processos/Controle_de_estoque.jpg "Modelo BPMN do Processo 4.")
 
-### 3.3.5 Processo 5 – PAGAMENTO DE CONSULTAS
+### 3.3.5 Processo 5 – CADASTRO DE PAGAMENTO 
 
-Após a conclusão da consulta, o paciente se dirige à recepção para efetuar o pagamento à clínica. Um funcionário da clínica, então, confirma se o paciente possui plano de saúde e se o plano tem cobertura para a clínica em questão. Caso ele possua um plano de saúde com cobertura para a clínica, o atendente verifica o pagamento pelo plano de saúde, registra no sistema e emite o recibo para o cliente. Se o cliente não tiver plano de saúde ou se o plano de saúde não oferecer cobertura para a clínica, o atendente informa o valor da consulta ao paciente, que escolhe o método de pagamento e realiza o pagamento. Em seguida, o atendente registra o pagamento no sistema e emite o recibo da consulta para o cliente.
-
-![Exemplo de um Modelo BPMN do PROCESSO 5](/assets/processos/Pagamento.png "Modelo BPMN do Processo 5.")
+Após a conclusão da consulta, o paciente se dirige à recepção para efetuar o pagamento à clínica. Um funcionário da clínica, então, confirma se o paciente possui plano de saúde e se o plano tem cobertura para a clínica em questão. Após o pagamento ser realizado o funcionário da clínica abre a página de cadastro de pagamento e registra o pagamento no sistema.  
+![Exemplo de um Modelo BPMN do PROCESSO 5](/assets/processos/cadastroDePagamento.png "Modelo BPMN do Processo 5.")
 
 ## 4. Projeto da Solução
 
@@ -251,19 +250,16 @@ Descrever aqui cada uma das propriedades das atividades de cada um dos processos
 |    |    |     |
 
 
-#### Processo 5 – CADASTRAMENTO DE CONSULTA
+#### Processo 5 – CADASTRO DE PAGAMENTO
 
 **Registrar pagamento no sistema**
 
 | **Campo** | **Tipo** | **Restrições** | **Valor default** |
 | --- | --- | --- | --- |
-| Nome Paciente | Caixa de texto | Apenas letras | - |
-| Nome Sobrenome | Caixa de texto | Apenas letras | - |
-| Nome Médico | Caixa de texto | Apenas letras | - |
-| Tipo de consulta | Caixa de texto | Apenas letras | - |
-| Valor da consulta | Caixa de texto | Apenas números | - |
-| Data do pagamento | Tipo Data | Obrigatório selecionar | - |
-| Pagamento via Plano de Saúde | Radio Button | [SIM] ou [NÃO] | - |
+| Data do Pagamento | Calendário virtual | DD/MM/AA | - |
+| Tipo de pagamento | Radio Button | [PIX] ou [Cartão de Crédito] ou [Boleto] | - |
+| Valor do Pagamento | Caixa de texto | Apenas valores numéricos com os decimais separados por "." | - |
+| Pagamento com Plano de Saúde | Radio Button | [SIM] ou [NÃO] | - |
 |    |    |     |
 
 **Gerar Recibo**
@@ -300,7 +296,7 @@ Usar o seguinte modelo:
 | Quantidade de reclamações | Avaliar quantitativamente as reclamações | Número de reclamações deixados na clínica |   | Caixa de reclamações na clínica | Aprendizado e Crescimento |
 | Número de agendamentos | Avaliar a quantidade de agendamentos | Mede o número de agendamentos em relação à meta mensal | (N° de atendimentos realizados no mês)/(Meta de 80 atendimentos mensais) | Registro de atendimentos da clínica | Evolução em relação à meta |
 | Necessidade de reestoque | Manter controle sobre os materiais que estão sendo utilizados | Um indicador para saber quando fazer o reestoque de algum item |  | Estoque registrado no sistema | Ter controle maior do estoque |
-| Quantidade de cancelamentos nos agendamentos | Avaliar o cancelamento de consultas agendadas | Número de consultas com agendamento marcado que foram cancelados | | Cancelamentos registrados no sistema | Possuir mais dados para avaliar o atendimento |
+| Clientes que possuem plano de saúde | Avaliar a quantidade de clientes que obtem o plano de saúde médico | Número de pacientes que usam o plano de saúde para o pagamenrto | | O processo de cadastrar pagamento | Fazer uma análise e relatórios com mais eficiência no plano de saúde |
 | Dias com mais atendimentos | Avaliar os dias mais lotados da clínica | Saber quais os dias mais cheios da clínica para melhorar a gestão |  | Agendamentos de consultas registrados no sistema | Melhor gestão de recursos |
 
 ## 7.Sistema desenvolvido
