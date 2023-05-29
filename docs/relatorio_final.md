@@ -144,11 +144,10 @@ Porém, caso todos os equipamentos estejam disponíveis, o funcionário irá ret
 
 ![Modelo BPMN do PROCESSO 4](/assets/processos/Controle_de_estoque.jpg "Modelo BPMN do Processo 4.")
 
-### 3.3.5 Processo 5 – PAGAMENTO DE CONSULTAS
+### 3.3.5 Processo 5 – CADASTRO DE PAGAMENTO 
 
-Após a conclusão da consulta, o paciente se dirige à recepção para efetuar o pagamento à clínica. Um funcionário da clínica, então, confirma se o paciente possui plano de saúde e se o plano tem cobertura para a clínica em questão. Caso ele possua um plano de saúde com cobertura para a clínica, o atendente verifica o pagamento pelo plano de saúde, registra no sistema e emite o recibo para o cliente. Se o cliente não tiver plano de saúde ou se o plano de saúde não oferecer cobertura para a clínica, o atendente informa o valor da consulta ao paciente, que escolhe o método de pagamento e realiza o pagamento. Em seguida, o atendente registra o pagamento no sistema e emite o recibo da consulta para o cliente.
-
-![Exemplo de um Modelo BPMN do PROCESSO 5](/assets/processos/Pagamento.png "Modelo BPMN do Processo 5.")
+Após a conclusão da consulta, o paciente se dirige à recepção para efetuar o pagamento à clínica. Um funcionário da clínica, então, confirma se o paciente possui plano de saúde e se o plano tem cobertura para a clínica em questão. Após o pagamento ser realizado o funcionário da clínica abre a página de cadastro de pagamento e registra o pagamento no sistema.  
+![Exemplo de um Modelo BPMN do PROCESSO 5](/assets/processos/cadastroDePagamento.png "Modelo BPMN do Processo 5.")
 
 ## 4. Projeto da Solução
 
@@ -251,19 +250,16 @@ Descrever aqui cada uma das propriedades das atividades de cada um dos processos
 |    |    |     |
 
 
-#### Processo 5 – CADASTRAMENTO DE CONSULTA
+#### Processo 5 – CADASTRO DE PAGAMENTO
 
 **Registrar pagamento no sistema**
 
 | **Campo** | **Tipo** | **Restrições** | **Valor default** |
 | --- | --- | --- | --- |
-| Nome Paciente | Caixa de texto | Apenas letras | - |
-| Nome Sobrenome | Caixa de texto | Apenas letras | - |
-| Nome Médico | Caixa de texto | Apenas letras | - |
-| Tipo de consulta | Caixa de texto | Apenas letras | - |
-| Valor da consulta | Caixa de texto | Apenas números | - |
-| Data do pagamento | Tipo Data | Obrigatório selecionar | - |
-| Pagamento via Plano de Saúde | Radio Button | [SIM] ou [NÃO] | - |
+| Data do Pagamento | Calendário virtual | DD/MM/AA | - |
+| Tipo de pagamento | Radio Button | [PIX] ou [Cartão de Crédito] ou [Boleto] | - |
+| Valor do Pagamento | Caixa de texto | Apenas valores numéricos com os decimais separados por "." | - |
+| Pagamento com Plano de Saúde | Radio Button | [SIM] ou [NÃO] | - |
 |    |    |     |
 
 **Gerar Recibo**
