@@ -76,13 +76,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`consulta` (
   `paciente_cpf_paciente` VARCHAR(11) NOT NULL,
   PRIMARY KEY (`id_consulta`),
   INDEX `fk_consulta_medicos1_idx` (`medicos_id_medicos` ASC) VISIBLE,
-  INDEX `fk_consulta_paciente1_idx` (`paciente_cpf_paciente` ASC) VISIBLE,
-  CONSTRAINT `fk_consulta_medicos1`
-    FOREIGN KEY (`medicos_id_medicos`)
-    REFERENCES `mydb`.`medicos` (`id_medicos`),
-  CONSTRAINT `fk_consulta_paciente1`
-    FOREIGN KEY (`paciente_cpf_paciente`)
-    REFERENCES `mydb`.`pacientes` (`cpf_paciente`))
+  INDEX `fk_consulta_paciente1_idx` (`paciente_cpf_paciente` ASC) VISIBLE)
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb3;
 
@@ -112,10 +106,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`funcionario` (
   `email_funcionario` CHAR(45) NULL DEFAULT NULL,
   `agendamento_id_agendamento` INT NULL DEFAULT NULL,
   PRIMARY KEY (`id_funcionario`),
-  INDEX `agendamento_id_agendamento` (`agendamento_id_agendamento` ASC) VISIBLE,
-  CONSTRAINT `agendamento_id_agendamento`
-    FOREIGN KEY (`agendamento_id_agendamento`)
-    REFERENCES `mydb`.`agendamento` (`id_agendamento`))
+  INDEX `agendamento_id_agendamento` (`agendamento_id_agendamento` ASC) VISIBLE)
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb3;
 
@@ -128,13 +119,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`funcionario_estoque` (
   `funcionario_id_funcionario` INT NOT NULL,
   `estoque_id_equipamento` INT NOT NULL,
   INDEX `fk_funcionario_estoque_funcionario1_idx` (`funcionario_id_funcionario` ASC) VISIBLE,
-  INDEX `fk_funcionario_estoque_estoque1_idx` (`estoque_id_equipamento` ASC) VISIBLE,
-  CONSTRAINT `fk_funcionario_estoque_estoque1`
-    FOREIGN KEY (`estoque_id_equipamento`)
-    REFERENCES `mydb`.`estoques` (`id_equipamento`),
-  CONSTRAINT `fk_funcionario_estoque_funcionario1`
-    FOREIGN KEY (`funcionario_id_funcionario`)
-    REFERENCES `mydb`.`funcionario` (`id_funcionario`))
+  INDEX `fk_funcionario_estoque_estoque1_idx` (`estoque_id_equipamento` ASC) VISIBLE)
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb3;
 
@@ -166,13 +151,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`prontuario` (
   `email_paciente` VARCHAR(45) NULL DEFAULT NULL,
   PRIMARY KEY (`id_prontuario`),
   INDEX `fk_prontuario_medicos1_idx` (`medicos_id_medicos` ASC) VISIBLE,
-  INDEX `fk_prontuario_paciente1_idx` (`paciente_cpf_paciente` ASC) VISIBLE,
-  CONSTRAINT `fk_prontuario_medicos1`
-    FOREIGN KEY (`medicos_id_medicos`)
-    REFERENCES `mydb`.`medicos` (`id_medicos`),
-  CONSTRAINT `fk_prontuario_paciente1`
-    FOREIGN KEY (`paciente_cpf_paciente`)
-    REFERENCES `mydb`.`pacientes` (`cpf_paciente`))
+  INDEX `fk_prontuario_paciente1_idx` (`paciente_cpf_paciente` ASC) VISIBLE)
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb3;
 
@@ -184,15 +163,24 @@ CREATE TABLE IF NOT EXISTS `mydb`.`prontuario_medicamento` (
   `prontuario_id_prontuario` INT NOT NULL,
   `medicamentos_idMedicamento` INT NOT NULL,
   PRIMARY KEY (`prontuario_id_prontuario`, `medicamentos_idMedicamento`),
-  INDEX `fk_prontuario_medicamento_medicamentos1_idx` (`medicamentos_idMedicamento` ASC) VISIBLE,
-  CONSTRAINT `fk_prontuario_medicamento_medicamentos1`
-    FOREIGN KEY (`medicamentos_idMedicamento`)
-    REFERENCES `mydb`.`medicamentos` (`idMedicamento`),
-  CONSTRAINT `fk_prontuario_medicamento_prontuario1`
-    FOREIGN KEY (`prontuario_id_prontuario`)
-    REFERENCES `mydb`.`prontuario` (`id_prontuario`))
+  INDEX `fk_prontuario_medicamento_medicamentos1_idx` (`medicamentos_idMedicamento` ASC) VISIBLE)
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb3;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`pagamentos`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `mydb`.`pagamentos` (
+  `id_pagamentos` INT NOT NULL AUTO_INCREMENT,
+  `data_pagamento` DATE NULL,
+  `tipo_pagamento` VARCHAR(255) NULL,
+  `valor_pagamento` DOUBLE NULL,
+  `possui_plano` VARCHAR(255) NULL,
+  `pacientes_cpf_paciente` VARCHAR(11) NOT NULL,
+  PRIMARY KEY (`id_pagamentos`),
+  INDEX `fk_pagamentos_pacientes1_idx` (`pacientes_cpf_paciente` ASC) VISIBLE)
+ENGINE = InnoDB;
 
 
 SET SQL_MODE=@OLD_SQL_MODE;
