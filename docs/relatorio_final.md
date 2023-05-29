@@ -251,7 +251,7 @@ Descrever aqui cada uma das propriedades das atividades de cada um dos processos
 |    |    |     |
 
 
-#### Processo 5 – PAGAMENTO DE CONSULTAS
+#### Processo 5 – CADASTRAMENTO DE CONSULTA
 
 **Registrar pagamento no sistema**
 
