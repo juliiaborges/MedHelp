@@ -300,7 +300,7 @@ Usar o seguinte modelo:
 | Quantidade de reclamações | Avaliar quantitativamente as reclamações | Número de reclamações deixados na clínica |   | Caixa de reclamações na clínica | Aprendizado e Crescimento |
 | Número de agendamentos | Avaliar a quantidade de agendamentos | Mede o número de agendamentos em relação à meta mensal | (N° de atendimentos realizados no mês)/(Meta de 80 atendimentos mensais) | Registro de atendimentos da clínica | Evolução em relação à meta |
 | Necessidade de reestoque | Manter controle sobre os materiais que estão sendo utilizados | Um indicador para saber quando fazer o reestoque de algum item |  | Estoque registrado no sistema | Ter controle maior do estoque |
-| Clientes que possuem plano de saúde | Avaliar a quantidade de clientes que obtem o plano de saúde médico | Número de pacientes que usam o plano de saúde para o pagamenrto | | O processo de cadastrar pagamento | Possuir mais dados para ver o  |
+| Clientes que possuem plano de saúde | Avaliar a quantidade de clientes que obtem o plano de saúde médico | Número de pacientes que usam o plano de saúde para o pagamenrto | | O processo de cadastrar pagamento | Fazer uma análise e relatórios com mais eficiência no plano de saúde |
 | Dias com mais atendimentos | Avaliar os dias mais lotados da clínica | Saber quais os dias mais cheios da clínica para melhorar a gestão |  | Agendamentos de consultas registrados no sistema | Melhor gestão de recursos |
 
 ## 7.Sistema desenvolvido
