@@ -20,7 +20,7 @@ app.get('/cad-pagamento', function (req, res) {
 });
 app.post('/add-pagamento', function(req, res){
     pagamento.create({
-        id_agendamento: req.body.id_consulta,
+        id_consulta: req.body.id_consulta,
         data_pagamento: req.body.data_pagamento,
         tipo_pagamento: req.body.tipo_pagamento,
         valor_pagamento: req.body.valor_pagamento,
