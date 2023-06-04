@@ -18,7 +18,7 @@ const Pagamentos = db.sequelize.define('pagamentos', {
     possui_plano: {
         type: db.Sequelize.STRING
     },
-    id_agendamento: {
+    id_consulta: {
         type: db.Sequelize.INTEGER,
         allowNull: true, // permitir valores nulos
         defaultValue: null // definir o valor padrão como null
