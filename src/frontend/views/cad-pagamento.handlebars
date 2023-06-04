@@ -1,11 +1,8 @@
-<h1>Formulário para cadastrar pagamento</h1>
+
+
 <form action="/add-pagamento" method="POST">
-
-<label>Id da consulta correspondente:</label>
-<input type="text" name="id_agendamento"><br><br>
-
-<label>Data do pagamento:</label>
-<input type="date" name="data_pagamento"><br><br>
+<label>Data do pagamento</label>
+<input type="date" name="data_consulta"><br><br>
 
 <label>Tipo do pagamento:</label>
 <INPUT TYPE="radio" NAME="tipo_pagamento" VALUE="Pix" > Pix
@@ -21,5 +18,72 @@
 
 <button type="submit">Cadastrar pagamento</button>
 
+</form> 
 
-</form>
+<style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      margin: 0;
+      padding: 0;
+    }
+  
+    h1 {
+      color: #333;
+      text-align: center;
+      margin-top: 20px;
+    }
+  
+    form {
+      max-width: 600px;
+      margin: 20px auto;
+      background-color: #fff;
+      padding: 20px;
+      padding-right: 40px;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      width: 600px;
+    }
+  
+    .form-group {
+      margin-bottom: 20px;
+      margin: 20px;      
+    }
+  
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+  
+    input[type="text"],
+    input[type="date"]
+    {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    input[type= "radio"]
+    {
+        display:inline;
+        margin: 10px;
+        margin-left: 20px;
+    }
+  
+    button[type="submit"] {
+      background-color: #49A2EB;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  
+    button[type="submit"]:hover {
+      background-color: #49A2EB;
+    }
+</style>
