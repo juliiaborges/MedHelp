@@ -7,7 +7,7 @@ const Pagamentos = db.sequelize.define('pagamentos', {
       primaryKey: true
     },
     data_pagamento:{
-        type: db.Sequelize.DATEONLY
+        type: db.Sequelize.DATE
     },
     tipo_pagamento: {
         type: db.Sequelize.STRING
