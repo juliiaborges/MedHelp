@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Paciente</title>
+    <link rel="stylesheet" href="../styles/login_paciente.css" />
+    <script
+      src="https://kit.fontawesome.com/7b39153ed3.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <div class="container" id="container">
+      <!-- sign Up form section start-->
+      <div class="form sign_up">
+        <form action="#">
+          <h1>Crie sua Conta</h1>
+          <span>Use seu melhor email para o registro</span>
+          <!-- input fields start -->
+          <input type="email" placeholder="Email" />
+          <input type="password" placeholder="Senha" />
+          <button>Criar Conta</button>
+          <!-- input fields end -->
+        </form>
+      </div>
+      <!-- sign Up form section end-->
+
+      <!-- sign in form section start-->
+      <div class="form sign_in">
+        <form action="#">
+          <!-- heading -->
+          <h1>Login </h1>
+          <!-- social media icons -->
+          <br>
+          <span>Faça Login com Sua Conta</span>
+          <!-- input fields start -->
+          <input type="email" placeholder="Email" />
+          <input type="password" placeholder="Senha" />
+          <span>Esqueceu sua <span class="forgot">senha?</span></span>
+          <button>Entrar</button>
+          <!-- input fields end -->
+        </form>
+      </div>
+      <!-- sign in form section end-->
+
+      <!-- overlay section start-->
+      <div class="overlay-container">
+        <div class="overlay">
+          <div class="overlay-pannel overlay-left">
+            <h1>Já tem uma conta?</h1>
+            <p>Faça o Login</p>
+            <button id="signIn" class="overBtn">Entrar</button>
+          </div>
+          <div class="overlay-pannel overlay-right">
+            <h1>Criar Conta</h1>
+            <p>MedHelp: Cuidando de você, priorizando sua saúde.</p>
+            <button id="signUp" class="overBtn">Cadastre-se</button>
+          </div>
+        </div>
+      </div>
+      <!-- overlay section start-->
+    </div>
+    <script src="../scripts/login_paciente.js"></script>
+  </body>
+</html>
