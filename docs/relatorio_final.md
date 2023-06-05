@@ -256,18 +256,13 @@ Descrever aqui cada uma das propriedades das atividades de cada um dos processos
 
 | **Campo** | **Tipo** | **Restrições** | **Valor default** |
 | --- | --- | --- | --- |
+| Id da consulta correspondente | Caixa de texto | Apenas números inteiros | - |
 | Data do Pagamento | Calendário virtual | DD/MM/AA | - |
 | Tipo de pagamento | Radio Button | [PIX] ou [Cartão de Crédito] ou [Boleto] | - |
 | Valor do Pagamento | Caixa de texto | Apenas valores numéricos com os decimais separados por "." | - |
 | Pagamento com Plano de Saúde | Radio Button | [SIM] ou [NÃO] | - |
 |    |    |     |
 
-**Gerar Recibo**
-
-| **Campo** | **Tipo** | **Restrições** | **Valor default** |
-| --- | --- | --- | --- |
-| Número Recibo | Caixa de texto | Apenas números | - |
-|    |    |     |
 
 ### 4.2. Tecnologias
 
