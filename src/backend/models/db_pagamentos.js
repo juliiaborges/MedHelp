@@ -20,8 +20,7 @@ const Pagamentos = db.sequelize.define('pagamentos', {
     },
     id_consulta: {
         type: db.Sequelize.INTEGER,
-        allowNull: true, // permitir valores nulos
-        defaultValue: null // definir o valor padrão como null
+        allowNull: false, // n permitir valores nulos
     },
 }, { 
     timestamps: false
