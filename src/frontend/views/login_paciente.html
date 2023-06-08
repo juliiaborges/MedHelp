@@ -16,12 +16,12 @@
     <div class="container" id="container">
       <!-- sign Up form section start-->
       <div class="form sign_up">
-        <form action="#">
+        <form action="/pacienteCadastrado" method="POST">
           <h1>Crie sua Conta</h1>
           <span>Use seu melhor email para o registro</span>
           <!-- input fields start -->
-          <input type="email" placeholder="Email" />
-          <input type="password" placeholder="Senha" />
+          <input type="email" name="email_paciente" id = "email_paciente" placeholder="Email" required/>
+          <input type="password" name = "senha_paciente" id=" senha_paciente" placeholder="Senha" required/>
           <button>Criar Conta</button>
           <!-- input fields end -->
         </form>
@@ -30,17 +30,17 @@
 
       <!-- sign in form section start-->
       <div class="form sign_in">
-        <form action="#">
+        <form action="/verificarLogin" method="POST">
           <!-- heading -->
           <h1>Login </h1>
           <!-- social media icons -->
           <br>
           <span>Faça Login com Sua Conta</span>
           <!-- input fields start -->
-          <input type="email" placeholder="Email" />
-          <input type="password" placeholder="Senha" />
+          <input type="email" id ="loginEmail" placeholder="Email" />
+          <input type="password" id= "loginSenha"placeholder="Senha" />
           <span>Esqueceu sua <span class="forgot">senha?</span></span>
-          <button>Entrar</button>
+          <button onclick="verificarLogin()">Entrar</button>
           <!-- input fields end -->
         </form>
       </div>
