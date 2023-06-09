@@ -14,7 +14,7 @@ app.use(bodyParser.json())
 app.use(express.static(path.join(__dirname + '/frontend')));
 
 // ROTAS ESTOQUE
-const estoque = require('../src/backend/models/Estoque');
+const estoque = require('./backend/models/Estoque');
 
 app.get('/atualizarEstoque', function (req, res) {
   res.sendFile(path.join(__dirname + '/frontend/views/atualizarEstoque.html'));

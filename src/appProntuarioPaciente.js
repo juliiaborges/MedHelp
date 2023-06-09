@@ -14,18 +14,18 @@ app.use(bodyParser.json())
 app.use(express.static(path.join(__dirname + '/frontend')));
 
 // ROTAS PRONTUARIO
-const prontuarioPaciente = require('../src/backend/models/prontuarioPaciente');
-const prontuario = require('../src/backend/models/prontuarioPaciente');
+const prontuarioPaciente = require('./backend/models/prontuarioPaciente');
+const prontuario = require('./backend/models/prontuarioPaciente');
 
-app.get('/prontuario_paciente', function (req, res) {
-  res.sendFile(path.join(__dirname + '/frontend/views/prontuario_paciente.html'));
+app.get('/prontuarioPaciente', function (req, res) {
+  res.sendFile(path.join(__dirname + '/frontend/views/prontuarioPaciente.html'));
 });
 
 
 //Receber dados do formulário
 
-app.post('/prontuarioPaciente_cadastrado', function (req, res) {
-  const filePath = path.join(__dirname, '../src/frontend/views/prontuarioPaciente_cadastrado.html');
+app.post('/prontuarioPacienteCadastrado', function (req, res) {
+  const filePath = path.join(__dirname, '../src/frontend/views/prontuarioPacienteCadastrado.html');
   fs.readFile(filePath, function (err, content) {
 
     prontuarioPaciente.create({
@@ -58,11 +58,11 @@ sequelize.authenticate().then(function () {
 
   // Rota para exibir a lista de pacientes
 
-  app.get('/lista_pacientes', function (req, res) {
+  app.get('/listarPacientes', function (req, res) {
     prontuarioPaciente
       .findAll()
       .then(function (prontuario) {
-        res.render('lista_pacientes', { prontuario: prontuario });
+        res.render('listarPacientes', { prontuario: prontuario });
       })
       .catch(function (erro) {
         res.send("Erro ao buscar pacientes!" + erro);
@@ -71,12 +71,12 @@ sequelize.authenticate().then(function () {
 
 // Rota para exibir o formulário de edição do paciente
 
-app.get('/editar_paciente/:id_prontuario', function(req, res) {
+app.get('/editarPacientes/:id_prontuario', function(req, res) {
   const idProntuario = req.params.id_prontuario;
   prontuario.findByPk(idProntuario)
     .then(function (prontuario) {
       if (prontuario) {
-        res.render('editar_paciente', { prontuario: prontuario });
+        res.render('editarPacientes', { prontuario: prontuario });
       } else {
         res.send('Paciente não encontrado');
       }
@@ -86,7 +86,7 @@ app.get('/editar_paciente/:id_prontuario', function(req, res) {
     });
 });
 
-app.post('/editar_paciente/:id_prontuario', function(req, res) {
+app.post('/editarPacientes/:id_prontuario', function(req, res) {
   const idProntuario = req.params.id_prontuario;
   const { nome, cpf, telefone, plano, data_nascimento, alergias, cirurgias, observacoes } = req.body;
   
@@ -107,7 +107,7 @@ app.post('/editar_paciente/:id_prontuario', function(req, res) {
       }
     })
     .then(function(prontuario) {
-      res.redirect('/lista_pacientes'); // Redireciona para a página de listagem de pacientes após a atualização
+      res.redirect('/listarPacientes'); // Redireciona para a página de listagem de pacientes após a atualização
     })
     .catch(function(erro) {
       res.send('Erro ao atualizar paciente: ' + erro);

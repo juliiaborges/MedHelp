@@ -15,10 +15,10 @@ app.use(bodyParser.json())
 app.use(express.static(path.join(__dirname + '/frontend')));
 
 // ROTAS ESTOQUE
-const paciente = require('../src/backend/models/Paciente');
+const paciente = require('./backend/models/Paciente');
 
-app.get('/login_paciente', function (req, res) {
-  res.sendFile(path.join(__dirname + '/frontend/views/login_paciente.html'));
+app.get('/loginPaciente', function (req, res) {
+  res.sendFile(path.join(__dirname + '/frontend/views/loginPaciente.html'));
 });
 
 
