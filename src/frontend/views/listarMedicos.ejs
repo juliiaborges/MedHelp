@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://rsms.me/">
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+
+  <title>Lista de Médicos</title>
+</head>
+
+<body>
+  <!--Início Nav-Bar-->
+  <section class="part1"></section>
+
+  <div class="nav-bar">
+    <div class="logo">
+      <img id="logo" src="..//images/logo.svg">
+    </div>
+    <div class="itens">
+      <a href="#inicio">Início</a>
+      <a href="#sobre-nos">Sobre Nós</a>
+      <a href="servicos">Serviços</a>
+      <div class="form-search">
+        <input type="text" class="form-control" placeholder="Nome do Médico: " aria-label="Pesquisar Médico"
+          aria-describedby="button-search">
+        <button class="button-search" type="button" id="button-search">Pesquisar</button>
+      </div>
+      <div class="mobile-menu-icon">
+        <button onclick="menushow()"><img class="icon" src="../frontend/images/icon.png" alt=""></button>
+      </div>
+    </div>
+  </div>
+
+  </section>
+  <!--Fim Nav-Bar-->
+
+  <div class="container">
+    <h1>Lista de Médicos</h1>
+    <% Medicos.forEach(function(Medicos) { %>
+      
+    <div class="card">
+      <h2>
+        <%= Medicos.nome_medico %>
+      </h2>
+      <br>
+      <p><strong>Telefone:</strong>
+        <%= Medicos.telefone_medico %>
+      </p>
+      <p>
+        <strong>Especialidade:</strong>
+        <%= Medicos.especialidade_medico %>
+      </p>
+      <p><strong>Situação:</strong>
+        <%= Medicos.situacao_medico %>
+      </p>
+      <br />
+      <a href="/horarioMedicos/<%= Medicos.id_medicos %>">Escolher</a>
+    </div>
+    <% }); %>
+  </div>
+
+</body>
+
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #f5f5f5;
+  }
+
+  .container {
+    max-width: 600px;
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .card {
+    width: 100%;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    margin-top: 20px;
+    border: 1px solid #49A2EB;
+    display: flex;
+      flex-direction: column;
+   align-items: center;
+   justify-content: center
+  }
+
+  h1 {
+    text-align: center;
+  }
+
+  a {
+    color: blue;
+    text-decoration: none;
+  }
+
+  :root {
+    font-family: 'Inter', sans-serif;
+  }
+
+  :root {
+    font-family: 'Inter var', sans-serif;
+  }
+
+  * {
+    font-family: 'Inter';
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  .nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #EBEFF3;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    height: 80px;
+    border-bottom: 1px solid #49A2EB;
+  }
+
+  .itens {
+    display: flex;
+    gap: 6px;
+    margin-right: 20px;
+  }
+
+  .logo {
+    margin-left: 20px;
+  }
+
+  .nav-bar a {
+    text-decoration: none;
+    color: #333;
+    margin: 0 10px;
+    font-weight: bold;
+  }
+
+  .nav-bar a:hover {
+    border-bottom: 2px solid #49A2EB;
+    transition: border-bottom 0.2s ease-in-out;
+  }
+
+  .form-control {
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    padding: 8px 16px;
+    font-size: 16px;
+    outline: none;
+  }
+
+  .button-search {
+    background: linear-gradient(90deg, #49A2EB 4.88%, #50DED2 100%);
+    border: none;
+    border-radius: 20px;
+    padding: 8px 16px;
+    font-size: 16px;
+    color: #fff;
+    cursor: pointer;
+  }
+
+  @media screen and (max-width:730px) {
+    .nav-bar {
+      padding: 1.5rem 4rem;
+    }
+    .nav-bar img {
+      margin-left: 0;
+    }
+    .logo {
+      margin-left: 0;
+    }
+
+    .itens {
+      display: none;
+    }
+
+    .mobile-menu-icon {
+      display: block;
+    }
+
+    .botoes {
+      display: none;
+    }
+
+    .mobile-menu-icon {
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 30px;
+      margin-top: -6.9em;
+      margin-left: 18em;
+      border: none;
+      background-color: transparent;
+    }
+
+    .mobile-menu .itens {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      padding-bottom: 1rem;
+    }
+
+    .open {
+      display: block;
+    }
+  }
+</style>
+</html>
