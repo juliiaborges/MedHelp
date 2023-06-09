@@ -115,8 +115,6 @@ app.post('/editarPacientes/:id_prontuario', function(req, res) {
 });
 
 
-
-
 // Rota para atualizar o paciente com as observações do médico
 app.post('/atualizar_paciente/:id_prontuario', function (req, res) {
   const prontuarioId = req.params.id_prontuario;

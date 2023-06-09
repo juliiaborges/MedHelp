@@ -39,13 +39,22 @@
 
   <div class="container">
     <h1>Horários disponíveis</h1>
-      <% Medicos.forEach(function(medicos) { %>
+    <form action="/horarioMedicos/<%= Medicos.id_medicos %>" method="GET">
+
         <div class="card">
           <br>
-          <p><strong>Horário de Início:</strong> <%= Medicos.horario_disponivel_inicio %></p>
-          <p><strong>Horário de Fim:</strong> <%= Medicos.horario_disponivel_fim %></p>
+          <h2>
+            <%= Medicos.nome_medico %>
+          </h2>
+          <br>
+          <p><strong>Horário de Início:</strong> 
+            <%= Medicos.horario_disponivel_inicio %>
+          </p>
+          <p><strong>Horário de Fim:</strong> 
+            <%= Medicos.horario_disponivel_fim %>
+          </p>
         </div>
-      <% }); %>
+    </form>
   </div>
   
 </body>

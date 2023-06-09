@@ -8,7 +8,7 @@ const Sequelize = require("sequelize");
 const { sequelize } = require("./backend/models/db");
 
 const Medicos = require("./backend/models/Medicos");
-
+const horarioDisponivelMedico = require("./backend/models/Medicos");
 
 const bodyParser = require("body-parser");
 
@@ -108,17 +108,16 @@ app.get("/listarMedicos", function (req, res) {
     });
 });
 
-//Rota para exibir horários disponíveis dos médicos
-const medicos = require("./backend/models/Medicos");
 // Rota para exibir horários disponíveis dos médicos
+
 app.get("/horarioMedicos/:id_medicos", function (req, res) {
   const idMedicos = req.params.id_medicos;
   Medicos.findByPk(idMedicos)
-    .then(function (medicos) {
-      if (medicos) {
-        res.render("horarioMedicos", { medicos: Medicos });
+    .then(function (Medicos) {
+      if (Medicos) {
+        res.render("horarioMedicos", { Medicos: Medicos });
       } else {
-        res.send("Médico não encontrado!");
+        res.send("Horário não disponível!");
       }
     })
     .catch(function (erro) {
