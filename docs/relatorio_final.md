@@ -162,21 +162,16 @@ Descrever aqui cada uma das propriedades das atividades de cada um dos processos
 | **Campo** | **Tipo** | **Restrições** | **Valor default** |
 | --- | --- | --- | --- |
 | Nome Completo do médico | Caixa de Texto | Apenas letras e tamanho máximo de 50 caracteres | - |
-| Especialidade | Caixa de Texto |  | - |
 | UF | Caixa de Texto | Apenas letras maiusculas e máximo de 2 caracteres | - |
 | CRM | Caixa de Texto | 6 caracteres | - |
 | Especialidade | Caixa de Texto | Apenas letras e tamanho máximo de 50 caracteres | - |
 | Situação | Caixa de Texto | Múltipla escolha | - |
 | Telefone | Caixa de Texto | Mínimo de 7 e máximo de 10 caracteres | -  |
 | E-mail | Caixa de Texto | Formato de e-mail | - | 
-
-
-**Cadastrar horários disponíveis do médico**
-
-| **Campo** | **Tipo** | **Restrições** | **Valor default** |
-| --- | --- | --- | --- |
-| Dias da semana disponível | Múltipla escolha | Valor não nulo | - |
-| Horas do dia disponível  |  Múltipla escolha  | Valor não nulo | - |
+| Horário disponível (início)  |  Múltipla escolha  | Valor não nulo | - |
+| Horário disponível (fim)  |  Múltipla escolha  | Valor não nulo | - |
+| Dias da semana disponível | Caixa de Texto | Valor não nulo | - |
+|    |    |     |
 
 #### Processo 2 – AGENDAMENTO DE CONSULTAS
 
@@ -185,70 +180,63 @@ Descrever aqui cada uma das propriedades das atividades de cada um dos processos
 | **Campo** | **Tipo** | **Restrições** | **Valor default** |
 | --- | --- | --- | --- |
 | Nome do médico e especialidade | Tabela | - | Nada selecionado |
+|    |    |     |
 
 **Selecionar horário**
 
 | **Campo** | **Tipo** | **Restrições** | **Valor default** |
 | --- | --- | --- | --- |
 | Horário e data | Tabela | - | Nada selecionado |
+|    |    |     |
 
 **Agendar horário**
 
 | **Campo** | **Tipo** | **Restrições** | **Valor default** |
 | --- | --- | --- | --- |
 | Cartão com informações do horário selecionado | Seleção única | - | Nada selecionado |
+|    |    |     |
 
 ### Processo 3 - Prontuário Médico 
 
-**Acessar prontuário do paciente**
+**Prontuário do paciente**
 
-| **Campo** | **Tipo** | **Restrições** | **Valor default** |
-| --- | --- | --- | --- |
-| Nome Completo do paciente | Caixa de Texto | Apenas letras e tamanho máximo de 15 caracteres | - |
-| CPF | Caixa de Texto | Deve ter 11 caracteres validados pelo cálculo de CPF | - | 
-| Telefone | Caixa de Texto | Mínimo de 7 e máximo de 10 caracteres | -  |
-| Alergias | Caixa de Texto | - | - |
-| E-mail | Caixa de Texto | Formato de e-mail | - | 
-| Quantidade de Cirurgias | Caixa de Texto |  | - |
-|    |    |     |
-
-**Atualizar Prontuário**
 | **Campo** | **Tipo** | **Restrições** | **Valor default** |
 | --- | --- | --- | --- |
 | Nome do paciente | Caixa de Texto | Apenas letras e tamanho máximo de 15 caracteres | - |
-| Sobrenome do Paciente | Caixa de Texto | Apenas letras e tamanho máximo de 30 caracteres | - |
-| CPF | Caixa de Texto | Deve ter 11 caracteres validados pelo cálculo de CPF | - | 
+| CPF do paciente | Caixa de Texto | Deve ter 11 caracteres | - | 
 | Telefone | Caixa de Texto | Mínimo de 7 e máximo de 10 caracteres | -  |
-| E-mail | Caixa de Texto | Formato de e-mail | - | 
+| Data de Nascimento | Caixa de Data | Formato de data | - | 
 | Alergias | Caixa de Texto | - | - |
-| Quantidade de Cirurgias | Caixa de Texto |  | - |
-| Diagnóstico | Caixa de texto | - | - |
-| Medicamento | Caixa de texto | - | - |
-| Tempo de uso do Medicamento | Caixa de texto | - | - |
-| Quantidade | Caixa de texto | - | - |
-| Recomendações | Caixa de texto | - | - |
+| Cirurgias já feitas | Caixa de Texto |  | - |
+| Observações | Caixa de texto | - | - |
 |    |    |     |
 
+**Atualizar Prontuário**
 
+| **Campo** | **Tipo** | **Restrições** | **Valor default** |
+| --- | --- | --- | --- |
+| Alergias | Caixa de Texto | - | - |
+| Cirurgias já feitas | Caixa de Texto |  | - |
+| Observações | Caixa de texto | - | - |
+|    |    |     |
 
 #### Processo 4 – CONTROLE DE ESTOQUE
 
-**Verificar disponibilidade**
+**Cadastrar equipamentos**
 
 | **Campo** | **Tipo** | **Restrições** | **Valor default** |
 | --- | --- | --- | --- |
-| ID da ferramenta | Caixa de Texto | Apenas números | - |
-| Nome da ferramenta | Caixa de Texto | Apenas letras e tamaanho máximo de 30 caracteres | - |
-| Quantidade | Número | - | - |
+| Nome do equipamento | Caixa de Texto | Tamanho máximo de 45 caracteres | - |
+| Quantidade | Caixa de Texto | Apenas números | - |
 |    |    |     |
 
-**Atualizar estoque**
+**Solicitar e devolver equipamentos**
 
 | **Campo** | **Tipo** | **Restrições** | **Valor default** |
 | --- | --- | --- | --- |
-| Quantidade | Número | Não pode ser negativo | - |
+| Nome do equipamento | Caixa de Texto | Tamanho máximo de 45 caracteres | - |
+| Quantidade | Caixa de Texto | Apenas números | - |
 |    |    |     |
-
 
 #### Processo 5 – CADASTRO DE PAGAMENTO
 
