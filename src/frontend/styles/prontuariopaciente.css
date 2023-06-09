@@ -43,8 +43,8 @@ body {
 }
 
 .form-group textarea {
-  resize: vertical;
-  height: 100px;
+  resize: none;
+  height: 80px;
 }
 
 .form-group input[type="submit"] {

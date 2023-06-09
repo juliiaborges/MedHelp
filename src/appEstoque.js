@@ -27,8 +27,8 @@ app.post('/estoqueCadastrado', function (req, res) {
   fs.readFile(filePath, function (err, content) {
 
     estoque.create({
-      nome_equipamento: req.body.nome,
-      quant_Equipamento: req.body.quant,      
+      nome_estoque: req.body.nome,
+      quant_estoque: req.body.quant,      
     }).then(function () {
       res.send("Equipamento cadastrado: "+ req.body.nome)
     }).catch(function (erro) {
@@ -70,16 +70,16 @@ app.get('/listarEquipamentos', function (req, res) {
 });
 
 // Rota para atualizar a quantidade do equipamento selecionado
-app.post('/atualizar_quantidade/:id', function (req, res) {
-  const equipamentoId = req.params.id;
+app.post('/atualizar_quantidade/:id_estoque', function (req, res) {
+  const id_estoque = req.params.id_estoque;
   const novaQuantidade = req.body.quantidade;
 
-  estoque.findByPk(equipamentoId).then(function (equipamento) {
+  estoque.findByPk(id_estoque).then(function (equipamento) {
     if (equipamento) {
-      const quantidadeAnterior = equipamento.quant_Equipamento;
+      const quantidadeAnterior = equipamento.quant_estoque;
       const quantidadeAtualizada = parseInt(quantidadeAnterior) + parseInt(novaQuantidade);
 
-      equipamento.update({ quant_Equipamento: quantidadeAtualizada }).then(function () {
+      equipamento.update({ quant_estoque: quantidadeAtualizada }).then(function () {
         res.redirect('/listarEquipamentos');
       }).catch(function (erro) {
         res.send('Erro ao atualizar a quantidade do equipamento: ' + erro);
@@ -93,8 +93,8 @@ app.post('/atualizar_quantidade/:id', function (req, res) {
 });
 
 // Rota para registrar o uso do equipamento selecionado
-app.post('/registrar_uso/:id', function (req, res) {
-  const equipamentoId = req.params.id;
+app.post('/registrar_uso/:id_estoque', function (req, res) {
+  const id_estoque = req.params.id_estoque;
   const resposta = req.body.resposta;
 
   // Lógica para registrar o uso do equipamento de acordo com a resposta (Sim ou Não)

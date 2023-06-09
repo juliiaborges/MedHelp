@@ -12,13 +12,13 @@
   <div class="card-container">
     <% equipamentos.forEach(function(equipamento) { %>
       <div class="card">
-        <h2><%= equipamento.nome_equipamento %></h2>
-        <p>Quantidade: <%= equipamento.quant_Equipamento %></p>
-        <form action="/atualizar_quantidade/<%= equipamento.id_equipamento %>" method="POST">
+        <h2><%= equipamento.nome_estoque %></h2>
+        <p>Quantidade: <%= equipamento.quant_estoque %></p>
+        <form action="/atualizar_quantidade/<%= equipamento.id_estoque  %>" method="POST">
           <input type="number" name="quantidade" value="1">
           <button type="submit">Devolver Equipamento</button>
         </form>
-        <form action="/atualizar_quantidade/<%= equipamento.id_equipamento %>" method="POST">
+        <form action="/atualizar_quantidade/<%= equipamento.id_estoque  %>" method="POST">
           <input type="number" name="quantidade" value="-1">
           <button type="submit">Solicitar Equipamento</button>
         </form>
