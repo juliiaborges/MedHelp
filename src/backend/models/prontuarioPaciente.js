@@ -1,32 +1,38 @@
-const db = require("./db_prontuarioPaciente");
+const db = require("./db");
 
-const Paciente = db.sequelize.define(
-    "paciente",
+const prontuario = db.sequelize.define(
+    "prontuario",
     {
-    cpf_paciente: {
+    id_prontuario: {
         type: db.Sequelize.INTEGER,
         primaryKey: true
+        },
+    fk_id_paciente: {
+        type: db.Sequelize.INTEGER,
+        allowNull: true,
+        defaultValue: null
+        },
+    observacoes_prontuario: {
+        type: db.Sequelize.STRING,
+        allowNull: true,
+        defaultValue: null
+        },
+    cpf_prontuario: {
+        type: db.Sequelize.INTEGER
     },
-    nome_paciente:{
+    nome_prontuario:{
         type: db.Sequelize.STRING,
     },
-    data_nascimento_paciente:{
+    data_nascimento_prontuario:{
+        type: db.Sequelize.DATE,
+    },
+    telefone_prontuario:{
         type: db.Sequelize.STRING,
     },
-    
-    alergias_paciente:{
+    alergias_prontuario:{
         type: db.Sequelize.STRING,
     },
-    cirurgias_paciente:{
-        type: db.Sequelize.STRING,
-    },
-    telefone_paciente:{
-        type: db.Sequelize.STRING,
-    },
-    possui_plano:{
-        type: db.Sequelize.STRING,
-    },
-    observacoes_paciente:{
+    cirurgias_prontuario:{
         type: db.Sequelize.STRING,
     }
     }, {
@@ -34,6 +40,6 @@ const Paciente = db.sequelize.define(
 });
 
 //Criar a tabela
-// Paciente.sync({force: true})
+// Prontuario.sync({force: true})
 
-module.exports = Paciente;
+module.exports = prontuario;

@@ -1,4 +1,4 @@
-const db = require("./db_estoque");
+const db = require("./db");
 
 const estoque = db.sequelize.define(
   "estoque",

@@ -9,6 +9,11 @@ const Medicos = db.sequelize.define('medicos', {
     email_medico: {
         type: db.Sequelize.STRING
     },
+    senha_medico:{
+        type: db.Sequelize.STRING,
+        allowNull: true, // permitir valores nulos
+        defaultValue: null // definir o valor padrão como null
+    },
     especialidade_medico: {
         type: db.Sequelize.STRING
     },
@@ -36,11 +41,6 @@ const Medicos = db.sequelize.define('medicos', {
     horario_disponivel_fim: {
         type: db.Sequelize.TIME
     },
-    agendamento_id_agendamento: {
-        type: db.Sequelize.INTEGER,
-        allowNull: true, // permitir valores nulos
-        defaultValue: null // definir o valor padrão como null
-    }
 }, {
     timestamps: false
 });

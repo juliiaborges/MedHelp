@@ -197,37 +197,34 @@
 
   <div class="container">
     <h1>Lista de Pacientes</h1>
-    <% pacientes.forEach(function(paciente) { %>
+    <% prontuario.forEach(function(prontuario) { %>
       
     <div class="card">
       <h2>
-        <%= paciente.nome_paciente %>
+        <%= prontuario.nome_prontuario %>
       </h2>
       <br>
       <p><strong>CPF:</strong>
-        <%= paciente.cpf_paciente %>
+        <%= prontuario.cpf_prontuario %>
       </p>
       <p><strong>Telefone:</strong>
-        <%= paciente.telefone_paciente %>
-      </p>
-      <p><strong>Possui Plano:</strong>
-        <%= paciente.possui_plano %>
+        <%= prontuario.telefone_paciente %>
       </p>
       <p>
         <strong>Data de Nascimento:</strong>
-        <%= paciente.data_nascimento_paciente %>
+        <%= prontuario.data_nascimento_prontuario %>
       </p>
       <p><strong>Alergias:</strong>
-        <%= paciente.alergias_paciente %>
+        <%= prontuario.alergias_prontuario %>
       </p>
       <p><strong>Cirurgias:</strong>
-        <%= paciente.cirurgias_paciente %>
+        <%= prontuario.cirurgias_prontuario %>
       </p>
       <p><strong>Observações:</strong><br>
-        <%= paciente.observacoes_paciente %>
+        <%= prontuario.observacoes_prontuario %>
       </p>
       <br />
-      <a href="/editar_paciente/<%= paciente.cpf_paciente %>">Editar</a>
+      <a href="/editar_paciente/<%= prontuario.id_prontuario %>">Editar</a>
     </div>
     <% }); %>
   </div>
