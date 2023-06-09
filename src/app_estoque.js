@@ -120,7 +120,7 @@ app.post('/estoqueCadastrado', function (req, res) {
 //   });
 // });
 
-app.listen(8085, () => {
+app.listen(8080, () => {
   console.log("Servidor iniciado")
 });
 

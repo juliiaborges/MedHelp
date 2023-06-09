@@ -3,7 +3,7 @@ const app = express();
 const fs = require('fs');
 const path = require('path');
 const bodyParser = require('body-parser');
-const Sequelize = require('sequelize')
+const Sequelize = require('sequelize');
 const { sequelize } = require('./backend/models/db');
 
 
@@ -41,12 +41,31 @@ sequelize.authenticate().then(function () {
 }).catch(function (err) {
   console.log("Erro  " + err)
 })
+// Verificar Login do Paciente
+app.post('/verificarLogin', function (req, res) {
+  const email = req.body.loginEmail;
+  const senha = req.body.loginSenha;
 
-//Verificação Login
+  paciente.findOne({
+    where: {
+      email_paciente: email,
+      senha_paciente: senha,
+    },
+  })
+    .then(function (paciente) {
+      if (paciente) {
+        res.send('Login bem-sucedido. Bem-vindo, ' + paciente.email_paciente + '!');
+      } else {
+        res.send('Email ou senha inválidos. Por favor, tente novamente.');
+      }
+    })
+    .catch(function (erro) {
+      res.send('Erro ao verificar o login do paciente: ' + erro);
+    });
+});
 
 
-
-app.listen(8082, () => {
+app.listen(8080, () => {
   console.log("Servidor iniciado")
 });
 

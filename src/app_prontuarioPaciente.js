@@ -142,7 +142,7 @@ app.post('/atualizar_paciente/:id', function (req, res) {
     });
 });
 
-app.listen(8082, () => {
+app.listen(8080, () => {
   console.log("Servidor iniciado")
 });
 

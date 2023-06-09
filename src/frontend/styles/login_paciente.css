@@ -135,7 +135,7 @@ button:active {
 .container {
   background-color: #ffffff;
   border-radius: 2em;
-  box-shadow: #5577FF 10px 10px 10px 10px;
+  box-shadow: 3px 5px 5px #5577FF;
   position: relative;
   overflow: hidden;
   width: 650px;
