@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const {engine} = require("express-handlebars");
 const bodyParser = require("body-parser");
-const pagamento= require("./db_pagamentos");
+const pagamento= require("./dbPagamentos");
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
@@ -15,12 +15,12 @@ app.get('/pagamento', function (req, res) {
     res.render('pagamento');
 });
 
-app.get('/cad-pagamento', function (req, res) {
-    res.render('cad-pagamento');
+app.get('/cadastroPagamentos', function (req, res) {
+    res.render('cadastroPagamentos');
 });
 app.post('/add-pagamento', function(req, res){
     pagamento.create({
-        id_consulta: req.body.id_consulta,
+        fk_id_consulta: req.body.fk_id_consulta,
         data_pagamento: req.body.data_pagamento,
         tipo_pagamento: req.body.tipo_pagamento,
         valor_pagamento: req.body.valor_pagamento,
