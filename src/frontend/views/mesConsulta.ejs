@@ -214,29 +214,31 @@
 
   // Adiciona um ouvinte de evento de clique a cada botão
 
-  buttons.forEach((button) => {
-    button.addEventListener("click", function () {
-      // Obtém o texto do mês escolhido
-      const mesEscolhido = this.parentNode.previousElementSibling.innerText;
+ buttons.forEach((button) => {
+  button.addEventListener("click", function () {
+    const mesEscolhido = this.parentNode.previousElementSibling.innerText;
+    const idMedico = "<%= medico.id_medicos %>";
 
-      // Faz uma requisição POST para enviar o mês escolhido ao servidor
-      fetch("/diaConsulta", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ mes: mesEscolhido }),
+    // Adicione esta linha para adicionar o atributo de dados
+    button.setAttribute("data-id-medicos", idMedico);
+
+    fetch("/diaConsulta", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ mes: mesEscolhido, id_medicos: idMedico }),
+    })
+      .then((response) => response.text())
+      .then((result) => {
+        console.log(result);
       })
-        .then((response) => response.text())
-        .then((result) => {
-          console.log(result);
-          // Faça algo com a resposta do servidor, se necessário
-        })
-        .catch((error) => {
-          console.error("Erro:", error);
-        });
-    });
+      .catch((error) => {
+        console.error("Erro:", error);
+      });
   });
+});
+
 
   // Adiciona um ouvinte de evento de clique a cada botão
 

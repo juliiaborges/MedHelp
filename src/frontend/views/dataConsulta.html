@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://rsms.me/">
+    <link rel="stylesheet" href="../styles/dataConsulta.css">
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+
+    <title>Cadastro de Médicos</title>
+</head>
+
+<body>
+
+
+    <div class="appointment-popup">
+  
+        <div id="calendar" class="appointment-calendar">
+      
+      
+         
+        </div>
+      </div>
+      
+      
+              <div class="current-week">
+            <span><i class="fa fa-calendar"></i> {{: month}} </span>
+            <div class="calendar-nav">
+              <button type="button" class="prev">Prev</button>
+              <button type="button" class="next">Next</button>
+            </div>
+          </div>
+        
+         <div class="calendar-wrapper">
+            <div class="calendar-week">
+              <ul>
+              {{for days}}
+              <li>{{: name}}, {{: day}}</li>
+              {{/for}}
+              </ul>
+            </div>
+      
+            <div class="calendar-hours">
+              <ul>
+                <li>
+                  <ul>
+                    <li>08:00</li>
+                    <li>08:15</li>
+                    <li>08:30</li>
+                    <li>08:45</li>
+                    <li>09:00</li>
+                    <li>09:15</li>
+                    <li>09:30</li>
+                  </ul>
+                </li>
+      
+                <li>
+                  <ul>
+                    <li>08:00</li>
+                    <li>08:15</li>
+                    <li>08:30</li>
+                    <li class="empty"></li>
+                    <li>09:00</li>
+                    <li>09:15</li>
+                    <li>09:30</li>
+                  </ul>
+                </li>
+                <li>
+                  <ul>
+                    <li class="empty"></li>
+                    <li class="empty"></li>
+                    <li class="empty"></li>
+                    <li class="empty"></li>
+                    <li class="empty"></li>
+                    <li class="empty"></li>
+                    <li class="empty"></li>
+                  </ul>
+                </li>
+      
+                <li>
+                  <ul>
+                    <li>08:00</li>
+                    <li>08:15</li>
+                    <li class="empty"></li>
+                    <li class="empty"></li>
+                    <li class="empty"></li>
+                    <li>09:15</li>
+                    <li>09:30</li>
+                  </ul>
+                </li>
+      
+                <li>
+                  <ul>
+                    <li class="empty"></li>
+                    <li>08:15</li>
+                    <li>08:30</li>
+                    <li>08:45</li>
+                    <li>09:00</li>
+                    <li>09:15</li>
+                    <li>09:30</li>
+                  </ul>
+                </li>
+      
+                <li>
+                  <ul>
+                    <li class="empty"></li>
+                    <li class="empty"></li>
+                    <li class="empty"></li>
+                    <li class="empty"></li>
+                    <li class="empty"></li>
+                    <li class="empty"></li>
+                    <li class="empty"></li>
+                  </ul>
+                </li>
+      
+                <li>
+                  <ul>
+                    <li class="empty"></li>
+                    <li class="empty"></li>
+                    <li class="empty"></li>
+                    <li class="empty"></li>
+                    <li class="empty"></li>
+                    <li class="empty"></li>
+                    <li class="empty"></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+      <script src="../scripts/dataConsulta.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,206 @@
+:root {
+    font-family: 'Inter', sans-serif;
+  }
+  
+  :root {
+    font-family: 'Inter var', sans-serif;
+  }
+  
+  * {
+    font-family: 'Inter';
+    margin: 0;
+    padding: 0;
+  }
+  
+  html{
+    scroll-behavior: smooth;
+  }
+  button{
+  background-color: #EBEFF3;
+  }
+  .nav-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:  #EBEFF3;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    height: 80px;
+  }
+  
+  .itens {
+    display: flex;
+    margin: 50px auto;
+    margin-left: 40%;
+    justify-content: center;
+    gap: 6px;
+  }
+  
+  .nav-bar a:not(:last-of-type) {
+    margin-right: 20px;
+  }
+  
+  .nav-bar a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+  }
+  
+  .nav-bar a:hover {
+    border-bottom: 2px solid #49A2EB;
+    transition: border-bottom 0.2s ease-in-out;
+  }
+  
+  .botoes{
+    margin-right: 10em;
+  }
+  
+  #logo {
+    width: 10em;
+    margin-left: 10em;
+  }
+  
+  
+  * Estilos para a seção inicial */
+  .part1 {
+    width: 100%;
+    margin: 0;
+  }
+  
+  /*SEGUNDA PARTE*/
+  .primeiro-container {
+    margin: 1em auto;
+  
+  }
+  
+  .container01 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    border-radius: 5px;
+  }
+  
+  .container01 {
+    display: flex;
+    align-items: center;
+  
+  }
+  #img01{
+    width: 26em;
+  }
+  .column01 p {
+    font-size: 20px;
+    color: #333;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .bt-saibamais {
+    background: linear-gradient(90deg, #49A2EB 4.88%, #50DED2 100%);
+    box-shadow: 0px 0px 17px rgba(0, 0, 0, 0.1);
+    border-radius: 35px;
+    color: #fff;
+    border: 2px solid #0099ff;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .bt-saibamais:hover {
+    font-size: 0.92em;
+    transition: font-size 0.2s ease-in-out;
+  }
+  
+  #img01 {
+    margin-left: 8rem;
+  }
+  
+  .text2 {
+    margin-left: 5rem;
+  }
+  
+  .bt-saibamais {
+    margin-left: 5rem;
+  }
+  
+  .melhordegestao {
+    font-size: large;
+  }
+  
+  /*Fim da Primeira Parte*/
+  
+  /*Inicio segunda parte*/
+  /* ... */
+  
+  /* ... */
+  
+  
+  /*Início Segunda Parte */
+  .container02 {
+    margin: 4em;
+  }
+  
+  .titulo {
+    text-align: center;
+    font-size: 0.8em;
+    color: #000000;
+  }
+  
+  .linha {
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .segundo-container {
+    background-color: #F8F8F8;
+    display: inline-flexbox;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 0;
+  }
+  
+  .container02 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .column2 {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+    border: 1px solid #0099ff;
+  }
+  
+  .column2:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out;
+  
+  }
+  
+  .column2 h3 {
+    font-weight: bold;
+    font-size: 22px;
+    margin-top: 0;
+  }
+  
+  .column2 p {
+    font-size: 18px;
+    line-height: 1.5;
+  }
+  
+  
+  
+  /*Fim da segunda parte /*
+  
+  /* ... */
+  
+  
+  

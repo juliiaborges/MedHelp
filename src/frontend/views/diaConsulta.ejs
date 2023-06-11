@@ -39,3 +39,15 @@
     font-size: 45px;
   }
 </style>
+
+<script>
+  buttons.forEach((button) => {
+  button.addEventListener("click", function () {
+    const mesEscolhido = button.getAttribute("data-mes");
+    const idMedicos = button.getAttribute("data-id-medicos");
+
+    window.location.href = "/diaConsulta/" + mesEscolhido + "/" + idMedicos;
+  });
+});
+
+</script>
