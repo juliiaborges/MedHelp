@@ -32,106 +32,10 @@
     padding: 0;
   }
 
-  slide {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    position: relative;
-    background: #eee;
-    text-align: center;
-    padding: 0 2em;
-    font-size: 2rem;
-    margin: 0;
-    letter-spacing: 1rem;
-  }
-
   h1 {
     display: flex;
     justify-content: center;
     padding: 20px;
     font-size: 45px;
-  }
-
-  #tab-portfolio {
-    background-color: rgb(253, 243, 229);
-    color: #000000;
-    flex-direction: column;
-  }
-
-  .cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    margin: 0 auto;
-    max-width: 1140px;
-    padding: 20px 28px;
-    grid-gap: 30px;
-    align-items: center; /* Updated to center align items */
-  }
-
-  .card {
-    display: flex;
-    flex-direction: column; /* Adicionado para posicionar o botão abaixo do mês */
-    justify-content: center; /* Adicionado para alinhar verticalmente */
-    align-items: center; /* Adicionado para alinhar horizontalmente */
-    background-color: #49a2eb;
-    border-radius: 20px;
-    box-shadow: 0 2px 2px 1px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    height: 240px;
-    transition: transform 0.3s cubic-bezier(0.374, 0.019, 0.035, 1.861);
-  }
-
-  .card:hover {
-    transform: scale(1.03);
-  }
-  .button-container {
-    margin-top: 10px; /* Adicionado para dar espaço entre o mês e o botão */
-  }
-
-  button {
-    display: block;
-    justify-content: center;
-    align-content: center;
-  }
-
-  .custom-btn {
-    width: 130px;
-    height: 40px;
-    color: #fff;
-    border-radius: 5px;
-    padding: 10px 25px;
-    font-weight: 500;
-    background: transparent;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    position: relative;
-    display: inline-block;
-    box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5),
-      7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
-    outline: none;
-  }
-
-  .custom-btn:before,
-  .custom-btn:after {
-    position: absolute;
-    content: "";
-    right: 0;
-    top: 0;
-    background: rgba(2, 126, 251, 1);
-    transition: all 0.3s ease;
-  }
-
-  .custom-btn:hover {
-    background: transparent;
-    box-shadow: none;
-  }
-
-  /* Added CSS for the month text */
-  .card-text {
-    font-size: 24px;
-    font-weight: bold;
-    color: #ffffff;
   }
 </style>

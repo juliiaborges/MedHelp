@@ -99,8 +99,8 @@ app.get("/diaConsulta/:mes_consulta/:id_medicos", function (req, res) {
     mesConsulta: mesConsulta,
     idMedicos: idMedicos,
   });
+  
 });
-
 
 
   sequelize
