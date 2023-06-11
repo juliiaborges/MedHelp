@@ -27,9 +27,6 @@ CREATE TABLE IF NOT EXISTS `mydb`.`medicos` (
   `uf_medico` CHAR(22) CHARACTER SET 'utf8mb3' NOT NULL,
   `crm_medico` CHAR(12) CHARACTER SET 'utf8mb3' NOT NULL,
   `situacao_medico` CHAR(20) CHARACTER SET 'utf8mb3' NOT NULL,
-  `dia_disponivel` VARCHAR(45) CHARACTER SET 'utf8mb3' NULL DEFAULT NULL,
-  `horario_disponivel_inicio` TIME NULL DEFAULT NULL,
-  `horario_disponivel_fim` TIME NULL DEFAULT NULL,
   PRIMARY KEY (`id_medicos`))
 ENGINE = InnoDB
 AUTO_INCREMENT = 26
@@ -55,10 +52,11 @@ DEFAULT CHARACTER SET = utf8mb3;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`consulta` (
   `id_consulta` INT NOT NULL AUTO_INCREMENT,
-  `fk_id_medicos` INT NOT NULL,
-  `fk_id_paciente` INT NOT NULL,
-  `data_consulta` DATE NOT NULL,
-  `horario_consulta` TIME NOT NULL,
+  `fk_id_medicos` INT NULL DEFAULT NULL,
+  `fk_id_paciente` INT NULL DEFAULT NULL,
+  `mes_consulta` VARCHAR(15) NULL DEFAULT NULL,
+  `dia_consulta` INT NULL DEFAULT NULL,
+  `horario_consulta` TIME NULL DEFAULT NULL,
   PRIMARY KEY (`id_consulta`),
   INDEX `fk_id_medicos_idx` (`fk_id_medicos` ASC) VISIBLE,
   INDEX `fk_id_paciente_idx` (`fk_id_paciente` ASC) VISIBLE,
@@ -69,6 +67,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`consulta` (
     FOREIGN KEY (`fk_id_paciente`)
     REFERENCES `mydb`.`pacientes` (`id_paciente`))
 ENGINE = InnoDB
+AUTO_INCREMENT = 12
 DEFAULT CHARACTER SET = utf8mb3;
 
 
@@ -137,7 +136,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`prontuarios` (
     FOREIGN KEY (`fk_id_paciente`)
     REFERENCES `mydb`.`pacientes` (`id_paciente`))
 ENGINE = InnoDB
-AUTO_INCREMENT = 3
+AUTO_INCREMENT = 8
 DEFAULT CHARACTER SET = utf8mb4
 COLLATE = utf8mb4_0900_ai_ci;
 
