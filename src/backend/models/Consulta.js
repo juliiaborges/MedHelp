@@ -8,23 +8,34 @@ const consulta = db.sequelize.define(
       autoIncrement: true,
       primaryKey: true,
     },
-    medicos_id_medicos: {
+    fk_id_medicos: {
       type: db.Sequelize.DOUBLE,
+      allowNull: true, // permitir valores nulos
+      defaultValue: null // definir o valor padrão como null
     },
-    horarios_consulta: {
-      type: db.Sequelize.STRING,
+    fk_id_paciente:{
+      type: db.Sequelize.DOUBLE,
+      allowNull: true, // permitir valores nulos
+      defaultValue: null // definir o valor padrão como null
     },
-    paciente_cpf_paciente: {
+    mes_consulta:{
       type: db.Sequelize.STRING,
     },
     dia_consulta: {
-      type: db.Sequelize.STRING,
+      type: db.Sequelize.DOUBLE,
+      allowNull: true, // permitir valores nulos
+      defaultValue: null // definir o valor padrão como null
+    },
+    horario_consulta: {
+      type: db.Sequelize.TIME,
+      allowNull: true, // permitir valores nulos
+      defaultValue: null // definir o valor padrão como null
     },
   },
   {
     timestamps: false,
-  }
-);
+  });
+
 
 //Criar a tabela
 // consulta.sync({force: true})

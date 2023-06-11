@@ -38,22 +38,19 @@
   <!--Fim Nav-Bar-->
 
   <div class="container">
-    <h1>Horários disponíveis</h1>
-    <form action="/horarioMedicos/<%= Medicos.id_medicos %>" method="GET">
-
-        <div class="card">
-          <br>
-          <h2>
-            <%= Medicos.nome_medico %>
-          </h2>
-          <br>
-          <p><strong>Horário de Início:</strong> 
-            <%= Medicos.horario_disponivel_inicio %>
-          </p>
-          <p><strong>Horário de Fim:</strong> 
-            <%= Medicos.horario_disponivel_fim %>
-          </p>
-        </div>
+     <h1>Horários disponíveis</h1>
+     <form action="/horarioMedicos/<%= Medicos.id_medicos %>" method="GET">
+      <div class="card">
+        <br>
+        <h2><%= Medicos.nome_medico %></h2>
+        <br>
+      <div class="horarios-consulta">
+        <h3>Selecione o horário da consulta:</h3>
+          <!--Faça o codigo aqui,chat-->
+        <% } %>
+      </div>
+      <button class="button-next" type="submit">Próximo</button>
+    </div>
     </form>
   </div>
   

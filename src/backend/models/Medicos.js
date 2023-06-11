@@ -32,15 +32,6 @@ const Medicos = db.sequelize.define('medicos', {
     situacao_medico: {
         type: db.Sequelize.STRING
     },
-    dia_disponivel: {
-        type: db.Sequelize.STRING
-    },
-    horario_disponivel_inicio: {
-        type: db.Sequelize.TIME
-    },
-    horario_disponivel_fim: {
-        type: db.Sequelize.TIME
-    },
 }, {
     timestamps: false
 });
