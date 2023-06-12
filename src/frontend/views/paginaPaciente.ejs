@@ -68,11 +68,13 @@
       <div class="column2" >
         <h3>Agendamento</h3>
         <p>Clique aqui para agendar suas consultas.</p>
+        <button id="agendarBtn">Agendar</button>
       </div>
         
       <div class="column2">        
         <h3>Acessar meu Prontuário</h3>
         <p>Clique aqui para acessar suas consultas.</p>
+        <button>Acessar</button>
       </div>
     </div>
 
@@ -83,3 +85,31 @@
   <!--Fim do container 02-->
 </body>
 </html>
+
+<script>
+  // Selecionar o botão de agendar
+  const agendarBtn = document.getElementById("agendarBtn");
+
+  // Adicionar um ouvinte de evento de clique ao botão
+  agendarBtn.addEventListener("click", function () {
+    // Redirecionar o usuário para a página listarMedicos.ejs
+    window.location.href = "/listarMedicos";
+  });
+</script>
+
+<style>
+  
+  .column2 button{
+    color: #49A2EB;
+    border: 1px solid #49A2EB;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin-right: 10px;
+    transition: all 0.2s ease-in-out;
+  }
+  .column2 button:hover{
+  background-color: #49A2EB;
+  color: #fff;
+  cursor: pointer;
+}
+</style>
