@@ -79,7 +79,7 @@ app.post('/prontuarioPaciente', function (req, res) {
     .then(function (paciente) {
       if (paciente) {
         const idPaciente = paciente.id_paciente;
-        res.redirect('/prontuarioPaciente?id_paciente=' + idPaciente);
+        res.redirect('/prontuarioPaciente/' + idPaciente);
       } else {
         res.send('Email ou senha inválidos. Por favor, tente novamente.');
       }
@@ -89,6 +89,10 @@ app.post('/prontuarioPaciente', function (req, res) {
     });
 });
 
+app.get('/prontuarioPaciente/:id_paciente', function (req, res) {
+  const idPaciente = req.params.id_paciente;
+  res.render('prontuarioPaciente', { id_paciente: idPaciente });
+});
 
 
 //Define a rota para o prontuario paciente 
@@ -101,8 +105,8 @@ app.get('/prontuarioPaciente', function (req, res) {
 
 //Receber dados do formulário
 
-app.post('/prontuarioPacienteCadastrado', function (req, res) {
-  const filePath = path.join(__dirname, '../src/frontend/views/prontuarioPacienteCadastrado.html');
+app.post('/paginaPaciente', function (req, res) {
+  const filePath = path.join(__dirname, '../src/frontend/views/paginaPaciente.ejs');
   fs.readFile(filePath, function (err, content) {
 
     prontuarioPaciente.create({
@@ -114,17 +118,16 @@ app.post('/prontuarioPacienteCadastrado', function (req, res) {
       telefone_prontuario: req.body.telefone
          
     }).then(function () {
-      res.send("Prontuário Cadastrado do paciente: "+ req.body.nome)
+      res.render('paginaPaciente');
     }).catch(function (erro) {
       res.send("Erro ao cadastrar prontuário do paciente!" + erro)
     })
   });
 });
 
-
 // Rota para exibir a página do paciente
 app.get("/paginaPaciente", function (req, res) {
-  res.sendFile(path.join(__dirname, "/frontend/views/paginaPaciente.html"));
+  res.sendFile(path.join(__dirname, "/frontend/views/paginaPaciente.ejs"));
 });
 
 // Rota para listar médicos
@@ -274,7 +277,7 @@ app.get("/diaConsulta/:mes_consulta/:id_medicos", function (req, res) {
 //Rota para escolher a data da consulta
 
 app.get("/dataConsulta", function (req, res) {
-  res.sendFile(path.join(__dirname, "/frontend/views/dataConsulta.html"));
+  res.sendFile(path.join(__dirname, "/frontend/views/dataConsulta.ejs"));
 });
 
 

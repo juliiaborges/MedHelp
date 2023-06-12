@@ -10,7 +10,7 @@
 <body>
   <div class="container">
     <h1>Formulário de Paciente</h1>
-    <form action="/prontuarioPacienteCadastrado" method="POST">
+    <form action="/paginaPaciente?<%= id_paciente %>" method="POST">
       <div class="form-group">
         <label for="cpf">CPF:</label>
         <input type="text" id="cpf" name="cpf" required>
