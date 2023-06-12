@@ -168,9 +168,6 @@ Descrever aqui cada uma das propriedades das atividades de cada um dos processos
 | Situação | Caixa de Texto | Múltipla escolha | - |
 | Telefone | Caixa de Texto | Mínimo de 7 e máximo de 10 caracteres | -  |
 | E-mail | Caixa de Texto | Formato de e-mail | - | 
-| Horário disponível (início)  |  Múltipla escolha  | Valor não nulo | - |
-| Horário disponível (fim)  |  Múltipla escolha  | Valor não nulo | - |
-| Dias da semana disponível | Caixa de Texto | Valor não nulo | - |
 |    |    |     |
 
 #### Processo 2 – AGENDAMENTO DE CONSULTAS
