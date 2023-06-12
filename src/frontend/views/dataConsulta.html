@@ -6,131 +6,114 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://rsms.me/">
-    <link rel="stylesheet" href="../styles/dataConsulta.css">
+    <link rel="stylesheet" href="../../frontend/styles/diaConsulta.css">
+    <link rel="stylesheet" href="../../frontend/styles/darkMode.css">
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
 
     <title>Cadastro de Médicos</title>
 </head>
 
 <body>
-
-
-    <div class="appointment-popup">
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-        <div id="calendar" class="appointment-calendar">
-      
-      
-         
+    <!-- arquivos style -->
+    <link href="./css/style.css" rel="stylesheet">
+    <link href="./css/darkMode.css" rel="stylesheet">
+  
+    <title>Calendario</title>
+  </head>
+    <!-- dark mode -->
+    
+    <div class="toggle">
+      <input id="switch" type="checkbox" name="theme">
+      <label for="switch">Toggle</label>
+    </div>
+  
+  <!-- -------- -->
+  
+  <body>
+    <div id="container">
+        <div id="header">
+          <div id="monthDisplay"></div>
+  
+          <div>
+            <button id="backButton">Voltar</button>
+            <button id="nextButton">Próximo</button>
+          </div>
+            
         </div>
-      </div>
-      
-      
-              <div class="current-week">
-            <span><i class="fa fa-calendar"></i> {{: month}} </span>
-            <div class="calendar-nav">
-              <button type="button" class="prev">Prev</button>
-              <button type="button" class="next">Next</button>
-            </div>
-          </div>
-        
-         <div class="calendar-wrapper">
-            <div class="calendar-week">
-              <ul>
-              {{for days}}
-              <li>{{: name}}, {{: day}}</li>
-              {{/for}}
-              </ul>
-            </div>
-      
-            <div class="calendar-hours">
-              <ul>
-                <li>
-                  <ul>
-                    <li>08:00</li>
-                    <li>08:15</li>
-                    <li>08:30</li>
-                    <li>08:45</li>
-                    <li>09:00</li>
-                    <li>09:15</li>
-                    <li>09:30</li>
-                  </ul>
-                </li>
-      
-                <li>
-                  <ul>
-                    <li>08:00</li>
-                    <li>08:15</li>
-                    <li>08:30</li>
-                    <li class="empty"></li>
-                    <li>09:00</li>
-                    <li>09:15</li>
-                    <li>09:30</li>
-                  </ul>
-                </li>
-                <li>
-                  <ul>
-                    <li class="empty"></li>
-                    <li class="empty"></li>
-                    <li class="empty"></li>
-                    <li class="empty"></li>
-                    <li class="empty"></li>
-                    <li class="empty"></li>
-                    <li class="empty"></li>
-                  </ul>
-                </li>
-      
-                <li>
-                  <ul>
-                    <li>08:00</li>
-                    <li>08:15</li>
-                    <li class="empty"></li>
-                    <li class="empty"></li>
-                    <li class="empty"></li>
-                    <li>09:15</li>
-                    <li>09:30</li>
-                  </ul>
-                </li>
-      
-                <li>
-                  <ul>
-                    <li class="empty"></li>
-                    <li>08:15</li>
-                    <li>08:30</li>
-                    <li>08:45</li>
-                    <li>09:00</li>
-                    <li>09:15</li>
-                    <li>09:30</li>
-                  </ul>
-                </li>
-      
-                <li>
-                  <ul>
-                    <li class="empty"></li>
-                    <li class="empty"></li>
-                    <li class="empty"></li>
-                    <li class="empty"></li>
-                    <li class="empty"></li>
-                    <li class="empty"></li>
-                    <li class="empty"></li>
-                  </ul>
-                </li>
-      
-                <li>
-                  <ul>
-                    <li class="empty"></li>
-                    <li class="empty"></li>
-                    <li class="empty"></li>
-                    <li class="empty"></li>
-                    <li class="empty"></li>
-                    <li class="empty"></li>
-                    <li class="empty"></li>
-                  </ul>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-      <script src="../scripts/dataConsulta.js"></script>
+  
+        <div id="weekdays">
+          <div>Domingo</div>
+          <div>Segunda-feira</div>
+          <div>Terça-feira</div>
+          <div>Quarta-feira</div>
+          <div>Quinta-feira</div>
+          <div>Sexta-feira</div>
+          <div>Sábado</div>
+        </div>
+  
+  
+        <!-- div dinamic -->
+        <div id="calendar" ></div>
+  
+     
+    </div>
+  
+    <div id="newEventModal">
+      <h2>Selecione um Horário: </h2>
+  
+      <form id="eventTitleInput" >
+  
+        <div>
+          <input type="radio" name="tipo_pagamento" value="Pix"> 12h até 13h
+        </div>
+        <div>
+          <input type="radio" name="tipo_pagamento" value="Cartão de crédito"> 13h até 14h
+        </div>
+        <div>
+          <input type="radio" name="tipo_pagamento" value="Boleto"> 14h até 15h
+        </div>
+        <div>
+          <input type="radio" name="tipo_pagamento" value="Boleto"> 15h até 16h
+        </div>
+        <div>
+          <input type="radio" name="tipo_pagamento" value="Boleto"> 16h até 17h
+        </div>
+        <div>
+          <input type="radio" name="tipo_pagamento" value="Boleto"> 17h até 18h
+        </div>
+        <div>
+          <input type="radio" name="tipo_pagamento" value="Boleto"> 18h até 19h
+        </div>
+        <br<br>
+        <button id="saveButton"> Salvar</button>
+      <button id="cancelButton">Cancelar</button>
+    </div>
+  
+    <div id="deleteEventModal">
+      <h2>Evento</h2>
+  
+      <div id="eventText"></div><br>
+  
+  
+      <button id="deleteButton">Deletar</button>
+      <button id="closeButton">Fechar</button>
+    </div>
+  
+    <div id="modalBackDrop"></div>
+  
+  
+    <script src="/src/frontend/scripts/darkMode.js"></script>
+    <script src="/src/frontend/scripts/main.js"></script>
+    
+  </body>
+  </html>
 
 </body>
 
