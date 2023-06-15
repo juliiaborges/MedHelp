@@ -277,9 +277,22 @@ app.get("/diaConsulta/:mes_consulta/:id_medicos", function (req, res) {
 //Rota para escolher a data da consulta
 
 app.get("/dataConsulta", function (req, res) {
-  res.sendFile(path.join(__dirname, "/frontend/views/dataConsulta.ejs"));
+  res.render("dataConsulta");
 });
-
+// Rota para salvar a data no banco de dados
+app.post('/dataConsulta', function (req, res) {
+  Consulta.create({
+    mes_consulta: req.body.mes,
+    dia_consulta: req.body.dia,
+    horario_consulta: req.body.horario
+  })
+    .then(function () {
+      res.send("Data cadastrada: " + req.body.dia + "/" + req.body.mes);
+    })
+    .catch(function (erro) {
+      res.send("Erro ao cadastrar data: " + erro);
+    });
+});
 
 
   sequelize
