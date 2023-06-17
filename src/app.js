@@ -89,16 +89,10 @@ app.post('/prontuarioPaciente', function (req, res) {
     });
 });
 
-app.get('/prontuarioPaciente/:id_paciente', function (req, res) {
-  const idPaciente = req.params.id_paciente;
-  res.render('prontuarioPaciente', { id_paciente: idPaciente });
-});
-
-
 //Define a rota para o prontuario paciente 
 
-app.get('/prontuarioPaciente', function (req, res) {
-  const idPaciente = req.query.id_paciente;
+app.get('/prontuarioPaciente/:id_paciente', function (req, res) {
+  const idPaciente = req.params.id_paciente;
   res.render('prontuarioPaciente', { id_paciente: idPaciente });
 });
 
@@ -130,16 +124,6 @@ app.get("/paginaPaciente", function (req, res) {
   res.sendFile(path.join(__dirname, "/frontend/views/paginaPaciente.ejs"));
 });
 
-// Rota para listar médicos
-app.get("/listarMedicos", function (req, res) {
-  Medicos.findAll()
-    .then(function (medicos) {
-      res.render("listarMedicos", { Medicos: medicos });
-    })
-    .catch(function (erro) {
-      res.send("Erro ao buscar médicos!" + erro);
-    });
-});
 
 
   // Rota para exibir a lista de pacientes
@@ -224,43 +208,45 @@ app.post('/atualizar_paciente/:id_prontuario', function (req, res) {
       res.send('Erro ao buscar paciente: ' + erro);
     });
 });
-
-// Rota para exibir meses disponíveis para consulta
-app.get("/mesConsulta/:id_medicos", function (req, res) {
-  const idMedicos = req.params.id_medicos;
-  Medicos.findByPk(idMedicos)
-    .then(function (medico) {
-      if (medico) {
-        res.render("mesConsulta", {
-          medico: medico,
-        });
-      } else {
-        res.send("Médico não encontrado!");
-      }
+// Rota para listar médicos
+// Rota para listar médicos
+app.get("/listarMedicos", function (req, res) {
+  Medicos.findAll()
+    .then(function (medicos) {
+      res.render("listarMedicos", { Medicos: medicos, id_medicos: req.query.id_medicos });
     })
     .catch(function (erro) {
-      res.send("Erro ao buscar médico!" + erro);
+      res.send("Erro ao buscar médicos!" + erro);
+    });
+});
+
+app.get("/mesConsulta", function (req, res) {
+  const idMedico = req.query.id_medicos;
+  res.render("mesConsulta", { id_medicos: idMedico });
+});
+
+app.post("/mesConsulta", function (req, res) {
+  const idMedico = req.query.id_medicos;
+  console.log("Valor de idMedico:", idMedico);  // Acessando o valor de id_medico da URL
+  const mesConsulta = req.body.mes;
+
+  Consulta.create({
+    fk_id_medicos: idMedico,
+    mes_consulta: mesConsulta,
+  })
+    .then(function () {
+      res.redirect("/dataConsulta");
+    })
+    .catch(function (erro) {
+      res.send("Erro!" + erro);
     });
 });
 
 
 // Rota para exibir meses disponíveis para consulta
 
-app.get("/dataConsulta/:id_medicos", function (req, res) {
-  const idMedicos = req.params.id_medicos;
-  Medicos.findByPk(idMedicos)
-    .then(function (medico) {
-      if (medico) {
-        res.render("dataConsulta", {
-          medico: medico,
-        });
-      } else {
-        res.send("Médico não encontrado!");
-      }
-    })
-    .catch(function (erro) {
-      res.send("Erro ao buscar médico!" + erro);
-    });
+app.get("/dataConsulta", function (req, res) {
+  res.render("dataConsulta");
 });
 
   sequelize
@@ -275,6 +261,6 @@ app.get("/dataConsulta/:id_medicos", function (req, res) {
 app.set("views", path.join(__dirname, "/frontend/views"));
 app.set("view engine", "ejs");
 
-app.listen(8080, () => {
+app.listen(8081, () => {
   console.log("Servidor iniciado");
 });

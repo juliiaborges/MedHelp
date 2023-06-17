@@ -40,29 +40,19 @@
   <div class="container">
     <h1>Lista de Médicos</h1>
     <% Medicos.forEach(function(Medicos) { %>
-      
-    <div class="card">
-      <h2>
-        <%= Medicos.nome_medico %>
-      </h2>
-      <br>
-      <p><strong>Telefone:</strong>
-        <%= Medicos.telefone_medico %>
-      </p>
-      <p>
-        <strong>Especialidade:</strong>
-        <%= Medicos.especialidade_medico %>
-      </p>
-      <p><strong>Situação:</strong>
-        <%= Medicos.situacao_medico %>
-      </p>
-      <br />
-      <a href="/mesConsulta/<%= Medicos.id_medicos %>">Escolher</a>
-    </div>
+      <div class="card">
+        <h2><%= Medicos.nome_medico %></h2>
+        <br>
+        <p><strong>Telefone:</strong> <%= Medicos.telefone_medico %></p>
+        <p><strong>Especialidade:</strong> <%= Medicos.especialidade_medico %></p>
+        <p><strong>Situação:</strong> <%= Medicos.situacao_medico %></p>
+        <br />
+        <a href="/mesConsulta?<%= Medicos.id_medicos%>">Escolher</a>
+      </div>
     <% }); %>
   </div>
-
 </body>
+</html>
 
 <style>
   body {

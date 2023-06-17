@@ -217,22 +217,6 @@ function load (){
     } else {
       dayS.classList.add('padding')
     }
-
-    //
-
-    dayS.addEventListener('click', () => {    
-    const monthElement = document.getElementById("monthDisplay");
-    if (monthElement) {
-      const date = monthElement.textContent;
-      const month = String(monthElement.textContent);
-      const monthOnly = month.split(",")[0].trim();
-      const yearOnly = month.split(",")[1].trim();
-      console.log(monthOnly);
-      console.log(yearOnly);
-    } else {
-    console.log("Elemento não encontrado");
-  }
-  });
     calendar.appendChild(dayS)
   }
 }
@@ -353,26 +337,6 @@ const changeColors = (colors) => {
 checkbox.addEventListener("change", ({target}) => {
     target.checked ? changeColors(darkMode) : changeColors(initialColors)
 })
-
-
-// function saveDate(time) {
-//     fetch('/salvarData', {
-//       method: 'POST',
-//       headers: {
-//         'Content-Type': 'application/json',
-//       },
-//       body: JSON.stringify({
-//         time: time,
-//       }),
-//     })
-//       .then((response) => response.text())
-//       .then((data) => {
-//         console.log(data); // Você pode exibir uma mensagem de sucesso aqui
-//       })
-//       .catch((error) => {
-//         console.error('Erro ao salvar data:', error);
-//       });
-//   }
 
 </script>
 

@@ -1,92 +1,48 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://rsms.me/" />
-    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
-    <title>Mês da consulta</title>
-  </head>
-  <body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://rsms.me/" />
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+  <title>Mês da consulta</title>
+</head>
+<body>
+  <form action="/mesConsulta" method="POST">
+    <input type="hidden" name="fk_id_medicos" value="<%= id_medicos %>">
     <section class="slide" id="tab-portfolio">
       <h1>Escolha um Mês</h1>
       <div class="cards" id="mes">
         <div class="card">
-            <span class="card-text">Janeiro</span>
-            <div class="button-container">
-            <button class="custom-btn escolher-mes" data-mes="janeiro">Escolher</button>
-        </div>
-        </div>
-        <div class="card">
-            <span class="card-text">Fevereiro</span>
-            <div class="button-container">
-            <button class="custom-btn escolher-mes" data-mes="fevereiro">Escolher</button>
-        </div>
-        </div>
-        <div class="card">
-            <span class="card-text">Março</span>
-            <div class="button-container">
-            <button class="custom-btn escolher-mes" data-mes="março">Escolher</button>
-        </div>
-        </div>
-        <div class="card">
-            <span class="card-text">Abril</span>
-            <div class="button-container">
-            <button class="custom-btn escolher-mes" data-mes="abril">Escolher</button>
+          <span class="card-text">Junho</span>
+          <div class="button-container">
+            <button class="custom-btn escolher-mes" type="submit" name="mes" value="junho">Escolher</button>
           </div>
         </div>
         <div class="card">
-            <span class="card-text">Maio</span>
-            <div class="button-container">
-            <button class="custom-btn escolher-mes" data-mes="maio">Escolher</button>
+          <span class="card-text">Julho</span>
+          <div class="button-container">
+            <button class="custom-btn escolher-mes" type="submit" name="mes" value="julho">Escolher</button>
           </div>
         </div>
         <div class="card">
-            <span class="card-text">Junho</span>
-            <div class="button-container">
-            <button class="custom-btn escolher-mes" data-mes="junho">Escolher</button>
-        </div>
-        </div>
-        <div class="card">
-            <span class="card-text">Julho</span>
-            <div class="button-container">
-              <button class="custom-btn escolher-mes" data-mes="julho">Escolher</button>
-        </div>
-        </div>
-        <div class="card">
-            <span class="card-text">Agosto</span>
-            <div class="button-container">
-            <button class="custom-btn escolher-mes" data-mes="agosto">Escolher</button>
-        </div>
-        </div>
-        <div class="card">
-            <span class="card-text">Setembro</span>
-            <div class="button-container">
-            <button class="custom-btn escolher-mes" data-mes="setembro">Escolher</button>
-        </div>
-        </div>
-        <div class="card">
-            <span class="card-text">Outubro</span>
-            <div class="button-container">
-            <button class="custom-btn escolher-mes" data-mes="outubro">Escolher</button>
-        </div>
-        </div>
-        <div class="card">
-            <span class="card-text">Novembro</span>
-            <div class="button-container">
-            <button class="custom-btn escolher-mes" data-mes="novembro">Escolher</button>
-            </div>
+          <span class="card-text">Agosto</span>
+          <div class="button-container">
+            <button class="custom-btn escolher-mes" type="submit" name="mes" value="agosto">Escolher</button>
           </div>
-        <div class="card">
-            <span class="card-text">Dezembro</span>
-            <div class="button-container">
-            <button class="custom-btn escolher-mes" data-mes="dezembro">Escolher</button>
         </div>
+        <div class="card">
+          <span class="card-text">Setembro</span>
+          <div class="button-container">
+            <button class="custom-btn escolher-mes" type="submit" name="mes" value="setembro">Escolher</button>
+          </div>
         </div>
       </div>
     </section>
-  </body>
+  </form>
+</body>
 </html>
+
 
 <style>
   :root {
@@ -206,52 +162,3 @@
     color: #ffffff;
   }
 </style>
-
-
-<script>
-  // Obtém todos os botões "Escolher"
-    const buttons = document.querySelectorAll(".escolher-mes");
-
-  // Adiciona um ouvinte de evento de clique a cada botão
-
- buttons.forEach((button) => {
-  button.addEventListener("click", function () {
-    const mesEscolhido = this.parentNode.previousElementSibling.innerText;
-    const idMedico = "<%= medico.id_medicos %>";
-
-    // Adicione esta linha para adicionar o atributo de dados
-    button.setAttribute("data-id-medicos", idMedico);
-
-    fetch("/dataConsulta", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ mes: mesEscolhido, id_medicos: idMedico }),
-    })
-      .then((response) => response.text())
-      .then((result) => {
-        console.log(result);
-      })
-      .catch((error) => {
-        console.error("Erro:", error);
-      });
-  });
-});
-
-
-  // Adiciona um ouvinte de evento de clique a cada botão
-
-  buttons.forEach((button) => {
-    button.addEventListener("click", function () {
-      // Obtém o valor do mês escolhido a partir do atributo "data-mes"
-      const mesEscolhido = button.getAttribute("data-mes");
-
-      // Obtém o ID do médico
-      const idMedico = "<%= medico.id_medicos %>"; // Certifique-se de que o objeto medico esteja disponível na página
-
-      // Redireciona para a página diaConsulta com os parâmetros do mês e do ID do médico
-      window.location.href = "/dataConsulta/" + mesEscolhido + "/" + idMedico;
-    });
-  });
-</script>
