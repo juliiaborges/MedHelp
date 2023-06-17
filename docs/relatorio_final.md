@@ -273,11 +273,10 @@ Usar o seguinte modelo:
 
 | **Indicador** | **Objetivos** | **Descrição** | **Cálculo** | **Fonte dados** | **Perspectiva** |
 | --- | --- | --- | --- | --- | --- |
-| Média de feedbacks mensais | Avaliar quantitativamente os feedbacks por mês| Número de feedbacks deixados na clínica | (Total das notas do feedback)/(Nº de feedbacks recevbidos) | Caixa de reclamações na clínica | Aprendizado e Crescimento |
 | Número de agendamentos | Avaliar a quantidade de agendamentos | Mede o número de agendamentos em relação à meta mensal | (N° de atendimentos realizados no mês)/(Meta de 80 atendimentos mensais) | Registro de atendimentos da clínica | Evolução em relação à meta |
-| Taxa de ocupação de equipamentos mensal | Manter controle de gerência | Calcular a taxa de ocupação de equipamento | (Tempo total do gasto do uso dos equipamentos/(Nº dos equipamentos adquiridos)| Controle de estoque | Melhorar a gestão |
-| Quantidade de pacientes que usufruem dos plano de saúde | Avaliar a quantidade de clientes que obtem o plano de saúde médico mensais | Número de pacientes que usam o plano de saúde para o pagamenrto | (Total de pagamentos com o plano de saúde realizados no mês)/(dias trabalhados pela clínica) | O processo de cadastrar pagamento | Fazer uma análise e relatórios com mais eficiência no plano de saúde |
-| Custo médio de atendimento por paciente | Avaliar a gestão do tempo de cada paciente | Saber o tempo que os funcionarios gastam com cada cliente | (Tempo total de cada consulta mensal)/(quantidade de consultas mensais)| Agendamentos de consultas registrados no sistema | Melhor gestão de tempo |
+| Quantidade de equipamentos usado mensalemente | Manter controle de gerência | Calcular a taxa de ocupação de equipamento | (Tempo total do gasto do uso dos equipamentos/(Nº dos equipamentos usados)| Controle de estoque | Melhorar a gestão |
+| Total de pagamentos com plano de saúde por dia | Avaliar a quantidade de clientes que usam o plano de saúde médico | Número de pacientes que usam o plano de saúde para o pagamenrto | (Total de atendimentos realizados no dia)-(Total de atendimentos realizados no dia sem plano de saúde) | O processo de cadastrar pagamento | Fazer uma análise e relatórios com mais eficiência no plano de saúde |
+| Tempo total de consultas | Avaliar a gestão do tempo da clínica | Saber o tempo que os funcionarios gastam com cada cliente | (Tempo total de cada consulta)*(quantidade de consultas)| Agendamentos de consultas registrados no sistema | Melhor gestão de tempo |
 
 ## 7.Sistema desenvolvido
 
