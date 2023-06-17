@@ -26,6 +26,11 @@ const consulta = db.sequelize.define(
       allowNull: true, // permitir valores nulos
       defaultValue: null // definir o valor padrão como null
     },
+    ano_consulta:{
+      type: db.Sequelize.INTEGER,
+      allowNull: true, // permitir valores nulos
+      defaultValue: null // definir o valor padrão como null
+    },
     horario_consulta: {
       type: db.Sequelize.TIME,
       allowNull: true, // permitir valores nulos

@@ -6,8 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://rsms.me/">
-    <link rel="stylesheet" href="../../frontend/styles/diaConsulta.css">
-    <link rel="stylesheet" href="../../frontend/styles/darkMode.css">
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
 
     <title>Cadastro de Horários</title>
@@ -56,31 +54,31 @@
   
       <form id="eventTitleInput" >
         <div>
-          <input type="radio" name="horario" id="horario" value="12h até 13h"> 12h até 13h
+          <input type="radio" name="horario" id="horario" value="12h até 13h" onclick="openModal(clicked, '12h até 13h')"> 12h até 13h
         </div>
         <br>
         <div>
-          <input type="radio" name="horario" id="horario" value="13h até 14h"> 13h até 14h
+          <input type="radio" name="horario" id="horario" value="13h até 14h" onclick="openModal(clicked, '13h até 14h')"> 13h até 14h
         </div>
         <br>
         <div>
-          <input type="radio" name="horario" id="horario" value="14h até 15h"> 14h até 15h
+          <input type="radio" name="horario" id="horario" value="14h até 15h" onclick="openModal(clicked, '14h até 15h')"> 14h até 15h
         </div>
         <br>
         <div>
-          <input type="radio" name="horario"id="horario" value="15h até 16h"> 15h até 16h
+          <input type="radio" name="horario"id="horario" value="15h até 16h" onclick="openModal(clicked, '15h até 16h')"> 15h até 16h
         </div>
         <br>
         <div>
-          <input type="radio" name="horario"id="horario" value="16h até 17h"> 16h até 17h
+          <input type="radio" name="horario"id="horario" value="16h até 17h" onclick="openModal(clicked, '16h até 17h')"> 16h até 17h
         </div>
         <br>
         <div>
-          <input type="radio" name="horario" id="horario" value="17h até 18h"> 17h até 18h
+          <input type="radio" name="horario" id="horario" value="17h até 18h" onclick="openModal(clicked, '17h até 18h')"> 17h até 18h
         </div>
         <br>
         <div>
-          <input type="radio" name="horario" id="horario" value="18h até 19h"> 18h até 19h
+          <input type="radio" name="horario" id="horario" value="18h até 19h" onclick="openModal(clicked, '18h até 19h')"> 18h até 19h
         </div>
         <br>
         <button id="saveButton"> Salvar</button>
@@ -220,10 +218,25 @@ function load (){
       dayS.classList.add('padding')
     }
 
-    
+    //
+
+    dayS.addEventListener('click', () => {    
+    const monthElement = document.getElementById("monthDisplay");
+    if (monthElement) {
+      const date = monthElement.textContent;
+      const month = String(monthElement.textContent);
+      const monthOnly = month.split(",")[0].trim();
+      const yearOnly = month.split(",")[1].trim();
+      console.log(monthOnly);
+      console.log(yearOnly);
+    } else {
+    console.log("Elemento não encontrado");
+  }
+  });
     calendar.appendChild(dayS)
   }
 }
+
 document.getElementById('cancelButton').addEventListener('click', () => {
   closeModal();
 });
@@ -308,10 +321,7 @@ const initialColors = {
   eventColor: getStyle(html, '--event-color'),
   eventColor: getStyle(html, '--event-color'),
   colorDay: getStyle(html, '--color-day'),
-  modalEvent: getStyle(html, '--modal-event')
-  
-
-  
+  modalEvent: getStyle(html, '--modal-event') 
 }
 
 const darkMode = {
@@ -344,24 +354,25 @@ checkbox.addEventListener("change", ({target}) => {
     target.checked ? changeColors(darkMode) : changeColors(initialColors)
 })
 
-function saveDate(time) {
-    fetch('/salvarData', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        time: time,
-      }),
-    })
-      .then((response) => response.text())
-      .then((data) => {
-        console.log(data); // Você pode exibir uma mensagem de sucesso aqui
-      })
-      .catch((error) => {
-        console.error('Erro ao salvar data:', error);
-      });
-  }
+
+// function saveDate(time) {
+//     fetch('/salvarData', {
+//       method: 'POST',
+//       headers: {
+//         'Content-Type': 'application/json',
+//       },
+//       body: JSON.stringify({
+//         time: time,
+//       }),
+//     })
+//       .then((response) => response.text())
+//       .then((data) => {
+//         console.log(data); // Você pode exibir uma mensagem de sucesso aqui
+//       })
+//       .catch((error) => {
+//         console.error('Erro ao salvar data:', error);
+//       });
+//   }
 
 </script>
 

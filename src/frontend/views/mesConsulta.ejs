@@ -222,7 +222,7 @@
     // Adicione esta linha para adicionar o atributo de dados
     button.setAttribute("data-id-medicos", idMedico);
 
-    fetch("/diaConsulta", {
+    fetch("/dataConsulta", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -251,7 +251,7 @@
       const idMedico = "<%= medico.id_medicos %>"; // Certifique-se de que o objeto medico esteja disponível na página
 
       // Redireciona para a página diaConsulta com os parâmetros do mês e do ID do médico
-      window.location.href = "/diaConsulta/" + mesEscolhido + "/" + idMedico;
+      window.location.href = "/dataConsulta/" + mesEscolhido + "/" + idMedico;
     });
   });
 </script>

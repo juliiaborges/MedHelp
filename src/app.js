@@ -174,7 +174,7 @@ app.get('/editarPacientes/:id_prontuario', function(req, res) {
 
 app.post('/editarPacientes/:id_prontuario', function(req, res) {
   const idProntuario = req.params.id_prontuario;
-  const { nome, cpf, telefone, plano, data_nascimento, alergias, cirurgias, observacoes } = req.body;
+  const { nome, cpf, telefone, data_nascimento, alergias, cirurgias, observacoes } = req.body;
   
   prontuario.findByPk(idProntuario)
     .then(function(prontuario) {
@@ -226,7 +226,6 @@ app.post('/atualizar_paciente/:id_prontuario', function (req, res) {
 });
 
 // Rota para exibir meses disponíveis para consulta
-
 app.get("/mesConsulta/:id_medicos", function (req, res) {
   const idMedicos = req.params.id_medicos;
   Medicos.findByPk(idMedicos)
@@ -244,56 +243,25 @@ app.get("/mesConsulta/:id_medicos", function (req, res) {
     });
 });
 
-// Rota para salvar a escolha do mês da consulta
-app.post("/diaConsulta", function (req, res) {
-  const idMedicos = req.body.id_medicos;
-  const mesConsulta = req.body.mes;
 
-  // Salve a escolha do mês no banco de dados
-  Consulta.create({
-    mes_consulta: mesConsulta,
-    fk_id_medicos: idMedicos,
-    // Defina os valores restantes do objeto de acordo com suas necessidades
-  })
-    .then(function () {
-      res.redirect("/diaConsulta/" + mesConsulta + "/" + idMedicos);
-    })
-    .catch(function (erro) {
-      res.send("Erro ao registrar escolha do mês: " + erro);
-    });
-});
+// Rota para exibir meses disponíveis para consulta
 
-// Rota para escolher o dia da consulta
-app.get("/diaConsulta/:mes_consulta/:id_medicos", function (req, res) {
-  const mesConsulta = req.params.mes_consulta;
+app.get("/dataConsulta/:id_medicos", function (req, res) {
   const idMedicos = req.params.id_medicos;
-  res.render("diaConsulta", {
-    mesConsulta: mesConsulta,
-    idMedicos: idMedicos,
-  });
-});
-
-
-//Rota para escolher a data da consulta
-
-app.get("/dataConsulta", function (req, res) {
-  res.render("dataConsulta");
-});
-// Rota para salvar a data no banco de dados
-app.post('/dataConsulta', function (req, res) {
-  Consulta.create({
-    mes_consulta: req.body.mes,
-    dia_consulta: req.body.dia,
-    horario_consulta: req.body.horario
-  })
-    .then(function () {
-      res.send("Data cadastrada: " + req.body.dia + "/" + req.body.mes);
+  Medicos.findByPk(idMedicos)
+    .then(function (medico) {
+      if (medico) {
+        res.render("dataConsulta", {
+          medico: medico,
+        });
+      } else {
+        res.send("Médico não encontrado!");
+      }
     })
     .catch(function (erro) {
-      res.send("Erro ao cadastrar data: " + erro);
+      res.send("Erro ao buscar médico!" + erro);
     });
 });
-
 
   sequelize
   .authenticate()
