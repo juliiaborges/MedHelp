@@ -208,7 +208,7 @@ app.post('/atualizar_paciente/:id_prontuario', function (req, res) {
       res.send('Erro ao buscar paciente: ' + erro);
     });
 });
-// Rota para listar médicos
+
 // Rota para listar médicos
 app.get("/listarMedicos", function (req, res) {
   Medicos.findAll()
@@ -220,33 +220,52 @@ app.get("/listarMedicos", function (req, res) {
     });
 });
 
-app.get("/mesConsulta", function (req, res) {
-  const idMedico = req.query.id_medicos;
-  res.render("mesConsulta", { id_medicos: idMedico });
-});
-
-app.post("/mesConsulta", function (req, res) {
-  const idMedico = req.query.id_medicos;
-  console.log("Valor de idMedico:", idMedico);  // Acessando o valor de id_medico da URL
-  const mesConsulta = req.body.mes;
-
-  Consulta.create({
-    fk_id_medicos: idMedico,
-    mes_consulta: mesConsulta,
-  })
-    .then(function () {
-      res.redirect("/dataConsulta");
+// Rota para exibir a página de escolha do mês da consulta
+app.get("/mesConsulta/:id_medicos", function (req, res) {
+  const idMedicos = req.params.id_medicos;
+  Medicos.findByPk(idMedicos)
+    .then(function (medico) {
+      if (medico) {
+        res.render("mesConsulta", {
+          medico: medico,
+          idMedicos: idMedicos,
+        });
+      } else {
+        res.send("Médico não encontrado!");
+      }
     })
     .catch(function (erro) {
-      res.send("Erro!" + erro);
+      res.send("Erro ao buscar médico!" + erro);
     });
 });
 
+// Rota para salvar a escolha do mês da consulta
+app.post("/mesConsulta/:id_medicos", function (req, res) {
+  const idMedicos = req.params.id_medicos;
+  const mesConsulta = req.body.mes;
 
-// Rota para exibir meses disponíveis para consulta
+  // Salve a escolha do mês no banco de dados
+  Consulta.create({
+    mes_consulta: mesConsulta,
+    fk_id_medicos: idMedicos,
+    // Defina os valores restantes do objeto de acordo com suas necessidades
+  })
+    .then(function () {
+      res.redirect("/dataConsulta/" + idMedicos);
+    })
+    .catch(function (erro) {
+      res.send("Erro ao registrar escolha do mês: " + erro);
+    });
+});
 
-app.get("/dataConsulta", function (req, res) {
-  res.render("dataConsulta");
+// Rota para escolher o dia da consulta
+app.get("/dataConsulta/:mesConsulta/:idMedicos", function (req, res) {
+  const mesConsulta = req.params.mesConsulta;
+  const idMedicos = req.params.idMedicos;
+  res.render("dataConsulta", {
+    mesConsulta: mesConsulta,
+    idMedicos: idMedicos,
+  });
 });
 
   sequelize

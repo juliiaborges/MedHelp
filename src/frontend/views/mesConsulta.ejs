@@ -8,41 +8,69 @@
   <title>Mês da consulta</title>
 </head>
 <body>
-  <form action="/mesConsulta" method="POST">
-    <input type="hidden" name="fk_id_medicos" value="<%= id_medicos %>">
+
     <section class="slide" id="tab-portfolio">
       <h1>Escolha um Mês</h1>
       <div class="cards" id="mes">
         <div class="card">
           <span class="card-text">Junho</span>
           <div class="button-container">
-            <button class="custom-btn escolher-mes" type="submit" name="mes" value="junho">Escolher</button>
+            <button class="custom-btn escolher-mes" value="junho">Escolher</button>
           </div>
         </div>
         <div class="card">
           <span class="card-text">Julho</span>
           <div class="button-container">
-            <button class="custom-btn escolher-mes" type="submit" name="mes" value="julho">Escolher</button>
+            <button class="custom-btn escolher-mes" data-mes="junho">Escolher</button>
           </div>
         </div>
         <div class="card">
           <span class="card-text">Agosto</span>
           <div class="button-container">
-            <button class="custom-btn escolher-mes" type="submit" name="mes" value="agosto">Escolher</button>
+            <button class="custom-btn escolher-mes" data-mes="agosto">Escolher</button>
           </div>
         </div>
         <div class="card">
           <span class="card-text">Setembro</span>
           <div class="button-container">
-            <button class="custom-btn escolher-mes" type="submit" name="mes" value="setembro">Escolher</button>
+            <button class="custom-btn escolher-mes" data-mes="setembro">Escolher</button>
           </div>
         </div>
       </div>
     </section>
-  </form>
+
 </body>
 </html>
 
+
+<script>
+  // Obtém todos os botões "Escolher"
+  const buttons = document.querySelectorAll(".escolher-mes");
+  buttons.forEach((button) => {
+    button.addEventListener("click", function () {
+      const mesEscolhido = this.parentNode.previousElementSibling.innerText;
+      const idMedico = "<%= idMedicos %>"; // Use a variável idMedicos definida anteriormente no arquivo
+      // Adicione esta linha para adicionar o atributo de dados
+      button.setAttribute("data-id-medicos", idMedico);
+      fetch("/mesConsulta/" + idMedico, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ mes: mesEscolhido }),
+      })
+        .then((response) => response.text())
+        .then((result) => {
+          console.log(result);
+          // Redireciona para a página dataConsulta com os parâmetros do mês e do ID do médico
+          window.location.href = "/dataConsulta/" + mesEscolhido + "/" + idMedico;
+        })
+        .catch((error) => {
+          console.error("Erro:", error);
+        });
+    });
+  });
+</script>
 
 <style>
   :root {
