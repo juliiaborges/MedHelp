@@ -87,13 +87,14 @@
 </html>
 
 <script>
+  const idPaciente = "<%= id_paciente %>";
   // Selecionar o botão de agendar
   const agendarBtn = document.getElementById("agendarBtn");
 
   // Adicionar um ouvinte de evento de clique ao botão
   agendarBtn.addEventListener("click", function () {
     // Redirecionar o usuário para a página listarMedicos.ejs
-    window.location.href = "/listarMedicos";
+    window.location.href = "/listarMedicos/" + idPaciente;
   });
 </script>
 

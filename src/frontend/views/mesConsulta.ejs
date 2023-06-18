@@ -42,17 +42,15 @@
 </body>
 </html>
 
-
 <script>
   // Obtém todos os botões "Escolher"
   const buttons = document.querySelectorAll(".escolher-mes");
   buttons.forEach((button) => {
     button.addEventListener("click", function () {
       const mesEscolhido = this.parentNode.previousElementSibling.innerText;
-      const idMedico = "<%= idMedicos %>"; // Use a variável idMedicos definida anteriormente no arquivo
-      // Adicione esta linha para adicionar o atributo de dados
-      button.setAttribute("data-id-medicos", idMedico);
-      fetch("/mesConsulta/" + idMedico, {
+      const idMedico = "<%= idMedicos %>";
+
+      fetch("/mesConsulta/<%= idPaciente %>/" + idMedico, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -62,8 +60,8 @@
         .then((response) => response.text())
         .then((result) => {
           console.log(result);
-          // Redireciona para a página dataConsulta com os parâmetros do mês e do ID do médico
-          window.location.href = "/dataConsulta/" + mesEscolhido + "/" + idMedico;
+          // Redireciona para a página dataConsulta com os parâmetros do mês, ID do médico e ID do paciente
+          window.location.href = "/dataConsulta/" + "<%= idPaciente %>/" + idMedico + "/" + mesEscolhido ;
         })
         .catch((error) => {
           console.error("Erro:", error);
@@ -71,6 +69,7 @@
     });
   });
 </script>
+
 
 <style>
   :root {

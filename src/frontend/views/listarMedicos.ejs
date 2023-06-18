@@ -47,7 +47,8 @@
         <p><strong>Especialidade:</strong> <%= Medicos.especialidade_medico %></p>
         <p><strong>Situação:</strong> <%= Medicos.situacao_medico %></p>
         <br />
-        <a href="/mesConsulta?<%= Medicos.id_medicos%>">Escolher</a>
+        <a href="/mesConsulta/<%= id_paciente %>/<%= Medicos.id_medicos %>">Escolher</a>
+
       </div>
     <% }); %>
   </div>

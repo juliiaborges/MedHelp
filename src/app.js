@@ -65,6 +65,7 @@ app.post('/pacienteCadastrado', function (req, res) {
       res.send('Erro ao cadastrar médico!' + erro);
     });
 });
+
 // Verificar Login do Paciente
 app.post('/prontuarioPaciente', function (req, res) {
   const email = req.body.loginEmail;
@@ -79,7 +80,7 @@ app.post('/prontuarioPaciente', function (req, res) {
     .then(function (paciente) {
       if (paciente) {
         const idPaciente = paciente.id_paciente;
-        res.redirect('/prontuarioPaciente/' + idPaciente);
+        res.redirect('/editarProntuario/' + idPaciente);
       } else {
         res.send('Email ou senha inválidos. Por favor, tente novamente.');
       }
@@ -89,41 +90,160 @@ app.post('/prontuarioPaciente', function (req, res) {
     });
 });
 
-//Define a rota para o prontuario paciente 
 
+
+// Rota para editar o prontuário do paciente
+app.get('/editarProntuario/:id_paciente', function (req, res) {
+  const idPaciente = req.params.id_paciente;
+
+  // Verificar se o prontuário já existe na tabela "prontuario"
+  prontuarioPaciente.findOne({ where: { fk_id_paciente: idPaciente } })
+    .then(function (prontuario) {
+      if (prontuario) {
+        res.render('editarProntuario', { id_paciente: idPaciente, prontuarioPaciente: prontuario });
+      } else {
+        res.redirect('/prontuarioPaciente/' + idPaciente);
+      }
+    })
+    .catch(function (erro) {
+      res.send('Erro ao verificar o prontuário: ' + erro);
+    });
+});
+
+// Rota para criar o prontuário do paciente
 app.get('/prontuarioPaciente/:id_paciente', function (req, res) {
   const idPaciente = req.params.id_paciente;
   res.render('prontuarioPaciente', { id_paciente: idPaciente });
 });
 
+// Rota para salvar/atualizar o prontuário do paciente
+app.post('/paginaPaciente/:id_paciente', function (req, res) {
+  const idPaciente = req.params.id_paciente;
+  const { cpf, nome, data_nascimento, alergias, cirurgias, telefone } = req.body;
 
-//Receber dados do formulário
+  // Verificar se o prontuário já existe na tabela "prontuario"
+  prontuarioPaciente.findOne({ where: { fk_id_paciente: idPaciente } })
+    .then(function (prontuario) {
+      if (prontuario) {
+        // Atualizar os dados do prontuário existente
+        prontuarioPaciente.update(
+          {
+            cpf_prontuario: cpf,
+            nome_prontuario: nome,
+            data_nascimento_prontuario: data_nascimento,
+            alergias_prontuario: alergias,
+            cirurgias_prontuario: cirurgias,
+            telefone_prontuario: telefone
+          },
+          { where: { fk_id_paciente: idPaciente } }
+        )
+          .then(function () {
+            res.render("paginaPaciente", { id_paciente: idPaciente });
 
-app.post('/paginaPaciente', function (req, res) {
-  const filePath = path.join(__dirname, '../src/frontend/views/paginaPaciente.ejs');
-  fs.readFile(filePath, function (err, content) {
-
-    prontuarioPaciente.create({
-      cpf_prontuario: req.body.cpf,
-      nome_prontuario: req.body.nome,
-      data_nascimento_prontuario: req.body.data_nascimento,
-      alergias_prontuario:req.body.alergias,
-      cirurgias_prontuario: req.body.cirurgias,  
-      telefone_prontuario: req.body.telefone
-         
-    }).then(function () {
-      res.render('paginaPaciente');
-    }).catch(function (erro) {
-      res.send("Erro ao cadastrar prontuário do paciente!" + erro)
+          })
+          .catch(function (erro) {
+            res.send('Erro ao atualizar o prontuário: ' + erro);
+          });
+      } else {
+        // Criar um novo prontuário para o paciente
+        prontuarioPaciente.create({
+          fk_id_paciente: idPaciente,
+          cpf_prontuario: cpf,
+          nome_prontuario: nome,
+          data_nascimento_prontuario: data_nascimento,
+          alergias_prontuario: alergias,
+          cirurgias_prontuario: cirurgias,
+          telefone_prontuario: telefone
+        })
+          .then(function () {
+            res.send("/paginaPaciente");
+          })
+          .catch(function (erro) {
+            res.send('Erro ao criar o prontuário: ' + erro);
+          });
+      }
     })
+    .catch(function (erro) {
+      res.send('Erro ao verificar o prontuário: ' + erro);
+    });
+});
+
+
+// Rota para exibir a página do paciente
+app.get("/paginaPaciente/:id_paciente", function (req, res) {
+  const idPaciente = req.params.id_paciente;
+  res.render("paginaPaciente", { id_paciente: idPaciente });
+});
+
+// Rota para exibir a lista de médicos
+app.get("/listarMedicos/:id_paciente", function (req, res) {
+  const idPaciente = req.params.id_paciente;
+  Medicos.findAll()
+    .then(function (medicos) {
+      res.render("listarMedicos", { Medicos: medicos, id_paciente: idPaciente });
+    })
+    .catch(function (erro) {
+      res.send("Erro ao buscar médicos!" + erro);
+    });
+});
+
+
+// Rota para exibir a página de escolha do mês da consulta
+app.get("/mesConsulta/:id_paciente/:id_medicos", function (req, res) {
+  const idPaciente = req.params.id_paciente;
+  const idMedicos = req.params.id_medicos;  
+  Medicos.findByPk(idMedicos)
+    .then(function (medico) {
+      if (medico) {
+        res.render("mesConsulta", {
+          medico: medico,
+          idMedicos: idMedicos,
+          idPaciente: idPaciente,
+        });
+      } else {
+        res.send("Médico não encontrado!");
+      }
+    })
+    .catch(function (erro) {
+      res.send("Erro ao buscar médico!" + erro);
+    });
+});
+
+// Rota para salvar a escolha do mês da consulta
+app.post("/mesConsulta/:id_paciente/:id_medicos", function (req, res) {
+  const idPaciente = req.params.id_paciente;
+  const idMedicos = req.params.id_medicos;
+  const mesConsulta = req.body.mes;
+
+  // Salve a escolha do mês no banco de dados
+  Consulta.create({
+    mes_consulta: mesConsulta,
+    fk_id_medicos: idMedicos,
+    fk_id_paciente: idPaciente,
+    // Defina os valores restantes do objeto de acordo com suas necessidades
+  })
+    .then(function () {
+      res.redirect("/dataConsulta/" + idPaciente + "/" + idMedicos + "/" + mesConsulta);
+    })
+    .catch(function (erro) {
+      res.send("Erro ao registrar escolha do mês: " + erro);
+    });
+});
+
+
+// Rota para escolher o dia da consulta
+app.get("/dataConsulta/:id_paciente/:id_medicos/:mesConsulta", function (req, res) {
+  const idPaciente = req.params.id_paciente;
+  const idMedicos = req.params.id_medicos;
+  const mesConsulta = req.params.mesConsulta;
+  res.render("dataConsulta", {
+    mesConsulta: mesConsulta,
+    fk_id_medicos: idMedicos,
+    fk_id_paciente: idPaciente,
   });
 });
 
-// Rota para exibir a página do paciente
-app.get("/paginaPaciente", function (req, res) {
-  res.sendFile(path.join(__dirname, "/frontend/views/paginaPaciente.ejs"));
-});
-
+//médico alterar prontuario paciente
 
 
   // Rota para exibir a lista de pacientes
@@ -207,65 +327,6 @@ app.post('/atualizar_paciente/:id_prontuario', function (req, res) {
     .catch(function (erro) {
       res.send('Erro ao buscar paciente: ' + erro);
     });
-});
-
-// Rota para listar médicos
-app.get("/listarMedicos", function (req, res) {
-  Medicos.findAll()
-    .then(function (medicos) {
-      res.render("listarMedicos", { Medicos: medicos, id_medicos: req.query.id_medicos });
-    })
-    .catch(function (erro) {
-      res.send("Erro ao buscar médicos!" + erro);
-    });
-});
-
-// Rota para exibir a página de escolha do mês da consulta
-app.get("/mesConsulta/:id_medicos", function (req, res) {
-  const idMedicos = req.params.id_medicos;
-  Medicos.findByPk(idMedicos)
-    .then(function (medico) {
-      if (medico) {
-        res.render("mesConsulta", {
-          medico: medico,
-          idMedicos: idMedicos,
-        });
-      } else {
-        res.send("Médico não encontrado!");
-      }
-    })
-    .catch(function (erro) {
-      res.send("Erro ao buscar médico!" + erro);
-    });
-});
-
-// Rota para salvar a escolha do mês da consulta
-app.post("/mesConsulta/:id_medicos", function (req, res) {
-  const idMedicos = req.params.id_medicos;
-  const mesConsulta = req.body.mes;
-
-  // Salve a escolha do mês no banco de dados
-  Consulta.create({
-    mes_consulta: mesConsulta,
-    fk_id_medicos: idMedicos,
-    // Defina os valores restantes do objeto de acordo com suas necessidades
-  })
-    .then(function () {
-      res.redirect("/dataConsulta/" + idMedicos);
-    })
-    .catch(function (erro) {
-      res.send("Erro ao registrar escolha do mês: " + erro);
-    });
-});
-
-// Rota para escolher o dia da consulta
-app.get("/dataConsulta/:mesConsulta/:idMedicos", function (req, res) {
-  const mesConsulta = req.params.mesConsulta;
-  const idMedicos = req.params.idMedicos;
-  res.render("dataConsulta", {
-    mesConsulta: mesConsulta,
-    idMedicos: idMedicos,
-  });
 });
 
   sequelize

@@ -338,16 +338,17 @@ checkbox.addEventListener("change", ({target}) => {
     target.checked ? changeColors(darkMode) : changeColors(initialColors)
 })
 
+
 //banco de dados
 
-
   buttons.forEach((button) => {
-  button.addEventListener("click", function () {
-    const mesEscolhido = button.getAttribute("data-mes");
-    const idMedicos = button.getAttribute("data-id-medicos");
-    window.location.href = "/dataConsulta/" + mesEscolhido + "/" + idMedicos;
+    button.addEventListener("click", function () {
+      const mesEscolhido = button.getAttribute("data-mes");
+      const idMedicos = button.getAttribute("data-id-medicos");
+      const idPaciente = button.getAttribute("data-id-medicos"); 
+      window.location.href = "/dataConsulta/" + idPaciente + "/" + idMedicos + "/" + mesEscolhido;
+    });
   });
-});
 
 </script>
 
