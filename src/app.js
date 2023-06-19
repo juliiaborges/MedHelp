@@ -156,7 +156,7 @@ app.post('/paginaPaciente/:id_paciente', function (req, res) {
           telefone_prontuario: telefone
         })
           .then(function () {
-            res.send("/paginaPaciente");
+            res.send("paginaPaciente");
           })
           .catch(function (erro) {
             res.send('Erro ao criar o prontuário: ' + erro);
@@ -208,7 +208,6 @@ app.get("/mesConsulta/:id_paciente/:id_medicos", function (req, res) {
       res.send("Erro ao buscar médico!" + erro);
     });
 });
-
 // Rota para salvar a escolha do mês da consulta
 app.post("/mesConsulta/:id_paciente/:id_medicos", function (req, res) {
   const idPaciente = req.params.id_paciente;
@@ -236,12 +235,30 @@ app.get("/dataConsulta/:id_paciente/:id_medicos/:mesConsulta", function (req, re
   const idPaciente = req.params.id_paciente;
   const idMedicos = req.params.id_medicos;
   const mesConsulta = req.params.mesConsulta;
-  res.render("dataConsulta", {
+  res.render(mesConsulta, {
     mesConsulta: mesConsulta,
     fk_id_medicos: idMedicos,
     fk_id_paciente: idPaciente,
   });
 });
+
+app.get("/junho", function (req, res) {
+  res.render("junho");
+});
+
+
+app.get("/julho", function (req, res) {
+  res.render("julho");
+});
+
+app.get("/agosto", function (req, res) {
+  res.render("agosto");
+});
+
+app.get("/setembro", function (req, res) {
+  res.render("setembro");
+});
+
 
 //médico alterar prontuario paciente
 

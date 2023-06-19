@@ -10,19 +10,15 @@ const consulta = db.sequelize.define(
     },
     fk_id_medicos: {
       type: db.Sequelize.DOUBLE,
-      allowNull: true, // permitir valores nulos
-      defaultValue: null // definir o valor padrão como null
     },
     fk_id_paciente:{
       type: db.Sequelize.DOUBLE,
-      allowNull: true, // permitir valores nulos
-      defaultValue: null // definir o valor padrão como null
     },
     mes_consulta:{
       type: db.Sequelize.STRING,
     },
     dia_consulta: {
-      type: db.Sequelize.DOUBLE,
+      type: db.Sequelize.STRING,
       allowNull: true, // permitir valores nulos
       defaultValue: null // definir o valor padrão como null
     },

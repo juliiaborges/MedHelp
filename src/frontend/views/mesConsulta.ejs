@@ -15,25 +15,25 @@
         <div class="card">
           <span class="card-text">Junho</span>
           <div class="button-container">
-            <button class="custom-btn escolher-mes" value="junho">Escolher</button>
+            <button class="custom-btn escolher-mes junho">Escolher</button>
           </div>
         </div>
         <div class="card">
           <span class="card-text">Julho</span>
           <div class="button-container">
-            <button class="custom-btn escolher-mes" data-mes="junho">Escolher</button>
+            <button class="custom-btn escolher-mes julho">Escolher</button>
           </div>
         </div>
         <div class="card">
           <span class="card-text">Agosto</span>
           <div class="button-container">
-            <button class="custom-btn escolher-mes" data-mes="agosto">Escolher</button>
+            <button class="custom-btn escolher-mes agosto">Escolher</button>
           </div>
         </div>
         <div class="card">
           <span class="card-text">Setembro</span>
           <div class="button-container">
-            <button class="custom-btn escolher-mes" data-mes="setembro">Escolher</button>
+            <button class="custom-btn escolher-mes setembro">Escolher</button>
           </div>
         </div>
       </div>
@@ -43,11 +43,11 @@
 </html>
 
 <script>
-  // Obtém todos os botões "Escolher"
-  const buttons = document.querySelectorAll(".escolher-mes");
+   // Obtém todos os botões "Escolher"
+   const buttons = document.querySelectorAll(".escolher-mes");
   buttons.forEach((button) => {
     button.addEventListener("click", function () {
-      const mesEscolhido = this.parentNode.previousElementSibling.innerText;
+      const mesEscolhido = this.classList[2]; // Obtém a classe do botão clicado (junho, julho, agosto, setembro)
       const idMedico = "<%= idMedicos %>";
 
       fetch("/mesConsulta/<%= idPaciente %>/" + idMedico, {
@@ -60,8 +60,8 @@
         .then((response) => response.text())
         .then((result) => {
           console.log(result);
-          // Redireciona para a página dataConsulta com os parâmetros do mês, ID do médico e ID do paciente
-          window.location.href = "/dataConsulta/" + "<%= idPaciente %>/" + idMedico + "/" + mesEscolhido ;
+          // Redireciona para a rota específica do mês escolhido
+          window.location.href = "/" + mesEscolhido;
         })
         .catch((error) => {
           console.error("Erro:", error);
