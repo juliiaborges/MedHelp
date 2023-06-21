@@ -68,6 +68,19 @@
       </div>
       
 </form>
+<div class="overlay">
+  <div class="overlay-content">
+    <h2>Selecione um horário</h2>
+    <INPUT TYPE="radio" NAME="horario" VALUE="12h/13h" > 12h até 13h<br>
+    <INPUT TYPE="radio" NAME="horario" VALUE="13h/14h"> 13h até 14h<br>
+   <INPUT TYPE="radio" NAME="horario" VALUE="14h/15h"> 14h até 15h<br> 
+    <INPUT TYPE="radio" NAME="horario" VALUE="15h/16h"> 15h até 16h <br>
+    <INPUT TYPE="radio" NAME="horario" VALUE="16h/17h"> 16h até 17h <br>
+   <INPUT TYPE="radio" NAME="horario" VALUE="17h/18h"> 17h até 18h <br><br>
+    <button id="confirmButton">Confirmar</button>
+    <button id="cancelButton">Cancelar</button>
+  </div>
+</div>
   </div>
 
   <div id="newEventModal">
@@ -96,7 +109,44 @@
   <div id="modalBackDrop"></div>
 
   <script>
-    // Adicione o JavaScript necessário aqui
+    
+    document.addEventListener("DOMContentLoaded", function () {
+        const calendarDays = document.querySelectorAll("#calendar .day");
+        const overlay = document.querySelector(".overlay");
+        const confirmButton = document.getElementById("confirmButton");
+        const cancelButton = document.getElementById("cancelButton");
+
+        function handleDayClick(event) {
+          const selectedDay = event.target;
+          const selectedDate = selectedDay.getAttribute("value");
+
+          // Adicionar classe "active" ao overlay para torná-lo visível
+          overlay.classList.add("active");
+
+          console.log("Data selecionada:", selectedDate);
+        }
+
+        function handleConfirmButtonClick() {
+          const selectedHorario = document.querySelector("#overlay input:checked");
+
+          console.log("Horário selecionado:", selectedHorario.value);
+
+          // Remover classe "active" do overlay para escondê-lo
+          overlay.classList.remove("active");
+        }
+
+        function handleCancelButtonClick() {
+          // Remover classe "active" do overlay para escondê-lo
+          overlay.classList.remove("active");
+        }
+
+        calendarDays.forEach(day => {
+          day.addEventListener("click", handleDayClick);
+        });
+
+        confirmButton.addEventListener("click", handleConfirmButtonClick);
+        cancelButton.addEventListener("click", handleCancelButtonClick);
+      });
   </script>
 </body>
 </html>
@@ -323,4 +373,27 @@
     display: flex;
     text-align: center;
   }
+  .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      visibility: hidden;
+    }
+
+    .overlay.active {
+      visibility: visible;
+    }
+
+    .overlay-content {
+      background-color: white;
+      padding: 20px;
+      text-align: center;
+    }
 </style>

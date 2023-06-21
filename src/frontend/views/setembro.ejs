@@ -1,116 +1,192 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cadastro de Horários</title>
-</head>
+  </head>
 
-<body>
-<h1>Setembro</h1>
-<br><br>
-  <div id="header">
-    <button id="backButton">&lt;</button>
-    <div id="monthYearDisplay"></div>
-    <button id="nextButton">&gt;</button>
-  </div>
-
-  <div id="container">
-    <div id="weekdays">
-      <div>Domingo</div>
-      <div>Segunda</div>
-      <div>Terça</div>
-      <div>Quarta</div>
-      <div>Quinta</div>
-      <div>Sexta</div>
-      <div>Sábado</div>
+  <body>
+    <h1>Setembro</h1>
+    <br /><br />
+    <div id="header">
+      <button id="backButton">&lt;</button>
+      <div id="monthYearDisplay"></div>
+      <button id="nextButton">&gt;</button>
     </div>
-<form>
-    <div id="calendar">
-        <div class="day padding"></div> <!-- Espaço vazio no início do mês -->
-        <div class="day padding"></div> <!-- Espaço vazio no início do mês -->
-        <div class="day padding"></div> <!-- Espaço vazio no início do mês -->
-        <div class="day padding"></div> <!-- Espaço vazio no início do mês -->
-        <div class="day" value="01/09">1</div>
-        <div class="day" value="02/09">2</div>
-        <div class="day" value="03/09">3</div>
-        <div class="day" value="04/09">4</div>
-        <div class="day" value="05/09">5</div>
-        <div class="day" value="06/09">6</div>
-        <div class="day" value="07/09">7</div>
-        <div class="day" value="08/09">8</div>
-        <div class="day" value="09/09">9</div>
-        <div class="day" value="10/09">10</div>
-        <div class="day" value="11/09">11</div>
-        <div class="day" value="12/09">12</div>
-        <div class="day" value="13/09">13</div>
-        <div class="day" value="14/09">14</div>
-        <div class="day" value="15/09">15</div>
-        <div class="day" value="16/09">16</div>
-        <div class="day" value="17/09">17</div>
-        <div class="day" value="18/09">18</div>
-        <div class="day" value="19/09">19</div>
-        <div class="day" value="20/09">20</div>
-        <div class="day" value="21/09">21</div>
-        <div class="day" value="22/09">22</div>
-        <div class="day" value="23/09">23</div>
-        <div class="day" value="24/09">24</div>
-        <div class="day" value="25/09">25</div>
-        <div class="day" value="26/09">26</div>
-        <div class="day" value="27/09">27</div>
-        <div class="day" value="28/09">28</div>
-        <div class="day" value="29/09">29</div>
-        <div class="day" value="30/09">30</div>
-        <div class="day padding"></div> <!-- Espaço vazio no final do mês -->
+
+    <div id="container">
+      <div id="weekdays">
+        <div>Domingo</div>
+        <div>Segunda</div>
+        <div>Terça</div>
+        <div>Quarta</div>
+        <div>Quinta</div>
+        <div>Sexta</div>
+        <div>Sábado</div>
       </div>
-      
-</form>
-  </div>
-
-  <div id="newEventModal">
-    <h3>Novo Evento</h3>
-    <input type="text" id="eventTitleInput" placeholder="Título do evento" />
-    <textarea id="eventTextInput" placeholder="Descrição do evento"></textarea>
-    <div class="radio-group">
-      <input type="radio" id="eventColor1" name="eventColor" value="#FFFCFF" checked />
-      <label for="eventColor1"></label>
-      <input type="radio" id="eventColor2" name="eventColor" value="#e8f4fa" />
-      <label for="eventColor2"></label>
-      <input type="radio" id="eventColor3" name="eventColor" value="#FFFCFF" />
-      <label for="eventColor3"></label>
+      <form>
+        <div id="calendar">
+          <div class="day padding"></div>
+          <!-- Espaço vazio no início do mês -->
+          <div class="day padding"></div>
+          <!-- Espaço vazio no início do mês -->
+          <div class="day padding"></div>
+          <!-- Espaço vazio no início do mês -->
+          <div class="day padding"></div>
+          <!-- Espaço vazio no início do mês -->
+          <div class="day" value="01/09">1</div>
+          <div class="day" value="02/09">2</div>
+          <div class="day" value="03/09">3</div>
+          <div class="day" value="04/09">4</div>
+          <div class="day" value="05/09">5</div>
+          <div class="day" value="06/09">6</div>
+          <div class="day" value="07/09">7</div>
+          <div class="day" value="08/09">8</div>
+          <div class="day" value="09/09">9</div>
+          <div class="day" value="10/09">10</div>
+          <div class="day" value="11/09">11</div>
+          <div class="day" value="12/09">12</div>
+          <div class="day" value="13/09">13</div>
+          <div class="day" value="14/09">14</div>
+          <div class="day" value="15/09">15</div>
+          <div class="day" value="16/09">16</div>
+          <div class="day" value="17/09">17</div>
+          <div class="day" value="18/09">18</div>
+          <div class="day" value="19/09">19</div>
+          <div class="day" value="20/09">20</div>
+          <div class="day" value="21/09">21</div>
+          <div class="day" value="22/09">22</div>
+          <div class="day" value="23/09">23</div>
+          <div class="day" value="24/09">24</div>
+          <div class="day" value="25/09">25</div>
+          <div class="day" value="26/09">26</div>
+          <div class="day" value="27/09">27</div>
+          <div class="day" value="28/09">28</div>
+          <div class="day" value="29/09">29</div>
+          <div class="day" value="30/09">30</div>
+          <div class="day padding"></div>
+          <!-- Espaço vazio no final do mês -->
+        </div>
+      </form>
+      <div class="overlay">
+        <div class="overlay-content">
+          <h2>Selecione um horário</h2>
+          <INPUT TYPE="radio" NAME="horario" VALUE="12h/13h" /> 12h até 13h<br />
+          <INPUT TYPE="radio" NAME="horario" VALUE="13h/14h" /> 13h até 14h<br />
+          <INPUT TYPE="radio" NAME="horario" VALUE="14h/15h" /> 14h até 15h<br />
+          <INPUT TYPE="radio" NAME="horario" VALUE="15h/16h" /> 15h até 16h
+          <br />
+          <INPUT TYPE="radio" NAME="horario" VALUE="16h/17h" /> 16h até 17h
+          <br />
+          <INPUT TYPE="radio" NAME="horario" VALUE="17h/18h" /> 17h até 18h
+          <br /><br />
+          <button id="confirmButton">Confirmar</button>
+          <button id="cancelButton">Cancelar</button>
+        </div>
+      </div>
     </div>
-    <button id="saveButton">Salvar</button>
-    <button id="cancelButton">Cancelar</button>
-  </div>
 
-  <div id="deleteEventModal">
-    <h3>Excluir Evento</h3>
-    <p>Você tem certeza que deseja excluir este evento?</p>
-    <button id="deleteButton">Excluir</button>
-    <button id="closeButton">Fechar</button>
-  </div>
+    <div id="newEventModal">
+      <h3>Novo Evento</h3>
+      <input type="text" id="eventTitleInput" placeholder="Título do evento" />
+      <textarea
+        id="eventTextInput"
+        placeholder="Descrição do evento"
+      ></textarea>
+      <div class="radio-group">
+        <input
+          type="radio"
+          id="eventColor1"
+          name="eventColor"
+          value="#FFFCFF"
+          checked
+        />
+        <label for="eventColor1"></label>
+        <input
+          type="radio"
+          id="eventColor2"
+          name="eventColor"
+          value="#e8f4fa"
+        />
+        <label for="eventColor2"></label>
+        <input
+          type="radio"
+          id="eventColor3"
+          name="eventColor"
+          value="#FFFCFF"
+        />
+        <label for="eventColor3"></label>
+      </div>
+      <button id="saveButton">Salvar</button>
+      <button id="cancelButton">Cancelar</button>
+    </div>
 
-  <div id="modalBackDrop"></div>
+    <div id="deleteEventModal">
+      <h3>Excluir Evento</h3>
+      <p>Você tem certeza que deseja excluir este evento?</p>
+      <button id="deleteButton">Excluir</button>
+      <button id="closeButton">Fechar</button>
+    </div>
 
-  <script>
-    // Adicione o JavaScript necessário aqui
-  </script>
-</body>
+    <div id="modalBackDrop"></div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const calendarDays = document.querySelectorAll("#calendar .day");
+        const overlay = document.querySelector(".overlay");
+        const confirmButton = document.getElementById("confirmButton");
+        const cancelButton = document.getElementById("cancelButton");
+
+        function handleDayClick(event) {
+          const selectedDay = event.target;
+          const selectedDate = selectedDay.getAttribute("value");
+
+          // Adicionar classe "active" ao overlay para torná-lo visível
+          overlay.classList.add("active");
+
+          console.log("Data selecionada:", selectedDate);
+        }
+
+        function handleConfirmButtonClick() {
+          const selectedHorario = document.querySelector(
+            "#overlay input:checked"
+          );
+
+          console.log("Horário selecionado:", selectedHorario.value);
+
+          // Remover classe "active" do overlay para escondê-lo
+          overlay.classList.remove("active");
+        }
+
+        function handleCancelButtonClick() {
+          // Remover classe "active" do overlay para escondê-lo
+          overlay.classList.remove("active");
+        }
+
+        calendarDays.forEach((day) => {
+          day.addEventListener("click", handleDayClick);
+        });
+
+        confirmButton.addEventListener("click", handleConfirmButtonClick);
+        cancelButton.addEventListener("click", handleCancelButtonClick);
+      });
+    </script>
+  </body>
 </html>
 
 <style>
   /* Adicione o CSS fornecido aqui */
   html {
-    --body-color: #FFFCFF;
-    --header-color: #49A2EB;
+    --body-color: #fffcff;
+    --header-color: #49a2eb;
     --header-button: #1437aa;
     --color-weekdays: #000000;
-    --box-shadow: #CBD4C2;
+    --box-shadow: #cbd4c2;
     --hover: #e8faed;
     --current-day: #e8f4fa;
-    --event-color: #FFFCFF;
+    --event-color: #fffcff;
     --modal-event: #e8f4fa;
     --color-day: white;
   }
@@ -187,7 +263,7 @@
     background-color: var(--hover);
   }
 
-  .day+#currentDay {
+  .day + #currentDay {
     background-color: var(--current-day);
   }
 
@@ -212,7 +288,7 @@
     display: none;
     z-index: 20;
     padding: 25px;
-    background-color: #FFFCFF;
+    background-color: #fffcff;
     box-shadow: 0px 0px 3px black;
     border-radius: 5px;
     width: 350px;
@@ -271,7 +347,7 @@
     margin-right: 5px;
   }
 
-  input[type=checkbox] {
+  input[type="checkbox"] {
     height: 0;
     width: 0;
     visibility: hidden;
@@ -290,7 +366,7 @@
   }
 
   label::after {
-    content: '';
+    content: "";
     position: absolute;
     top: 3px;
     left: 3px;
@@ -301,11 +377,11 @@
     transition: 0.3s;
   }
 
-  input:checked+label {
+  input:checked + label {
     background-color: rgb(142, 142, 240);
   }
 
-  input:checked+label::after {
+  input:checked + label::after {
     left: calc(100% - 5px);
     transform: translateX(-100%);
   }
@@ -318,8 +394,31 @@
   #nextButton {
     display: none;
   }
-  h1{
+  h1 {
     display: flex;
+    text-align: center;
+  }
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    visibility: hidden;
+  }
+
+  .overlay.active {
+    visibility: visible;
+  }
+
+  .overlay-content {
+    background-color: white;
+    padding: 20px;
     text-align: center;
   }
 </style>
