@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+const session = require('express-session');
 
 const fs = require("fs");
 const path = require("path");
@@ -14,6 +15,13 @@ const prontuarioPaciente = require('./backend/models/prontuarioPaciente');
 const prontuario = require('./backend/models/prontuarioPaciente');
 
 const bodyParser = require("body-parser");
+
+// Configurar o middleware de sessão
+app.use(session({
+  secret: 'mysecretkey',
+  resave: false,
+  saveUninitialized: true
+}));
 
 // Configuração BodyParser
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -220,21 +228,23 @@ app.post("/mesConsulta/:id_paciente/:id_medicos", function (req, res) {
     fk_id_medicos: idMedicos,
     mes_consulta: mesConsulta,
   })
-  .then(function (consulta) {
-    const idConsulta = consulta.id_consulta; // Acesso ao id_consulta da consulta criada
-    res.redirect(idConsulta);
-  })
+    .then(function (consulta) {
+      const idConsulta = consulta.id_consulta;
+      req.session.idConsulta = idConsulta; // Armazenar o idConsulta na sessão
+      res.redirect(idConsulta);
+    })
     .catch(function (erro) {
-      res.send("Erro ao registrar escolha do mês: " + erro);
+      res.send('Erro ao criar a consulta: ' + erro);
     });
 }); 
 
-app.get("/junho", function (req, res) {
-  res.render("junho");
+app.get('/junho', function (req, res) {
+  const idConsulta = req.session.idConsulta; // Obter o idConsulta da sessão
+  res.render('junho', { idConsulta: idConsulta });
 });
 
 app.post("/junho", function (req, res) {
-  const idConsulta = req.body.idConsulta;
+  const idConsulta = req.session.idConsulta;
   const diaConsulta = req.body.diaConsulta; 
   const horarioConsulta = req.body.horarioConsulta;
 
@@ -248,7 +258,7 @@ app.post("/junho", function (req, res) {
             horario_consulta: horarioConsulta
           })
           .then(function () {
-            res.render("salvarConsulta", { id_consulta: idConsulta });
+            res.render("junho", { id_consulta: idConsulta });
           })
           .catch(function (erro) {
             res.send('Erro ao atualizar a consulta ' + erro);
@@ -273,16 +283,136 @@ app.post("/junho", function (req, res) {
 });
 
 
-app.get("/julho", function (req, res) {
-  res.render("julho");
+app.get('/julho', function (req, res) {
+  const idConsulta = req.session.idConsulta; // Obter o idConsulta da sessão
+  res.render('julho', { idConsulta: idConsulta });
 });
 
-app.get("/agosto", function (req, res) {
-  res.render("agosto");
+app.post("/julho", function (req, res) {
+  const idConsulta = req.session.idConsulta;
+  const diaConsulta = req.body.diaConsulta; 
+  const horarioConsulta = req.body.horarioConsulta;
+
+  Consulta.findByPk(idConsulta) 
+    .then(function (consulta) {
+      if (consulta) {
+        // Atualizar os dados da consulta existente
+        consulta
+          .update({ 
+            dia_consulta: diaConsulta,
+            horario_consulta: horarioConsulta
+          })
+          .then(function () {
+            res.render("julho", { id_consulta: idConsulta });
+          })
+          .catch(function (erro) {
+            res.send('Erro ao atualizar a consulta ' + erro);
+          });
+      } else {
+        // Criar uma nova consulta para o paciente
+        Consulta.create({ 
+          dia_consulta: diaConsulta, 
+          horario_consulta: horarioConsulta
+        })
+          .then(function () {
+            res.send("Consulta criada com sucesso");
+          })
+          .catch(function (erro) {
+            res.send('Erro ao criar a consulta: ' + erro);
+          });
+      }
+    })
+    .catch(function (erro) {
+      res.send('Erro ao verificar a consulta: ' + erro);
+    });
 });
 
-app.get("/setembro", function (req, res) {
-  res.render("setembro");
+app.get('/agosto', function (req, res) {
+  const idConsulta = req.session.idConsulta; // Obter o idConsulta da sessão
+  res.render('agosto', { idConsulta: idConsulta });
+});
+
+app.post("/agosto", function (req, res) {
+  const idConsulta = req.session.idConsulta;
+  const diaConsulta = req.body.diaConsulta; 
+  const horarioConsulta = req.body.horarioConsulta;
+
+  Consulta.findByPk(idConsulta) 
+    .then(function (consulta) {
+      if (consulta) {
+        // Atualizar os dados da consulta existente
+        consulta
+          .update({ 
+            dia_consulta: diaConsulta,
+            horario_consulta: horarioConsulta
+          })
+          .then(function () {
+            res.render("agosto", { id_consulta: idConsulta });
+          })
+          .catch(function (erro) {
+            res.send('Erro ao atualizar a consulta ' + erro);
+          });
+      } else {
+        // Criar uma nova consulta para o paciente
+        Consulta.create({ 
+          dia_consulta: diaConsulta, 
+          horario_consulta: horarioConsulta
+        })
+          .then(function () {
+            res.send("Consulta criada com sucesso");
+          })
+          .catch(function (erro) {
+            res.send('Erro ao criar a consulta: ' + erro);
+          });
+      }
+    })
+    .catch(function (erro) {
+      res.send('Erro ao verificar a consulta: ' + erro);
+    });
+});
+
+app.get('/setembro', function (req, res) {
+  const idConsulta = req.session.idConsulta; // Obter o idConsulta da sessão
+  res.render('setembro', { idConsulta: idConsulta });
+});
+
+app.post("/setembro", function (req, res) {
+  const idConsulta = req.session.idConsulta;
+  const diaConsulta = req.body.diaConsulta; 
+  const horarioConsulta = req.body.horarioConsulta;
+
+  Consulta.findByPk(idConsulta) 
+    .then(function (consulta) {
+      if (consulta) {
+        // Atualizar os dados da consulta existente
+        consulta
+          .update({ 
+            dia_consulta: diaConsulta,
+            horario_consulta: horarioConsulta
+          })
+          .then(function () {
+            res.render("setembro", { id_consulta: idConsulta });
+          })
+          .catch(function (erro) {
+            res.send('Erro ao atualizar a consulta ' + erro);
+          });
+      } else {
+        // Criar uma nova consulta para o paciente
+        Consulta.create({ 
+          dia_consulta: diaConsulta, 
+          horario_consulta: horarioConsulta
+        })
+          .then(function () {
+            res.send("Consulta criada com sucesso");
+          })
+          .catch(function (erro) {
+            res.send('Erro ao criar a consulta: ' + erro);
+          });
+      }
+    })
+    .catch(function (erro) {
+      res.send('Erro ao verificar a consulta: ' + erro);
+    });
 });
 
 

@@ -24,8 +24,8 @@ document.addEventListener("DOMContentLoaded", function () {
         console.log("Horário selecionado:", horarioConsulta);
   
         if (selectedDate) {
-          // Envia uma requisição POST para a rota '/junho' apenas quando o botão de confirmação for clicado
-          fetch("/junho", {
+          // Envia uma requisição POST para a rota '/agosto' apenas quando o botão de confirmação for clicado
+          fetch("/agosto", {
             method: "POST",
             headers: {
               "Content-Type": "application/json"
