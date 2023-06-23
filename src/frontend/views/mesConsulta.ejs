@@ -48,9 +48,10 @@
   buttons.forEach((button) => {
     button.addEventListener("click", function () {
       const mesEscolhido = this.classList[2]; // Obtém a classe do botão clicado (junho, julho, agosto, setembro)
-      const idMedico = "<%= idMedicos %>";
+      const idMedicos = "<%= idMedicos %>";
+      const idPaciente = "<%= idPaciente %>";
 
-      fetch("/mesConsulta/<%= idPaciente %>/" + idMedico, {
+      fetch("/mesConsulta/"+ idPaciente + "/" +idMedicos, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

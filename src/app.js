@@ -191,7 +191,7 @@ app.get("/listarMedicos/:id_paciente", function (req, res) {
 // Rota para exibir a página de escolha do mês da consulta
 app.get("/mesConsulta/:id_paciente/:id_medicos", function (req, res) {
   const idPaciente = req.params.id_paciente;
-  const idMedicos = req.params.id_medicos;  
+  const idMedicos = req.params.id_medicos;
   Medicos.findByPk(idMedicos)
     .then(function (medico) {
       if (medico) {
@@ -208,42 +208,68 @@ app.get("/mesConsulta/:id_paciente/:id_medicos", function (req, res) {
       res.send("Erro ao buscar médico!" + erro);
     });
 });
-// Rota para salvar a escolha do mês da consulta
+
 app.post("/mesConsulta/:id_paciente/:id_medicos", function (req, res) {
   const idPaciente = req.params.id_paciente;
   const idMedicos = req.params.id_medicos;
-  const mesConsulta = req.body.mes;
+  const mesConsulta =  req.body.mes;
 
   // Salve a escolha do mês no banco de dados
   Consulta.create({
-    mes_consulta: mesConsulta,
-    fk_id_medicos: idMedicos,
     fk_id_paciente: idPaciente,
-    // Defina os valores restantes do objeto de acordo com suas necessidades
+    fk_id_medicos: idMedicos,
+    mes_consulta: mesConsulta,
   })
-    .then(function () {
-      res.redirect("/dataConsulta/" + idPaciente + "/" + idMedicos + "/" + mesConsulta);
-    })
+  .then(function (consulta) {
+    const idConsulta = consulta.id_consulta; // Acesso ao id_consulta da consulta criada
+    res.redirect(idConsulta);
+  })
     .catch(function (erro) {
       res.send("Erro ao registrar escolha do mês: " + erro);
     });
-});
-
-
-// Rota para escolher o dia da consulta
-app.get("/dataConsulta/:id_paciente/:id_medicos/:mesConsulta", function (req, res) {
-  const idPaciente = req.params.id_paciente;
-  const idMedicos = req.params.id_medicos;
-  const mesConsulta = req.params.mesConsulta;
-  res.render(mesConsulta, {
-    mesConsulta: mesConsulta,
-    fk_id_medicos: idMedicos,
-    fk_id_paciente: idPaciente,
-  });
-});
+}); 
 
 app.get("/junho", function (req, res) {
   res.render("junho");
+});
+
+app.post("/junho", function (req, res) {
+  const idConsulta = req.body.idConsulta;
+  const diaConsulta = req.body.diaConsulta; 
+  const horarioConsulta = req.body.horarioConsulta;
+
+  Consulta.findByPk(idConsulta) 
+    .then(function (consulta) {
+      if (consulta) {
+        // Atualizar os dados da consulta existente
+        consulta
+          .update({ 
+            dia_consulta: diaConsulta,
+            horario_consulta: horarioConsulta
+          })
+          .then(function () {
+            res.render("salvarConsulta", { id_consulta: idConsulta });
+          })
+          .catch(function (erro) {
+            res.send('Erro ao atualizar a consulta ' + erro);
+          });
+      } else {
+        // Criar uma nova consulta para o paciente
+        Consulta.create({ 
+          dia_consulta: diaConsulta, 
+          horario_consulta: horarioConsulta
+        })
+          .then(function () {
+            res.send("Consulta criada com sucesso");
+          })
+          .catch(function (erro) {
+            res.send('Erro ao criar a consulta: ' + erro);
+          });
+      }
+    })
+    .catch(function (erro) {
+      res.send('Erro ao verificar a consulta: ' + erro);
+    });
 });
 
 
