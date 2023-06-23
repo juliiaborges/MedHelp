@@ -10,12 +10,9 @@
 </head>
 
 <body>
-  <h1>Junho</h1>
-  <br><br>
+
   <div id="header">
-    <button id="backButton">&lt;</button>
-    <div id="monthYearDisplay"></div>
-    <button id="nextButton">&gt;</button>
+    <h1>Junho</h1>
   </div>
 
   <div id="container">
@@ -82,30 +79,12 @@
     </div>
   </div>
 
-  <div id="newEventModal">
-    <h3>Novo Evento</h3>
-    <input type="text" id="eventTitleInput" placeholder="Título do evento" />
-    <textarea id="eventTextInput" placeholder="Descrição do evento"></textarea>
-    <div class="radio-group">
-      <input type="radio" id="eventColor1" name="eventColor" value="#FFFCFF" checked />
-      <label for="eventColor1"></label>
-      <input type="radio" id="eventColor2" name="eventColor" value="#e8f4fa" />
-      <label for="eventColor2"></label>
-      <input type="radio" id="eventColor3" name="eventColor" value="#FFFCFF" />
-      <label for="eventColor3"></label>
+  <% if (mensagemErro) { %>
+    <div class="error-message">
+      <%= mensagemErro %>
     </div>
-    <button id="saveButton">Salvar</button>
-    <button id="cancelButton">Cancelar</button>
-  </div>
-
-  <div id="deleteEventModal">
-    <h3>Excluir Evento</h3>
-    <p>Você tem certeza que deseja excluir este evento?</p>
-    <button id="deleteButton">Excluir</button>
-    <button id="closeButton">Fechar</button>
-  </div>
-
-  <div id="modalBackDrop"></div>
+  <% } %>
+  
 </body>
 </html>
 <script src="../scripts/junho.js"></script>

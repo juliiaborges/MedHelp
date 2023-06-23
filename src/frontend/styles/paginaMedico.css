@@ -130,11 +130,6 @@ background-color: #EBEFF3;
 
 /*Fim da Primeira Parte*/
 
-/*Inicio segunda parte*/
-/* ... */
-
-/* ... */
-
 
 /*Início Segunda Parte */
 .container02 {
@@ -202,4 +197,16 @@ background-color: #EBEFF3;
 
 /* ... */
 
-
+.column2 button{
+  color: #49A2EB;
+  border: 1px solid #49A2EB;
+  border-radius: 5px;
+  padding: 10px 20px;
+  margin-right: 10px;
+  transition: all 0.2s ease-in-out;
+}
+.column2 button:hover{
+background-color: #49A2EB;
+color: #fff;
+cursor: pointer;
+}

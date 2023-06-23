@@ -243,44 +243,58 @@ app.get('/junho', function (req, res) {
   res.render('junho', { idConsulta: idConsulta });
 });
 
+const { Op } = require("sequelize");
+
+// ...
+
 app.post("/junho", function (req, res) {
   const idConsulta = req.session.idConsulta;
-  const diaConsulta = req.body.diaConsulta; 
+  const diaConsulta = req.body.diaConsulta;
   const horarioConsulta = req.body.horarioConsulta;
 
-  Consulta.findByPk(idConsulta) 
+  Consulta.findByPk(idConsulta)
     .then(function (consulta) {
-      if (consulta) {
-        // Atualizar os dados da consulta existente
-        consulta
-          .update({ 
-            dia_consulta: diaConsulta,
-            horario_consulta: horarioConsulta
-          })
-          .then(function () {
-            res.render("junho", { id_consulta: idConsulta });
-          })
-          .catch(function (erro) {
-            res.send('Erro ao atualizar a consulta ' + erro);
-          });
-      } else {
-        // Criar uma nova consulta para o paciente
-        Consulta.create({ 
-          dia_consulta: diaConsulta, 
-          horario_consulta: horarioConsulta
+      // ...
+
+      // Verificar se já existe uma consulta marcada na mesma data e horário
+      Consulta.findOne({
+        where: {
+          dia_consulta: diaConsulta,
+          horario_consulta: horarioConsulta,
+          id_consulta: {
+            [Op.ne]: idConsulta, // Excluir a própria consulta da verificação
+          },
+        },
+      })
+        .then(function (existingConsulta) {
+          if (existingConsulta) {
+            // Consulta já existe, mostrar uma mensagem de erro
+            res.render("junho", { id_consulta: idConsulta, mensagemErro: "Já existe uma consulta marcada para essa data e horário." });
+          } else {
+            // Atualizar os dados da consulta existente
+            consulta
+              .update({
+                dia_consulta: diaConsulta,
+                horario_consulta: horarioConsulta,
+              })
+              .then(function () {
+                res.render("junho", { id_consulta: idConsulta });
+              })
+              .catch(function (erro) {
+                res.send("Erro ao atualizar a consulta " + erro);
+              });
+          }
         })
-          .then(function () {
-            res.send("Consulta criada com sucesso");
-          })
-          .catch(function (erro) {
-            res.send('Erro ao criar a consulta: ' + erro);
-          });
-      }
+        .catch(function (erro) {
+          res.send("Erro ao verificar a consulta: " + erro);
+        });
     })
     .catch(function (erro) {
-      res.send('Erro ao verificar a consulta: ' + erro);
+      res.send("Erro ao verificar a consulta: " + erro);
     });
 });
+
+
 
 
 app.get('/julho', function (req, res) {
