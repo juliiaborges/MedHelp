@@ -273,10 +273,11 @@ Usar o seguinte modelo:
 
 | **Indicador** | **Objetivos** | **Descrição** | **Cálculo** | **Fonte dados** | **Perspectiva** |
 | --- | --- | --- | --- | --- | --- |
-| Número de consultas | Avaliar a quantidade de consultas | Mede o número de consultas em relação ao mês anterior | (Número de consultas no mês atual / Número de consultas no mês anterior) * 100 | Registro de atendimentos da clínica | Evolução em relação à meta |
-| Quantidade de equipamentos usado mensalemente | Manter controle de gerência | Calcular a taxa de ocupação de equipamento | (Tempo total do gasto do uso dos equipamentos/(Nº dos equipamentos usados)| Controle de estoque | Melhorar a gestão |
-| Total de pagamentos com plano de saúde por dia | Avaliar a quantidade de clientes que usam o plano de saúde médico | Número de pacientes que usam o plano de saúde para o pagamenrto | (Total de atendimentos realizados no dia)-(Total de atendimentos realizados no dia sem plano de saúde) | O processo de cadastrar pagamento | Fazer uma análise e relatórios com mais eficiência no plano de saúde |
-| Tempo total de consultas | Avaliar a gestão do tempo da clínica | Saber o tempo que os funcionarios gastam com cada cliente | (Tempo total de cada consulta)*(quantidade de consultas)| Agendamentos de consultas registrados no sistema | Melhor gestão de tempo |
+| Aumento do número de consultas mensais | Avaliar o aumento na quantidade de consultas | Mede o número de consultas em relação ao mês anterior | (Número de consultas no mês atual / Número de consultas no mês anterior) * 100 | Tabela Consulta | Evolução em relação ao mês anterior |
+| Quantidade de pacientes que fizeram cirurgia | Saber a quantidade de pacientes que já fizeram cirurgia | Ter noção da porcentagem de cirurgias feitas em pacientes na clínica no mês | (Quantidade de pacientes que já fizeram cirurgia * 100)/(Total de pacientes)  | Tabela prontuário | Conhecimento |
+| Método de pagamento mais usado | Avaliar qual o método de pagamento mais é usado pelos pacientes | Descobre qual o método de pagamento mais usado | ((Quantidade do pagamento mais usado * 100)/(Total dos pagamentos))  | Tabela Pagamentos | Conhecimento sobre as vendas |
+| Total de pagamentos com plano de saúde por dia | Avaliar a quantidade de clientes que usam o plano de saúde médico | Número de pacientes que usam o plano de saúde para o pagamenrto | (Total de pagamentos realizados no dia) - (Total de pagamentos realizados no dia sem plano de saúde) | Tabela pagamentos | Fazer uma análise e relatórios com mais eficiência no plano de saúde |
+| Taxa de ocupação dos médicos | Saber se a clínica precisa contratar novos médicos ou não | Avaliar a taxa de ocupação dos médicos da clínica | (Número total e consultas no mês)/(Número de médicos cadastrados na clínica)| Tabela Médicos e Tabela Consultas | Melhor gestão de equipe |
 
 ## 7.Sistema desenvolvido
 
