@@ -105,7 +105,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`pagamentos` (
   `data_pagamento` DATE NULL DEFAULT NULL,
   `tipo_pagamento` VARCHAR(255) NULL DEFAULT NULL,
   `valor_pagamento` DOUBLE NULL DEFAULT NULL,
-  `possui_plano` VARCHAR(255) NULL DEFAULT NULL,
+  `possui_plano` TINYINT NULL DEFAULT NULL,
   PRIMARY KEY (`id_pagamentos`),
   INDEX `fk_id_consulta_idx` (`fk_id_consulta` ASC) VISIBLE,
   CONSTRAINT `fk_id_consulta`

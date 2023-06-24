@@ -19,7 +19,7 @@ const Pagamentos = db.sequelize.define('pagamentos', {
         type: db.Sequelize.DOUBLE
     },
     possui_plano: {
-        type: db.Sequelize.STRING
+        type: db.Sequelize.TINYINT
     }
 }, { 
     timestamps: false
