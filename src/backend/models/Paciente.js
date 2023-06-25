@@ -4,7 +4,7 @@ const paciente = db.sequelize.define(
   "paciente",
   {
     id_paciente: {
-      type: db.Sequelize.DOUBLE,
+      type: db.Sequelize.INTEGER,
       autoIncrement: true,
       primaryKey: true,
     },

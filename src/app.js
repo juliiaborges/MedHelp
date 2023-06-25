@@ -36,6 +36,7 @@ app.get("/cadastroMedicos", function (req, res) {
 
 // Receber dados do formulário de cadastro de médicos
 app.post("/medicoCadastrado", function (req, res) {
+  
   Medicos.create({
     nome_medico: req.body.nome,
     uf_medico: req.body.uf,
@@ -45,9 +46,9 @@ app.post("/medicoCadastrado", function (req, res) {
     telefone_medico: req.body.telefone,
     email_medico: req.body.email,
   })
-    .then(function () {
-      res.send("Médico cadastrado: " + req.body.nome);
-    })
+  .then(function () {
+    res.send("Médico cadastrado: " + req.body.nome);
+  })
     .catch(function (erro) {
       res.send("Erro ao cadastrar médico!" + erro);
     });
@@ -200,6 +201,7 @@ app.get("/listarMedicos/:id_paciente", function (req, res) {
 app.get("/mesConsulta/:id_paciente/:id_medicos", function (req, res) {
   const idPaciente = req.params.id_paciente;
   const idMedicos = req.params.id_medicos;
+  
   Medicos.findByPk(idMedicos)
     .then(function (medico) {
       if (medico) {
@@ -220,8 +222,8 @@ app.get("/mesConsulta/:id_paciente/:id_medicos", function (req, res) {
 app.post("/mesConsulta/:id_paciente/:id_medicos", function (req, res) {
   const idPaciente = req.params.id_paciente;
   const idMedicos = req.params.id_medicos;
+  req.session.idMedicos = idMedicos; // Armazenar o idMedico na sessão
   const mesConsulta =  req.body.mes;
-  
 
   // Salve a escolha do mês no banco de dados
   Consulta.create({
@@ -241,22 +243,25 @@ app.post("/mesConsulta/:id_paciente/:id_medicos", function (req, res) {
 
 app.get('/junho', function (req, res) {
   const idConsulta = req.session.idConsulta; // Obter o idConsulta da sessão
-  res.render('junho', { idConsulta: idConsulta, errorMessage: null, successMessage: null });
+  const idMedicos = req.session.idMedicos; // Obter o idMedico da sessão
+  res.render('junho', { idConsulta: idConsulta, idMedicos: idMedicos, errorMessage: null, successMessage: null });
 });
 
 app.post("/junho", function (req, res) {
   const idConsulta = req.session.idConsulta;
+  const idMedicos = req.session.idMedicos;
   const diaConsulta = req.body.diaConsulta;
   const horarioConsulta = req.body.horarioConsulta;
 
   Consulta.findByPk(idConsulta)
     .then(function (consulta) {
       if (consulta) {
-        // Verificar se já existe uma consulta marcada na mesma data e horário
+        // Verificar se já existe uma consulta marcada na mesma data, horário e com o mesmo médico
         Consulta.findOne({
           where: {
             dia_consulta: diaConsulta,
             horario_consulta: horarioConsulta,
+            fk_id_medicos: idMedicos,
             id_consulta: {
               [Op.ne]: idConsulta, // Excluir a própria consulta da verificação
             },
@@ -272,6 +277,7 @@ app.post("/junho", function (req, res) {
                 .update({
                   dia_consulta: diaConsulta,
                   horario_consulta: horarioConsulta,
+                  fk_id_medicos: idMedicos,
                 })
                 .then(function () {
                   res.json({ success: "Consulta agendada com sucesso!" });
@@ -290,16 +296,18 @@ app.post("/junho", function (req, res) {
           where: {
             dia_consulta: diaConsulta,
             horario_consulta: horarioConsulta,
+            fk_id_medicos: idMedicos,
           },
         })
           .then(function (existingConsulta) {
             if (existingConsulta) {
               // Consulta já existe, mostrar uma mensagem de erro
-              res.json({ error: "Já existe uma consulta marcada para essa data e horário, tente selecionar outro dia ou horário." });
+              res.json({ error: "Já existe uma consulta marcada para essa data, horário e médico, tente selecionar outro dia, horário ou médico." });
             } else {
               Consulta.create({
                 dia_consulta: diaConsulta,
                 horario_consulta: horarioConsulta,
+                fk_id_medicos: idMedicos,
               })
                 .then(function () {
                   res.json({ success: "Consulta agendada com sucesso" });
@@ -321,22 +329,25 @@ app.post("/junho", function (req, res) {
 
 app.get('/julho', function (req, res) {
   const idConsulta = req.session.idConsulta; // Obter o idConsulta da sessão
-  res.render('julho', { idConsulta: idConsulta, errorMessage: null, successMessage: null });
+  const idMedicos = req.session.idMedicos; // Obter o idMedico da sessão
+  res.render('julho', { idConsulta: idConsulta, idMedicos: idMedicos, errorMessage: null, successMessage: null });
 });
 
 app.post("/julho", function (req, res) {
   const idConsulta = req.session.idConsulta;
+  const idMedicos = req.session.idMedicos;
   const diaConsulta = req.body.diaConsulta;
   const horarioConsulta = req.body.horarioConsulta;
 
   Consulta.findByPk(idConsulta)
     .then(function (consulta) {
       if (consulta) {
-        // Verificar se já existe uma consulta marcada na mesma data e horário
+        // Verificar se já existe uma consulta marcada na mesma data, horário e com o mesmo médico
         Consulta.findOne({
           where: {
             dia_consulta: diaConsulta,
             horario_consulta: horarioConsulta,
+            fk_id_medicos: idMedicos,
             id_consulta: {
               [Op.ne]: idConsulta, // Excluir a própria consulta da verificação
             },
@@ -352,6 +363,7 @@ app.post("/julho", function (req, res) {
                 .update({
                   dia_consulta: diaConsulta,
                   horario_consulta: horarioConsulta,
+                  fk_id_medicos: idMedicos,
                 })
                 .then(function () {
                   res.json({ success: "Consulta agendada com sucesso!" });
@@ -370,16 +382,18 @@ app.post("/julho", function (req, res) {
           where: {
             dia_consulta: diaConsulta,
             horario_consulta: horarioConsulta,
+            fk_id_medicos: idMedicos,
           },
         })
           .then(function (existingConsulta) {
             if (existingConsulta) {
               // Consulta já existe, mostrar uma mensagem de erro
-              res.json({ error: "Já existe uma consulta marcada para essa data e horário, tente selecionar outro dia ou horário." });
+              res.json({ error: "Já existe uma consulta marcada para essa data, horário e médico, tente selecionar outro dia, horário ou médico." });
             } else {
               Consulta.create({
                 dia_consulta: diaConsulta,
                 horario_consulta: horarioConsulta,
+                fk_id_medicos: idMedicos,
               })
                 .then(function () {
                   res.json({ success: "Consulta agendada com sucesso" });
@@ -401,22 +415,25 @@ app.post("/julho", function (req, res) {
 
 app.get('/agosto', function (req, res) {
   const idConsulta = req.session.idConsulta; // Obter o idConsulta da sessão
-  res.render('agosto', { idConsulta: idConsulta, errorMessage: null, successMessage: null });
+  const idMedicos = req.session.idMedicos; // Obter o idMedico da sessão
+  res.render('agosto', { idConsulta: idConsulta, idMedicos: idMedicos, errorMessage: null, successMessage: null });
 });
 
 app.post("/agosto", function (req, res) {
   const idConsulta = req.session.idConsulta;
+  const idMedicos = req.session.idMedicos;
   const diaConsulta = req.body.diaConsulta;
   const horarioConsulta = req.body.horarioConsulta;
 
   Consulta.findByPk(idConsulta)
     .then(function (consulta) {
       if (consulta) {
-        // Verificar se já existe uma consulta marcada na mesma data e horário
+        // Verificar se já existe uma consulta marcada na mesma data, horário e com o mesmo médico
         Consulta.findOne({
           where: {
             dia_consulta: diaConsulta,
             horario_consulta: horarioConsulta,
+            fk_id_medicos: idMedicos,
             id_consulta: {
               [Op.ne]: idConsulta, // Excluir a própria consulta da verificação
             },
@@ -432,6 +449,7 @@ app.post("/agosto", function (req, res) {
                 .update({
                   dia_consulta: diaConsulta,
                   horario_consulta: horarioConsulta,
+                  fk_id_medicos: idMedicos,
                 })
                 .then(function () {
                   res.json({ success: "Consulta agendada com sucesso!" });
@@ -450,16 +468,18 @@ app.post("/agosto", function (req, res) {
           where: {
             dia_consulta: diaConsulta,
             horario_consulta: horarioConsulta,
+            fk_id_medicos: idMedicos,
           },
         })
           .then(function (existingConsulta) {
             if (existingConsulta) {
               // Consulta já existe, mostrar uma mensagem de erro
-              res.json({ error: "Já existe uma consulta marcada para essa data e horário, tente selecionar outro dia ou horário." });
+              res.json({ error: "Já existe uma consulta marcada para essa data, horário e médico, tente selecionar outro dia, horário ou médico." });
             } else {
               Consulta.create({
                 dia_consulta: diaConsulta,
                 horario_consulta: horarioConsulta,
+                fk_id_medicos: idMedicos,
               })
                 .then(function () {
                   res.json({ success: "Consulta agendada com sucesso" });
@@ -478,25 +498,27 @@ app.post("/agosto", function (req, res) {
       res.json({ error: "Erro ao verificar a consulta: " + erro });
     });
 });
-
 app.get('/setembro', function (req, res) {
   const idConsulta = req.session.idConsulta; // Obter o idConsulta da sessão
-  res.render('setembro', { idConsulta: idConsulta, errorMessage: null, successMessage: null });
+  const idMedicos = req.session.idMedicos; // Obter o idMedico da sessão
+  res.render('setembro', { idConsulta: idConsulta, idMedicos: idMedicos, errorMessage: null, successMessage: null });
 });
 
 app.post("/setembro", function (req, res) {
   const idConsulta = req.session.idConsulta;
+  const idMedicos = req.session.idMedicos;
   const diaConsulta = req.body.diaConsulta;
   const horarioConsulta = req.body.horarioConsulta;
 
   Consulta.findByPk(idConsulta)
     .then(function (consulta) {
       if (consulta) {
-        // Verificar se já existe uma consulta marcada na mesma data e horário
+        // Verificar se já existe uma consulta marcada na mesma data, horário e com o mesmo médico
         Consulta.findOne({
           where: {
             dia_consulta: diaConsulta,
             horario_consulta: horarioConsulta,
+            fk_id_medicos: idMedicos,
             id_consulta: {
               [Op.ne]: idConsulta, // Excluir a própria consulta da verificação
             },
@@ -512,6 +534,7 @@ app.post("/setembro", function (req, res) {
                 .update({
                   dia_consulta: diaConsulta,
                   horario_consulta: horarioConsulta,
+                  fk_id_medicos: idMedicos,
                 })
                 .then(function () {
                   res.json({ success: "Consulta agendada com sucesso!" });
@@ -530,16 +553,18 @@ app.post("/setembro", function (req, res) {
           where: {
             dia_consulta: diaConsulta,
             horario_consulta: horarioConsulta,
+            fk_id_medicos: idMedicos,
           },
         })
           .then(function (existingConsulta) {
             if (existingConsulta) {
               // Consulta já existe, mostrar uma mensagem de erro
-              res.json({ error: "Já existe uma consulta marcada para essa data e horário, tente selecionar outro dia ou horário." });
+              res.json({ error: "Já existe uma consulta marcada para essa data, horário e médico, tente selecionar outro dia, horário ou médico." });
             } else {
               Consulta.create({
                 dia_consulta: diaConsulta,
                 horario_consulta: horarioConsulta,
+                fk_id_medicos: idMedicos,
               })
                 .then(function () {
                   res.json({ success: "Consulta agendada com sucesso" });

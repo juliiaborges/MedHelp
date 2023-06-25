@@ -40,36 +40,34 @@ document.addEventListener("DOMContentLoaded", function () {
             if (data.error) {
               // Exibe a mensagem de erro no elemento HTML
               const mensagemErroElemento = document.getElementById('mensagem-erro');
-              mensagemErroElemento.innerHTML = data.error;
+              mensagemErroElemento.innerHTML = `<p>${data.error}</p>`;
             } else if (data.success) {
               // Exibe a mensagem de sucesso no elemento HTML
               const mensagemErroElemento = document.getElementById('mensagem-erro');
-              mensagemErroElemento.innerHTML = data.success;
+              mensagemErroElemento.innerHTML = `<p>${data.success}</p>`;
             }
           })
           .catch(error => {
-            console.log("Erro ao enviar a requisição:", error);
+            console.log("Erro:", error);
           });
-        
-      } else {
-        console.log("Nenhum dia selecionado.");
-        // Exiba uma mensagem de erro ou tome outra ação apropriada
       }
     }
 
-    // Remover classe "active" do overlay para escondê-lo
+    // Remove a classe "active" do overlay para torná-lo invisível
     overlay.classList.remove("active");
   }
 
   function handleCancelButtonClick() {
-    // Remover classe "active" do overlay para escondê-lo
+    // Remove a classe "active" do overlay para torná-lo invisível
     overlay.classList.remove("active");
   }
 
-  calendarDays.forEach(day => {
+  // Adiciona um evento de clique para cada dia do calendário
+  calendarDays.forEach(function (day) {
     day.addEventListener("click", handleDayClick);
   });
 
+  // Adiciona eventos de clique aos botões do overlay
   confirmButton.addEventListener("click", handleConfirmButtonClick);
   cancelButton.addEventListener("click", handleCancelButtonClick);
 });

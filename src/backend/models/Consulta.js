@@ -4,15 +4,15 @@ const consulta = db.sequelize.define(
   "consulta",
   {
     id_consulta: {
-      type: db.Sequelize.DOUBLE,
+      type: db.Sequelize.INTEGER,
       autoIncrement: true,
       primaryKey: true,
     },
     fk_id_medicos: {
-      type: db.Sequelize.DOUBLE,
+      type: db.Sequelize.INTEGER,
     },
     fk_id_paciente:{
-      type: db.Sequelize.DOUBLE,
+      type: db.Sequelize.INTEGER,
     },
     mes_consulta:{
       type: db.Sequelize.STRING,
