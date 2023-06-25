@@ -1,5 +1,5 @@
 const { Sequelize, QueryTypes } = require('sequelize');
-const pagamentos = require {'../models/dbPagamentos.js'}
+const pagamentos = require("./backend/models/Pagamentos");
 const sequelize = new Sequelize('mydb', 'root', 'root', {
   host: 'localhost',
   dialect: 'mysql'
