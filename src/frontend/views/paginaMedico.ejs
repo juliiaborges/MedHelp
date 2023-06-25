@@ -23,7 +23,6 @@
       <a href="#consultas">Consultas</a>
       <a href="#equipamentos">Equipamentos</a>
     </div>
-  
   </div>
 </div>
   </section>
@@ -60,33 +59,46 @@
         <h1>Serviços</h1>
       </div>
       <div class="linha">
-        <img src="../frontend/images/Rectangle 5.png">
+        <img src="../images/Rectangle5.png">
       </div>
     </div>
-    
+
     <div class="container02">
-        <button> <a href="#">
-      <div class="column2" >
-        <img src="../frontend/images/gestaofinanceira.png">
-        <h3>Consultas</h3>
-        <p>Explore suas consultas marcadas. Clique aqui para mais informações. </p>
-      </a></button>
-      </div>
-
-        <button> <a href="listarEquipamentos.ejs">
       <div class="column2">        
-        <img src="../frontend/images/gestaofinanceira.png">
-        <h3>Estoque</h3>
-        <p>Acesse os equipamentos disponíveis. Clique aqui para mais detalhes. </p>
+          <h3>Acessar suas Consultas</h3>
+          <p>Clique aqui para acessar as consultas.</p>
+          <button id= "consultasBtn">Acessar</button>
       </div>
-    </a></button>
-    </div>
-    </div>
 
+      <div class="column2">        
+        <h3>Acessar o Estoque</h3>
+        <p>Clique aqui para solicitar equipamentos.</p>
+        <button id= "estoqueBtn">Acessar</button>
+      </div>
+    </div>
   </section>
-
-
 
   <!--Fim do container 02-->
 </body>
 </html>
+
+
+<script>
+    const idMedico = "<%= id_medico %>";
+
+// Selecionar os botões de acesso
+const consultasBtn = document.getElementById("consultasBtn");
+const estoqueBtn = document.getElementById("estoqueBtn");
+
+// Adicionar um ouvinte de evento de clique aos botões
+consultasBtn.addEventListener("click", function () {
+  // Redirecionar o médico para a página consultasMedico.ejs
+  window.location.href = "/consultasMedico/" + idMedico;
+});
+
+estoqueBtn.addEventListener("click", function () {
+  // Redirecionar o médico para a página listarEquipamentos.ejs
+  window.location.href = "/listarEquipamentos";
+});
+
+</script>

@@ -92,33 +92,7 @@ app.post('/atualizar_quantidade/:id_estoque', function (req, res) {
   });
 });
 
-// Rota para registrar o uso do equipamento selecionado
-app.post('/registrar_uso/:id_estoque', function (req, res) {
-  const id_estoque = req.params.id_estoque;
-  const resposta = req.body.resposta;
 
-  // Lógica para registrar o uso do equipamento de acordo com a resposta (Sim ou Não)
-
-  // res.redirect('/estoqueCadastrado');
-});
-
-// Rota para redirecionar para a página de listagem após cadastrar um novo equipamento
-app.post('/estoqueCadastrado', function (req, res) {
-  // Lógica para cadastrar um novo equipamento
-
-  // res.redirect('/estoqueCadastrado');
-});
-
-
-// ...
-
-//   const pesquisa = require ("./frontend/views/pesquisaEstoque.html")
-
-// app.get('/pesquisaEstoque', function (req, res) {
-//   pesquisa.findAll().then(function(pesquisas){
-//     res.render('pesquisaEstoque', { pesquisas: pesquisas });
-//   });
-// });
 
 app.listen(8080, () => {
   console.log("Servidor iniciado")

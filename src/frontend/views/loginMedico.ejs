@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Paciente</title>
+    <link rel="stylesheet" href="../styles/loginPaciente.css" />
+    <script
+      src="https://kit.fontawesome.com/7b39153ed3.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <div class="container" id="container">
+      <!-- sign Up form section start-->
+      <!-- sign in form section start-->
+      <div class="form sign_in">
+        <form action="/loginMedico" method="POST">
+            <!-- heading -->
+            <h1>Login</h1>
+            <!-- social media icons -->
+            <br>
+            <% if (typeof error !== 'undefined') { %>
+              <div class="card-error-message">
+                <div class="error-message"><%- error %></div>
+              </div>
+            <% } %>
+            <% if (typeof success !== 'undefined') { %>
+              <div class="card-success-message">
+                <div class="success-message"><%- success %></div>
+              </div>
+            <% } %>
+          
+            <span>Faça Login com Sua Conta</span>
+            <!-- input fields start -->
+            <input type="email" name="loginEmail" id="loginEmail" placeholder="Email" />
+            <input type="password" name="loginSenha" id="loginSenha" placeholder="Senha" />
+            <button id="loginBtn">Entrar</button>
+            <!-- input fields end -->
+          </form>
+      </div>
+      
+      <!-- sign in form section end-->
+
+      <!-- overlay section start-->
+      <div class="overlay-container">
+        <div class="overlay">
+          <div class="overlay-pannel overlay-left">
+            <h1>Já tem uma conta?</h1>
+            <p>Faça o Login</p>
+            <button id="signIn" class="overBtn">Entrar</button>
+          </div>
+        </div>
+      </div>
+      <!-- overlay section start-->
+    </div>
+    <script src="../scripts/loginMedico.js"></script>
+  </body>
+</html>

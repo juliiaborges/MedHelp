@@ -136,6 +136,10 @@ background-color: #EBEFF3;
   margin: 4em;
 }
 
+.container02 button{
+  margin-top: 10px;
+}
+
 .titulo {
   text-align: center;
   font-size: 0.8em;

@@ -15,22 +15,34 @@ const Medicos = db.sequelize.define('medicos', {
         defaultValue: null // definir o valor padrão como null
     },
     especialidade_medico: {
-        type: db.Sequelize.STRING
+        type: db.Sequelize.STRING,
+        allowNull: true, // permitir valores nulos
+        defaultValue: null // definir o valor padrão como null
     },
     nome_medico: {
-        type: db.Sequelize.STRING
+        type: db.Sequelize.STRING,
+        allowNull: true, // permitir valores nulos
+        defaultValue: null // definir o valor padrão como null
     },
     telefone_medico: {
-        type: db.Sequelize.STRING
+        type: db.Sequelize.STRING,
+        allowNull: true, // permitir valores nulos
+        defaultValue: null // definir o valor padrão como null
     },
     uf_medico: {
-        type: db.Sequelize.STRING
+        type: db.Sequelize.STRING,
+        allowNull: true, // permitir valores nulos
+        defaultValue: null // definir o valor padrão como null
     },
     crm_medico: {
-        type: db.Sequelize.DOUBLE
+        type: db.Sequelize.DOUBLE,
+        allowNull: true, // permitir valores nulos
+        defaultValue: null // definir o valor padrão como null
     },
     situacao_medico: {
-        type: db.Sequelize.STRING
+        type: db.Sequelize.STRING,
+        allowNull: true, // permitir valores nulos
+        defaultValue: null // definir o valor padrão como null
     },
 }, {
     timestamps: false

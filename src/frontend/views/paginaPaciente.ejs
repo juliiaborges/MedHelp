@@ -19,7 +19,7 @@
     <div class="itens">
       <a href="#inicio">Início</a>
       <a href="#consultas">Consulta</a>
-      <a href="#equipamentos">Prontuário</a>
+      <a href="#prontuario">Prontuário</a>
     </div>
   </div>
   <section class="part1"></section>
@@ -72,8 +72,14 @@
         
       <div class="column2">        
         <h3>Acessar meu Prontuário</h3>
+        <p>Clique aqui para acessar e editar o prontuário.</p>
+        <button id= "prontBtn">Acessar</button>
+      </div>
+
+      <div class="column2">        
+        <h3>Acessar minhas Consultas</h3>
         <p>Clique aqui para acessar suas consultas.</p>
-        <button>Acessar</button>
+        <button id= "consultBtn">Acessar</button>
       </div>
     </div>
 
@@ -86,10 +92,22 @@
   const idPaciente = "<%= id_paciente %>";
   // Selecionar o botão de agendar
   const agendarBtn = document.getElementById("agendarBtn");
+  const prontBtn = document.getElementById("prontBtn");
+  const consultBtn = document.getElementById("consultBtn");
 
   // Adicionar um ouvinte de evento de clique ao botão
   agendarBtn.addEventListener("click", function () {
     // Redirecionar o usuário para a página listarMedicos.ejs
     window.location.href = "/listarMedicos/" + idPaciente;
   });
+  prontBtn.addEventListener("click", function () {
+    // Redirecionar o usuário para a página listarMedicos.ejs
+    window.location.href = "/editarProntuario/" + idPaciente;
+  });
+
+  consultBtn.addEventListener("click", function () {
+    // Redirecionar o usuário para a página listarMedicos.ejs
+    window.location.href = "/consultasAgendadas/" + idPaciente;
+  });
+
 </script>

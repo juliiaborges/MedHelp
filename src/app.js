@@ -13,6 +13,7 @@ const Consulta = require("./backend/models/Consulta");
 const Paciente = require("./backend/models/Paciente");
 const prontuarioPaciente = require('./backend/models/prontuarioPaciente');
 const prontuario = require('./backend/models/prontuarioPaciente');
+const estoque = require('./backend/models/Estoque');
 
 const bodyParser = require("body-parser");
 
@@ -34,9 +35,13 @@ app.get("/cadastroMedicos", function (req, res) {
   res.sendFile(path.join(__dirname, "/frontend/views/cadastroMedicos.html"));
 });
 
+app.get("/paginaMedico", function(req,res){
+  const idMedico = req.session.idMedico;
+  res.render("paginaMedico", { id_medico: idMedico });
+});
+
 // Receber dados do formulário de cadastro de médicos
-app.post("/medicoCadastrado", function (req, res) {
-  
+app.post("/medicoCadastrado", function (req, res) {  
   Medicos.create({
     nome_medico: req.body.nome,
     uf_medico: req.body.uf,
@@ -54,26 +59,99 @@ app.post("/medicoCadastrado", function (req, res) {
     });
 });
 
+//Define a rota para o login do medico
+app.get('/loginMedico', function (req, res) {
+  const errorMessage = req.query.error;
+  const successMessage = req.query.success;
+  res.render('loginMedico', { error: errorMessage, success: successMessage });
+});
+
+// Define a rota para o login do médico
+app.post('/loginMedico', function (req, res) {
+  const email = req.body.loginEmail;
+  const senha = req.body.loginSenha;
+
+  // Verifica se as credenciais estão corretas
+  Medicos.findOne({
+    where: {
+      email_medico: email,
+      senha_medico: senha,
+    },
+  })
+    .then(function (medico) {
+      if (medico) {
+        res.render('paginaMedico', { id_medico: medico.id_medicos });
+      } else {
+        const errorMessage = 'Credenciais inválidas. Verifique seu email e senha.';
+        res.redirect('/loginMedico?error=' + encodeURIComponent(errorMessage));
+      }
+    })
+    .catch(function (erro) {
+      res.send('Erro ao verificar as credenciais do médico: ' + erro);
+    });
+});
+
+app.get('/consultasMedico/:id_medico', function(req, res){
+  const idMedico = req.params.id_medico;
+  Consulta.findAll({
+    where: {
+      fk_id_medicos: idMedico,
+      mes_consulta: { [Op.ne]: null },
+      dia_consulta: { [Op.ne]: null },
+      horario_consulta: { [Op.ne]: null },
+    }
+  })
+    .then(function (consultas) {
+      res.render('consultasMedico', { consultas: consultas });
+    })
+    .catch(function (erro) {
+      res.send('Erro ao buscar consultas agendadas: ' + erro);
+    });
+});
+
+
 //Define a rota para o login do paciente
 
 app.get('/loginPaciente', function (req, res) {
-  res.sendFile(path.join(__dirname + '/frontend/views/loginPaciente.html'));
+  const errorMessage = req.query.error;
+  const successMessage = req.query.success;
+  res.render('loginPaciente', { error: errorMessage, success: successMessage });
 });
-
 
 // Receber dados do formulário de cadastro de médicos
 app.post('/pacienteCadastrado', function (req, res) {
-  Paciente.create({
-    email_paciente: req.body.email_paciente,
-    senha_paciente: req.body.senha_paciente,
+  const email = req.body.email_paciente;
+
+  // Verifica se já existe um paciente com o mesmo email
+  Paciente.findOne({
+    where: {
+      email_paciente: email,
+    },
   })
-    .then(function () {
-      res.send('Paciente cadastrado: ' + req.body.email_paciente);
+    .then(function (paciente) {
+      if (paciente) {
+        const errorMessage = 'O email informado já está em uso. Por favor, utilize outro email.';
+        res.redirect('/loginPaciente?error=' + encodeURIComponent(errorMessage));
+      } else {
+        // Se não existe um paciente com o mesmo email, cria o cadastro
+        Paciente.create({
+          email_paciente: email,
+          senha_paciente: req.body.senha_paciente,
+        })
+          .then(function () {
+            const successMessage = 'Paciente cadastrado: ' + email;
+            res.redirect('/loginPaciente?success=' + encodeURIComponent(successMessage));
+          })
+          .catch(function (erro) {
+            res.send('Erro ao cadastrar médico!' + erro);
+          });
+      }
     })
     .catch(function (erro) {
-      res.send('Erro ao cadastrar médico!' + erro);
+      res.send('Erro ao verificar o email do paciente: ' + erro);
     });
 });
+
 
 // Verificar Login do Paciente
 app.post('/prontuarioPaciente', function (req, res) {
@@ -91,7 +169,8 @@ app.post('/prontuarioPaciente', function (req, res) {
         const idPaciente = paciente.id_paciente;
         res.redirect('/editarProntuario/' + idPaciente);
       } else {
-        res.send('Email ou senha inválidos. Por favor, tente novamente.');
+        const errorMessage = 'Email ou senha inválidos. Por favor, tente novamente.';
+        res.redirect('/loginPaciente?error=' + encodeURIComponent(errorMessage)); // Redireciona com a mensagem de erro na query string
       }
     })
     .catch(function (erro) {
@@ -147,7 +226,7 @@ app.post('/paginaPaciente/:id_paciente', function (req, res) {
           { where: { fk_id_paciente: idPaciente } }
         )
           .then(function () {
-            res.send("paginaPaciente");
+            res.render("paginaPaciente", { id_paciente: idPaciente });
 
           })
           .catch(function (erro) {
@@ -165,7 +244,7 @@ app.post('/paginaPaciente/:id_paciente', function (req, res) {
           telefone_prontuario: telefone
         })
           .then(function () {
-            res.send("paginaPaciente");
+            res.render("paginaPaciente", { id_paciente: idPaciente });
           })
           .catch(function (erro) {
             res.send('Erro ao criar o prontuário: ' + erro);
@@ -181,8 +260,29 @@ app.post('/paginaPaciente/:id_paciente', function (req, res) {
 // Rota para exibir a página do paciente
 app.get("/paginaPaciente/:id_paciente", function (req, res) {
   const idPaciente = req.params.id_paciente;
+  req.session.idPaciente = idPaciente; // Armazenar o idPaciente na sessão
   res.render("paginaPaciente", { id_paciente: idPaciente });
 });
+
+// Rota para exibir as consultas agendadas do paciente
+app.get('/consultasAgendadas/:id_paciente', function (req, res) {
+  const idPaciente = req.params.id_paciente;
+  Consulta.findAll({
+    where: {
+      fk_id_paciente: idPaciente,
+      mes_consulta: { [Op.ne]: null },
+      dia_consulta: { [Op.ne]: null },
+      horario_consulta: { [Op.ne]: null },
+    }
+  })
+    .then(function (consultas) {
+      res.render('consultasAgendadas', { consultas: consultas });
+    })
+    .catch(function (erro) {
+      res.send('Erro ao buscar consultas agendadas: ' + erro);
+    });
+});
+
 
 // Rota para exibir a lista de médicos
 app.get("/listarMedicos/:id_paciente", function (req, res) {
@@ -671,6 +771,64 @@ app.post('/atualizar_paciente/:id_prontuario', function (req, res) {
     });
 });
 
+// estoque
+
+app.get('/atualizarEstoque', function (req, res) {
+  res.sendFile(path.join(__dirname + '/frontend/views/atualizarEstoque.html'));
+});
+
+
+//Receber dados do formulário
+app.post('/estoqueCadastrado', function (req, res) {
+  const filePath = path.join(__dirname, '../src/frontend/views/estoqueCadastrado');
+  fs.readFile(filePath, function (err, content) {
+
+    estoque.create({
+      nome_estoque: req.body.nome,
+      quant_estoque: req.body.quant,      
+    }).then(function () {
+      res.send("Equipamento cadastrado: "+ req.body.nome)
+    }).catch(function (erro) {
+      res.send("Erro ao cadastrar equipamento!" + erro)
+    })
+  });
+});
+
+  //Segunda parte - Listar Produtos  
+
+// Rota para exibir a página de listagem de equipamentos
+app.get('/listarEquipamentos', function (req, res) {
+  estoque.findAll().then(function (equipamentos) {
+    res.render('listarEquipamentos', { equipamentos: equipamentos });
+  }).catch(function (erro) {
+    res.send('Erro ao buscar equipamentos: ' + erro);
+  });
+});
+
+// Rota para atualizar a quantidade do equipamento selecionado
+app.post('/atualizar_quantidade/:id_estoque', function (req, res) {
+  const id_estoque = req.params.id_estoque;
+  const novaQuantidade = req.body.quantidade;
+
+  estoque.findByPk(id_estoque).then(function (equipamento) {
+    if (equipamento) {
+      const quantidadeAnterior = equipamento.quant_estoque;
+      const quantidadeAtualizada = parseInt(quantidadeAnterior) + parseInt(novaQuantidade);
+
+      equipamento.update({ quant_estoque: quantidadeAtualizada }).then(function () {
+        res.redirect('/listarEquipamentos');
+      }).catch(function (erro) {
+        res.send('Erro ao atualizar a quantidade do equipamento: ' + erro);
+      });
+    } else {
+      res.send('Equipamento não encontrado');
+    }
+  }).catch(function (erro) {
+    res.send('Erro ao buscar equipamento: ' + erro);
+  });
+});
+
+
   sequelize
   .authenticate()
   .then(function () {
@@ -683,6 +841,6 @@ app.post('/atualizar_paciente/:id_prontuario', function (req, res) {
 app.set("views", path.join(__dirname, "/frontend/views"));
 app.set("view engine", "ejs");
 
-app.listen(8081, () => {
+app.listen(8080, () => {
   console.log("Servidor iniciado");
 });

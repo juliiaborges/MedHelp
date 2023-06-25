@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../styles/consultasAgendadas.css">
+  <title>Consultas Agendadas</title>
+</head>
+<body>
+  <h1>Consultas Agendadas</h1>
+<div class="consulta">
+  <% if (typeof consultas !== 'undefined' && consultas.length > 0) { %>
+    <% consultas.forEach(function (consulta) { %>
+      <div class="consulta-item">
+        <h3>ID da Consulta: <%= consulta.id_consulta %></h3>
+        <p>Data: <%= consulta.dia_consulta %></p>
+        <p>Hora: <%= consulta.horario_consulta %></p>
+      </div>
+    <% }) %>
+  <% } else { %>
+    <p>Não há consultas agendadas no momento.</p>
+  <% } %>
+</div>
+</body>
+</html>
