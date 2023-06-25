@@ -2,20 +2,24 @@
 <html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro de Horários</title>
-    <link rel="stylesheet" href="../styles/meses.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro de Horários</title>
+  <link rel="stylesheet" href="../styles/meses.css">
 </head>
 
 <body>
-
-<div id="header">
-  <h1>Agosto</h1>
-</div>
-
   <div id="container">
+    <h1>Agosto</h1>
+    <div id="content">
+      <div id="mensagem-erro">
+        <% if (errorMessage) { %>
+        <p><%= errorMessage %></p>
+        <% } else if (successMessage) { %>
+        <p><%= successMessage %></p>
+        <% } %>
+      </div>
     <div id="weekdays">
       <div>Domingo</div>
       <div>Segunda</div>
@@ -25,8 +29,7 @@
       <div>Sexta</div>
       <div>Sábado</div>
     </div>
-<form>
-    <div id="calendar">
+      <div id="calendar">
         <div class="day padding"></div> <!-- Espaço vazio no início do mês -->
         <div class="day padding"></div> <!-- Espaço vazio no início do mês -->
         <div class="day padding"></div> <!-- Espaço vazio no início do mês -->
@@ -64,47 +67,22 @@
         <div class="day" value="31/08">31</div>
         <div class="day padding"></div> <!-- Espaço vazio no final do mês -->
       </div>
-      
-</form>
-<div class="overlay">
-  <div class="overlay-content">
-    <h2>Selecione um horário</h2>
-    <INPUT TYPE="radio" NAME="horario" VALUE="12h/13h" > 12h até 13h<br>
-    <INPUT TYPE="radio" NAME="horario" VALUE="13h/14h"> 13h até 14h<br>
-   <INPUT TYPE="radio" NAME="horario" VALUE="14h/15h"> 14h até 15h<br> 
-    <INPUT TYPE="radio" NAME="horario" VALUE="15h/16h"> 15h até 16h <br>
-    <INPUT TYPE="radio" NAME="horario" VALUE="16h/17h"> 16h até 17h <br>
-   <INPUT TYPE="radio" NAME="horario" VALUE="17h/18h"> 17h até 18h <br><br>
-    <button id="confirmButton">Confirmar</button>
-    <button id="cancelButton">Cancelar</button>
   </div>
 </div>
-  </div>
 
-  <div id="newEventModal">
-    <h3>Novo Evento</h3>
-    <input type="text" id="eventTitleInput" placeholder="Título do evento" />
-    <textarea id="eventTextInput" placeholder="Descrição do evento"></textarea>
-    <div class="radio-group">
-      <input type="radio" id="eventColor1" name="eventColor" value="#FFFCFF" checked />
-      <label for="eventColor1"></label>
-      <input type="radio" id="eventColor2" name="eventColor" value="#e8f4fa" />
-      <label for="eventColor2"></label>
-      <input type="radio" id="eventColor3" name="eventColor" value="#FFFCFF" />
-      <label for="eventColor3"></label>
+  <div class="overlay">
+    <div class="overlay-content">
+      <h2>Selecione um horário</h2>
+      <input type="radio" name="horario" value="12h/13h"> 12h até 13h<br>
+      <input type="radio" name="horario" value="13h/14h"> 13h até 14h<br>
+      <input type="radio" name="horario" value="14h/15h"> 14h até 15h<br>
+      <input type="radio" name="horario" value="15h/16h"> 15h até 16h<br>
+      <input type="radio" name="horario" value="16h/17h"> 16h até 17h<br>
+      <input type="radio" name="horario" value="17h/18h"> 17h até 18h<br><br>
+      <button id="confirmButton">Confirmar</button>
+      <button id="cancelButton">Cancelar</button>
     </div>
-    <button id="saveButton">Salvar</button>
-    <button id="cancelButton">Cancelar</button>
-  </div>
-
-  <div id="deleteEventModal">
-    <h3>Excluir Evento</h3>
-    <p>Você tem certeza que deseja excluir este evento?</p>
-    <button id="deleteButton">Excluir</button>
-    <button id="closeButton">Fechar</button>
-  </div>
-
-  <div id="modalBackDrop"></div>
+  </div> 
 </body>
 </html>
-<script src="../scripts/agosto.js"></script>
+<script src="../scripts/junho.js"></script>

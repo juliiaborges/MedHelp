@@ -2,19 +2,24 @@
 <html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro de Horários</title>
-    <link rel="stylesheet" href="../styles/meses.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro de Horários</title>
+  <link rel="stylesheet" href="../styles/meses.css">
 </head>
 
-<body>
-  <div id="header">
-    <h1>Julho</h1>
-  </div>
-
+<body>  
   <div id="container">
+    <h1>Julho</h1>
+    <div id="content">
+      <div id="mensagem-erro">
+        <% if (errorMessage) { %>
+        <p><%= errorMessage %></p>
+        <% } else if (successMessage) { %>
+        <p><%= successMessage %></p>
+        <% } %>
+      </div>
     <div id="weekdays">
       <div>Domingo</div>
       <div>Segunda</div>
@@ -24,84 +29,61 @@
       <div>Sexta</div>
       <div>Sábado</div>
     </div>
-<form>
     <div id="calendar">
-        <div class="day padding"></div> <!-- Espaço vazio no início do mês -->
-        <div class="day padding"></div> <!-- Espaço vazio no início do mês -->
-        <div class="day padding"></div> <!-- Espaço vazio no início do mês -->
-        <div class="day padding"></div> <!-- Espaço vazio no início do mês -->
-        <div class="day" value="01/07">1</div>
-        <div class="day" value="02/07">2</div>
-        <div class="day" value="03/07">3</div>
-        <div class="day" value="04/07">4</div>
-        <div class="day" value="05/07">5</div>
-        <div class="day" value="06/07">6</div>
-        <div class="day" value="07/07">7</div>
-        <div class="day" value="08/07">8</div>
-        <div class="day" value="09/07">9</div>
-        <div class="day" value="10/07">10</div>
-        <div class="day" value="11/07">11</div>
-        <div class="day" value="12/07">12</div>
-        <div class="day" value="13/07">13</div>
-        <div class="day" value="14/07">14</div>
-        <div class="day" value="15/07">15</div>
-        <div class="day" value="16/07">16</div>
-        <div class="day" value="17/07">17</div>
-        <div class="day" value="18/07">18</div>
-        <div class="day" value="19/07">19</div>
-        <div class="day" value="20/07">20</div>
-        <div class="day" value="21/07">21</div>
-        <div class="day" value="22/07">22</div>
-        <div class="day" value="23/07">23</div>
-        <div class="day" value="24/07">24</div>
-        <div class="day" value="25/07">25</div>
-        <div class="day" value="26/07">26</div>
-        <div class="day" value="27/07">27</div>
-        <div class="day" value="28/07">28</div>
-        <div class="day" value="29/07">29</div>
-        <div class="day" value="30/07">30</div>
-        <div class="day" value="31/07">31</div>
-        <div class="day padding"></div> <!-- Espaço vazio no final do mês -->
-      </div>
-    </form>
+      <div class="day padding"></div> <!-- Espaço vazio no início do mês -->
+      <div class="day padding"></div> <!-- Espaço vazio no início do mês -->
+      <div class="day padding"></div> <!-- Espaço vazio no início do mês -->
+      <div class="day padding"></div> <!-- Espaço vazio no início do mês -->
+      <div class="day" value="01/07">1</div>
+      <div class="day" value="02/07">2</div>
+      <div class="day" value="03/07">3</div>
+      <div class="day" value="04/07">4</div>
+      <div class="day" value="05/07">5</div>
+      <div class="day" value="06/07">6</div>
+      <div class="day" value="07/07">7</div>
+      <div class="day" value="08/07">8</div>
+      <div class="day" value="09/07">9</div>
+      <div class="day" value="10/07">10</div>
+      <div class="day" value="11/07">11</div>
+      <div class="day" value="12/07">12</div>
+      <div class="day" value="13/07">13</div>
+      <div class="day" value="14/07">14</div>
+      <div class="day" value="15/07">15</div>
+      <div class="day" value="16/07">16</div>
+      <div class="day" value="17/07">17</div>
+      <div class="day" value="18/07">18</div>
+      <div class="day" value="19/07">19</div>
+      <div class="day" value="20/07">20</div>
+      <div class="day" value="21/07">21</div>
+      <div class="day" value="22/07">22</div>
+      <div class="day" value="23/07">23</div>
+      <div class="day" value="24/07">24</div>
+      <div class="day" value="25/07">25</div>
+      <div class="day" value="26/07">26</div>
+      <div class="day" value="27/07">27</div>
+      <div class="day" value="28/07">28</div>
+      <div class="day" value="29/07">29</div>
+      <div class="day" value="30/07">30</div>
+      <div class="day" value="31/07">31</div>
+      <div class="day padding"></div> <!-- Espaço vazio no final do mês -->
+    </div>
   </div>
+</div>
+
   <div class="overlay">
     <div class="overlay-content">
       <h2>Selecione um horário</h2>
-      <INPUT TYPE="radio" NAME="horario" VALUE="12h/13h" > 12h até 13h<br>
-      <INPUT TYPE="radio" NAME="horario" VALUE="13h/14h"> 13h até 14h<br>
-     <INPUT TYPE="radio" NAME="horario" VALUE="14h/15h"> 14h até 15h<br> 
-      <INPUT TYPE="radio" NAME="horario" VALUE="15h/16h"> 15h até 16h <br>
-      <INPUT TYPE="radio" NAME="horario" VALUE="16h/17h"> 16h até 17h <br>
-     <INPUT TYPE="radio" NAME="horario" VALUE="17h/18h"> 17h até 18h <br><br>
+      <input type="radio" name="horario" value="12h/13h"> 12h até 13h<br>
+      <input type="radio" name="horario" value="13h/14h"> 13h até 14h<br>
+      <input type="radio" name="horario" value="14h/15h"> 14h até 15h<br>
+      <input type="radio" name="horario" value="15h/16h"> 15h até 16h<br>
+      <input type="radio" name="horario" value="16h/17h"> 16h até 17h<br>
+      <input type="radio" name="horario" value="17h/18h"> 17h até 18h<br><br>
       <button id="confirmButton">Confirmar</button>
       <button id="cancelButton">Cancelar</button>
     </div>
-  </div>
-  <div id="newEventModal">
-    <h3>Novo Evento</h3>
-    <input type="text" id="eventTitleInput" placeholder="Título do evento" />
-    <textarea id="eventTextInput" placeholder="Descrição do evento"></textarea>
-    <div class="radio-group">
-      <input type="radio" id="eventColor1" name="eventColor" value="#FFFCFF" checked />
-      <label for="eventColor1"></label>
-      <input type="radio" id="eventColor2" name="eventColor" value="#e8f4fa" />
-      <label for="eventColor2"></label>
-      <input type="radio" id="eventColor3" name="eventColor" value="#FFFCFF" />
-      <label for="eventColor3"></label>
-    </div>
-    <button id="saveButton">Salvar</button>
-    <button id="cancelButton">Cancelar</button>
-  </div>
-
-  <div id="deleteEventModal">
-    <h3>Excluir Evento</h3>
-    <p>Você tem certeza que deseja excluir este evento?</p>
-    <button id="deleteButton">Excluir</button>
-    <button id="closeButton">Fechar</button>
-  </div>
-
-  <div id="modalBackDrop"></div>
+  </div> 
 </body>
 </html>
-<script src="../scripts/julho.js"></script>
+<script src="../scripts/junho.js"></script>
+

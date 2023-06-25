@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 const session = require('express-session');
-
+const { Op } = require("sequelize");
 const fs = require("fs");
 const path = require("path");
 
@@ -146,7 +146,7 @@ app.post('/paginaPaciente/:id_paciente', function (req, res) {
           { where: { fk_id_paciente: idPaciente } }
         )
           .then(function () {
-            res.render("paginaPaciente", { id_paciente: idPaciente });
+            res.send("paginaPaciente");
 
           })
           .catch(function (erro) {
@@ -221,6 +221,7 @@ app.post("/mesConsulta/:id_paciente/:id_medicos", function (req, res) {
   const idPaciente = req.params.id_paciente;
   const idMedicos = req.params.id_medicos;
   const mesConsulta =  req.body.mes;
+  
 
   // Salve a escolha do mês no banco de dados
   Consulta.create({
@@ -240,12 +241,8 @@ app.post("/mesConsulta/:id_paciente/:id_medicos", function (req, res) {
 
 app.get('/junho', function (req, res) {
   const idConsulta = req.session.idConsulta; // Obter o idConsulta da sessão
-  res.render('junho', { idConsulta: idConsulta });
+  res.render('junho', { idConsulta: idConsulta, errorMessage: null, successMessage: null });
 });
-
-const { Op } = require("sequelize");
-
-// ...
 
 app.post("/junho", function (req, res) {
   const idConsulta = req.session.idConsulta;
@@ -254,178 +251,311 @@ app.post("/junho", function (req, res) {
 
   Consulta.findByPk(idConsulta)
     .then(function (consulta) {
-      // ...
-
-      // Verificar se já existe uma consulta marcada na mesma data e horário
-      Consulta.findOne({
-        where: {
-          dia_consulta: diaConsulta,
-          horario_consulta: horarioConsulta,
-          id_consulta: {
-            [Op.ne]: idConsulta, // Excluir a própria consulta da verificação
-          },
-        },
-      })
-        .then(function (existingConsulta) {
-          if (existingConsulta) {
-            // Consulta já existe, mostrar uma mensagem de erro
-            res.render("junho", { id_consulta: idConsulta, mensagemErro: "Já existe uma consulta marcada para essa data e horário." });
-          } else {
-            // Atualizar os dados da consulta existente
-            consulta
-              .update({
-                dia_consulta: diaConsulta,
-                horario_consulta: horarioConsulta,
-              })
-              .then(function () {
-                res.render("junho", { id_consulta: idConsulta });
-              })
-              .catch(function (erro) {
-                res.send("Erro ao atualizar a consulta " + erro);
-              });
-          }
-        })
-        .catch(function (erro) {
-          res.send("Erro ao verificar a consulta: " + erro);
-        });
-    })
-    .catch(function (erro) {
-      res.send("Erro ao verificar a consulta: " + erro);
-    });
-});
-
-
-
-
-app.get('/julho', function (req, res) {
-  const idConsulta = req.session.idConsulta; // Obter o idConsulta da sessão
-  res.render('julho', { idConsulta: idConsulta });
-});
-
-app.post("/julho", function (req, res) {
-  const idConsulta = req.session.idConsulta;
-  const diaConsulta = req.body.diaConsulta; 
-  const horarioConsulta = req.body.horarioConsulta;
-
-  Consulta.findByPk(idConsulta) 
-    .then(function (consulta) {
       if (consulta) {
-        // Atualizar os dados da consulta existente
-        consulta
-          .update({ 
+        // Verificar se já existe uma consulta marcada na mesma data e horário
+        Consulta.findOne({
+          where: {
             dia_consulta: diaConsulta,
-            horario_consulta: horarioConsulta
-          })
-          .then(function () {
-            res.render("julho", { id_consulta: idConsulta });
+            horario_consulta: horarioConsulta,
+            id_consulta: {
+              [Op.ne]: idConsulta, // Excluir a própria consulta da verificação
+            },
+          },
+        })
+          .then(function (existingConsulta) {
+            if (existingConsulta) {
+              // Consulta já existe, mostrar uma mensagem de erro
+              res.json({ error: "Data ocupada, tente agendar em outra data e/ou horário." });
+            } else {
+              // Atualizar os dados da consulta existente
+              consulta
+                .update({
+                  dia_consulta: diaConsulta,
+                  horario_consulta: horarioConsulta,
+                })
+                .then(function () {
+                  res.json({ success: "Consulta agendada com sucesso!" });
+                })
+                .catch(function (erro) {
+                  res.json({ error: "Erro ao atualizar a consulta: " + erro });
+                });
+            }
           })
           .catch(function (erro) {
-            res.send('Erro ao atualizar a consulta ' + erro);
+            res.json({ error: "Erro ao verificar a consulta: " + erro });
           });
       } else {
         // Criar uma nova consulta para o paciente
-        Consulta.create({ 
-          dia_consulta: diaConsulta, 
-          horario_consulta: horarioConsulta
+        Consulta.findOne({
+          where: {
+            dia_consulta: diaConsulta,
+            horario_consulta: horarioConsulta,
+          },
         })
-          .then(function () {
-            res.send("Consulta criada com sucesso");
+          .then(function (existingConsulta) {
+            if (existingConsulta) {
+              // Consulta já existe, mostrar uma mensagem de erro
+              res.json({ error: "Já existe uma consulta marcada para essa data e horário, tente selecionar outro dia ou horário." });
+            } else {
+              Consulta.create({
+                dia_consulta: diaConsulta,
+                horario_consulta: horarioConsulta,
+              })
+                .then(function () {
+                  res.json({ success: "Consulta agendada com sucesso" });
+                })
+                .catch(function (erro) {
+                  res.json({ error: "Erro ao criar a consulta: " + erro });
+                });
+            }
           })
           .catch(function (erro) {
-            res.send('Erro ao criar a consulta: ' + erro);
+            res.json({ error: "Erro ao verificar a consulta: " + erro });
           });
       }
     })
     .catch(function (erro) {
-      res.send('Erro ao verificar a consulta: ' + erro);
+      res.json({ error: "Erro ao verificar a consulta: " + erro });
+    });
+});
+
+app.get('/julho', function (req, res) {
+  const idConsulta = req.session.idConsulta; // Obter o idConsulta da sessão
+  res.render('julho', { idConsulta: idConsulta, errorMessage: null, successMessage: null });
+});
+
+app.post("/julho", function (req, res) {
+  const idConsulta = req.session.idConsulta;
+  const diaConsulta = req.body.diaConsulta;
+  const horarioConsulta = req.body.horarioConsulta;
+
+  Consulta.findByPk(idConsulta)
+    .then(function (consulta) {
+      if (consulta) {
+        // Verificar se já existe uma consulta marcada na mesma data e horário
+        Consulta.findOne({
+          where: {
+            dia_consulta: diaConsulta,
+            horario_consulta: horarioConsulta,
+            id_consulta: {
+              [Op.ne]: idConsulta, // Excluir a própria consulta da verificação
+            },
+          },
+        })
+          .then(function (existingConsulta) {
+            if (existingConsulta) {
+              // Consulta já existe, mostrar uma mensagem de erro
+              res.json({ error: "Data ocupada, tente agendar em outra data e/ou horário." });
+            } else {
+              // Atualizar os dados da consulta existente
+              consulta
+                .update({
+                  dia_consulta: diaConsulta,
+                  horario_consulta: horarioConsulta,
+                })
+                .then(function () {
+                  res.json({ success: "Consulta agendada com sucesso!" });
+                })
+                .catch(function (erro) {
+                  res.json({ error: "Erro ao atualizar a consulta: " + erro });
+                });
+            }
+          })
+          .catch(function (erro) {
+            res.json({ error: "Erro ao verificar a consulta: " + erro });
+          });
+      } else {
+        // Criar uma nova consulta para o paciente
+        Consulta.findOne({
+          where: {
+            dia_consulta: diaConsulta,
+            horario_consulta: horarioConsulta,
+          },
+        })
+          .then(function (existingConsulta) {
+            if (existingConsulta) {
+              // Consulta já existe, mostrar uma mensagem de erro
+              res.json({ error: "Já existe uma consulta marcada para essa data e horário, tente selecionar outro dia ou horário." });
+            } else {
+              Consulta.create({
+                dia_consulta: diaConsulta,
+                horario_consulta: horarioConsulta,
+              })
+                .then(function () {
+                  res.json({ success: "Consulta agendada com sucesso" });
+                })
+                .catch(function (erro) {
+                  res.json({ error: "Erro ao criar a consulta: " + erro });
+                });
+            }
+          })
+          .catch(function (erro) {
+            res.json({ error: "Erro ao verificar a consulta: " + erro });
+          });
+      }
+    })
+    .catch(function (erro) {
+      res.json({ error: "Erro ao verificar a consulta: " + erro });
     });
 });
 
 app.get('/agosto', function (req, res) {
   const idConsulta = req.session.idConsulta; // Obter o idConsulta da sessão
-  res.render('agosto', { idConsulta: idConsulta });
+  res.render('agosto', { idConsulta: idConsulta, errorMessage: null, successMessage: null });
 });
 
 app.post("/agosto", function (req, res) {
   const idConsulta = req.session.idConsulta;
-  const diaConsulta = req.body.diaConsulta; 
+  const diaConsulta = req.body.diaConsulta;
   const horarioConsulta = req.body.horarioConsulta;
 
-  Consulta.findByPk(idConsulta) 
+  Consulta.findByPk(idConsulta)
     .then(function (consulta) {
       if (consulta) {
-        // Atualizar os dados da consulta existente
-        consulta
-          .update({ 
+        // Verificar se já existe uma consulta marcada na mesma data e horário
+        Consulta.findOne({
+          where: {
             dia_consulta: diaConsulta,
-            horario_consulta: horarioConsulta
-          })
-          .then(function () {
-            res.render("agosto", { id_consulta: idConsulta });
+            horario_consulta: horarioConsulta,
+            id_consulta: {
+              [Op.ne]: idConsulta, // Excluir a própria consulta da verificação
+            },
+          },
+        })
+          .then(function (existingConsulta) {
+            if (existingConsulta) {
+              // Consulta já existe, mostrar uma mensagem de erro
+              res.json({ error: "Data ocupada, tente agendar em outra data e/ou horário." });
+            } else {
+              // Atualizar os dados da consulta existente
+              consulta
+                .update({
+                  dia_consulta: diaConsulta,
+                  horario_consulta: horarioConsulta,
+                })
+                .then(function () {
+                  res.json({ success: "Consulta agendada com sucesso!" });
+                })
+                .catch(function (erro) {
+                  res.json({ error: "Erro ao atualizar a consulta: " + erro });
+                });
+            }
           })
           .catch(function (erro) {
-            res.send('Erro ao atualizar a consulta ' + erro);
+            res.json({ error: "Erro ao verificar a consulta: " + erro });
           });
       } else {
         // Criar uma nova consulta para o paciente
-        Consulta.create({ 
-          dia_consulta: diaConsulta, 
-          horario_consulta: horarioConsulta
+        Consulta.findOne({
+          where: {
+            dia_consulta: diaConsulta,
+            horario_consulta: horarioConsulta,
+          },
         })
-          .then(function () {
-            res.send("Consulta criada com sucesso");
+          .then(function (existingConsulta) {
+            if (existingConsulta) {
+              // Consulta já existe, mostrar uma mensagem de erro
+              res.json({ error: "Já existe uma consulta marcada para essa data e horário, tente selecionar outro dia ou horário." });
+            } else {
+              Consulta.create({
+                dia_consulta: diaConsulta,
+                horario_consulta: horarioConsulta,
+              })
+                .then(function () {
+                  res.json({ success: "Consulta agendada com sucesso" });
+                })
+                .catch(function (erro) {
+                  res.json({ error: "Erro ao criar a consulta: " + erro });
+                });
+            }
           })
           .catch(function (erro) {
-            res.send('Erro ao criar a consulta: ' + erro);
+            res.json({ error: "Erro ao verificar a consulta: " + erro });
           });
       }
     })
     .catch(function (erro) {
-      res.send('Erro ao verificar a consulta: ' + erro);
+      res.json({ error: "Erro ao verificar a consulta: " + erro });
     });
 });
 
 app.get('/setembro', function (req, res) {
   const idConsulta = req.session.idConsulta; // Obter o idConsulta da sessão
-  res.render('setembro', { idConsulta: idConsulta });
+  res.render('setembro', { idConsulta: idConsulta, errorMessage: null, successMessage: null });
 });
 
 app.post("/setembro", function (req, res) {
   const idConsulta = req.session.idConsulta;
-  const diaConsulta = req.body.diaConsulta; 
+  const diaConsulta = req.body.diaConsulta;
   const horarioConsulta = req.body.horarioConsulta;
 
-  Consulta.findByPk(idConsulta) 
+  Consulta.findByPk(idConsulta)
     .then(function (consulta) {
       if (consulta) {
-        // Atualizar os dados da consulta existente
-        consulta
-          .update({ 
+        // Verificar se já existe uma consulta marcada na mesma data e horário
+        Consulta.findOne({
+          where: {
             dia_consulta: diaConsulta,
-            horario_consulta: horarioConsulta
-          })
-          .then(function () {
-            res.render("setembro", { id_consulta: idConsulta });
+            horario_consulta: horarioConsulta,
+            id_consulta: {
+              [Op.ne]: idConsulta, // Excluir a própria consulta da verificação
+            },
+          },
+        })
+          .then(function (existingConsulta) {
+            if (existingConsulta) {
+              // Consulta já existe, mostrar uma mensagem de erro
+              res.json({ error: "Data ocupada, tente agendar em outra data e/ou horário." });
+            } else {
+              // Atualizar os dados da consulta existente
+              consulta
+                .update({
+                  dia_consulta: diaConsulta,
+                  horario_consulta: horarioConsulta,
+                })
+                .then(function () {
+                  res.json({ success: "Consulta agendada com sucesso!" });
+                })
+                .catch(function (erro) {
+                  res.json({ error: "Erro ao atualizar a consulta: " + erro });
+                });
+            }
           })
           .catch(function (erro) {
-            res.send('Erro ao atualizar a consulta ' + erro);
+            res.json({ error: "Erro ao verificar a consulta: " + erro });
           });
       } else {
         // Criar uma nova consulta para o paciente
-        Consulta.create({ 
-          dia_consulta: diaConsulta, 
-          horario_consulta: horarioConsulta
+        Consulta.findOne({
+          where: {
+            dia_consulta: diaConsulta,
+            horario_consulta: horarioConsulta,
+          },
         })
-          .then(function () {
-            res.send("Consulta criada com sucesso");
+          .then(function (existingConsulta) {
+            if (existingConsulta) {
+              // Consulta já existe, mostrar uma mensagem de erro
+              res.json({ error: "Já existe uma consulta marcada para essa data e horário, tente selecionar outro dia ou horário." });
+            } else {
+              Consulta.create({
+                dia_consulta: diaConsulta,
+                horario_consulta: horarioConsulta,
+              })
+                .then(function () {
+                  res.json({ success: "Consulta agendada com sucesso" });
+                })
+                .catch(function (erro) {
+                  res.json({ error: "Erro ao criar a consulta: " + erro });
+                });
+            }
           })
           .catch(function (erro) {
-            res.send('Erro ao criar a consulta: ' + erro);
+            res.json({ error: "Erro ao verificar a consulta: " + erro });
           });
       }
     })
     .catch(function (erro) {
-      res.send('Erro ao verificar a consulta: ' + erro);
+      res.json({ error: "Erro ao verificar a consulta: " + erro });
     });
 });
 
