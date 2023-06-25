@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MedHelp - Gestão de clínica</title>
-  <link rel="stylesheet" href="../frontend/styles/index.css">
+  <link rel="stylesheet" href="/styles/index.css">
   <link rel="preconnect" href="https://rsms.me/">
   <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
 
@@ -24,15 +24,16 @@
       <a href="servicos">Serviços</a>
     </div>
     <div class="botoes">
-      <button class="bt-registro">Registrar</button>
-      <button href=index2.html class="bt-login">Login</button>
+      <button id="bt-registro" class="bt-registro">Registrar</button>
+      <button id="btn-login" class="bt-login">Login</button>
+
     </div>
     <div class="mobile-menu-icon">
-      <button onclick="menushow()"><img class="icon" src="../frontend/images/icon.png" alt=""></button>
+      <button onclick="menushow()"><img class="icon" src="/images/icon.png" alt=""></button>
     </div>
   </div>
   <div class="mobile-menu-icon">
-    <button><img class="icon" src="../frontend/images/icon.png" alt=""></button>
+    <button><img class="icon" src="/images/icon.png" alt=""></button>
     <div class="mobile-menu">
       <div class="itens">
         <a href="#inicio">Início</a>
@@ -40,8 +41,9 @@
         <a href="servicos">Serviços</a>
       </div>
       <div class="botoes">
-        <button class="bt-registro">Registrar</button>
-        <button href=index2.html class="bt-login">Login</button>
+        <button id="bt-registro" class="bt-registro">Registrar</button>
+        <button id="btn-login" class="bt-login">Login</button>
+
       </div>
     </div>
   </div>
@@ -66,7 +68,7 @@
       <button class="bt-saibamais">Saiba Mais</button>
     </div>
     <div class="column1">
-      <img id="img01" src="../frontend/images/Ilustração.png" alt="Imagem">
+      <img id="img01" src="/images/Ilustração.png" alt="Imagem">
     </div>
   </div>
   </section>
@@ -84,25 +86,25 @@
         <h1>Vantagens do MedHelp</h1>
       </div>
       <div class="linha">
-        <img src="../frontend/images/Rectangle 5.png">
+        <img src="/images/Rectangle5.png">
       </div>
     </div>
     
     <div class="container02">
       <div class="column2">
-        <img src="../frontend/images/gestaofinanceira.png">
+        <img src="/images/gestaofinanceira.png">
         <h3>Gestão Financeira</h3>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante
           dapibus diam. Sed nisi. </p>
       </div>
       <div class="column2">
-        <img src="../frontend/images/gestaofinanceira.png">
+        <img src="/images/gestaofinanceira.png">
         <h3>Agendamento Online</h3>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante
           dapibus diam. Sed nisi. </p>
       </div>
       <div class="column2">
-        <img src="../frontend/images/gestaofinanceira.png">
+        <img src="/images/gestaofinanceira.png">
         <h3>Prontuário Médico</h3>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante
           dapibus diam. Sed nisi. </p>
@@ -115,7 +117,7 @@
   <section class="questionamento">
     <div class="container-03">
       <div class="container">
-        <img src="../frontend/images/imagemmulher.png" alt="imagem3">
+        <img src="/images/imagemmulher.png" alt="imagem3">
       </div>
 
       <div class="container">
@@ -154,7 +156,7 @@
 
   <!--Início Footer-->
   <footer class="footer">
-    <img id="logoFooter" src="/../frontend/images/logo.svg" alt=""> <br>
+    <img id="logoFooter" src="/images/logo.svg" alt=""> <br>
     <div class="colunaFooter">
       <a href="">Início</a> <br>
       <a href="">Sobre nós</a> <br>
@@ -165,8 +167,8 @@
       <a href="">Termos e Condições</a> <br>
     </div>
     <div class="colunaFooter">
-      <a class="social" href=""><img src="../frontend/images/Facebook.png" alt=""></a>
-      <a class="social" href=""><img src="../frontend/images/Instagram Circle.png" alt=""></a>
+      <a class="social" href=""><img src="/images/Facebook.png" alt=""></a>
+      <a class="social" href=""><img src="/images/Instagram Circle.png" alt=""></a>
 
     </div>
 
@@ -185,5 +187,21 @@
     }
   </script>
 </body>
-
 </html>
+
+<script>
+  const btLogin = document.getElementById("btn-login");
+  const btRegistro = document.getElementById("bt-registro");
+
+  // Adicionar um ouvinte de evento de clique aos botões
+  btLogin.addEventListener("click", function () {
+  // Redirecionar o médico para a página consultasMedico.ejs
+  window.location.href = "login";
+});
+  // Adicionar um ouvinte de evento de clique aos botões
+  btRegistro.addEventListener("click", function () {
+  // Redirecionar o médico para a página consultasMedico.ejs
+  window.location.href = "login";
+});
+  
+</script>

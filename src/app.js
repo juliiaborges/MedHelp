@@ -32,6 +32,10 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, "./frontend")));
 
+app.get("/index", function(req,res){
+  res.sendFile(path.join(__dirname, "/frontend/index.html"));
+});
+
 // Define a rota para o cadastro de médicos
 app.get("/cadastroMedicos", function (req, res) {
   res.sendFile(path.join(__dirname, "/frontend/views/cadastroMedicos.html"));
