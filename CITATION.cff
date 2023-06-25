@@ -1,16 +1,16 @@
 # YAML 1.2
 ---
 authors: 
-  - family-names: sobrenome do aluno 1
-    given-names: Nome do aluno 1 
-  - family-names: sobrenome do aluno 1
-    given-names: Nome do aluno 1 
-  - family-names: sobrenome do aluno 1
-    given-names: Nome do aluno 1 
-  - family-names: sobrenome do aluno 1
-    given-names: Nome do aluno 1 
-  - family-names: sobrenome do aluno 1
-    given-names: Nome do aluno 1 
+  - family-names: Blom de Paula
+    given-names: Letícia Rodrigues
+  - family-names: Capanema Bretas
+    given-names: Arthur
+  - family-names: Miranda Santos
+    given-names: Igor 
+  - family-names: Borges Araújo Silva
+    given-names: Júlia 
+  - family-names: de Oliveira Morais
+    given-names: Gabriel Vitor
     
   - name-suffix: Professor
     affiliation: PUC Minas
@@ -20,22 +20,21 @@ authors:
     affiliation: PUC Minas
     family-names: Veloso
     given-names: Eveline Alonso
-  - name-suffix: Professor
-    affiliation: PUC Minas
-    family-names: Silva
-    given-names: Thiago Augusto Nicolini 
 cff-version: "1.1.0"
 keywords: 
+  - "Engenharia de Software"
   - "Modelagem de Processos de Negócios"
-  - "Palavra chave 2"
-  - "Palavra chave 3"
+  - "TIS 2"
+  - "MedHelp"
+  - "Clínica Médica"
 message: |
     "If you use this software, please cite it using these metadata.
     Se você utilizar este software, por favor cite-o utilizando estes metadados."
-repository-code: "https://github.com/url do projeto"
-title: "Título do projeto"
+repository-code: "https://github.com/ICEI-PUC-Minas-PPLES-TI/plf-es-2023-1-ti2-0924100-medhelp.git"
+title: "MedHelp"
 abstract: |
-    "
-    Breve descrição do projeto
-    "
+    "O MedHelp é um software de gerenciamento e organização de clínicas médicas, desenvolvido com o objetivo de auxiliá-las
+  no cadastro de médicos, agendamento de consultas, controle de prontuários, gerenciamento de estoque e registro de pagamentos.
+  Para isso, utiliza tecnologias de frontend (HTML, CSS, JavaScript) e backend (MySQL, Node.js),
+  permitindo uma integração eficiente com o banco de dados."
 ...
