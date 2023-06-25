@@ -1,27 +1,19 @@
 //Função ATUALIZAR esquipamentos
-
 //Equipamentos em estoque
-
-
 atualizarTabela();
-
 // função para adicionar um equipamento na tabela
 function adicionarEquipamentoTabela(equipamento) {
     const tableBody = document.querySelector('#equipamentos-table tbody');
     const row = tableBody.insertRow();
-
     const idCell = row.insertCell(0);
     const nomeCell = row.insertCell(1)
     const descricaoCell = row.insertCell(2);
     const disponibilidadeCell = row.insertCell(3)
     const actionsCell = row.insertCell(4);
-
     idCell.innerText = equipamento.id;
     nomeCell.innerText = equipamento.nome;
     descricaoCell.innerText = equipamento.descricao;
     disponibilidadeCell.innerText = equipamento.disponibilidade
-
-
     // botão de excluir equipamento
     const deleteButton = document.createElement('button');
     deleteButton.innerText = 'Excluir';
@@ -30,13 +22,11 @@ function adicionarEquipamentoTabela(equipamento) {
     }
     actionsCell.appendChild(deleteButton);
 }
-
 // função para excluir um equipamento do array e da tabela
 function excluirEquipamento(id) {
     equipamentos = equipamentos.filter(equipamento => equipamento.id !== id);
     atualizarTabela();
 }
-
 // função para atualizar a tabela com os dados do array de equipamentos
 function atualizarTabela() {
     const tableBody = document.querySelector('#equipamentos-table tbody');

@@ -11,7 +11,14 @@
     --modal-event: #e8f4fa;
     --color-day: white;
   }
-
+  :root {
+    font-family: 'Inter', sans-serif;
+  }
+  
+  :root {
+    font-family: 'Inter var', sans-serif;
+  }
+  
   body {
     display: flex;
     margin-top: 10px;

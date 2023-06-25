@@ -14,6 +14,8 @@ const Paciente = require("./backend/models/Paciente");
 const prontuarioPaciente = require('./backend/models/prontuarioPaciente');
 const prontuario = require('./backend/models/prontuarioPaciente');
 const estoque = require('./backend/models/Estoque');
+const Funcionario = require('./backend/models/Funcionario');
+const pagamento = require("./backend/models/Pagamentos");
 
 const bodyParser = require("body-parser");
 
@@ -50,12 +52,50 @@ app.post("/medicoCadastrado", function (req, res) {
     situacao_medico: req.body.situacao,
     telefone_medico: req.body.telefone,
     email_medico: req.body.email,
+    senha_medico: req.body.senha,
   })
   .then(function () {
-    res.send("Médico cadastrado: " + req.body.nome);
+    res.render("paginaFuncionario");
   })
     .catch(function (erro) {
       res.send("Erro ao cadastrar médico!" + erro);
+    });
+});
+
+app.get('/login', function (req, res){
+  res.render('login');
+});
+
+// login funcionário
+
+app.get('/loginFuncionario', function (req, res){
+  const errorMessage = req.query.error;
+  const successMessage = req.query.success;
+  res.render('loginFuncionario', { error: errorMessage, success: successMessage });
+});
+
+// Define a rota para o login do médico
+app.post('/loginFuncionario', function (req, res) {
+  const email = req.body.loginEmail;
+  const senha = req.body.loginSenha;
+
+  // Verifica se as credenciais estão corretas
+  Funcionario.findOne({
+    where: {
+      email_funcionario: email,
+      senha_funcionario: senha,
+    },
+  })
+    .then(function (funcionario) {
+      if (funcionario) {
+        res.render('paginaFuncionario', { id_funcionario: funcionario.id_funcionario });
+      } else {
+        const errorMessage = 'Credenciais inválidas. Verifique seu email e senha.';
+        res.redirect('/loginFuncionario?error=' + encodeURIComponent(errorMessage));
+      }
+    })
+    .catch(function (erro) {
+      res.send('Erro ao verificar as credenciais do funcionario: ' + erro);
     });
 });
 
@@ -787,7 +827,7 @@ app.post('/estoqueCadastrado', function (req, res) {
       nome_estoque: req.body.nome,
       quant_estoque: req.body.quant,      
     }).then(function () {
-      res.send("Equipamento cadastrado: "+ req.body.nome)
+      res.render('paginaFuncionario')
     }).catch(function (erro) {
       res.send("Erro ao cadastrar equipamento!" + erro)
     })
@@ -828,6 +868,46 @@ app.post('/atualizar_quantidade/:id_estoque', function (req, res) {
   });
 });
 
+//pagamentos
+
+app.get('/pagamento', function (req, res) {
+  res.render('pagamento');
+});
+app.get('/consultasFuncionario', function (req, res) {
+  Consulta.findAll({
+    where: {
+      mes_consulta: { [Op.ne]: null },
+      dia_consulta: { [Op.ne]: null },
+      horario_consulta: { [Op.ne]: null },
+    }
+  })
+    .then(function (consultas) {
+      res.render('consultasFuncionario', { consultas: consultas });
+    })
+    .catch(function (erro) {
+      res.send('Erro ao buscar consultas agendadas: ' + erro);
+    });
+});
+
+app.get('/cadastroPagamentos/:idConsulta', function (req, res) {
+  req.session.idConsulta = req.params.idConsulta; // Armazena o ID da consulta na sessão
+  res.render('cadastroPagamentos');
+});
+
+app.post('/add-pagamento', function (req, res) {
+  const idConsulta = req.session.idConsulta;
+  pagamento.create({
+      fk_id_consulta: idConsulta,
+      data_pagamento: req.body.data_pagamento,
+      tipo_pagamento: req.body.tipo_pagamento,
+      valor_pagamento: req.body.valor_pagamento,
+      possui_plano: req.body.possui_plano
+  }).then(function(){
+      res.render('paginaFuncionario');
+  }).catch(function(er){
+      res.send("Erro: Pagamento não foi cadastrado com sucesso." + er)
+  })
+});
 
   sequelize
   .authenticate()

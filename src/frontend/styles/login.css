@@ -15,7 +15,11 @@
 body {
   background-color:  #a5ccec;
 }
-
+#loginDoMedico,
+#loginDoPaciente,
+#loginDoFuncionario{
+border: transparent;
+}
 .container {
   display: flex;
   justify-content: center;

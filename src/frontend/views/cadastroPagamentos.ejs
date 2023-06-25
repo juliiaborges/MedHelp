@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+  <link rel="preconnect" href="https://rsms.me/">
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      margin: 0;
+      padding: 0;
+    }
+  
+    .nav-bar {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #EBEFF3;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      height: 80px;
+    }
+      input[type="radio"],
+    label[for^="tipo_"] {
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 10px;
+    }
+    input[type="radio"],
+    label[for^="plano_"] {
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 10px;
+    }
+    .itens {
+      display: flex;
+      margin: 50px auto;
+      margin-left: 40%;
+      justify-content: center;
+      gap: 6px;
+    }
+  
+    .nav-bar a:not(:last-of-type) {
+      margin-right: 20px;
+    }
+  
+    .nav-bar a {
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+  
+    .nav-bar a:hover {
+      border-bottom: 2px solid #49A2EB;
+      transition: border-bottom 0.2s ease-in-out;
+    }
+  
+    #logo {
+    display: block;
+    margin: 0 auto;
+  }
+    h1 {
+      color: #333;
+      text-align: center;
+      margin-top: 20px;
+    }
+  
+    form {
+      max-width: 600px;
+      margin: 20px auto;
+      background-color: #fff;
+      padding: 20px;
+      padding-right: 40px;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      width: 600px;
+    }
+  
+    .form-group {
+      margin-bottom: 20px;
+      margin: 20px;      
+    }
+  
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+  
+    input[type="text"],
+    input[type="date"] {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+  
+    input[type="radio"] {
+      display: inline;
+      margin: 10px;
+      margin-left: 20px;
+    }
+  
+    button[type="submit"] {
+      background-color: #49A2EB;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 20px;
+      margin-right: 10px;
+      transition: all 0.2s ease-in-out;
+    }
+  
+    button[type="submit"]:hover {
+      background-color: #3477B7;
+      cursor: pointer;
+    }
+  </style>
+  
+  <title>Cadastro de Pagamentos</title>
+</head>
+<body>
+  <div class="nav-bar">
+    <img id="logo" src="../images/logo.svg" alt="logo">
+    
+  </div>
+
+  <form action="/add-pagamento" method="POST">
+
+    <div class="form-group">
+      <label for="data_pagamento">Data do pagamento:</label>
+      <input type="date" id="data_pagamento" name="data_pagamento">
+    </div>
+
+    <div class="form-group">
+      <label>Tipo do pagamento:</label>
+      <input type="radio" id="tipo_pix" name="tipo_pagamento" value="Pix">
+      <label for="tipo_pix">Pix</label>
+
+      <input type="radio" id="tipo_cartao" name="tipo_pagamento" value="Cartão de crédito">
+      <label for="tipo_cartao">Cartão de Crédito</label>
+
+      <input type="radio" id="tipo_boleto" name="tipo_pagamento" value="Boleto">
+      <label for="tipo_boleto">Boleto</label>
+    </div>
+
+    <div class="form-group">
+      <label for="valor_pagamento">Valor do pagamento:</label>
+      <input type="text" id="valor_pagamento" name="valor_pagamento">
+    </div>
+
+    <div class="form-group">
+      <label>Pagamento com o plano de saúde?</label>
+      <input type="radio" id="plano_sim" name="possui_plano" value="1">
+      <label for="plano_sim">Sim</label>
+
+      <input type="radio" id="plano_nao" name="possui_plano" value="0">
+      <label for="plano_nao">Não</label>
+    </div>
+
+    <button type="submit">Cadastrar pagamento</button>
+  </form>
+</body>
+</html>

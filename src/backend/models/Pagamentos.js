@@ -1,38 +1,31 @@
-const express = require("express");
-const app = express();
-const {engine} = require("express-handlebars");
-const bodyParser = require("body-parser");
-const pagamento= require("./dbPagamentos");
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
+const db = require('./db.js')
 
-app.engine('handlebars', engine({ defaultLayout: 'main' }));
-app.set('views', '../../frontend/views');
-app.set('view engine', 'handlebars');
-
-//Rotas
-app.get('/pagamento', function (req, res) {
-    res.render('pagamento');
+const Pagamentos = db.sequelize.define('pagamentos', {
+    id_pagamentos: {
+        type: db.Sequelize.INTEGER,
+        autoIncrement: true,
+        primaryKey: true
+    },
+    fk_id_consulta: {
+        type: db.Sequelize.INTEGER,
+    },
+    data_pagamento:{
+        type: db.Sequelize.DATE
+    },
+    tipo_pagamento: {
+        type: db.Sequelize.STRING
+    },
+    valor_pagamento: {
+        type: db.Sequelize.DOUBLE
+    },
+    possui_plano: {
+        type: db.Sequelize.TINYINT
+    }
+}, { 
+    timestamps: false
 });
 
-app.get('/cadastroPagamentos', function (req, res) {
-    res.render('cadastroPagamentos');
-});
-app.post('/add-pagamento', function(req, res){
-    pagamento.create({
-        fk_id_consulta: req.body.fk_id_consulta,
-        data_pagamento: req.body.data_pagamento,
-        tipo_pagamento: req.body.tipo_pagamento,
-        valor_pagamento: req.body.valor_pagamento,
-        possui_plano: req.body.possui_plano
-    }).then(function(){
-        res.send("Pagamento cadastrado com sucesso!")
-    }).catch(function(er){
-        res.send("Erro: Pagamento não foi cadastrado com sucesso." + er)
-    })
-   //res.send("Data de pagamento: " + req.body.data_pagamento + "<br>Tipo de pagamento: " + req.body.tipo_pagamento + "<br>Valor do pagamento: " + req.body.valor_pagamento + "<br>") 
-})
+    module.exports = Pagamentos;
 
-app.listen(8080);
-
-console.log('Conectado');
+//Criar a tabela
+//Pagamentos.sync({force: true})

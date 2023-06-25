@@ -11,8 +11,6 @@
   <title>MedHelp - Médicos</title>
 </head>
 <body>
-
-
   <!--nav-bar-->
   <section class="part1"></section>
 
@@ -65,21 +63,21 @@
 
     <div class="container02">
       <div class="column2">        
-          <h3>Acessar suas Consultas</h3>
-          <p>Clique aqui para acessar as consultas.</p>
-          <button id= "consultasBtn">Acessar</button>
+          <h3>Cadastre novos médicos</h3>
+          <p>Clique aqui para cadastrar novos médicos.</p>
+          <button id= "cadastroBtn">Acessar</button>
       </div>
 
       <div class="column2">        
-        <h3>Acessar o Estoque</h3>
-        <p>Clique aqui para solicitar equipamentos.</p>
+        <h3>Atualize o Estoque</h3>
+        <p>Clique aqui para atualizar os equipamentos.</p>
         <button id= "estoqueBtn">Acessar</button>
       </div>
 
       <div class="column2">        
-        <h3>Editar Prontuários</h3>
-        <p>Clique aqui para editar prontuarios dos seus pacientes.</p>
-        <button id= "prontuarioBtn">Acessar</button>
+        <h3>Registrar Pagamento</h3>
+        <p>Clique aqui para registrar os pagamentos.</p>
+        <button id= "pagamentoBtn">Acessar</button>
       </div>
     </div>
   </section>
@@ -90,27 +88,27 @@
 
 
 <script>
-  const idMedico = "<%= id_medico %>";
+
 
 // Selecionar os botões de acesso
-const consultasBtn = document.getElementById("consultasBtn");
+const cadastroBtn = document.getElementById("cadastroBtn");
 const estoqueBtn = document.getElementById("estoqueBtn");
-const prontuarioBtn = document.getElementById("prontuarioBtn");
+const pagamentoBtn = document.getElementById("pagamentoBtn");
 
 // Adicionar um ouvinte de evento de clique aos botões
-consultasBtn.addEventListener("click", function () {
+cadastroBtn.addEventListener("click", function () {
   // Redirecionar o médico para a página consultasMedico.ejs
-  window.location.href = "/consultasMedico/" + idMedico;
+  window.location.href = "/cadastroMedicos";
 });
 
 estoqueBtn.addEventListener("click", function () {
   // Redirecionar o médico para a página listarEquipamentos.ejs
-  window.location.href = "/listarEquipamentos";
+  window.location.href = "/atualizarEstoque";
 });
 
-prontuarioBtn.addEventListener("click", function () {
+pagamentoBtn.addEventListener("click", function () {
   // Redirecionar o médico para a página listarEquipamentos.ejs
-  window.location.href = "/listarPacientes";
+  window.location.href = "/consultasFuncionario";
 });
 
 </script>

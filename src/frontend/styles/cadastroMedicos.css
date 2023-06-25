@@ -6,106 +6,74 @@
   font-family: 'Inter var', sans-serif;
 }
 
-/* Definindo o estilo do body */
+   * {
+  box-sizing: border-box;
+}
+
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f1f1f1;
+  background-color: #ffffff;
+  font-family: "Inter", Arial, sans-serif;
   margin: 0;
   padding: 0;
 }
 
-* {
-  font-family: 'Inter';
-  margin: 0;
-  padding: 0;
-}
-
-/* Estilo para o título */
-h1 {
-  text-align: center;
+form {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 .title {
-  align-items: center;
-  height: 80px;
-  border-radius: 8px;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
-/* Estilo para o formulário */
-form {
-  max-width: 700px;
-  margin: 20px auto;
-  background-color: #fff;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  border-radius: 5px;
+.title h1 {
+  font-size: 24px;
+  color: #333333;
 }
 
-/* Estilo para os rótulos */
 label {
-  display: inline-block;
-  margin-bottom: 10px;
+  display: block;
+  font-size: 16px;
+  color: #333333;
+  margin-bottom: 5px;
 }
 
-/* Estilo para os campos de entrada */
 input,
 select {
   width: 100%;
-  padding: 8px;
-  margin-bottom: 20px;
-  border: none;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #dddddd;
   border-radius: 5px;
-  border: 1px rgb(207, 207, 207) solid;
+  margin-bottom: 10px;
 }
 
-/* Estilo para os botões */
 button {
-  background-color: #fff;
-  color: #49A2EB;
-  border: 1px solid #49A2EB;
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  color: #ffffff;
+  background-color: #49a2eb;
+  border: none;
   border-radius: 5px;
-  padding: 10px 20px;
-  margin-right: 10px;
-  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 button:hover {
-  background-color: #49A2EB;
-  color: #fff;
-  cursor: pointer;
+  background-color: #3288d5;
 }
 
-/* Estilo para o botão de envio */
-#btn_envio {
-  background-color: #49A2EB;
-  color: #fff;
-  border: none;
+
+input:invalid:focus {
+  outline: none;
 }
 
-#btn_envio:hover {
-  background-color: #2c82b9;
-}
-
-/* Estilo para a tabela */
-table {
-  border-collapse: collapse;
-  width: 100%;
-  margin-top: 30px;
-}
-
-th,
-td {
-  text-align: left;
-  padding: 8px;
-}
-
-th {
-  background-color: #f8f8f8;
-  color: #49A2EB;
-
-
-}
-
-tr:nth-child(even) {
-  background-color: #f2f2f2;
+input:valid {
+  border-color: #dddddd;
 }

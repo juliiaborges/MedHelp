@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../styles/consultasAgendadas.css">
+  <title>Consultas Agendadas</title>
+</head>
+<body>
+  <h1>Escolha uma consulta</h1>
+<div class="consulta">
+  <% if (typeof consultas !== 'undefined' && consultas.length > 0) { %>
+    <% consultas.forEach(function (consulta) { %>
+      <div class="consulta-item">
+        <h3>ID da Consulta: <%= consulta.id_consulta %></h3>
+        <p>Data: <%= consulta.dia_consulta %></p>
+        <p>Hora: <%= consulta.horario_consulta %></p>
+        <button id="pagamentoBtn" data-id="<%= consulta.id_consulta %>">Cadastrar Pagamento</button>
+      </div>
+    <% }) %>
+  <% } else { %>
+    <p>Não há consultas agendadas no momento.</p>
+  <% } %>
+</div>
+</body>
+</html>
+
+<script>
+  const pagamentoBtn = document.getElementById("pagamentoBtn");
+
+  pagamentoBtn.addEventListener("click", function () {
+    const idConsulta = this.dataset.id;
+    // Redirecionar para a página de cadastro de pagamentos com o ID da consulta
+    window.location.href = "/cadastroPagamentos/" + idConsulta;
+  });
+</script>

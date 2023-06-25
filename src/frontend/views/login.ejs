@@ -42,13 +42,10 @@
                             <div id="flush-collapseOne" class="accordion-collapse collapse"
                                 aria-labelledby="flush-headingOne" data-bs-parent="#accordionTipoAcesso">
                                 <div class="accordion-body">
-                                    <p>
-                                        <a href="https://icei.pucminas.br/sgl/" target="_blank">Esqueceu a senha?</a>
-                                    </p>
 
-                                    <a class="btn btn-primary col-12"
-                                        href="https://pucminas.instructure.com/login/microsoft/8"
-                                        role="button">Acessar como Médico</a>
+                                  <button id="loginDoMedico">  <a class="btn btn-primary col-12"
+                                        
+                                        role="button">Acessar como Médico</a> </button>
                                 </div>
                             </div>
                         </div>
@@ -63,10 +60,10 @@
                             <div id="flush-collapseTwo" class="accordion-collapse collapse"
                                 aria-labelledby="flush-headingTwo" data-bs-parent="#accordionTipoAcesso">
                                 <div class="accordion-body">
-                                    <a class="btn btn-primary col-12"
-                                        href="https://pucminas.instructure.com/login/microsoft/110"
+                                   <button id="loginDoFuncionario"> <a class="btn btn-primary col-12"
+                                      
                                         role="button">Acessar como funcionário</a>
-                                </div>
+                                </div> </button>
                             </div>
                         </div>
                         <div class="accordion-item">
@@ -82,9 +79,9 @@
                                 <div class="accordion-body">
                                     
                                 </div>
-                                <a class="btn btn-primary col-12"
-                                    href="https://pucminas.instructure.com/login/canvas" role="button">Acessar com
-                                    usuário e senha</a>
+                               <button id="loginDoPaciente"> <a class="btn btn-primary col-12"
+                                    role="button">Acessar como Paciente
+                                   </a> </button>
                             </div>
                         </div>
                     </div>
@@ -123,6 +120,25 @@
                 }
             }
         });  
+        //Rotas do Login 
+       
+        const loginDoMedico = document.getElementById("loginDoMedico");
+        const loginDoPaciente = document.getElementById ("loginDoPaciente");
+        const loginDoFuncionario = document.getElementById ("loginDoFuncionario");
+
+        loginDoMedico.addEventListener ("click", function(){
+            //redirecionamento para a página de login do médico 
+            window.location.href = "/loginMedico";
+        });
+
+        loginDoPaciente.addEventListener ("click", function(){
+            //redirecionamento para a página de login do Paciente
+            window.location.href = "/loginPaciente"; 
+        })
+        loginDoFuncionario.addEventListener ("click", function(){
+            //redirecionamento para a página de login do Funcionário
+            window.location.href = "/loginFuncionario";
+        })
     </script>
 </body>
 
