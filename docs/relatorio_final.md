@@ -298,15 +298,17 @@ Tela 3 - Agendamento de Consultas - Data
 Tela 4 - Agendamento de Consultas - Horário
 ![Tela do Processo 2](/assets/processos/telaAgendamentoHorario.jpg "Tela do Processo 2.")
 
-Tela 5 - 
+Tela 5 - Prontuário Médico
 ![Tela do Processo 3](/assets/processos/telaCadastroMedicos.jpg "Tela do Processo 3.")
 
-![Tela do Processo 4](/assets/processos/telaCadastroMedicos.jpg "Tela do Processo 4.")
+Tela 6 - Controle de Estoque - Atualizar
+![Tela do Processo 4](/assets/processos/telaControleEstoqueAtualizar.jpg "Tela do Processo 4.")
 
-![Tela do Processo 5](/assets/processos/telaCadastroMedicos.jpg "Tela do Processo 5.")
+Tela 7 - Controle de Estoque - Editar
+![Tela do Processo 4](/assets/processos/telaControleEstoqueEditar.jpg "Tela do Processo 4.")
 
-
- Coloque as principais telas com uma explicação de como usar cada uma.
+Tela 8 - Cadastro de Pagamento
+![Tela do Processo 5](/assets/processos/telaCadastroPagamento.jpg "Tela do Processo 5.")
 
 ## 8. Conclusão
 
