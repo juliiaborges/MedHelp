@@ -131,16 +131,15 @@ Após a contratação dos médicos, a clínica já está pronta para receber seu
 ![Modelo BPMN do PROCESSO 2](/assets/processos/Agendamento_De_Consulta.jpg "Modelo BPMN do Processo 2.")
 
 ### 3.3.3 Processo 3 -PRONTUÁRIO MÉDICO
-Com as informações disponíveis no banco de dados, o médico poderá acessá-las durante a consulta para verificar o histórico médico do paciente, identificar possíveis alergias a medicamentos, verificar os medicamentos que o paciente está tomando atualmente, entre outras informações importantes que podem ajudar no diagnóstico e tratamento do paciente.
+Com as informações disponíveis no banco de dados, o médico poderá acessá-las durante a consulta para verificar o histórico médico do paciente, identificar possíveis alergias e cirurgias previamente feitas, entre outras informações importantes que podem ajudar no diagnóstico e tratamento do paciente.
 
-Ao final da consulta, o médico poderá acrescentar novas informações relevantes no prontuário médico do paciente, como a prescrição de medicamentos, exames solicitados, recomendações de cuidados em casa, entre outras informações importantes. Isso garante que todas as informações relevantes para o tratamento do paciente fiquem armazenadas em um só lugar e possam ser acessadas facilmente em consultas futuras.
+Ao final da consulta, o médico poderá acrescentar novas observações relevantes no prontuário médico do paciente, como a prescrição de medicamentos, exames solicitados, recomendações de cuidados em casa, entre outras informações importantes. Isso garante que todas as informações relevantes para o tratamento do paciente fiquem armazenadas em um só lugar e possam ser acessadas facilmente em consultas futuras.
 
 ![Modelo BPMN do PROCESSO 3](/assets/processos/Prontuario_Medico.jpg "Modelo BPMN do Processo 3.")
 
 
 ### 3.3.4 Processo 4 – CONTROLE DE ESTOQUE
-Após o agendamento da consulta, o médico irá solicitar os equipamentos necessários para realizar o atendimento do cliente. Para isso, ele enviará uma mensagem ao funcionário responsável, informando quais ferramentas serão necessárias. O funcionário, por sua vez, irá anotar os equipamentos solicitados e verificar a disponibilidade dos mesmos no estoque. Caso algum equipamento esteja indisponível, ele enviará uma mensagem ao médico informando a situação e encerrando o processo.
-Porém, caso todos os equipamentos estejam disponíveis, o funcionário irá retirá-los do estoque, dar baixa no sistema e entregá-los ao médico. Dessa forma, garantimos que todos os equipamentos necessários para a consulta estejam disponíveis e que o processo ocorra de forma eficiente e organizada
+Ao acessar o estoque, um funcionário pode cadastrar um novo equipamento, informando o nome e a quantidade disponível em estoque. Além de adicionar novos itens, o funcionário também tem a opção de editar o estoque, podendo modificar o nome ou a quantidade de qualquer um dos equipamentos previamente adicionados. Além disso, há a possibilidade de excluir um equipamento do estoque, caso necessário.
 
 ![Modelo BPMN do PROCESSO 4](/assets/processos/Controle_de_estoque.jpg "Modelo BPMN do Processo 4.")
 
