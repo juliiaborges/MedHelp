@@ -241,7 +241,6 @@ Descrever aqui cada uma das propriedades das atividades de cada um dos processos
 
 | **Campo** | **Tipo** | **Restrições** | **Valor default** |
 | --- | --- | --- | --- |
-| Id da consulta correspondente | Caixa de texto | Apenas números inteiros | - |
 | Data do Pagamento | Calendário virtual | DD/MM/AA | - |
 | Tipo de pagamento | Radio Button | [PIX] ou [Cartão de Crédito] ou [Boleto] | - |
 | Valor do Pagamento | Caixa de texto | Apenas valores numéricos com os decimais separados por "." | - |
@@ -287,27 +286,35 @@ O MedHelp é um software de gerenciamento e organização de clínicas médicas,
   permitindo uma integração eficiente com o banco de dados.
 
 Tela 1 - Cadastro de médicos
+Tela usada para inserir os dados do médico a ser cadstrado.
 ![Tela do Processo 1](/assets/processos/telaCadastroMedicos.jpg "Tela do Processo 1.")
 
 Tela 2 - Agendamento de Consultas - Médico
+Tela usada para selecionar o médico da consulta a ser agendada.
 ![Tela do Processo 2](/assets/processos/telaAgendamentoMedico.jpg "Tela do Processo 2.")
 
 Tela 3 - Agendamento de Consultas - Data
+Tela usada para selecionar o dia do mês da consulta a ser agendada.
 ![Tela do Processo 2](/assets/processos/telaAgendamentoData.jpg "Tela do Processo 2.")
 
 Tela 4 - Agendamento de Consultas - Horário
+Tela usada para selecionar o horário da consulta a ser agendada.
 ![Tela do Processo 2](/assets/processos/telaAgendamentoHorario.jpg "Tela do Processo 2.")
 
 Tela 5 - Prontuário Médico
+Tela usada para preencher o prontuário do paciente.
 ![Tela do Processo 3](/assets/processos/telaCadastroMedicos.jpg "Tela do Processo 3.")
 
 Tela 6 - Controle de Estoque - Atualizar
+Tela usada para cadastrar um novo item no estoque.
 ![Tela do Processo 4](/assets/processos/telaControleEstoqueAtualizar.jpg "Tela do Processo 4.")
 
 Tela 7 - Controle de Estoque - Editar
+Tela usada para editar os itens do estoque.
 ![Tela do Processo 4](/assets/processos/telaControleEstoqueEditar.jpg "Tela do Processo 4.")
 
 Tela 8 - Cadastro de Pagamento<br>
+Tela usada para cadastrar pagamentos realizados pelos pacientes.
 ![Tela do Processo 5](/assets/processos/telaCadastroPagamento.jpg "Tela do Processo 5.")
 
 ## 8. Conclusão
