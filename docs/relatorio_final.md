@@ -80,7 +80,7 @@ Pacientes: São usuários com idade entre 18 e 65+, que têm o papel de acessar 
 
 Médicos: São usuários com formação acadêmica na área da saúde, seu papel é acessar o sistema para visualizar consultas já marcadas pelos pacientes da clínica.
 
-Atendentes: São usuários que já foram contratados para fazer a gestão da clínica dentro do software como: gestão financeira, cadastro de médicos e atendimento ao cliente.
+Funcionários: São usuários que já foram contratados para fazer a gestão da clínica dentro do software como: gestão financeira, cadastro de médicos e controle de estoque.
 
 
 ## 3. Modelagem do processo de negócio
