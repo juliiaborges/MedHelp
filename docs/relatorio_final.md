@@ -286,6 +286,18 @@ O MedHelp é um software de gerenciamento e organização de clínicas médicas,
   Para isso, utiliza tecnologias de frontend (HTML, CSS, JavaScript) e backend (MySQL, Node.js),
   permitindo uma integração eficiente com o banco de dados.
 
+Tela 1 - Cadastro de médicos
+![Tela do Processo 1](/assets/processos/telaCadastroMedicos.jpg "Tela do Processo 1.")
+
+![Tela do Processo 2](/assets/processos/telaCadastroMedicos.jpg "Tela do Processo 2.")
+
+![Tela do Processo 3](/assets/processos/telaCadastroMedicos.jpg "Tela do Processo 3.")
+
+![Tela do Processo 4](/assets/processos/telaCadastroMedicos.jpg "Tela do Processo 4.")
+
+![Tela do Processo 5](/assets/processos/telaCadastroMedicos.jpg "Tela do Processo 5.")
+
+
  Coloque as principais telas com uma explicação de como usar cada uma.
 
 ## 8. Conclusão
