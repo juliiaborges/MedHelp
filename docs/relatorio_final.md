@@ -103,15 +103,15 @@ Em suma, a análise da situação atual das clínicas médicas mostra que a impl
 
 ## 3.2. Descrição Geral da proposta
 
-O primeiro passo para iniciar os processos de uma clínica médica gerenciada pela MedHelp é cadastrar médicos que farão parte da equipe. Para isso, um funcionário da clínica realizará uma entrevista com o médico interessado e, ao ser aceito, suas informações serão coletadas e agregadas ao sistema, tais como nome completo, especialidade, formação, endereço, telefone(s) e e-mail.
+O primeiro passo para iniciar os processos de uma clínica médica gerenciada pela MedHelp é cadastrar médicos que farão parte da equipe. Para isso, um funcionário da clínica realizará uma entrevista com o médico interessado e, ao ser aceito, suas informações serão coletadas e agregadas ao sistema, tais como nome completo, especialidade, telefone(s) e e-mail.
 
-Com os médicos contratados, a clínica estará preparada para receber pacientes, e o papel do software é facilitar o agendamento. Por meio do sistema, o cliente que já fez login no sistema poderá visualizar uma lista de médicos disponíveis e seus horários, com um indicador de ocupação para facilitar a escolha do profissional.
+Com os médicos contratados, a clínica estará preparada para receber pacientes, e o papel do software é facilitar o agendamento. Por meio do sistema, o cliente que já fez login poderá visualizar uma lista de médicos disponíveis e, ao selecioná-lo, será direcionado para a tela de escolha do dia e horário.
 
-No momento do atendimento, o médico estará logado em sua conta e, caso o paciente possua uma ficha cadastrada na clínica, ele terá acesso ao prontuário do paciente que contém informações importantes para a consulta, como, por exemplo, condições crônicas e histórico de consultas. Caso o paciente não possua uma ficha, o médico responsável deverá criá-la durante o atendimento.
+No momento do atendimento, o médico estará logado em sua conta e a com ficha do paciente cadastrada na clínica, ele terá acesso ao prontuário do paciente que contém informações importantes para a consulta, como, por exemplo, alergias e cirurgias feitas.
 
-Outra funcionalidade do sistema é a gestão financeira da clínica. Com os funcionários registrando os gastos realizados pela clínica, é feito um gráfico indicando para onde o dinheiro está sendo destinado, facilitando a visualização e gestão desses gastos.
+Outra funcionalidade do sistema é o registro de pagamentos. Os funcionários realizam o registro dos pagamentos das consultas utilizando o ID da consulta, especificando o valor, o método de pagamento e se foi realizado através de plano de saúde.
 
-Para complementar a gestão financeira, a MedHelp possui um controle de estoque que será um processo feito pelos atendentes da clínica, pelos médicos e pelo sistema. Os médicos registrarão os equipamentos e medicamentos usados nos atendimentos, o sistema descontará do estoque, e quando algum produto estiver acabando, o software notificará os funcionários da clínica para que seja feito o reabastecimento.
+Para complementar, o software possui a opção de controle de estoque de ferramentas para os médicos, onde o funcionário consegue adicionar e editar ferramentas usadas na clínica.
 
 Enfim, é importante ressaltar que a plataforma MedHelp visa facilitar, agilizar e organizar os processos de uma clínica médica. No entanto, é importante ter em mente que há limitações do sistema, já que processos manuais, como entrevistas de contratação e consultas, necessitam da intervenção humana para funcionarem adequadamente.
 
