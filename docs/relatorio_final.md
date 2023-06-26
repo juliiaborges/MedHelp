@@ -348,15 +348,13 @@ Por fim, o trabalho realizado proporcionou aos alunos uma valiosa experiência p
 
 # APÊNDICES
 
-**Colocar link:**
+https://github.com/ICEI-PUC-Minas-PPLES-TI/plf-es-2023-1-ti2-0924100-medhelp/tree/master/src
 
-Do código (armazenado no repositório): https://github.com/ICEI-PUC-Minas-PPLES-TI/plf-es-2023-1-ti2-0924100-medhelp/tree/master/src
+https://github.com/ICEI-PUC-Minas-PPLES-TI/plf-es-2023-1-ti2-0924100-medhelp/tree/master/assets
 
-Dos artefatos (armazenado do repositório): https://github.com/ICEI-PUC-Minas-PPLES-TI/plf-es-2023-1-ti2-0924100-medhelp/tree/master/assets
+https://github.com/ICEI-PUC-Minas-PPLES-TI/plf-es-2023-1-ti2-0924100-medhelp/blob/master/docs/Slides%20TIS%202.pdf
 
-Da apresentação final (armazenado no repositório): 
-
-Do vídeo de apresentação (armazenado no repositório):
+https://github.com/ICEI-PUC-Minas-PPLES-TI/plf-es-2023-1-ti2-0924100-medhelp/blob/master/docs/VideoMedHealp.zip
 
 
 
