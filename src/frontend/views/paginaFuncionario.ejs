@@ -13,7 +13,7 @@
 </head>
 <body>
   <!--nav-bar-->
-  <section class="part1"></section>
+  <section class="part1">
 
   <div class="nav-bar">
     <img id="logo" src="../images/logo.svg" alt="logo">
@@ -24,7 +24,7 @@
     </div>
   </div>
 </div>
-  </section>
+</section>
   <!--Fim nav-bar-->
 
   
@@ -80,6 +80,11 @@
         <p>Clique aqui para registrar os pagamentos.</p>
         <button id= "pagamentoBtn">Acessar</button>
       </div>
+      <div class="column2">        
+        <h3>Indicadores</h3>
+        <p>Clique aqui para ver os indicadores de desempenho.</p>
+        <button id= "indicadoresBtn">Acessar</button>
+      </div>
     </div>
   </section>
 
@@ -95,6 +100,7 @@
 const cadastroBtn = document.getElementById("cadastroBtn");
 const estoqueBtn = document.getElementById("estoqueBtn");
 const pagamentoBtn = document.getElementById("pagamentoBtn");
+const indicadoresBtn = document.getElementById("indicadoresBtn");
 
 // Adicionar um ouvinte de evento de clique aos botões
 cadastroBtn.addEventListener("click", function () {
@@ -112,4 +118,8 @@ pagamentoBtn.addEventListener("click", function () {
   window.location.href = "/consultasFuncionario";
 });
 
+indicadoresBtn.addEventListener("click", function () {
+  // Redirecionar o médico para a página listarEquipamentos.ejs
+  window.location.href = "/indicadores";
+});
 </script>

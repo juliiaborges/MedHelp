@@ -928,3 +928,130 @@ app.set("view engine", "ejs");
 app.listen(8080, () => {
   console.log("Servidor iniciado");
 });
+
+//implementação dos indicadores
+
+// Rota para a implementação dos indicadores
+
+app.get('/pagamentoMaisUsado', function(req, res) {
+  sequelize.query(`
+  SELECT 
+    COUNT(*) AS pacientes_cirurgia,
+    (SELECT COUNT(*) FROM prontuarios) AS total_pacientes,
+    (COUNT(*) / (SELECT COUNT(*) FROM prontuarios)) * 100 AS porcentagem_cirurgia
+  FROM prontuarios
+  WHERE cirurgias_prontuario IS NOT NULL
+`, {
+  type: Sequelize.QueryTypes.SELECT
+})
+.then(results => {
+  console.log('Dados da consulta: ', results);
+  // Renderizar o template e enviar os resultados como variáveis
+  res.render('pagamentoMaisUsado', { results });
+})
+.catch(error => {
+  console.error('Erro ao executar a consulta: ', error);
+  // Envie uma resposta de erro, se necessário
+  res.status(500).json({ error: 'Erro ao executar a consulta' });
+});
+});
+
+app.get('/pagamentosComPlano', function(req, res) {
+  sequelize.query(`
+    SELECT 
+      COUNT(*) AS total_pagamentos,
+      SUM(CASE WHEN possui_plano = 1 THEN 1 ELSE 0 END) AS pagamentos_com_plano,
+      (SUM(CASE WHEN possui_plano = 1 THEN 1 ELSE 0 END) / COUNT(*)) * 100 AS porcentagem_com_plano
+    FROM pagamentos
+    WHERE MONTH(data_pagamento) = MONTH(CURRENT_DATE)
+  `, {
+    type: Sequelize.QueryTypes.SELECT
+  })
+  .then(results => {
+    console.log('Dados da consulta: ', results);
+    // Renderize o arquivo pagamentosComPlano.ejs com os dados da consulta
+    res.render('pagamentosComPlano', { results });
+  })
+  .catch(error => {
+    console.error('Erro ao executar a consulta: ', error);
+    // Envie uma resposta de erro, se necessário
+    res.status(500).json({ error: 'Erro ao executar a consulta' });
+  });
+});
+
+// Rota para a implementação dos indicadores
+app.get('/pagamentoTipoMaisFrequente', function(req, res) {
+  sequelize.query(`
+    SELECT tipo_pagamento, COUNT(*) AS total, (COUNT(*) / (SELECT COUNT(*) FROM mydb.pagamentos)) * 100 AS porcentagem
+    FROM mydb.pagamentos
+    GROUP BY tipo_pagamento;
+  `, {
+    type: Sequelize.QueryTypes.SELECT
+  })
+  .then(results => {
+    console.log('Dados da consulta: ', results);
+    // Renderizar o arquivo pagamentoTipoMaisFrequente.ejs com os dados da consulta
+    res.render('pagamentoTipoMaisFrequente', { results });
+  })
+  .catch(error => {
+    console.error('Erro ao executar a consulta: ', error);
+    // Enviar uma resposta de erro, se necessário
+    res.status(500).json({ error: 'Erro ao executar a consulta' });
+  });
+});
+
+// Rota para a implementação dos indicadores
+app.get('/pacientesAlergias', function(req, res) {
+  sequelize.query(`
+    SELECT 
+        COUNT(*) AS pacientes_alergias,
+        (SELECT COUNT(*) FROM prontuarios) AS total_pacientes,
+        (COUNT(*) / (SELECT COUNT(*) FROM prontuarios)) * 100 AS porcentagem_alergias
+    FROM prontuarios
+    WHERE alergias_prontuario IS NOT NULL AND alergias_prontuario <> '';
+  `, {
+    type: Sequelize.QueryTypes.SELECT
+  })
+  .then(results => {
+    console.log('Dados da consulta: ', results);
+    // Renderizar o arquivo pacientesAlergias.ejs com os dados da consulta
+    res.render('pacientesAlergias', { results });
+  })
+  .catch(error => {
+    console.error('Erro ao executar a consulta: ', error);
+    // Enviar uma resposta de erro, se necessário
+    res.status(500).json({ error: 'Erro ao executar a consulta' });
+  });
+});
+
+// Rota para a implementação dos indicadores
+app.get('/frequenciaHorariosConsulta', function(req, res) {
+  sequelize.query(`
+    SELECT
+        horario_consulta,
+        COUNT(*) AS total,
+        (COUNT(*) / (SELECT COUNT(*) FROM mydb.consulta)) * 100 AS porcentagem
+    FROM
+        mydb.consulta
+    WHERE
+        horario_consulta IN ('12h/13h', '13h/14h', '14h/15h', '15h/16h', '16h/17h', '17h/18h')
+    GROUP BY
+        horario_consulta;
+  `, {
+    type: Sequelize.QueryTypes.SELECT
+  })
+  .then(results => {
+    console.log('Dados da consulta: ', results);
+    // Renderizar o arquivo frequenciaHorariosConsulta.ejs com os dados da consulta
+    res.render('frequenciaHorariosConsulta', { results });
+  })
+  .catch(error => {
+    console.error('Erro ao executar a consulta: ', error);
+    // Enviar uma resposta de erro, se necessário
+    res.status(500).json({ error: 'Erro ao executar a consulta' });
+  });
+});
+
+app.get("/indicadores", function(req, res) {
+  res.render('indicadores');
+})

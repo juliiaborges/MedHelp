@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./images/flaticon.png" type="image/x-icon">
+    <link rel="stylesheet" href="../styles/indicadores.css">
+    <title>Pagamento Mais Usado</title>
+</head>
+<body>
+    <h1>Pagamento Mais Usado</h1>
+    
+    <div class="result-container">
+        <% if (results && results.length > 0) { %>
+            <% results.forEach(result => { %>
+                <div class="result-item">
+                    <span class="result-label">Pacientes com cirurgia:</span>
+                    <span><%= result.pacientes_cirurgia %></span>
+                </div>
+                <div class="result-item">
+                    <span class="result-label">Total de pacientes:</span>
+                    <span><%= result.total_pacientes %></span>
+                </div>
+                <div class="result-item">
+                    <span class="result-label">Porcentagem de cirurgia:</span>
+                    <span><%= result.porcentagem_cirurgia %>%</span>
+                </div>
+            <% }); %>
+        <% } else { %>
+            <div class="result-item">Nenhum resultado encontrado.</div>
+        <% } %>
+    </div>
+</body>
+</html>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+        margin: 0;
+        padding: 20px;
+    }
+    
+    h1 {
+        color: #333;
+    }
+    
+    .result-container {
+        margin-top: 20px;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    
+    .result-item {
+        margin-bottom: 10px;
+    }
+    
+    .result-label {
+        font-weight: bold;
+    }
+</style>

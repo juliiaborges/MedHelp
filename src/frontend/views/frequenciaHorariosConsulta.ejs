@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="shortcut icon" href="./images/flaticon.png" type="image/x-icon">
+    <title>Frequência Horários de Consulta</title>
+</head>
+<body>
+    <h1>Frequência Horários de Consulta</h1>
+    <div class="result-container">        
+        <% if (results && results.length > 0) { %>
+            <% results.forEach(result => { %>
+        <div class="result-item">
+            <span class="result-label">Horário:</span>
+            <span><%= result.horario_consulta %></span>
+        </div>
+        <div class="result-item">
+            <span class="result-label">Total:</span>
+            <span><%= result.total %></span>
+        </div>
+        <div class="result-item">
+            <span class="result-label">Porcentagem:</span>
+            <span><%= result.porcentagem %>%</span>
+        </div>
+    
+        <% }); %>
+        <% } else { %>
+            <div class="result-item">Nenhum resultado encontrado.</div>
+        <% } %>
+</body>
+</html>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+        margin: 0;
+        padding: 20px;
+    }
+    
+    h1 {
+        color: #333;
+    }
+    
+    .result-container {
+        margin-top: 20px;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    
+    .result-item {
+        margin-bottom: 10px;
+    }
+    
+    .result-label {
+        font-weight: bold;
+    }
+</style>

@@ -7,7 +7,7 @@
   <link rel="shortcut icon" href="./images/flaticon.png" type="image/x-icon">
   <title>Editação Prontuario</title> 
 </head>
-<body>
+
   <h1>Deseja alterar algo?</h1>
   <form action="/paginaPaciente/<%= id_paciente %>" method="POST">
     <div class="form-group">
@@ -24,11 +24,11 @@
       <input type="date" id="data_nascimento" name="data_nascimento" value="<%= prontuarioPaciente.data_nascimento_prontuario %>" required>
     </div>
     <div class="form-group">
-      <label for="alergias">Alergias:</label>
+      <label for="alergias">Alergias: <br>(caso não tenha feito - deixar em branco)</label>
       <textarea id="alergias" name="alergias"><%= prontuarioPaciente.alergias_prontuario %></textarea>
     </div>
     <div class="form-group">
-      <label for="cirurgias">Cirurgias Realizadas:</label>
+      <label for="cirurgias">Cirurgias Realizadas: <br>(caso não tenha feito - deixar em branco) </label>
       <textarea id="cirurgias" name="cirurgias"><%= prontuarioPaciente.cirurgias_prontuario %></textarea>
     </div>
     <div class="form-group">
