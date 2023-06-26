@@ -93,25 +93,25 @@ Com relação ao agendamento de consultas, é possível implementar melhorias, c
 
 Já o prontuário pode ser aprimorado permitindo uma fácil edição pelo paciente e pelo médico responsável.
 
-O cadastro de médicos pode ser aprimorado com a inclusão de informações adicionais sobre a formação e experiência dos profissionais, a implementação de um sistema de avaliação pelos pacientes e a integração com a agenda eletrônica e prontuário eletrônico para maior integração dos sistemas.
+O cadastro de médicos pode ser aprimorado com a inclusão de informações adicionais sobre a especialização dos profissionais, a integração com o agendamento e prontuário, para maior integração dos sistemas.
 
-No que diz respeito ao gerenciamento financeiro, a geração de relatórios financeiros em tempo real e a integração com sistemas de gestão de estoque podem ajudar a clínica a ter uma visão geral mais precisa de seu desempenho financeiro e gerenciar melhor seus recursos.
+No que diz respeito ao gerenciamento financeiro, é possível registrar de maneira prática os pagamentos das consultas com implementação de métricas para avaliar dados desses registros.
 
-Por fim, quanto aos relatórios gerenciais, pode-se incluir informações sobre a disponibilidade dos médicos e relatórios de fluxo de pacientes.
+Por fim, no que diz respeito ao controle de estoque, é possível implementar um registro eficiente dos itens em um banco de dados, permitindo a atualização das informações dos produtos em estoque de forma precisa e confiável.
 
-Em suma, a análise da situação atual das clínicas médicas mostra que a implementação dessas melhorias nos sistemas e ferramentas pode otimizar o atendimento aos pacientes, melhorar o desempenho financeiro, aprimorar a gestão dos recursos e profissionais da saúde.
+Em suma, a análise da situação atual das clínicas médicas mostra que a implementação dessas melhorias nos sistemas e ferramentas pode otimizar o atendimento aos pacientes, melhorar o desempenho financeiro e aprimorar a gestão dos recursos da clínica.
 
 ## 3.2. Descrição Geral da proposta
 
-O primeiro passo para iniciar os processos de uma clínica médica gerenciada pela MedHelp é cadastrar médicos que farão parte da equipe. Para isso, um funcionário da clínica realizará uma entrevista com o médico interessado e, ao ser aceito, suas informações serão coletadas e agregadas ao sistema, tais como nome completo, especialidade, formação, endereço, telefone(s) e e-mail.
+O primeiro passo para iniciar os processos de uma clínica médica gerenciada pela MedHelp é cadastrar médicos que farão parte da equipe. Para isso, um funcionário da clínica realizará uma entrevista com o médico interessado e, ao ser aceito, suas informações serão coletadas e agregadas ao sistema, tais como nome completo, especialidade, telefone(s) e e-mail.
 
-Com os médicos contratados, a clínica estará preparada para receber pacientes, e o papel do software é facilitar o agendamento. Por meio do sistema, o cliente que já fez login no sistema poderá visualizar uma lista de médicos disponíveis e seus horários, com um indicador de ocupação para facilitar a escolha do profissional.
+Com os médicos contratados, a clínica estará preparada para receber pacientes, e o papel do software é facilitar o agendamento. Por meio do sistema, o cliente que já fez login poderá visualizar uma lista de médicos disponíveis e, ao selecioná-lo, será direcionado para a tela de escolha do dia e horário.
 
-No momento do atendimento, o médico estará logado em sua conta e, caso o paciente possua uma ficha cadastrada na clínica, ele terá acesso ao prontuário do paciente que contém informações importantes para a consulta, como, por exemplo, condições crônicas e histórico de consultas. Caso o paciente não possua uma ficha, o médico responsável deverá criá-la durante o atendimento.
+No momento do atendimento, o médico estará logado em sua conta e a com ficha do paciente cadastrada na clínica, ele terá acesso ao prontuário do paciente que contém informações importantes para a consulta, como, por exemplo, alergias e cirurgias feitas.
 
-Outra funcionalidade do sistema é a gestão financeira da clínica. Com os funcionários registrando os gastos realizados pela clínica, é feito um gráfico indicando para onde o dinheiro está sendo destinado, facilitando a visualização e gestão desses gastos.
+Outra funcionalidade do sistema é o registro de pagamentos. Os funcionários realizam o registro dos pagamentos das consultas utilizando o ID da consulta, especificando o valor, o método de pagamento e se foi realizado através de plano de saúde.
 
-Para complementar a gestão financeira, a MedHelp possui um controle de estoque que será um processo feito pelos atendentes da clínica, pelos médicos e pelo sistema. Os médicos registrarão os equipamentos e medicamentos usados nos atendimentos, o sistema descontará do estoque, e quando algum produto estiver acabando, o software notificará os funcionários da clínica para que seja feito o reabastecimento.
+Para complementar, o software possui a opção de controle de estoque de ferramentas para os médicos, onde o funcionário consegue adicionar e editar ferramentas usadas na clínica.
 
 Enfim, é importante ressaltar que a plataforma MedHelp visa facilitar, agilizar e organizar os processos de uma clínica médica. No entanto, é importante ter em mente que há limitações do sistema, já que processos manuais, como entrevistas de contratação e consultas, necessitam da intervenção humana para funcionarem adequadamente.
 
@@ -119,7 +119,7 @@ Enfim, é importante ressaltar que a plataforma MedHelp visa facilitar, agilizar
 
 ### 3.3.1 Processo 1 – CADASTRO DE MÉDICOS
 
-O primeiro processo se inicia com a etapa de admissão de novos médicos na MedHelp, sendo feita por meio de uma entrevista conduzida por um funcionário da clínica. Após a entrevista, caso o médico seja aprovado, serão solicitadas informações adicionais, como nome completo, especialidade, formação, endereço, telefone(s) e e-mail, e também os horários em que o médico estará disponível para atendimento, que serão fornecidas pelo médico, e agregadas ao sistema pela equipe da clínica, mantendo um cadastro completo de todos os médicos da equipe.
+O primeiro processo se inicia com a etapa de admissão de novos médicos na MedHelp, sendo feita por meio de uma entrevista conduzida por um funcionário da clínica. Após a entrevista, caso o médico seja aprovado, serão solicitadas informações adicionais, como nome completo, especialidade, telefone(s) e e-mail, que serão fornecidas pelo médico, e agregadas ao sistema pela equipe da clínica, mantendo um cadastro completo de todos os médicos da equipe.
 
 ![Modelo BPMN do PROCESSO 1](/assets/processos/Cadastro_De_Medicos.png "Modelo BPMN do Processo 1.")
 
@@ -131,18 +131,17 @@ Após a contratação dos médicos, a clínica já está pronta para receber seu
 ![Modelo BPMN do PROCESSO 2](/assets/processos/Agendamento_De_Consulta.jpg "Modelo BPMN do Processo 2.")
 
 ### 3.3.3 Processo 3 -PRONTUÁRIO MÉDICO
-Com as informações disponíveis no banco de dados, o médico poderá acessá-las durante a consulta para verificar o histórico médico do paciente, identificar possíveis alergias a medicamentos, verificar os medicamentos que o paciente está tomando atualmente, entre outras informações importantes que podem ajudar no diagnóstico e tratamento do paciente.
+Com as informações disponíveis no banco de dados, o médico poderá acessá-las durante a consulta para verificar o histórico médico do paciente, identificar possíveis alergias e cirurgias previamente feitas, entre outras informações importantes que podem ajudar no diagnóstico e tratamento do paciente.
 
-Ao final da consulta, o médico poderá acrescentar novas informações relevantes no prontuário médico do paciente, como a prescrição de medicamentos, exames solicitados, recomendações de cuidados em casa, entre outras informações importantes. Isso garante que todas as informações relevantes para o tratamento do paciente fiquem armazenadas em um só lugar e possam ser acessadas facilmente em consultas futuras.
+Ao final da consulta, o médico poderá acrescentar novas observações relevantes no prontuário médico do paciente, como a prescrição de medicamentos, exames solicitados, recomendações de cuidados em casa, entre outras informações importantes. Isso garante que todas as informações relevantes para o tratamento do paciente fiquem armazenadas em um só lugar e possam ser acessadas facilmente em consultas futuras.
 
 ![Modelo BPMN do PROCESSO 3](/assets/processos/Prontuario_Medico.jpg "Modelo BPMN do Processo 3.")
 
 
 ### 3.3.4 Processo 4 – CONTROLE DE ESTOQUE
-Após o agendamento da consulta, o médico irá solicitar os equipamentos necessários para realizar o atendimento do cliente. Para isso, ele enviará uma mensagem ao funcionário responsável, informando quais ferramentas serão necessárias. O funcionário, por sua vez, irá anotar os equipamentos solicitados e verificar a disponibilidade dos mesmos no estoque. Caso algum equipamento esteja indisponível, ele enviará uma mensagem ao médico informando a situação e encerrando o processo.
-Porém, caso todos os equipamentos estejam disponíveis, o funcionário irá retirá-los do estoque, dar baixa no sistema e entregá-los ao médico. Dessa forma, garantimos que todos os equipamentos necessários para a consulta estejam disponíveis e que o processo ocorra de forma eficiente e organizada
+Ao acessar o estoque, um funcionário pode cadastrar um novo equipamento, informando o nome e a quantidade disponível em estoque. Além de adicionar novos itens, o funcionário também tem a opção de editar o estoque, podendo modificar o nome ou a quantidade de qualquer um dos equipamentos previamente adicionados. Além disso, há a possibilidade de excluir um equipamento do estoque, caso necessário.
 
-![Modelo BPMN do PROCESSO 4](/assets/processos/Controle_de_estoque.jpg "Modelo BPMN do Processo 4.")
+![Modelo BPMN do PROCESSO 4](/assets/processos/Controle_de_Estoque.jpg "Modelo BPMN do Processo 4.")
 
 ### 3.3.5 Processo 5 – CADASTRO DE PAGAMENTO 
 
@@ -179,11 +178,12 @@ Descrever aqui cada uma das propriedades das atividades de cada um dos processos
 | Nome do médico e especialidade | Tabela | - | Nada selecionado |
 |    |    |     |
 
-**Selecionar horário**
+
+**Selecionar data**
 
 | **Campo** | **Tipo** | **Restrições** | **Valor default** |
 | --- | --- | --- | --- |
-| Horário e data | Tabela | - | Nada selecionado |
+| Calendário com dias do mês selecionado | Seleção única | - | Nada selecionado |
 |    |    |     |
 
 **Agendar horário**
@@ -227,7 +227,7 @@ Descrever aqui cada uma das propriedades das atividades de cada um dos processos
 | Quantidade | Caixa de Texto | Apenas números | - |
 |    |    |     |
 
-**Solicitar e devolver equipamentos**
+**Editar estoque**
 
 | **Campo** | **Tipo** | **Restrições** | **Valor default** |
 | --- | --- | --- | --- |
@@ -253,7 +253,7 @@ Descrever aqui cada uma das propriedades das atividades de cada um dos processos
 
 As tecnologias utilizadas serão:
 
-- HTML, CSS, JavaScript e Bootstrap para o desenvolvimento Front-End;
+- HTML, CSS e JavaScript para o desenvolvimento Front-End;
 - Node JS para o desenvolvimento Back-End;
 - MySQL para a criação do Banco de Dados;
 - Git e Github para o controle de versão e armazenamento do código;
@@ -263,7 +263,7 @@ As tecnologias utilizadas serão:
 ## 5. Modelo de dados
 
 **[Modelo de Entidade Relacionamento Físico]**<br>
-![Modelo de Entidade Relacionamento Físico](/assets/processos/modelo_fisico.png "Modelo de Entidade Relacionamento Físico")
+![Modelo de Entidade Relacionamento Físico](/assets/processos/modelo_fisico_bd.jpg "Modelo de Entidade Relacionamento Físico")
 
 ## 6. Indicadores de desempenho
 
@@ -273,19 +273,40 @@ Usar o seguinte modelo:
 
 | **Indicador** | **Objetivos** | **Descrição** | **Cálculo** | **Fonte dados** | **Perspectiva** |
 | --- | --- | --- | --- | --- | --- |
-| Aumento do número de consultas mensais | Avaliar o aumento na quantidade de consultas | Mede o número de consultas em relação ao mês anterior | (Número de consultas no mês atual / Número de consultas no mês anterior) * 100 | Tabela Consulta | Evolução em relação ao mês anterior |
+| Horários de agendamento mais usado | Avaliar qual o horário mais movimentado na clínica | Descobre qual o horário de consulta mais marcado | ((Quantidade do horário mais marcado * 100)/(Total dos agendamentos)) | Tabela consulta | Controle de movimento na clínica |
 | Quantidade de pacientes que fizeram cirurgia | Saber a quantidade de pacientes que já fizeram cirurgia | Ter noção da porcentagem de cirurgias feitas em pacientes na clínica no mês | (Quantidade de pacientes que já fizeram cirurgia * 100)/(Total de pacientes)  | Tabela prontuário | Conhecimento |
-| Método de pagamento mais usado | Avaliar qual o método de pagamento mais é usado pelos pacientes | Descobre qual o método de pagamento mais usado | ((Quantidade do pagamento mais usado * 100)/(Total dos pagamentos))  | Tabela Pagamentos | Conhecimento sobre as vendas |
-| Total de pagamentos com plano de saúde por dia | Avaliar a quantidade de clientes que usam o plano de saúde médico | Número de pacientes que usam o plano de saúde para o pagamento | (Total de pagamentos realizados no dia) - (Total de pagamentos realizados no dia sem plano de saúde) | Tabela pagamentos | Fazer uma análise e relatórios com mais eficiência no plano de saúde |
-| Taxa de ocupação dos médicos | Saber se a clínica precisa contratar novos médicos ou não | Avaliar a taxa de ocupação dos médicos da clínica | (Número total e consultas no mês)/(Número de médicos cadastrados na clínica)| Tabela Médicos e Tabela Consultas | Melhor gestão de equipe |
+| Frequência dos tipos de pagamento | Avaliar qual o método de pagamento mais é usado pelos pacientes | Descobre qual o método de pagamento mais usado | ((Quantidade do tipo de pagamento mais usado * 100)/(Total dos pagamentos))  | Tabela Pagamentos | Conhecimento sobre as vendas |
+| Total de pagamentos com plano de saúde no mês atual | Avaliar a quantidade de clientes que usam o plano de saúde médico | Número de pacientes que usam o plano de saúde para o pagamento | (Total de pagamentos realizados no mês com plano de saúde * 100)/(Total de pagamentos realizados no mês) | Tabela pagamentos | Fazer uma análise e relatórios com mais eficiência do plano de saúde |
+| Quantidade de pacientes que tem alguma alergia | Saber a quantidade de pacientes que já tem alguma alergia | Ter noção da quantidade de pacientes da clínica que tem alguma alergia | (Quantidade de pacientes que tem alguma alergia * 100)/(Total de pacientes)  | Tabela prontuário | Conhecimento |
 
 ## 7.Sistema desenvolvido
 
-Faça aqui uma breve descrição do software e coloque as principais telas com uma explicação de como usar cada uma.
+O MedHelp é um software de gerenciamento e organização de clínicas médicas, desenvolvido com o objetivo de auxiliá-las
+  no cadastro de médicos, agendamento de consultas, controle de prontuários, gerenciamento de estoque e registro de pagamentos.
+  Para isso, utiliza tecnologias de frontend (HTML, CSS, JavaScript) e backend (MySQL, Node.js),
+  permitindo uma integração eficiente com o banco de dados.
+
+ Coloque as principais telas com uma explicação de como usar cada uma.
 
 ## 8. Conclusão
 
-Apresente aqui a conclusão do seu trabalho. Discussão dos resultados obtidos no trabalho, onde se verifica as observações pessoais de cada aluno. Poderá também apresentar sugestões de novas linhas de estudo.
+O trabalho desenvolvido para o curso de Engenharia de Software consistiu na criação de um software de organização de clínicas médicas chamado MedHelp. O objetivo principal foi fornecer uma solução eficiente para auxiliar as clínicas no gerenciamento de suas atividades, como cadastro de médicos, agendamento de consultas, controle de prontuários, gerenciamento de estoque e registro de pagamentos.
+
+Ao longo do projeto, foram utilizadas tecnologias de frontend, como HTML, CSS e JavaScript, para criar a interface do usuário, proporcionando uma experiência amigável e intuitiva. Já no backend, foram empregados o MySQL e o Node.js para a implementação das funcionalidades e a integração com o banco de dados.
+
+Durante a execução do trabalho, cada aluno teve a oportunidade de contribuir de forma significativa, trazendo suas habilidades individuais para o desenvolvimento do projeto. Por meio da colaboração em equipe, foram superados desafios técnicos e alcançados resultados satisfatórios.
+
+Durante a análise dos resultados obtidos, pudemos constatar que o MedHelp é uma solução eficaz para as clínicas médicas, facilitando o cadastro de médicos, o agendamento de consultas, o controle de prontuários, o gerenciamento de estoque e o registro de pagamentos. Através dos testes realizados, observamos que o software atendeu às expectativas e necessidades do contexto em que foi aplicado.
+
+Com base nas observações pessoais de cada aluno, foram identificadas oportunidades de melhoria para futuras versões do MedHelp. Algumas sugestões incluem:
+
+    1. Implementação de recursos avançados de relatórios e análise de dados, fornecendo insights valiosos para a gestão das clínicas médicas.
+    2. Integração com sistemas de gestão de planos de saúde, permitindo o registro automatizado de pagamentos e a verificação de cobertura.
+    3. Desenvolvimento de uma versão mobile do software, possibilitando o acesso e a utilização em dispositivos móveis, como smartphones e tablets.
+    4. Aprimoramento da interface do usuário, buscando torná-la ainda mais intuitiva e amigável, considerando as necessidades dos usuários finais.
+    5. Implementação de recursos de segurança adicionais, como autenticação de dois fatores e criptografia de dados sensíveis, garantindo a confidencialidade e a integridade das informações dos pacientes.
+
+Por fim, o trabalho realizado proporcionou aos alunos uma valiosa experiência prática na área de Engenharia de Software, permitindo a aplicação dos conhecimentos teóricos adquiridos ao longo do curso. O projeto também serviu como uma oportunidade de aprimoramento das habilidades de trabalho em equipe, comunicação e resolução de problemas.
 
 # REFERÊNCIAS
 
@@ -300,13 +321,13 @@ Apresente aqui a conclusão do seu trabalho. Discussão dos resultados obtidos n
 
 **Colocar link:**
 
-Do código (armazenado no repositório);
+Do código (armazenado no repositório): https://github.com/ICEI-PUC-Minas-PPLES-TI/plf-es-2023-1-ti2-0924100-medhelp/tree/master/src
 
-Dos artefatos (armazenado do repositório);
+Dos artefatos (armazenado do repositório): https://github.com/ICEI-PUC-Minas-PPLES-TI/plf-es-2023-1-ti2-0924100-medhelp/tree/master/assets
 
-Da apresentação final (armazenado no repositório);
+Da apresentação final (armazenado no repositório): 
 
-Do vídeo de apresentação (armazenado no repositório).
+Do vídeo de apresentação (armazenado no repositório):
 
 
 
