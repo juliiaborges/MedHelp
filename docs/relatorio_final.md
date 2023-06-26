@@ -93,13 +93,13 @@ Com relação ao agendamento de consultas, é possível implementar melhorias, c
 
 Já o prontuário pode ser aprimorado permitindo uma fácil edição pelo paciente e pelo médico responsável.
 
-O cadastro de médicos pode ser aprimorado com a inclusão de informações adicionais sobre a formação e experiência dos profissionais, a implementação de um sistema de avaliação pelos pacientes e a integração com a agenda eletrônica e prontuário eletrônico para maior integração dos sistemas.
+O cadastro de médicos pode ser aprimorado com a inclusão de informações adicionais sobre a especialização dos profissionais, a integração com o agendamento e prontuário, para maior integração dos sistemas.
 
-No que diz respeito ao gerenciamento financeiro, a geração de relatórios financeiros em tempo real e a integração com sistemas de gestão de estoque podem ajudar a clínica a ter uma visão geral mais precisa de seu desempenho financeiro e gerenciar melhor seus recursos.
+No que diz respeito ao gerenciamento financeiro, é possível registrar de maneira prática os pagamentos das consultas com implementação de métricas para avaliar dados desses registros.
 
-Por fim, quanto aos relatórios gerenciais, pode-se incluir informações sobre a disponibilidade dos médicos e relatórios de fluxo de pacientes.
+Por fim, no que diz respeito ao controle de estoque, é possível implementar um registro eficiente dos itens em um banco de dados, permitindo a atualização das informações dos produtos em estoque de forma precisa e confiável.
 
-Em suma, a análise da situação atual das clínicas médicas mostra que a implementação dessas melhorias nos sistemas e ferramentas pode otimizar o atendimento aos pacientes, melhorar o desempenho financeiro, aprimorar a gestão dos recursos e profissionais da saúde.
+Em suma, a análise da situação atual das clínicas médicas mostra que a implementação dessas melhorias nos sistemas e ferramentas pode otimizar o atendimento aos pacientes, melhorar o desempenho financeiro e aprimorar a gestão dos recursos da clínica.
 
 ## 3.2. Descrição Geral da proposta
 
