@@ -285,31 +285,31 @@ O MedHelp é um software de gerenciamento e organização de clínicas médicas,
   Para isso, utiliza tecnologias de frontend (HTML, CSS, JavaScript) e backend (MySQL, Node.js),
   permitindo uma integração eficiente com o banco de dados.
 
-Tela 1 - Cadastro de médicos
+Tela 1 - Cadastro de médicos<br>
 Tela usada para inserir os dados do médico a ser cadstrado.
 ![Tela do Processo 1](/assets/processos/telaCadastroMedicos.jpg "Tela do Processo 1.")
 
-Tela 2 - Agendamento de Consultas - Médico
+Tela 2 - Agendamento de Consultas - Médico<br>
 Tela usada para selecionar o médico da consulta a ser agendada.
 ![Tela do Processo 2](/assets/processos/telaAgendamentoMedico.jpg "Tela do Processo 2.")
 
-Tela 3 - Agendamento de Consultas - Data
+Tela 3 - Agendamento de Consultas - Data<br>
 Tela usada para selecionar o dia do mês da consulta a ser agendada.
 ![Tela do Processo 2](/assets/processos/telaAgendamentoData.jpg "Tela do Processo 2.")
 
-Tela 4 - Agendamento de Consultas - Horário
+Tela 4 - Agendamento de Consultas - Horário<br>
 Tela usada para selecionar o horário da consulta a ser agendada.
 ![Tela do Processo 2](/assets/processos/telaAgendamentoHorario.jpg "Tela do Processo 2.")
 
-Tela 5 - Prontuário Médico
+Tela 5 - Prontuário Médico<br>
 Tela usada para preencher o prontuário do paciente.
 ![Tela do Processo 3](/assets/processos/telaCadastroMedicos.jpg "Tela do Processo 3.")
 
-Tela 6 - Controle de Estoque - Atualizar
+Tela 6 - Controle de Estoque - Atualizar<br>
 Tela usada para cadastrar um novo item no estoque.
 ![Tela do Processo 4](/assets/processos/telaControleEstoqueAtualizar.jpg "Tela do Processo 4.")
 
-Tela 7 - Controle de Estoque - Editar
+Tela 7 - Controle de Estoque - Editar<br>
 Tela usada para editar os itens do estoque.
 ![Tela do Processo 4](/assets/processos/telaControleEstoqueEditar.jpg "Tela do Processo 4.")
 
