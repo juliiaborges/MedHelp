@@ -87,11 +87,11 @@ Funcionários: São usuários que já foram contratados para fazer a gestão da 
 
 ## 3.1. Análise da situação atual
 
-Quando o assunto é gestão de clínicas médicas, a maioria delas ainda realiza as atividades manualmente. Entre essas atividades, destacam-se a agenda eletrônica, o prontuário eletrônico, o cadastro de médicos, o gerenciamento financeiro e os relatórios gerenciais. Nosso objetivo é automatizar todos os processos para agilizar e proporcionar mais segurança, evitando a perda de dados da clínica.
+Quando o assunto é gestão de clínicas médicas, a maioria delas ainda realiza as atividades manualmente. Entre essas atividades, destacam-se o agendamento de consultas, a atualização do prontuário, o cadastro de médicos, o gerenciamento financeiro e o controle de estoque. Nosso objetivo é automatizar todos os processos para agilizar e proporcionar mais segurança, evitando a perda de dados da clínica.
 
-Com relação à agenda eletrônica, é possível implementar melhorias, como personalização de lembretes para reduzir faltas às consultas, visualização do histórico de consultas dos pacientes para planejamento das próximas consultas e integração com sistemas de telemedicina.
+Com relação ao agendamento de consultas, é possível implementar melhorias, como uma maior facilidade e autonomia para os clientes.
 
-Já o prontuário eletrônico pode ser aprimorado com a integração com a agenda eletrônica, permitindo o agendamento de consultas e exames diretamente no sistema, compartilhamento de informações entre profissionais autorizados e acesso aos prontuários dos pacientes em tempo real.
+Já o prontuário pode ser aprimorado permitindo uma fácil edição pelo paciente e pelo médico responsável.
 
 O cadastro de médicos pode ser aprimorado com a inclusão de informações adicionais sobre a formação e experiência dos profissionais, a implementação de um sistema de avaliação pelos pacientes e a integração com a agenda eletrônica e prontuário eletrônico para maior integração dos sistemas.
 
