@@ -141,7 +141,7 @@ Ao final da consulta, o médico poderá acrescentar novas observações relevant
 ### 3.3.4 Processo 4 – CONTROLE DE ESTOQUE
 Ao acessar o estoque, um funcionário pode cadastrar um novo equipamento, informando o nome e a quantidade disponível em estoque. Além de adicionar novos itens, o funcionário também tem a opção de editar o estoque, podendo modificar o nome ou a quantidade de qualquer um dos equipamentos previamente adicionados. Além disso, há a possibilidade de excluir um equipamento do estoque, caso necessário.
 
-![Modelo BPMN do PROCESSO 4](/assets/processos/Controle_de_estoque.jpg "Modelo BPMN do Processo 4.")
+![Modelo BPMN do PROCESSO 4](/assets/processos/Controle_de_Estoque.jpg "Modelo BPMN do Processo 4.")
 
 ### 3.3.5 Processo 5 – CADASTRO DE PAGAMENTO 
 
