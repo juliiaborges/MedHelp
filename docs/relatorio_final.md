@@ -253,7 +253,7 @@ Descrever aqui cada uma das propriedades das atividades de cada um dos processos
 
 As tecnologias utilizadas serão:
 
-- HTML, CSS, JavaScript e Bootstrap para o desenvolvimento Front-End;
+- HTML, CSS e JavaScript para o desenvolvimento Front-End;
 - Node JS para o desenvolvimento Back-End;
 - MySQL para a criação do Banco de Dados;
 - Git e Github para o controle de versão e armazenamento do código;
@@ -263,7 +263,7 @@ As tecnologias utilizadas serão:
 ## 5. Modelo de dados
 
 **[Modelo de Entidade Relacionamento Físico]**<br>
-![Modelo de Entidade Relacionamento Físico](/assets/processos/modelo_fisico.png "Modelo de Entidade Relacionamento Físico")
+![Modelo de Entidade Relacionamento Físico](/assets/processos/modelo_fisico_bd.png "Modelo de Entidade Relacionamento Físico")
 
 ## 6. Indicadores de desempenho
 
