@@ -178,11 +178,12 @@ Descrever aqui cada uma das propriedades das atividades de cada um dos processos
 | Nome do médico e especialidade | Tabela | - | Nada selecionado |
 |    |    |     |
 
-**Selecionar horário**
+
+**Selecionar data**
 
 | **Campo** | **Tipo** | **Restrições** | **Valor default** |
 | --- | --- | --- | --- |
-| Horário e data | Tabela | - | Nada selecionado |
+| Calendário com dias do mês selecionado | Seleção única | - | Nada selecionado |
 |    |    |     |
 
 **Agendar horário**
@@ -226,7 +227,7 @@ Descrever aqui cada uma das propriedades das atividades de cada um dos processos
 | Quantidade | Caixa de Texto | Apenas números | - |
 |    |    |     |
 
-**Solicitar e devolver equipamentos**
+**Editar estoque**
 
 | **Campo** | **Tipo** | **Restrições** | **Valor default** |
 | --- | --- | --- | --- |
