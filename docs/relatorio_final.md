@@ -281,11 +281,32 @@ Usar o seguinte modelo:
 
 ## 7.Sistema desenvolvido
 
-Faça aqui uma breve descrição do software e coloque as principais telas com uma explicação de como usar cada uma.
+O MedHelp é um software de gerenciamento e organização de clínicas médicas, desenvolvido com o objetivo de auxiliá-las
+  no cadastro de médicos, agendamento de consultas, controle de prontuários, gerenciamento de estoque e registro de pagamentos.
+  Para isso, utiliza tecnologias de frontend (HTML, CSS, JavaScript) e backend (MySQL, Node.js),
+  permitindo uma integração eficiente com o banco de dados.
+
+ Coloque as principais telas com uma explicação de como usar cada uma.
 
 ## 8. Conclusão
 
-Apresente aqui a conclusão do seu trabalho. Discussão dos resultados obtidos no trabalho, onde se verifica as observações pessoais de cada aluno. Poderá também apresentar sugestões de novas linhas de estudo.
+O trabalho desenvolvido para o curso de Engenharia de Software consistiu na criação de um software de organização de clínicas médicas chamado MedHelp. O objetivo principal foi fornecer uma solução eficiente para auxiliar as clínicas no gerenciamento de suas atividades, como cadastro de médicos, agendamento de consultas, controle de prontuários, gerenciamento de estoque e registro de pagamentos.
+
+Ao longo do projeto, foram utilizadas tecnologias de frontend, como HTML, CSS e JavaScript, para criar a interface do usuário, proporcionando uma experiência amigável e intuitiva. Já no backend, foram empregados o MySQL e o Node.js para a implementação das funcionalidades e a integração com o banco de dados.
+
+Durante a execução do trabalho, cada aluno teve a oportunidade de contribuir de forma significativa, trazendo suas habilidades individuais para o desenvolvimento do projeto. Por meio da colaboração em equipe, foram superados desafios técnicos e alcançados resultados satisfatórios.
+
+Durante a análise dos resultados obtidos, pudemos constatar que o MedHelp é uma solução eficaz para as clínicas médicas, facilitando o cadastro de médicos, o agendamento de consultas, o controle de prontuários, o gerenciamento de estoque e o registro de pagamentos. Através dos testes realizados, observamos que o software atendeu às expectativas e necessidades do contexto em que foi aplicado.
+
+Com base nas observações pessoais de cada aluno, foram identificadas oportunidades de melhoria para futuras versões do MedHelp. Algumas sugestões incluem:
+
+    1. Implementação de recursos avançados de relatórios e análise de dados, fornecendo insights valiosos para a gestão das clínicas médicas.
+    2. Integração com sistemas de gestão de planos de saúde, permitindo o registro automatizado de pagamentos e a verificação de cobertura.
+    3. Desenvolvimento de uma versão mobile do software, possibilitando o acesso e a utilização em dispositivos móveis, como smartphones e tablets.
+    4. Aprimoramento da interface do usuário, buscando torná-la ainda mais intuitiva e amigável, considerando as necessidades dos usuários finais.
+    5. Implementação de recursos de segurança adicionais, como autenticação de dois fatores e criptografia de dados sensíveis, garantindo a confidencialidade e a integridade das informações dos pacientes.
+
+Por fim, o trabalho realizado proporcionou aos alunos uma valiosa experiência prática na área de Engenharia de Software, permitindo a aplicação dos conhecimentos teóricos adquiridos ao longo do curso. O projeto também serviu como uma oportunidade de aprimoramento das habilidades de trabalho em equipe, comunicação e resolução de problemas.
 
 # REFERÊNCIAS
 
