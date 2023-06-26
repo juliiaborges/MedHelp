@@ -263,7 +263,7 @@ As tecnologias utilizadas serão:
 ## 5. Modelo de dados
 
 **[Modelo de Entidade Relacionamento Físico]**<br>
-![Modelo de Entidade Relacionamento Físico](/assets/processos/modelo_fisico_bd.png "Modelo de Entidade Relacionamento Físico")
+![Modelo de Entidade Relacionamento Físico](/assets/processos/modelo_fisico_bd.jpg "Modelo de Entidade Relacionamento Físico")
 
 ## 6. Indicadores de desempenho
 
