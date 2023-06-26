@@ -307,7 +307,7 @@ Tela 6 - Controle de Estoque - Atualizar
 Tela 7 - Controle de Estoque - Editar
 ![Tela do Processo 4](/assets/processos/telaControleEstoqueEditar.jpg "Tela do Processo 4.")
 
-Tela 8 - Cadastro de Pagamento
+Tela 8 - Cadastro de Pagamento<br>
 ![Tela do Processo 5](/assets/processos/telaCadastroPagamento.jpg "Tela do Processo 5.")
 
 ## 8. Conclusão
