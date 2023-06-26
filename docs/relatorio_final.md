@@ -289,8 +289,16 @@ O MedHelp é um software de gerenciamento e organização de clínicas médicas,
 Tela 1 - Cadastro de médicos
 ![Tela do Processo 1](/assets/processos/telaCadastroMedicos.jpg "Tela do Processo 1.")
 
-![Tela do Processo 2](/assets/processos/telaCadastroMedicos.jpg "Tela do Processo 2.")
+Tela 2 - Agendamento de Consultas - Médico
+![Tela do Processo 2](/assets/processos/telaAgendamentoMedico.jpg "Tela do Processo 2.")
 
+Tela 3 - Agendamento de Consultas - Data
+![Tela do Processo 2](/assets/processos/telaAgendamentoData.jpg "Tela do Processo 2.")
+
+Tela 4 - Agendamento de Consultas - Horário
+![Tela do Processo 2](/assets/processos/telaAgendamentoHorario.jpg "Tela do Processo 2.")
+
+Tela 5 - 
 ![Tela do Processo 3](/assets/processos/telaCadastroMedicos.jpg "Tela do Processo 3.")
 
 ![Tela do Processo 4](/assets/processos/telaCadastroMedicos.jpg "Tela do Processo 4.")
