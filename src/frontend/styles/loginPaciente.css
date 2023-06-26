@@ -134,6 +134,7 @@ button:active {
 /* container */
 .container {
   background-color: #ffffff;
+  border: 1px solid #5577FF;
   border-radius: 2em;
   box-shadow: 3px 5px 5px #5577FF;
   position: relative;

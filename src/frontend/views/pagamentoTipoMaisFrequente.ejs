@@ -1,48 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="shortcut icon" href="./images/flaticon.png" type="image/x-icon">
-  <link rel="stylesheet" href="../styles/indicadores.css">
-  <title>Frequência de Pagamentos</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./images/flaticon.png" type="image/x-icon">
+    <link rel="stylesheet" href="../styles/indicadores.css">
+    <link rel="preconnect" href="https://rsms.me/">
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <title>Frequência de Pagamentos</title>
 </head>
 <body>
-  <h1>Frequência de Pagamentos</h1>
-  <div class="result-container">        
-    <% if (results && results.length > 0) { %>
-        <% results.forEach(result => { %>
-    <div class="result-item">
-        <span class="result-label">Tipo de Pagamento:</span>
-        <span><%= result.tipo_pagamento %></span>
+    <div class="nav-bar">
+        <img id="logo" src="../images/logo.svg" alt="logo">
+       
+      </div>
+      <br><br>
+    <h2>Frequência de Pagamentos</h2>
+    <div class="result-container-wrapper">
+        <% if (results && results.length > 0) { %>
+            <% results.forEach(result => { %>
+                <div class="result-container">
+                    <div class="result-item">
+                        <span class="result-label">Tipo de Pagamento:</span>
+                        <span><%= result.tipo_pagamento %></span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Total:</span>
+                        <span><%= result.total %></span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Porcentagem:</span>
+                        <span><%= result.porcentagem %>%</span>
+                    </div>
+                </div>
+            <% }); %>
+        <% } else { %>
+            <div class="result-container">Nenhum resultado encontrado.</div>
+        <% } %>
     </div>
-    <div class="result-item">
-        <span class="result-label">Total:</span>
-        <span><%= result.total %></span>
-    </div>
-    <div class="result-item">
-        <span class="result-label">Porcentagem:</span>
-        <span><%= result.porcentagem %>%</span>
-    </div>
-
-    <% }); %>
-    <% } else { %>
-        <div class="result-item">Nenhum resultado encontrado.</div>
-    <% } %>
-</div>
 </body>
 </html>
 
 <style>
+    .nav-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #EBEFF3;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  height: 80px;
+  border-bottom:1px solid #49a2eb;
+}
+.itens {
+  display: flex;
+  margin: 50px auto;
+  margin-left: 40%;
+  justify-content: center;
+  gap: 6px;
+}
+
+.nav-bar a:not(:last-of-type) {
+  margin-right: 20px;
+}
+
+.nav-bar a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+.nav-bar a:hover {
+  border-bottom: 2px solid #49A2EB;
+  transition: border-bottom 0.2s ease-in-out;
+}
+
+#logo {
+display: block;
+margin: 0 auto;
+}
+:root {
+    font-family: 'Inter', sans-serif;
+  }
+  
+  :root {
+    font-family: 'Inter var', sans-serif;
+  }
     body {
         font-family: Arial, sans-serif;
         background-color: #f2f2f2;
         margin: 0;
-        padding: 20px;
+    
     }
     
-    h1 {
-        color: #333;
+    h2 {
+        color: #000000;
+        text-align: center;
+    }
+    
+    .result-container-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
     }
     
     .result-container {
@@ -51,6 +110,8 @@
         padding: 20px;
         border-radius: 5px;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        margin-right: 10px;
+        border:1px solid #49A2EB
     }
     
     .result-item {

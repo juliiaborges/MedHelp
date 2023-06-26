@@ -11,7 +11,10 @@
   margin: 0;
   padding: 0;
 }
-
+.logo{
+  display: block;
+  margin: 0
+}
 html{
   scroll-behavior: smooth;
 }
@@ -29,11 +32,9 @@ background-color: #EBEFF3;
 }
 
 .itens {
-  display: flex;
-  margin: 50px auto;
-  margin-left: 40%;
-  justify-content: center;
-  gap: 6px;
+  justify-content:space-between;
+ display: flex;
+  
 }
 
 .nav-bar a:not(:last-of-type) {
@@ -44,6 +45,7 @@ background-color: #EBEFF3;
   text-decoration: none;
   color: #333;
   font-weight: bold;
+  margin-left: 600%; 
 }
 
 .nav-bar a:hover {
@@ -57,7 +59,7 @@ background-color: #EBEFF3;
 
 #logo {
   width: 10em;
-  margin-left: 10em;
+ 
 }
 
 

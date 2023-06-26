@@ -10,14 +10,18 @@
   <title>Consultas Agendadas</title>
 </head>
 <body>
-  <h1>Escolha uma consulta</h1>
+  <div class="nav-bar">
+    <img id="logo" src="../images/logo.svg" alt="logo">
+    
+  </div>
+  <h2>Escolha uma consulta</h2>
 <div class="consulta">
   <% if (typeof consultas !== 'undefined' && consultas.length > 0) { %>
     <% consultas.forEach(function (consulta) { %>
       <div class="consulta-item">
         <h3>ID da Consulta: <%= consulta.id_consulta %></h3>
         <p>Data: <%= consulta.dia_consulta %></p>
-        <p>Hora: <%= consulta.horario_consulta %></p>
+        <p>Hora: <%= consulta.horario_consulta %></p> <br>
         <button id="pagamentoBtn" data-id="<%= consulta.id_consulta %>">Cadastrar Pagamento</button>
       </div>
     <% }) %>

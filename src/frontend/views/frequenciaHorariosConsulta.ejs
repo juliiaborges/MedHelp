@@ -8,40 +8,91 @@
     <title>Frequência Horários de Consulta</title>
 </head>
 <body>
-    <h1>Frequência Horários de Consulta</h1>
-    <div class="result-container">        
+    <div class="nav-bar">
+        <img id="logo" src="../images/logo.svg" alt="logo">
+    </div>
+   <br> <h2>Frequência Horários de Consulta</h2>
+    <div class="result-container-wrapper"> <!-- Contêiner pai dos quadradinhos -->
         <% if (results && results.length > 0) { %>
             <% results.forEach(result => { %>
-        <div class="result-item">
-            <span class="result-label">Horário:</span>
-            <span><%= result.horario_consulta %></span>
-        </div>
-        <div class="result-item">
-            <span class="result-label">Total:</span>
-            <span><%= result.total %></span>
-        </div>
-        <div class="result-item">
-            <span class="result-label">Porcentagem:</span>
-            <span><%= result.porcentagem %>%</span>
-        </div>
-    
-        <% }); %>
+                <div class="result-container">        
+                    <div class="result-item">
+                        <span class="result-label">Horário:</span>
+                        <span><%= result.horario_consulta %></span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Total:</span>
+                        <span><%= result.total %></span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Porcentagem:</span>
+                        <span><%= result.porcentagem %>%</span>
+                    </div>
+                </div>
+                <br><br><br>
+            <% }); %>
         <% } else { %>
-            <div class="result-item">Nenhum resultado encontrado.</div>
+            <div class="result-container">Nenhum resultado encontrado.</div>
         <% } %>
+    </div>
 </body>
 </html>
 
 <style>
+    .nav-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #EBEFF3;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  height: 80px;
+  border-bottom:1px solid #49a2eb;
+}
+.itens {
+  display: flex;
+  margin: 50px auto;
+  margin-left: 40%;
+  justify-content: center;
+  gap: 6px;
+}
+
+.nav-bar a:not(:last-of-type) {
+  margin-right: 20px;
+}
+
+.nav-bar a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+.nav-bar a:hover {
+  border-bottom: 2px solid #49A2EB;
+  transition: border-bottom 0.2s ease-in-out;
+}
+
+#logo {
+display: block;
+margin: 0 auto;
+}
+    #logo {
+        margin: 0 auto;
+        display: block;
+    }
     body {
         font-family: Arial, sans-serif;
         background-color: #f2f2f2;
         margin: 0;
-        padding: 20px;
     }
     
-    h1 {
-        color: #333;
+    h2 {
+        text-align: center;
+        color: #020202;
+    }
+    
+    .result-container-wrapper {
+        text-align: center; /* Centraliza os quadradinhos horizontalmente */
     }
     
     .result-container {
@@ -50,10 +101,17 @@
         padding: 20px;
         border-radius: 5px;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        display: inline-block;
+        width: 200px;
+        vertical-align: top;
+        margin-right: 10px;
+        border: 1px solid #1086d4
     }
     
     .result-item {
         margin-bottom: 10px;
+        padding: 10px;
     }
     
     .result-label {

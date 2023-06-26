@@ -13,33 +13,16 @@
 </head>
 
 <body>
-  <!--Início Nav-Bar-->
-  <section class="part1"></section>
-
   <div class="nav-bar">
-    <div class="logo">
-      <img id="logo" src="..//images/logo.svg">
-    </div>
-    <div class="itens">
-      <a href="#inicio">Início</a>
-      <a href="#sobre-nos">Sobre Nós</a>
-      <a href="servicos">Serviços</a>
-      <div class="form-search">
-        <input type="text" class="form-control" placeholder="Nome do paciente: " aria-label="Pesquisar paciente"
-          aria-describedby="button-search">
-        <button class="button-search" type="button" id="button-search">Pesquisar</button>
-      </div>
-      <div class="mobile-menu-icon">
-        <button onclick="menushow()"><img class="icon" src="../frontend/images/icon.png" alt=""></button>
-      </div>
-    </div>
+    <img id="logo" src="../images/logo.svg" alt="logo">
+    
   </div>
 
-  </section>
   <!--Fim Nav-Bar-->
 
   <div class="container">
-    <h1>Lista de Pacientes</h1>
+    <br>
+    <h1>Prontuário dos Pacientes</h1>
     <% prontuario.forEach(function(prontuario) { %>
       
     <div class="card">
@@ -184,7 +167,10 @@
     color: #fff;
     cursor: pointer;
   }
-
+#logo{
+  margin: 0 auto;
+  display: block;
+}
   @media screen and (max-width:730px) {
     .nav-bar {
       padding: 1.5rem 4rem;

@@ -2,10 +2,6 @@
   font-family: 'Inter', sans-serif;
 }
 
-:root {
-  font-family: 'Inter var', sans-serif;
-}
-
 * {
   font-family: 'Inter';
   margin: 0;
@@ -13,13 +9,9 @@
 }
 
 body {
-  background-color:  #a5ccec;
+  background-color: #64acff;
 }
-#loginDoMedico,
-#loginDoPaciente,
-#loginDoFuncionario{
-border: transparent;
-}
+
 .container {
   display: flex;
   justify-content: center;
@@ -33,6 +25,7 @@ border: transparent;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   padding: 20px;
   text-align: center;
+  border: 1px solid #49a2eb;
 }
 
 .logo-area {
@@ -42,9 +35,7 @@ border: transparent;
 .logo {
   width: 150px;
 }
-.info-card{
-  border: 1px solid  #49A2EB;
-}
+
 .info-title {
   font-size: 20px;
   margin-bottom: 20px;

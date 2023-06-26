@@ -13,27 +13,15 @@
 </head>
 
 <body>
-  <!--Início Nav-Bar-->
-  <section class="part1"></section>
-
-  <div class="nav-bar">
-    <div class="logo">
-      <img id="logo" src="..//images/logo.svg">
-    </div>
-    <div class="itens">
-      <a href="#inicio">Início</a>
-      <a href="#sobre-nos">Sobre Nós</a>
-      <a href="servicos">Serviços</a>
-      
+    <div class="nav-bar">
+      <img id="logo" src="../images/logo.svg" alt="logo">
       
     </div>
-  </div>
-
-  </section>
+  
   <!--Fim Nav-Bar-->
-
+<br>
   <div class="container">
-    <h1>Lista de Médicos</h1>
+    <h1>Escolha um Médico</h1>
     <% Medicos.forEach(function(Medicos) { %>
       <div class="card">
         <h2><%= Medicos.nome_medico %></h2>
@@ -160,7 +148,10 @@
     color: #fff;
     cursor: pointer;
   }
-
+#logo{
+  margin: 0 auto;
+  display: block;
+}
   @media screen and (max-width:730px) {
     .nav-bar {
       padding: 1.5rem 4rem;

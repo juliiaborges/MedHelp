@@ -16,11 +16,7 @@
   <section class="part1">
     <div class="nav-bar">
       <img id="logo" src="../images/logo.svg" alt="logo">
-      <div class="itens">
-        <a href="#inicio">Início</a>
-        <a href="#consultas">Consultas</a>
-        <a href="#equipamentos">Equipamentos</a>
-      </div>
+    
     </div>
   </section>
 
@@ -51,3 +47,26 @@
   </section>
 </body>
 </html>
+
+<style>
+  /* Restante do seu estilo CSS existente */
+  .nav-bar{
+    border-bottom: 1px solid #007cc4;
+  }
+#logo{
+  margin: 0 auto;
+  display: flex;
+}
+  .indicadores-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .indicador-card {
+    flex-basis: calc(50% - 10px);
+    text-align: center;
+  }
+</style>
