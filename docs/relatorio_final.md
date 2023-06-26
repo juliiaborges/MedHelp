@@ -321,13 +321,13 @@ Por fim, o trabalho realizado proporcionou aos alunos uma valiosa experiência p
 
 **Colocar link:**
 
-Do código (armazenado no repositório); https://github.com/ICEI-PUC-Minas-PPLES-TI/plf-es-2023-1-ti2-0924100-medhelp/tree/master/src
+Do código (armazenado no repositório): https://github.com/ICEI-PUC-Minas-PPLES-TI/plf-es-2023-1-ti2-0924100-medhelp/tree/master/src
 
-Dos artefatos (armazenado do repositório);
+Dos artefatos (armazenado do repositório): https://github.com/ICEI-PUC-Minas-PPLES-TI/plf-es-2023-1-ti2-0924100-medhelp/tree/master/assets
 
-Da apresentação final (armazenado no repositório);
+Da apresentação final (armazenado no repositório): 
 
-Do vídeo de apresentação (armazenado no repositório).
+Do vídeo de apresentação (armazenado no repositório):
 
 
 
