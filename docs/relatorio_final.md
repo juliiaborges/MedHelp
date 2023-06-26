@@ -68,7 +68,7 @@ Com essa solução tecnológica, é possível simplificar o processo de agendame
 Dessa forma, o software de agendamento contribui para a otimização dos recursos de saúde e para o aumento da satisfação e fidelização dos pacientes.
 
 
-   1.4 Justificativas
+       1.4 Justificativas
 
 Com a crescente demanda por atendimento médico, a implementação de um software de clínica médica pode ser uma solução efetiva para melhorar a qualidade do atendimento aos pacientes. Além disso, essa tecnologia pode aumentar a eficiência operacional, facilitar o gerenciamento de informações, otimizar a tomada de decisão e, principalmente, garantir a segurança dos pacientes. Com todas essas vantagens, investir em um software de clínica médica é uma escolha inteligente para quem deseja melhorar o desempenho da clínica ou consultório médico.
 Um software de clínica médica é uma ferramenta essencial para garantir a eficiência e qualidade no atendimento médico. Com ele, é possível o agendamento consultas de forma fácil e rápida, facilitando o acesso dos pacientes aos profissionais da saúde. Além disso, o software permite o registro completo do histórico médico do paciente, incluindo diagnósticos, tratamentos anteriores e prescrição de medicamentos. Isso torna o acompanhamento da saúde do paciente mais preciso e seguro.
